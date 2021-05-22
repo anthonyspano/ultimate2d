@@ -7,15 +7,20 @@ public class UltimateBar : MonoBehaviour
 {
 	public Slider slider;
 	
-	public void SetMaxUlt(int max)
+	public void SetMaxUlt(float max)
 	{
 		slider.maxValue = max;
 		slider.value = 0;
 		
 	}
 	
-	public void SetUlt(int ult)
+	public void SetUlt(float ult)
 	{
 		slider.value = ult;
+	}
+
+	public float GetUlt()
+	{
+		return slider.value;
 	}
 }

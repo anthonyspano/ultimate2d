@@ -93,11 +93,11 @@ GameObject:
   - component: {fileID: 685095614681586349}
   - component: {fileID: 685095614681586350}
   - component: {fileID: 685095614681586351}
-  - component: {fileID: 685095614681586348}
   - component: {fileID: 685095614681586355}
   - component: {fileID: 685095614681586354}
   - component: {fileID: 685095614681586352}
-  - component: {fileID: 685095614681586359}
+  - component: {fileID: 4506577907516632672}
+  - component: {fileID: 5353517363659856517}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -181,24 +181,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
---- !u!114 &685095614681586348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685095614681586344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 532c49e34771826459637a9f9dabebe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  validTarget: 9
-  bulletPrefab: {fileID: 195326668867401345, guid: 29564057a9f2d474d9c1af8af061b55d,
-    type: 3}
-  bulletSpeed: 0
-  bulletSpawn: {fileID: 0}
-  time: 0
 --- !u!50 &685095614681586355
 Rigidbody2D:
   serializedVersion: 4
@@ -259,8 +241,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfHealthBar: {fileID: 0}
+  maxUlt: 100
+  ultCharge: 0
   ultBar: {fileID: 0}
---- !u!114 &685095614681586359
+--- !u!114 &4506577907516632672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,9 +253,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 685095614681586344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ce1a763fe30d4d4c88f9223f01da859, type: 3}
+  m_Script: {fileID: 11500000, guid: b96981ab991776c4187db0494684a720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayerMask: 9
+--- !u!114 &5353517363659856517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685095614681586344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2688f86c6123c4ca7b2c8c2f2ea57f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleBuffer: 0.2
   dashDistance: 12
   shadowPrefab: {fileID: 5805966917542625806, guid: a288aad23e06bb544b82c2283b1a4e15,
     type: 3}

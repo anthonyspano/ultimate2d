@@ -6,20 +6,21 @@ public class ShadowController : MonoBehaviour
 {
 	private GameObject temp;
 	public UltimateBar ultBar;
-	private int ultCharge = 0;
+	private float ultCharge;
 	
-	void Awake()
+	private void Awake()
 	{
-		Debug.Log(GameObject.Find("UltBar"));
 		temp = GameObject.Find("UltBar");
 		ultBar = temp.GetComponent<UltimateBar>();
+		ultCharge = ultBar.GetUlt();
 	}
 	
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.gameObject.tag == "Enemy")
+		if(other.gameObject.CompareTag("Enemy"))
 		{
-			ultCharge += 50;
+			Debug.Log(other.gameObject);
+			ultCharge += 20;
 			ultBar.SetUlt(ultCharge);
 		}
 	}

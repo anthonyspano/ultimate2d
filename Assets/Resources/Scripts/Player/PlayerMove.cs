@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     float x;
     float y;
     [SerializeField]
     private float moveSpeed;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,12 +21,12 @@ public class Move : MonoBehaviour
     {
         if(Input.GetAxis("Horizontal") != 0)
         {
-            transform.Translate(Vector3.right * x * Time.deltaTime * moveSpeed);
+            transform.Translate(Vector3.right * (x * Time.deltaTime * moveSpeed));
         }
 
         if(Input.GetAxis("Vertical") != 0)
         {
-            transform.Translate(Vector3.up * y * Time.deltaTime * moveSpeed);
+            transform.Translate(Vector3.up * (y * Time.deltaTime * moveSpeed));
         }
         
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHandler : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {	
 	// health
 	public Transform pfHealthBar;	
@@ -15,12 +15,14 @@ public class PlayerHandler : MonoBehaviour
 
     private void Start()
     {
+	    // health
         pHealth = new HealthSystem(100, 1f);
-		// added
-		Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(transform.position.x, transform.position.y + 0.2f), Quaternion.identity, transform);
-		HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>(); 
-		// end
-        healthBar.Setup(pHealth);
+        var healthBarTransform = Instantiate(pfHealthBar, 
+								     new Vector3(transform.position.x, transform.position.y + 0.2f), 
+								     Quaternion.identity, 
+								     transform);
+		var healthBar = healthBarTransform.GetComponent<HealthBar>();
+		healthBar.Setup(pHealth);
 		
 		// ultimate bar
 		ultBar.SetUlt(ultCharge);
