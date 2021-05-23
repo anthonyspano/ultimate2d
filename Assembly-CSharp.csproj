@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\PlayerAttack.cs" />
     <Compile Include="Assets\Resources\NormalizedTest.cs" />
     <Compile Include="Assets\Resources\Scripts\AI Tree\BehaviorTree.cs" />
     <Compile Include="Assets\Resources\Scripts\AI Tree\BTComposite.cs" />
@@ -85,7 +86,9 @@
     <Compile Include="Assets\Resources\Scripts\Player\ShadowController.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\TranslateDash.cs" />
     <Compile Include="Assets\Resources\Scripts\Strike.cs" />
+    <Compile Include="Assets\Resources\Scripts\TransformExtensions.cs" />
     <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateBar.cs" />
+    <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateMove.cs" />
     <Compile Include="Assets\TimedLife.cs" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Users/Anthony/Documents/UnityProjects/ultimate2d/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>

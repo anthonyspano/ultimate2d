@@ -1,33 +1,51 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class PlayerMove : MonoBehaviour
 {
-    float x;
-    float y;
     [SerializeField]
     private float moveSpeed;
 
-    // Update is called once per frame
-    void Update()
+    // animation
+    private SpriteRenderer sr;
+    private Animator anim;
+    private bool isFacingLeft;
+    
+    private void Start()
     {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
-        Movement();
+        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
-    void Movement()
+    private void Update()
     {
-        if(Input.GetAxis("Horizontal") != 0)
-        {
-            transform.Translate(Vector3.right * (x * Time.deltaTime * moveSpeed));
-        }
-
-        if(Input.GetAxis("Vertical") != 0)
-        {
-            transform.Translate(Vector3.up * (y * Time.deltaTime * moveSpeed));
-        }
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+        var movement = new Vector2(x, y);
         
+        if (x < 0)
+            isFacingLeft = true;
+        else if (x > 0)
+            isFacingLeft = false;
+        sr.flipX = isFacingLeft;
+        
+        if (movement.magnitude > 0)
+        {
+            movement.Normalize();
+            movement *= moveSpeed * Time.deltaTime;
+            transform.Translate(movement);
+            anim.SetBool("isMoving", true);
+        }
+        else anim.SetBool("isMoving", false);
+        
+        anim.SetFloat("MoveX", x);
+        anim.SetFloat("MoveY", y);
     }
+
+ 
+
+  
 }

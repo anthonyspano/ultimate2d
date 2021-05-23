@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class ShadowController : MonoBehaviour
 {
-	private GameObject temp;
 	public UltimateBar ultBar;
-	private float ultCharge;
-	
+
 	private void Awake()
 	{
-		temp = GameObject.Find("UltBar");
-		ultBar = temp.GetComponent<UltimateBar>();
-		ultCharge = ultBar.GetUlt();
+		ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
 	}
 	
     private void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.gameObject.CompareTag("Enemy"))
 		{
-			Debug.Log(other.gameObject);
-			ultCharge += 20;
-			ultBar.SetUlt(ultCharge);
+			ultBar.AddUlt(50);
 		}
 	}
 }

@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(UltimateBar))]
 public class PlayerShoot : MonoBehaviour
 {
 	private Camera cam;
-    public int enemyLayerMask;     // layer mask of enemy (9)
+    public LayerMask enemyLayerMask;     // layer mask of enemy (9)
 
+    private UltimateBar ultBar;
+    public int ultChargeAmt;
 
 	// Start is called before the first frame update
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
+
+        ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
     }
 
     private void FixedUpdate()
@@ -42,15 +47,12 @@ public class PlayerShoot : MonoBehaviour
         Vector3 click = mouseWorldPoint - transform.position;
         Debug.DrawLine(transform.position, mouseWorldPoint, Color.red);
         // cast from player pos to mouse pos 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, click, distance, ~enemyLayerMask);
-
-
-        // on hit - iterates 4 times
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, click, distance, enemyLayerMask);
+        
         if (hit.collider)
         {
-            Debug.Log("Hit");
-            
-            hit.collider.gameObject.GetComponentInChildren<EnemyManager>().hBar.healthSystem.Damage(20);
+	        hit.collider.gameObject.GetComponent<EnemyManager>().hSystem.Damage(20);
+	        ultBar.AddUlt(ultChargeAmt);
         }
 
     }

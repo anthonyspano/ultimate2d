@@ -7,7 +7,8 @@ public class EnemyManager : MonoBehaviour
 {
 	public Transform pfHealthBar;
 	
-	private HealthSystem hSystem;
+	public HealthSystem hSystem;
+	[HideInInspector]
 	public HealthBar hBar;
 
 
