@@ -194,7 +194,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 50
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfHealthBar: {fileID: 0}
+  positionOffset: 0
   maxUlt: 100
-  ultCharge: 0
   ultBar: {fileID: 0}
 --- !u!114 &4506577907516632672
 MonoBehaviour:
@@ -256,7 +256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96981ab991776c4187db0494684a720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLayerMask: 9
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  ultChargeAmt: 0
 --- !u!114 &5353517363659856517
 MonoBehaviour:
   m_ObjectHideFlags: 0

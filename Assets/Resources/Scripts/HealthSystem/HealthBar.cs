@@ -23,7 +23,6 @@ public class HealthBar : MonoBehaviour
     {
         Vector3 healthBarSize = transform.Find("Bar").localScale;
         transform.Find("Bar").localScale = new Vector3(healthSystem.GetHealthPercent(), 1, 0);
-        Debug.Log("Current health: " + healthSystem.GetHealthPercent());
         healthSystem.SetInvulnerability(true);
 
     }

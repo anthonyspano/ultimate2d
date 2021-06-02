@@ -6,7 +6,7 @@ using UnityEngine;
 public class TranslateDash : MonoBehaviour
 {
 	// speed that determines slow enough to move back instead of jumping forward
-	public float idleBuffer; // 0.2f
+	public float idleBuffer; // (0.2f) if close to not moving, dash backwards 
 	public float dashDistance; // 12 seems good
     public Transform shadowPrefab;
     

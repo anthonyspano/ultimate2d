@@ -23,9 +23,7 @@ public class UltimateBar : MonoBehaviour
 		slider.value += charge;
 		if ((int) slider.value >= (int) slider.maxValue)
 		{
-			Debug.Log("Ult full");
 			if (OnUltFull != null) OnUltFull(this, EventArgs.Empty);
-
 		}
 	}
 	

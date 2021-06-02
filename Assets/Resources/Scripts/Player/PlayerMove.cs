@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
     private SpriteRenderer sr;
     private Animator anim;
     private bool isFacingLeft;
+
+    public float deadZone;
     
     private void Start()
     {
@@ -32,7 +34,7 @@ public class PlayerMove : MonoBehaviour
             isFacingLeft = false;
         sr.flipX = isFacingLeft;
         
-        if (movement.magnitude > 0)
+        if (movement.magnitude > deadZone) // if (movement.magnitude > 0)
         {
             movement.Normalize();
             movement *= moveSpeed * Time.deltaTime;
