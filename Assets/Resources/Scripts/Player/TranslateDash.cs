@@ -10,11 +10,19 @@ public class TranslateDash : MonoBehaviour
 	public float dashDistance; // 12 seems good
     public Transform shadowPrefab;
     
-
+    // cooldown
+    private float cooldownTimer = 0;
+    [SerializeField] private float cooldownRate;
+    
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (cooldownTimer <= 0 && Input.GetAxis("Jump") > 0)
+        {
+            cooldownTimer = cooldownRate;
             Dash(dashDistance);
+        }
+
+        cooldownTimer -= Time.deltaTime;
     }
 
     protected virtual void Dash(float speed)

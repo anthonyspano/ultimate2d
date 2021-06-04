@@ -3,17 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+[RequireComponent(typeof(PlayerAim))]
+public class PlayerAttack : MonoBehaviour, ICoolDown
 {
-    private float x;
-    private float y;
     
     // hitbox
     public float radius;
-    public float range;
-    private Vector2 lastMove;
     public LayerMask enemyLayer;
-    
+
     // debug
     private Color hitboxColor;
 
@@ -24,31 +21,35 @@ public class PlayerAttack : MonoBehaviour
     // animation
     private Animator anim;
     
+    // interface
+    [SerializeField] private float cooldownRate;
+    public float CooldownTimer { get; set; }
+    public float CooldownRate { get; set; }
+    
+    // Player Aim
+    private PlayerAim myAim;
+
     private void Start()
     {
-        lastMove = new Vector2(0, 1);
+        myAim = GetComponent<PlayerAim>();
         ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
-
         anim = GameObject.Find("StrikeSprite").GetComponent<Animator>();
-        
+
+        CooldownTimer = 0;
     }
 
     private void Update()
     {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
-
-        if (x != 0 || y != 0)
-            lastMove = new Vector2(x, y);
-        
-        if (Input.GetButtonDown("Fire1"))
+        if (CooldownTimer <= 0 && Input.GetButtonDown("Fire1"))
         {
+            // cooldown
+            CooldownTimer = cooldownRate;
+            
             // play anim
             anim.Play("strike");
             
             // spawn hitbox
-            var center = transform.XandY() + lastMove.normalized * range;
-            var hits = Physics2D.OverlapCircleAll(center, radius, enemyLayer);
+            var hits = Physics2D.OverlapCircleAll(myAim.center, radius, enemyLayer);
             foreach (var col in hits)
             {
                 if (col.gameObject.CompareTag("Enemy"))
@@ -61,19 +62,15 @@ public class PlayerAttack : MonoBehaviour
             
         }
         
-        
+        CooldownTimer -= Time.deltaTime;
     }
 
     
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
-        if (lastMove.x != 0 || lastMove.y != 0)
-        {
-            var center = transform.XandY();
-            center += lastMove.normalized * range;
-            Gizmos.color = hitboxColor;
-            Gizmos.DrawWireSphere(center, radius);
-        }
+        Gizmos.color = hitboxColor;
+
+        Gizmos.DrawWireSphere(myAim.center, radius);
         hitboxColor = Color.red;
     }
 }

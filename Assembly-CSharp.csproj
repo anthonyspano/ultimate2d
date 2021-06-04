@@ -76,11 +76,15 @@
     <Compile Include="Assets\Resources\Scripts\Enemy\SimpleAI.cs" />
     <Compile Include="Assets\Resources\Scripts\HealthSystem\HealthBar.cs" />
     <Compile Include="Assets\Resources\Scripts\HealthSystem\HealthSystem.cs" />
+    <Compile Include="Assets\Resources\Scripts\ICoolDown.cs" />
+    <Compile Include="Assets\Resources\Scripts\LaunchProjectile.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\NearMiss.cs" />
+    <Compile Include="Assets\Resources\Scripts\Player\PlayerAim.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerMove.cs" />
-    <Compile Include="Assets\Resources\Scripts\Player\PlayerShoot.cs" />
+    <Compile Include="Assets\Resources\Scripts\Player\PlayerShootProjectile.cs" />
+    <Compile Include="Assets\Resources\Scripts\Player\PlayerShootRaycast.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\RBDash.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\ShadowController.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\TranslateDash.cs" />

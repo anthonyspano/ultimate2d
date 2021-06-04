@@ -4,23 +4,21 @@ using UnityEngine;
 
 using static EnemyManager;
 
-public class EnemyShoot : MonoBehaviour
+public class EnemyShoot : LaunchProjectile
 {
-	private Rigidbody2D rb2D;
-	public Transform bulletPrefab;
-	private Vector2 playerPos;
-	public float bulletSpeed; // 40
-
 	public float time;
 	private float timer;
-	
+	public float bulletSpeed;
+	public Transform bulletPrefab;
+
+	private GameObject player;
 
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
-        rb2D = GetComponent<Rigidbody2D>();
-
         timer = time;
+
+        player = GameObject.Find("Player");
     }
 
     private void FixedUpdate()
@@ -30,26 +28,11 @@ public class EnemyShoot : MonoBehaviour
 		else
 		{
 			timer = time;
-			Fire();
+			var playerPos = player.transform.XandY();
+			Fire(bulletPrefab, transform.position - Vector3.left, playerPos - transform.XandY(), bulletSpeed);
 		}
 		
 		
     }
-    
-	
-	public void Fire()	
-	{
-		// locate player
-		playerPos = GameObject.Find("Player").transform.position;
-		// spawn bullet
-		Transform bulletClone = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-		// gain invulnerability from bullet
-		Physics2D.IgnoreCollision(bulletClone.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());		
-		// add force
-		Rigidbody2D bulletRB = bulletClone.GetComponent<Rigidbody2D>();
-		Vector2 traj = playerPos - (Vector2)transform.position; 
-		bulletRB.AddForce(traj * bulletSpeed);
 
-	}
-	
 }
