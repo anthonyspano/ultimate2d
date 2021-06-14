@@ -12,6 +12,7 @@ public class PlayerAim : MonoBehaviour
 
     private float x;
     private float y;
+    
     private void Start()
     {
         lastMove = Vector2.down;
@@ -19,12 +20,13 @@ public class PlayerAim : MonoBehaviour
 
     protected void Update()
     {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
+        x = Input.GetAxis(InputAxis.x);
+        y = Input.GetAxis(InputAxis.y);
         
         if (x != 0 || y != 0)
             lastMove = new Vector2(x, y);
         
         center = transform.XandY() + lastMove.normalized * range;
     }
+    
 }

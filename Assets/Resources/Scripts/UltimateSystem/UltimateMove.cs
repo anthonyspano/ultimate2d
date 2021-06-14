@@ -40,7 +40,7 @@ public class UltimateMove : MonoBehaviour
             ultBar.AddUlt(100);
         }
 
-        if (ultReady && Input.GetKeyDown(KeyCode.Mouse2))
+        if (ultReady && Input.GetKeyDown(KeyCode.U))
         {
             ultReady = false;
             UseUlt();
@@ -49,18 +49,12 @@ public class UltimateMove : MonoBehaviour
     
     private void UseUlt()
     {
+        // hitbox in direction of aim
+        
+        
         // play ult anim
         if(FireUltAnim != null) FireUltAnim(this, EventArgs.Empty);
-
-        // shoot raycasts to left and right to apply damage
-        RaycastHit2D rightUlt = Physics2D.Raycast(transform.position, Vector2.right, 20f, layerMask);
-        RaycastHit2D leftUlt = Physics2D.Raycast(transform.position, Vector2.left, 20f, layerMask);
         
-        // damage enemy hit
-        if (leftUlt.collider) 
-            leftUlt.collider.gameObject.GetComponent<EnemyManager>().hBar.healthSystem.Damage(ultDamage);
-        if (rightUlt.collider)    
-            rightUlt.collider.gameObject.GetComponent<EnemyManager>().hBar.healthSystem.Damage(ultDamage);
         
         // empty ult bar
         ultBar.SetUlt(0);

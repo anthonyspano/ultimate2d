@@ -7,25 +7,18 @@ using static EnemyManager;
 public class EnemyMove : MonoBehaviour
 {
 	private Vector2 playerPos;
-	private float maxDistDelta; // 0.01f
+	private float maxDistDelta = 0.01f; // 0.01f
 
 	public float radius;
-
-	private void Start() 
-	{
-		maxDistDelta = 0.01f;
-
-	}
-
+	
 
 	public void Move()
 	{
 		// determine player's position
-		GameObject player = GameObject.Find("Player");
-		playerPos = player.transform.position;
+		playerPos = PlayerManager.player.transform.position;
 
 		// accomplish being in range of player
-		if (!InRange(player))
+		if (!InRange(playerPos))
 		{
 			transform.position = Vector2.MoveTowards(transform.position, playerPos, maxDistDelta);
 		}
@@ -33,10 +26,10 @@ public class EnemyMove : MonoBehaviour
 
 	}
 
-	public bool InRange(GameObject target)
+	public bool InRange(Vector2 target)
     {
-        float dX = transform.position.x - target.transform.position.x;
-        float dY = transform.position.y - target.transform.position.y;
+        float dX = transform.position.x - target.x;
+        float dY = transform.position.y - target.y;
 
         return (dX < radius && dY < radius);
     }

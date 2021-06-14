@@ -16,7 +16,7 @@ public class TranslateDash : MonoBehaviour
     
     private void Update()
     {
-        if (cooldownTimer <= 0 && Input.GetAxis("Jump") > 0)
+        if (cooldownTimer <= 0 && Input.GetAxis(InputAxis.jump) > 0)
         {
             cooldownTimer = cooldownRate;
             Dash(dashDistance);
@@ -27,8 +27,8 @@ public class TranslateDash : MonoBehaviour
 
     protected virtual void Dash(float speed)
     {
-        var x = Input.GetAxis("Horizontal");
-        var y = Input.GetAxis("Vertical");
+        var x = Input.GetAxis(InputAxis.x);
+        var y = Input.GetAxis(InputAxis.y);
         var direction = new Vector2(x, y);
         if (x < idleBuffer && y < idleBuffer)
 	        direction = Vector2.left;

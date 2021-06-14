@@ -63,21 +63,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EndAnimation.cs" />
     <Compile Include="Assets\Resources\Scripts\AI Tree\BehaviorTree.cs" />
     <Compile Include="Assets\Resources\Scripts\AI Tree\BTComposite.cs" />
     <Compile Include="Assets\Resources\Scripts\AI Tree\BTNode.cs" />
     <Compile Include="Assets\Resources\Scripts\AI Tree\BTRepeater.cs" />
     <Compile Include="Assets\Resources\Scripts\AI Tree\BTSequencer.cs" />
     <Compile Include="Assets\Resources\Scripts\AI Tree\Decorator.cs" />
-    <Compile Include="Assets\Resources\Scripts\Enemy\AIScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Resources\Scripts\Deprecated\AIScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\Deprecated\SimpleAI.cs" />
     <Compile Include="Assets\Resources\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Enemy\EnemyMove.cs" />
     <Compile Include="Assets\Resources\Scripts\Enemy\EnemyShoot.cs" />
-    <Compile Include="Assets\Resources\Scripts\Enemy\SimpleAI.cs" />
     <Compile Include="Assets\Resources\Scripts\HealthSystem\HealthBar.cs" />
     <Compile Include="Assets\Resources\Scripts\HealthSystem\HealthSystem.cs" />
     <Compile Include="Assets\Resources\Scripts\ICoolDown.cs" />
+    <Compile Include="Assets\Resources\Scripts\InputAxis.cs" />
     <Compile Include="Assets\Resources\Scripts\LaunchProjectile.cs" />
+    <Compile Include="Assets\Resources\Scripts\Player\ChangeClothes.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\NearMiss.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerAim.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerAttack.cs" />
@@ -90,11 +94,12 @@
     <Compile Include="Assets\Resources\Scripts\Player\TranslateDash.cs" />
     <Compile Include="Assets\Resources\Scripts\PointToRotation.cs" />
     <Compile Include="Assets\Resources\Scripts\RotateAroundPlayer.cs" />
-    <Compile Include="Assets\Resources\Scripts\TimedLife.cs" />
+    <Compile Include="Assets\Resources\Scripts\TestAnim.cs" />
     <Compile Include="Assets\Resources\Scripts\TransformExtensions.cs" />
+    <Compile Include="Assets\Resources\Scripts\TriggerEvent.cs" />
+    <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateAim.cs" />
     <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateBar.cs" />
     <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateMove.cs" />
-    <Compile Include="Assets\TestAnim.cs" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Users/Anthony/Documents/UnityProjects/ultimate2d/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>

@@ -24,8 +24,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = Input.GetAxis(InputAxis.x);
+        float y = Input.GetAxis(InputAxis.y);
         var movement = new Vector2(x, y);
         
         if (x < 0)

@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerAim))]
 public class PlayerAttack : MonoBehaviour, ICoolDown
 {
+    // temp
+    private UltimateAim ultAim;
     
     // hitbox
     public float radius;
@@ -16,25 +18,28 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
 
     // ultimate
     private UltimateBar ultBar;
+    [Tooltip("This charges the ultimate bar")]
     public int ultChargeAmt;
 
     // animation
     private Animator anim;
     
     // interface
+    [Header("Interface")]
     [SerializeField] private float cooldownRate;
     public float CooldownTimer { get; set; }
     public float CooldownRate { get; set; }
-    
+
     // Player Aim
     private PlayerAim myAim;
 
     private void Start()
     {
         myAim = GetComponent<PlayerAim>();
+        ultAim = GetComponent<UltimateAim>();
         ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
         anim = GameObject.Find("StrikeSprite").GetComponent<Animator>();
-
+        Debug.Log(anim);
         CooldownTimer = 0;
     }
 
@@ -64,12 +69,17 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
         
         CooldownTimer -= Time.deltaTime;
     }
-
     
+    public void EndAnim()
+    {
+        anim.Play("Neutral");
+    }
+
+    // temporarily for ultimate aim
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = hitboxColor;
-
+        //Gizmos.DrawLine(transform.XandY(), ultAim.center);
         Gizmos.DrawWireSphere(myAim.center, radius);
         hitboxColor = Color.red;
     }

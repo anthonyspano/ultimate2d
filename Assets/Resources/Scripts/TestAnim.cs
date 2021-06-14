@@ -9,25 +9,21 @@ public class TestAnim : MonoBehaviour
 
     private UltimateMove _ultMove;
 
-    public string stateName;
+    public AnimationClip clip;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-
-        _ultMove = GameObject.Find("Player").GetComponent<UltimateMove>();
+        
+        _ultMove = PlayerManager.player.GetComponent<UltimateMove>();
         _ultMove.FireUltAnim += DoAnim;
     }
 
     private void DoAnim(object sender, EventArgs e)
     {
-        anim.Play(stateName);
+        anim.Play("blast");
     }
-
-    public void EndAnim()
-    {
-        anim.Play("Neutral");
-    }
+    
     
 }

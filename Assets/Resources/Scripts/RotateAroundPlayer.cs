@@ -11,25 +11,23 @@ public class RotateAroundPlayer : MonoBehaviour
 
     private Vector2 lastMove;
 
-    public float radius; // 2.5
+    public float radius;
     
     private void Update()
     {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
+        x = Input.GetAxis(InputAxis.x);
+        y = Input.GetAxis(InputAxis.y);
         Vector3 moveDirection = new Vector3(x, y);
-        moveDirection.Normalize();
 
-        if (x != 0 || y != 0)
-            lastMove = new Vector2(x, y);
-        
-        if (lastMove.x != 0 || lastMove.y != 0)
+        if (moveDirection.x != 0 || moveDirection.y != 0)
         {
-            // pos
-            var pos = GameObject.Find("Player").transform.XandY();
-            pos += lastMove.normalized * radius;
-            transform.position = pos;
+            moveDirection.Normalize();
             
+            // pos
+            var pos = PlayerManager.player.transform.XandY();
+            pos += (Vector2)moveDirection * radius;
+            transform.position = pos;
+
             // rotate
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) *
                           Mathf.Rad2Deg;     // return angle in radians tan(y/x)

@@ -11,8 +11,9 @@ public class PlayerShootProjectile : LaunchProjectile
 
     public float bulletSpeed;
     public Transform bulletPrefab;
-
+    
     private PlayerAim myAim;
+    public float crosshairSize;
     
     private void Start()
     {
@@ -25,11 +26,16 @@ public class PlayerShootProjectile : LaunchProjectile
 	    if (Input.GetButtonDown("Fire2"))
 	    {
 		    var pos = myAim.center;
+		    Debug.Log("speed: " + bulletSpeed);
 		    Fire(bulletPrefab, pos, pos - transform.XandY(), bulletSpeed);
 	    }
 	    
     }
 
+    private void OnDrawGizmosSelected()
+    {
+	    //Gizmos.color = Color.red;
+	    //Gizmos.DrawWireSphere(myAim.center, crosshairSize);
+    }
     
-
 }
