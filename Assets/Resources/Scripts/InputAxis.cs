@@ -6,5 +6,5 @@ public class InputAxis : MonoBehaviour
 {
     public static string x = "Horizontal";
     public static string y = "Vertical";
-    public static string jump = "Jump";
+    public static KeyCode jumpKey = KeyCode.Space;
 }

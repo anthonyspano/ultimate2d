@@ -47,27 +47,36 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
     {
         if (CooldownTimer <= 0 && Input.GetButtonDown("Fire1"))
         {
-            // cooldown
-            CooldownTimer = cooldownRate;
-            
-            // play anim
-            anim.Play("strike");
-            
-            // spawn hitbox
-            var hits = Physics2D.OverlapCircleAll(myAim.center, radius, enemyLayer);
-            foreach (var col in hits)
-            {
-                if (col.gameObject.CompareTag("Enemy"))
-                {
-                    col.gameObject.GetComponent<EnemyManager>().hSystem.Damage(20);
-                    ultBar.AddUlt(ultChargeAmt);
-                    hitboxColor = Color.green;
-                }
-            }
-            
+            Strike("strike", 20);
         }
         
+
         CooldownTimer -= Time.deltaTime;
+    }
+
+    // pass in anim name based on where called
+    // param for ultcharge based on where called
+    public void Strike(string stateName, int ultChargeAmt)
+    {
+        // cooldown
+        CooldownTimer = cooldownRate;
+        
+        // play anim
+        anim.Play("strike");
+        
+        // spawn hitbox
+        var hits = Physics2D.OverlapCircleAll(myAim.center, radius, enemyLayer);
+        foreach (var col in hits)
+        {
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+                col.gameObject.GetComponent<EnemyManager>().hSystem.Damage(20);
+                ultBar.AddUlt(ultChargeAmt);
+                hitboxColor = Color.green;
+            }
+        }
+
+
     }
     
     public void EndAnim()
@@ -79,7 +88,6 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = hitboxColor;
-        //Gizmos.DrawLine(transform.XandY(), ultAim.center);
         Gizmos.DrawWireSphere(myAim.center, radius);
         hitboxColor = Color.red;
     }

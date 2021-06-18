@@ -49,12 +49,11 @@ public class UltimateMove : MonoBehaviour
     
     private void UseUlt()
     {
-        // hitbox in direction of aim
+        // enable ult hitbox
         
         
         // play ult anim
         if(FireUltAnim != null) FireUltAnim(this, EventArgs.Empty);
-        
         
         // empty ult bar
         ultBar.SetUlt(0);
