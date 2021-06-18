@@ -47,17 +47,18 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
     {
         if (CooldownTimer <= 0 && Input.GetButtonDown("Fire1"))
         {
-            Strike("strike", 20);
+            StartCoroutine(Strike("strike", 20));
         }
         
 
         CooldownTimer -= Time.deltaTime;
     }
 
-    // pass in anim name based on where called
-    // param for ultcharge based on where called
-    public void Strike(string stateName, int ultChargeAmt)
+    // 0.2 seconds will work for now
+    public IEnumerator Strike(string stateName, int ultChargeAmt)
     {
+        yield return new WaitForSeconds(0.2f);
+
         // cooldown
         CooldownTimer = cooldownRate;
         
@@ -84,11 +85,11 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
         anim.Play("Neutral");
     }
 
-    // temporarily for ultimate aim
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = hitboxColor;
-        Gizmos.DrawWireSphere(myAim.center, radius);
-        hitboxColor = Color.red;
-    }
+
+    // private void OnDrawGizmosSelected()
+    // {
+    //     Gizmos.color = hitboxColor;
+    //     Gizmos.DrawWireSphere(myAim.center, radius);
+    //     hitboxColor = Color.red;
+    // }
 }

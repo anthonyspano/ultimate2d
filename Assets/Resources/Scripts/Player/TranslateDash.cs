@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// tbi: enhanced strike
+
 [RequireComponent(typeof(PlayerAttack))]
 public class TranslateDash : MonoBehaviour
 {
@@ -41,7 +41,7 @@ public class TranslateDash : MonoBehaviour
             if (consecutiveDashes >= maxConsecutiveDashes)
             {
                 // strike
-                pAtk.Strike("strike", 50); // tbi: enhanced strike
+                StartCoroutine(pAtk.Strike("strike", 50)); 
                 
                 // reset
                 consecutiveDashes = 0;
