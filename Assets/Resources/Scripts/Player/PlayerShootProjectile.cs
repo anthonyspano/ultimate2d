@@ -23,10 +23,9 @@ public class PlayerShootProjectile : LaunchProjectile
 
     private void Update()
     {
-	    if (Input.GetButtonDown("Fire2"))
+	    if (Input.GetKeyDown(InputAxis.shoot))
 	    {
 		    var pos = myAim.center;
-		    Debug.Log("speed: " + bulletSpeed);
 		    Fire(bulletPrefab, pos, pos - transform.XandY(), bulletSpeed);
 	    }
 	    

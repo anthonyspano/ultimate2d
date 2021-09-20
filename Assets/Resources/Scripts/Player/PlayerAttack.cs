@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
 
     private void Update()
     {
-        if (CooldownTimer <= 0 && Input.GetButtonDown("Fire1"))
+        if (CooldownTimer <= 0 && Input.GetKeyDown(InputAxis.slash))
         {
             StartCoroutine(Strike("strike", 20));
         }
