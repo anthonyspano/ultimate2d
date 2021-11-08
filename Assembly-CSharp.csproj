@@ -74,6 +74,7 @@
      <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateAim.cs" />
      <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateBar.cs" />
      <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateMove.cs" />
+     <Compile Include="Assets\mino2.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

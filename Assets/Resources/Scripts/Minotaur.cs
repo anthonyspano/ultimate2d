@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// print when the code steps through each point and make sure correct
+
 public class Minotaur : MonoBehaviour
 {
     private Animator anim;
@@ -36,13 +38,21 @@ public class Minotaur : MonoBehaviour
         if (inSight(distX, distY))
         {  
             //anim.SetBool("inSight", true);
-            // pursue player 
+
+
             if(!inRange(distX, distY))// || !isSwinging)
             {
-                // move towards player
-                Debug.Log(playerPos);
-                transform.Translate(playerPos * Time.deltaTime * runSpeed);
+                // pursue player 
+                //transform.Translate(playerPos * Time.deltaTime * runSpeed);
+                // probably move towards playerpos but set value to distance traveled in one frame
+                transform.position = Vector2.MoveTowards(transform.position, playerPos, runSpeed * Time.deltaTime);
+
                 
+            }
+            else
+            {
+                Debug.Log("attacking player");
+                // attack
             }
             
         }
@@ -54,7 +64,7 @@ public class Minotaur : MonoBehaviour
         // attack range
         if (inRange(distX, distY))
         {
-            isSwinging = true;
+            //isSwinging = true;
             //anim.SetBool("inRange", true);
             // swing
             //StartCoroutine("Attack");
