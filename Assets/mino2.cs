@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 // print when the code steps through each point and make sure correct
 
@@ -33,36 +34,35 @@ public class mino2 : MonoBehaviour
     private void Update()
     {
         var playerPos = player.transform.position;
-        //Debug.Log(playerPos);
-        distX = transform.position.x - playerPos.x;
-        distY = transform.position.y - playerPos.y;
-        //Debug.Log(inSight(distX, distY));
+        distX = Math.Abs(transform.position.x - playerPos.x);
+        distY = Math.Abs(transform.position.y - playerPos.y);
+        
         // sight range 
         if (inSight(distX, distY) && !inRange(distX, distY))
         {  
-            //anim.SetBool("inSight", true);
+            anim.SetBool("inSight", true);
             // probably move towards playerpos but set value to distance traveled in one frame
             // towards: (playerPos - transform.position).normalize
             tPos = transform.position + ((playerPos - transform.position).normalized);
             transform.position = Vector2.MoveTowards(transform.position, tPos, runSpeed * Time.deltaTime);
         }
 
-        if(inRange(distX, distY))// || !isSwinging)
+        if(inRange(distX, distY) || !isSwinging)
         {
 
-            Debug.Log("attacking player");
+            //Debug.Log("attacking player");
 
         }
 
         
-        // // attack range
-        // if (inRange(distX, distY))
-        // {
-        //     //isSwinging = true;
-        //     //anim.SetBool("inRange", true);
-        //     // swing
-        //     //StartCoroutine("Attack");
-        // }
+        // attack range
+        if (inRange(distX, distY))
+        {
+            isSwinging = true;
+            anim.SetBool("inRange", true);
+            //swing
+            StartCoroutine("Attack");
+        }
         
         
     }
