@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
 
 	// health
 	public Transform pfHealthBar;	
-	private HealthSystem pHealth;
+	public HealthSystem pHealth;
 	public float positionOffset;
 	
 	// ultimate
@@ -56,8 +56,7 @@ public class PlayerManager : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Projectile"))
-            pHealth.Damage(20);
+        Debug.Log("Hit");
     }
 
 

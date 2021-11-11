@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - UltBar
   - Projectile
+  - Boss
+  - BigHurt
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,7 @@ public class PlayerShootProjectile : LaunchProjectile
     private void Start()
     {
 	    myAim = GetComponent<PlayerAim>();
-	    ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
+	    //ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
     }
 
     private void Update()

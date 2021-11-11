@@ -21,8 +21,8 @@ public class UltimateMove : MonoBehaviour
 
     private void Start()
     {
-        ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
-        ultBar.OnUltFull += ReadyUlt;
+        //ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
+        //ultBar.OnUltFull += ReadyUlt;
 
 
     }

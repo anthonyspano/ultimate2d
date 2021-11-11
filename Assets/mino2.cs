@@ -20,19 +20,45 @@ public class mino2 : MonoBehaviour
     [SerializeField]
     private float runSpeed;
 
+    // attacking flow control
     private bool isSwinging;
+    private bool once = true;
 
     //testing
     private Vector2 tPos;
+
+    // health
+    public HealthSystem healthSystem;
+    public HealthBar healthBar; // referenced with scene healthbar
+
+    // hitbox
+    public float hitboxSize;
+    public LayerMask playerLayer;
+    private Vector3 hitboxPos;
     
     private void Start()
     {
         anim = GetComponent<Animator>();
         player = GameObject.Find("Player");
+
+        // health
+        healthSystem = new HealthSystem(200, 0f);
+        healthBar.Setup(healthSystem);
+        // health - death event
+        healthSystem.OnHealthChanged += OnDeath;
+    }
+
+    private void OnDeath(object sender, System.EventArgs e)
+    {
+        if(healthSystem.GetHealth() <= 0) 
+        {
+            // Death sequence   
+        }
     }
 
     private void Update()
     {
+        hitboxPos = GameObject.Find("AxeHitBox").transform.position; 
         var playerPos = player.transform.position;
         distX = Math.Abs(transform.position.x - playerPos.x);
         distY = Math.Abs(transform.position.y - playerPos.y);
@@ -56,9 +82,11 @@ public class mino2 : MonoBehaviour
 
         
         // attack range
-        if (inRange(distX, distY))
+        if (inRange(distX, distY) && once)
         {
-            isSwinging = true;
+            once = false;
+            Debug.Log("once");
+            //isSwinging = true;
             anim.SetBool("inRange", true);
             //swing
             StartCoroutine("Attack");
@@ -69,10 +97,20 @@ public class mino2 : MonoBehaviour
 
     private IEnumerator Attack()
     {
-        isSwinging = false;
-        yield return new WaitForSeconds(2f);
+        //isSwinging = false;
+        yield return new WaitForSeconds(1f);
+        // trigger hitbox
+        var hits = Physics2D.OverlapCircleAll(hitboxPos, hitboxSize, playerLayer);
+        foreach (var col in hits)
+        {
+            if(col.gameObject.CompareTag("Player"))
+            {
+                Debug.Log("Player hit!");
+                col.gameObject.GetComponent<PlayerManager>().pHealth.Damage(20);
+            }
+        }
 
-        //Debug.Log("Attack finished");
+        once = true;
     }
 
 
@@ -85,6 +123,9 @@ public class mino2 : MonoBehaviour
     {
         return (dx < atkRange && dy < atkRange);
     }
+
+
+
     
     
     private void OnDrawGizmos()
@@ -95,6 +136,10 @@ public class mino2 : MonoBehaviour
         // sight range
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+
+        // axe hitbox
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(hitboxPos, hitboxSize);
     
     }
     
