@@ -20,6 +20,8 @@ public class mino2 : MonoBehaviour
     [SerializeField]
     private float runSpeed;
 
+    public int assignedPlayerDamage;
+
     // attacking flow control
     private bool isSwinging;
     private bool once = true;
@@ -52,7 +54,8 @@ public class mino2 : MonoBehaviour
     {
         if(healthSystem.GetHealth() <= 0) 
         {
-            // Death sequence   
+            // Death sequence  
+            anim.SetBool("isDead", true);
         }
     }
 
@@ -87,30 +90,11 @@ public class mino2 : MonoBehaviour
             once = false;
             Debug.Log("once");
             //isSwinging = true;
-            anim.SetBool("inRange", true);
-            //swing
-            StartCoroutine("Attack");
+            anim.SetBool("inRange", true); // begins the "mino_atk1" animation
+            // end of animation trigger for damage assignment (Attack())
         }
         
         
-    }
-
-    private IEnumerator Attack()
-    {
-        //isSwinging = false;
-        yield return new WaitForSeconds(1f);
-        // trigger hitbox
-        var hits = Physics2D.OverlapCircleAll(hitboxPos, hitboxSize, playerLayer);
-        foreach (var col in hits)
-        {
-            if(col.gameObject.CompareTag("Player"))
-            {
-                Debug.Log("Player hit!");
-                col.gameObject.GetComponent<PlayerManager>().pHealth.Damage(20);
-            }
-        }
-
-        once = true;
     }
 
 
@@ -125,24 +109,46 @@ public class mino2 : MonoBehaviour
     }
 
 
-
-    
-    
-    private void OnDrawGizmos()
+    private void Attack() 
     {
-        // attack range
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, atkRange);
-        // sight range
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, sightRange);
+        // triggered from animation
+        var hits = Physics2D.OverlapCircleAll(hitboxPos, hitboxSize, playerLayer);
+        foreach (var col in hits)
+        {
+            if(col.gameObject.CompareTag("Player"))
+            {
+                Debug.Log("Player hit!");
+                col.gameObject.GetComponent<PlayerManager>().pHealth.Damage(assignedPlayerDamage);
+            }
+        }
 
-        // axe hitbox
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(hitboxPos, hitboxSize);
-    
+    }
+
+    private void Death() 
+    {
+        // triggered after death animation
+        anim.enabled = false;
+        gameObject.GetComponent<mino2>().enabled = false;
+
     }
     
+    
+    // private void OnDrawGizmos()
+    // {
+    //     // attack range
+    //     Gizmos.color = Color.green;
+    //     Gizmos.DrawWireSphere(transform.position, atkRange);
+    //     // sight range
+    //     Gizmos.color = Color.white;
+    //     Gizmos.DrawWireSphere(transform.position, sightRange);
+
+    //     // axe hitbox
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireSphere(hitboxPos, hitboxSize);
+    
+    // }
+    
+
     
     
 }
