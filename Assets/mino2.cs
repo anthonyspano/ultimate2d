@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-// print when the code steps through each point and make sure correct
+// change OnHealthChanged to flash red and delete sr in start and var
 
 public class mino2 : MonoBehaviour
 {
     private Animator anim;
-    private GameObject player;
+    [HideInInspector] public GameObject player;
 
     private float distX;
     private float distY;
@@ -37,6 +37,10 @@ public class mino2 : MonoBehaviour
     public float hitboxSize;
     public LayerMask playerLayer;
     private Vector3 hitboxPos;
+
+
+    // remove later
+    SpriteRenderer sr;
     
     private void Start()
     {
@@ -47,24 +51,52 @@ public class mino2 : MonoBehaviour
         healthSystem = new HealthSystem(200, 0f);
         healthBar.Setup(healthSystem);
         // health - death event
-        healthSystem.OnHealthChanged += OnDeath;
+        healthSystem.OnHealthChanged += OnDamage;
+
+        sr = GetComponent<SpriteRenderer>();
     }
 
-    private void OnDeath(object sender, System.EventArgs e)
-    {
-        if(healthSystem.GetHealth() <= 0) 
-        {
-            // Death sequence  
-            anim.SetBool("isDead", true);
-        }
-    }
+	private void OnDamage(object sender, System.EventArgs e) 
+	{
+		StartCoroutine(FlashRed());
+    
+    	if(healthSystem.GetHealth() <= 0)
+		{
+			// Death sequence
+			anim.SetBool("isDead", true);
+		}
+
+	
+	
+		
+		
+		
+
+	}
+
+	private IEnumerator FlashRed()
+	{
+		var timer = 0.33f;
+		sr.color = Color.red;
+		yield return new WaitForSeconds(timer);
+		sr.color = Color.white;
+		// yield return new WaitForSeconds(timer);
+		// sr.color = Color.red;
+		// yield return new WaitForSeconds(timer);
+		// sr.color = Color.white;
+
+	}
 
     private void Update()
     {
+        
         hitboxPos = GameObject.Find("AxeHitBox").transform.position; 
         var playerPos = player.transform.position;
         distX = Math.Abs(transform.position.x - playerPos.x);
         distY = Math.Abs(transform.position.y - playerPos.y);
+        
+        anim.SetBool("inSight", inSight(distX,distY));
+        anim.SetBool("inRange", inRange(distX,distY));
         
         // sight range 
         if (inSight(distX, distY) && !inRange(distX, distY))
@@ -76,22 +108,12 @@ public class mino2 : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, tPos, runSpeed * Time.deltaTime);
         }
 
-        if(inRange(distX, distY) || !isSwinging)
-        {
-
-            //Debug.Log("attacking player");
-
-        }
-
         
         // attack range
         if (inRange(distX, distY) && once)
         {
             once = false;
-            Debug.Log("once");
-            //isSwinging = true;
             anim.SetBool("inRange", true); // begins the "mino_atk1" animation
-            // end of animation trigger for damage assignment (Attack())
         }
         
         
@@ -117,7 +139,7 @@ public class mino2 : MonoBehaviour
         {
             if(col.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Player hit!");
+                //Debug.Log("Player hit!");
                 col.gameObject.GetComponent<PlayerManager>().pHealth.Damage(assignedPlayerDamage);
             }
         }

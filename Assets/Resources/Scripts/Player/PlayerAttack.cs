@@ -35,6 +35,8 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
     // Player Aim
     private PlayerAim myAim;
 
+    public int bossDamage;
+
     private void Start()
     {
         // hitbox
@@ -86,7 +88,7 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
 
             if (col.gameObject.CompareTag("Boss"))
             {
-                col.gameObject.GetComponent<mino2>().healthSystem.Damage(20);
+                col.gameObject.GetComponent<mino2>().healthSystem.Damage(bossDamage);
             }
         }
 
