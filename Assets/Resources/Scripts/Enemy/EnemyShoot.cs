@@ -11,14 +11,11 @@ public class EnemyShoot : LaunchProjectile
 	public float bulletSpeed;
 	public Transform bulletPrefab;
 
-	private GameObject player;
-
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
         timer = time;
 
-        player = GameObject.Find("Player");
     }
 
     private void FixedUpdate()
@@ -28,7 +25,7 @@ public class EnemyShoot : LaunchProjectile
 		else
 		{
 			timer = time;
-			var playerPos = player.transform.XandY();
+			var playerPos = PlayerManager.player.transform.XandY();
 			Fire(bulletPrefab, transform.position - Vector3.left, playerPos - transform.XandY(), bulletSpeed);
 		}
 		

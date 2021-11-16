@@ -36,7 +36,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\EndAnimation.cs" />
      <Compile Include="Assets\Resources\Scripts\AI Tree\BTComposite.cs" />
      <Compile Include="Assets\Resources\Scripts\AI Tree\BTNode.cs" />
      <Compile Include="Assets\Resources\Scripts\AI Tree\BTRepeater.cs" />
@@ -45,7 +44,9 @@
      <Compile Include="Assets\Resources\Scripts\AI Tree\Decorator.cs" />
      <Compile Include="Assets\Resources\Scripts\Bullet.cs" />
      <Compile Include="Assets\Resources\Scripts\Deprecated\AIScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\Deprecated\Minotaur.cs" />
      <Compile Include="Assets\Resources\Scripts\Deprecated\SimpleAI.cs" />
+     <Compile Include="Assets\Resources\Scripts\EndAnimation.cs" />
      <Compile Include="Assets\Resources\Scripts\Enemy\EnemyManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Enemy\EnemyMove.cs" />
      <Compile Include="Assets\Resources\Scripts\Enemy\EnemyShoot.cs" />
@@ -54,8 +55,8 @@
      <Compile Include="Assets\Resources\Scripts\ICoolDown.cs" />
      <Compile Include="Assets\Resources\Scripts\Input\InputAxis.cs" />
      <Compile Include="Assets\Resources\Scripts\LaunchProjectile.cs" />
-     <Compile Include="Assets\Resources\Scripts\Minotaur.cs" />
      <Compile Include="Assets\Resources\Scripts\Player\ChangeClothes.cs" />
+     <Compile Include="Assets\Resources\Scripts\Player\Dash.cs" />
      <Compile Include="Assets\Resources\Scripts\Player\NearMiss.cs" />
      <Compile Include="Assets\Resources\Scripts\Player\PlayerAim.cs" />
      <Compile Include="Assets\Resources\Scripts\Player\PlayerAttack.cs" />
@@ -74,8 +75,7 @@
      <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateAim.cs" />
      <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateBar.cs" />
      <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateMove.cs" />
-     <Compile Include="Assets\SimpleDash.cs" />
-     <Compile Include="Assets\mino2.cs" />
+     <Compile Include="Assets\Resources\Scripts\mino2.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
