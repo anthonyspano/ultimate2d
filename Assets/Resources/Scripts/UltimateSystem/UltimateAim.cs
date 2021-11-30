@@ -21,8 +21,8 @@ public class UltimateAim : MonoBehaviour
 
     protected void Update()
     {
-        x = Input.GetAxis(InputAxis.x);
-        y = Input.GetAxis(InputAxis.y);
+        x = Input.GetAxis(PlayerInput.x);
+        y = Input.GetAxis(PlayerInput.y);
         
         if (x != 0 || y != 0)
             lastMove = new Vector2(x, y);

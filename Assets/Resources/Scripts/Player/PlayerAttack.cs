@@ -52,7 +52,9 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
     {
         // for hitbox
         //if (x != 0 || y != 0) lastMove = new Vector2(x,y);
-        if (CooldownTimer <= 0 && Input.GetKeyDown(InputAxis.slash)) 
+        //if (CooldownTimer <= 0 && (Input.GetKeyDown(PlayerInput.k_slash)
+        //                        || Input.GetKeyDown(PlayerInput.c_slash))) 
+        if (PlayerInput.Slash())
         {
             StartCoroutine(Strike("strike", 20));
         }

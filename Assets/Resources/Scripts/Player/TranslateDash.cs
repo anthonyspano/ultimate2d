@@ -28,7 +28,7 @@ public class TranslateDash : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(InputAxis.jumpKey) && cooldownTimer <= 0)
+        if (PlayerInput.Jump() && cooldownTimer <= 0)
         {
             // increment to max dashes
             consecutiveDashes++;
@@ -55,8 +55,8 @@ public class TranslateDash : MonoBehaviour
 
     protected virtual void Dash(float speed)
     {
-        var x = Input.GetAxis(InputAxis.x);
-        var y = Input.GetAxis(InputAxis.y);
+        var x = Input.GetAxis(PlayerInput.x);
+        var y = Input.GetAxis(PlayerInput.y);
         var direction = new Vector2(x, y);
         // if (x < idleBuffer && y < idleBuffer)
 	       //  direction = Vector2.left;

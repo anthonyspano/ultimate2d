@@ -9,11 +9,11 @@ public class Dash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var x = Input.GetAxis(InputAxis.x);
-        var y = Input.GetAxis(InputAxis.y);
+        var x = Input.GetAxis(PlayerInput.x);
+        var y = Input.GetAxis(PlayerInput.y);
         var direction = new Vector2(x, y);
         
-        if (Input.GetKeyDown(InputAxis.jumpKey)) 
+        if (PlayerInput.Jump())
         {
             Debug.Log("Dash!");
             transform.Translate(direction * (dashDistance * Time.deltaTime));

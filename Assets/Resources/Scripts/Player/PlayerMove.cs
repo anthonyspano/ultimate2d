@@ -24,8 +24,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        float x = Input.GetAxis(InputAxis.x);
-        float y = Input.GetAxis(InputAxis.y);
+        float x = Input.GetAxis(PlayerInput.x);
+        float y = Input.GetAxis(PlayerInput.y);
         var movement = new Vector2(x, y);
         
         if (x < 0)
@@ -36,9 +36,8 @@ public class PlayerMove : MonoBehaviour
         
         if (movement.magnitude > deadZone) // if (movement.magnitude > 0)
         {
-            movement.Normalize();
-            movement *= moveSpeed * Time.deltaTime;
-            transform.Translate(movement);
+            var direction = new Vector3(movement.x, movement.y, 0) + transform.position;
+            transform.position = Vector2.MoveTowards(transform.position, direction, moveSpeed * Time.deltaTime);
             anim.SetBool("isMoving", true);
         }
         else anim.SetBool("isMoving", false);

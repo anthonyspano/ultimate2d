@@ -52,32 +52,18 @@ public class mino2 : MonoBehaviour
         healthBar.Setup(healthSystem);
         // health - death event
         healthSystem.OnHealthChanged += OnDamage;
+        healthSystem.OnHealthChanged += BeginFlashRed;
 
         sr = GetComponent<SpriteRenderer>();
     }
 
 	private void OnDamage(object sender, System.EventArgs e) 
 	{
-		StartCoroutine(FlashRed());
-    
     	if(healthSystem.GetHealth() <= 0)
 		{
 			// Death sequence
 			anim.SetBool("isDead", true);
 		}
-
-	}
-
-	private IEnumerator FlashRed()
-	{
-		var timer = 0.33f;
-		sr.color = Color.red;
-		yield return new WaitForSeconds(timer);
-		sr.color = Color.white;
-		// yield return new WaitForSeconds(timer);
-		// sr.color = Color.red;
-		// yield return new WaitForSeconds(timer);
-		// sr.color = Color.white;
 
 	}
 
@@ -146,6 +132,26 @@ public class mino2 : MonoBehaviour
         anim.enabled = false;
         gameObject.GetComponent<mino2>().enabled = false;
 
+    }
+
+
+    public void BeginFlashRed(object sender, System.EventArgs e) 
+    {
+        StartCoroutine(FlashRed());
+    }
+
+    public IEnumerator FlashRed()
+    {
+        var repeatTimes = 3;
+        var timer = 0.1f; // just seems like a good number
+        var sr = GetComponent<SpriteRenderer>();
+		for(int i = 0; i < repeatTimes; i++)
+        {
+            sr.color = Color.red;
+            yield return new WaitForSeconds(timer);
+            sr.color = Color.white;
+            yield return new WaitForSeconds(timer);
+        }
     }
     
     

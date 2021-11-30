@@ -15,8 +15,8 @@ public class RotateAroundPlayer : MonoBehaviour
     
     private void Update()
     {
-        x = Input.GetAxis(InputAxis.x);
-        y = Input.GetAxis(InputAxis.y);
+        x = Input.GetAxis(PlayerInput.x);
+        y = Input.GetAxis(PlayerInput.y);
         Vector3 moveDirection = new Vector3(x, y);
 
         if (moveDirection.x != 0 || moveDirection.y != 0)

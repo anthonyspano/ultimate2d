@@ -23,7 +23,7 @@ public class PlayerShootProjectile : LaunchProjectile
 
     private void Update()
     {
-	    if (Input.GetKeyDown(InputAxis.shoot))
+	    if (PlayerInput.Shoot())
 	    {
 		    var pos = myAim.center;
 		    Fire(bulletPrefab, pos, pos - transform.XandY(), bulletSpeed);

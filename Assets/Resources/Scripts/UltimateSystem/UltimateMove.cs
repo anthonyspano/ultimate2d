@@ -40,7 +40,7 @@ public class UltimateMove : MonoBehaviour
             ultBar.AddUlt(100);
         }
 
-        if (ultReady && Input.GetKeyDown(InputAxis.ultimate))
+        if (ultReady && PlayerInput.Ultimate())
         {
             ultReady = false;
             UseUlt();

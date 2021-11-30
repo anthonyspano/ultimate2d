@@ -18,8 +18,8 @@ public class PointToRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis(InputAxis.x);
-        float y = Input.GetAxis(InputAxis.y);
+        float x = Input.GetAxis(PlayerInput.x);
+        float y = Input.GetAxis(PlayerInput.y);
         Vector2 movement = new Vector2(x, y);
         movement.Normalize();
 
