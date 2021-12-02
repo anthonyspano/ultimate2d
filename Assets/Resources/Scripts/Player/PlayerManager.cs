@@ -108,7 +108,7 @@ public class PlayerManager : MonoBehaviour
     {
         // disable minotaur
 		var boss = GameObject.Find("minotaur_boss");
-		var moveScript = boss.GetComponent<mino2>();
+		var moveScript = boss.GetComponent<EnemyMove>();
 		//moveScript.enabled = false;
 		//var bossAnim = boss.GetComponent<Animator>();
 		//bossAnim.enabled = false;

@@ -90,7 +90,7 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
 
             if (col.gameObject.CompareTag("Boss"))
             {
-                col.gameObject.GetComponent<mino2>().healthSystem.Damage(bossDamage);
+                col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(bossDamage);
             }
         }
 
