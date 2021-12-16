@@ -37,12 +37,14 @@ public class EnemyTakeDamage : MonoBehaviour
     private void Death() 
     {
         // triggered after death animation
-        anim.enabled = false;
         var scripts = gameObject.GetComponents(typeof(MonoBehaviour)); // scripts attached
         foreach (MonoBehaviour s in scripts)
         {
             s.enabled = false;
+            Debug.Log(s);
         }
+
+        anim.enabled = false;
 
     }
 
