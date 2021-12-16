@@ -31,13 +31,16 @@ public class PlayerManager : MonoBehaviour
 	// for damage
 	SpriteRenderer sr;
 
+	// player properties
+	[SerializeField] private int maxHealth;
+
 	private void Start()
     {
 	    if(player == null)
 			player = GameObject.Find("Player");
 	    
 	    // health
-        pHealth = new HealthSystem(100, 1f);
+        pHealth = new HealthSystem(maxHealth, 1f);
         var healthBarTransform = Instantiate(pfHealthBar, 
 								     new Vector3(transform.position.x, transform.position.y + positionOffset), 
 								     Quaternion.identity, 

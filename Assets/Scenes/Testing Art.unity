@@ -7111,6 +7111,8 @@ MonoBehaviour:
   sightRange: 20
   atkRange: 10
   runSpeed: 10
+  isReady: 0
+  cooldownMax: 1.5
 --- !u!114 &1809158623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8402,6 +8404,11 @@ PrefabInstance:
       propertyPath: ultBar
       value: 
       objectReference: {fileID: 1424788036}
+    - target: {fileID: 9125116208761811324, guid: 4dac4da00385ba04b9894a09f857c3bc,
+        type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 9125116208761811325, guid: 4dac4da00385ba04b9894a09f857c3bc,
         type: 3}
       propertyPath: bossDamage

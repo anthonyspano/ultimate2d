@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyMove))]
 public class MinotaurAttack : MonoBehaviour
 {
     public int assignedPlayerDamage;
@@ -30,6 +31,9 @@ public class MinotaurAttack : MonoBehaviour
                 col.gameObject.GetComponent<PlayerManager>().pHealth.Damage(assignedPlayerDamage);
             }
         }
+
+        // set isReady to false, allowing for cooldown window 
+        GetComponent<EnemyMove>().SetReady(0);
 
     }
 
