@@ -15,7 +15,7 @@ public class Dash : MonoBehaviour
         
         if (PlayerInput.Jump())
         {
-            Debug.Log("Dash!");
+            GetComponent<Animator>().Play("PlayerDash");
             transform.Translate(direction * (dashDistance * Time.deltaTime));
         }
     }
