@@ -21,8 +21,8 @@ public class UltimateMove : MonoBehaviour
 
     private void Start()
     {
-        ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
-        ultBar.OnUltFull += ReadyUlt;
+        //ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
+        //ultBar.OnUltFull += ReadyUlt;
 
 
     }
@@ -40,7 +40,7 @@ public class UltimateMove : MonoBehaviour
             ultBar.AddUlt(100);
         }
 
-        if (ultReady && Input.GetKeyDown(KeyCode.U))
+        if (ultReady && Input.GetKeyDown(InputAxis.ultimate))
         {
             ultReady = false;
             UseUlt();
@@ -49,12 +49,11 @@ public class UltimateMove : MonoBehaviour
     
     private void UseUlt()
     {
-        // hitbox in direction of aim
+        // enable ult hitbox
         
         
         // play ult anim
         if(FireUltAnim != null) FireUltAnim(this, EventArgs.Empty);
-        
         
         // empty ult bar
         ultBar.SetUlt(0);

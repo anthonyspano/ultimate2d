@@ -18,15 +18,14 @@ public class PlayerShootProjectile : LaunchProjectile
     private void Start()
     {
 	    myAim = GetComponent<PlayerAim>();
-	    ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
+	    //ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
     }
 
     private void Update()
     {
-	    if (Input.GetButtonDown("Fire2"))
+	    if (Input.GetKeyDown(InputAxis.shoot))
 	    {
 		    var pos = myAim.center;
-		    Debug.Log("speed: " + bulletSpeed);
 		    Fire(bulletPrefab, pos, pos - transform.XandY(), bulletSpeed);
 	    }
 	    

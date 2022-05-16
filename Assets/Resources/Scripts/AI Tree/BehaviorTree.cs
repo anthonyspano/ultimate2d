@@ -36,6 +36,7 @@ public class BehaviorTree : MonoBehaviour
 
 	private IEnumerator RunBehavior()
 	{
+		// BTNode.Execute(); // returns failure
 		BTNode.Result result = Root.Execute();
 		while (result == BTNode.Result.Running)
 		{

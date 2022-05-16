@@ -7,22 +7,35 @@ public class TestAnim : MonoBehaviour
 {
     private Animator anim;
 
-    private UltimateMove _ultMove;
+    private UltimateMove ultMove;
 
-    public AnimationClip clip;
-
+    public float animLength;
+    private BoxCollider2D bc;
+    
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        
-        _ultMove = PlayerManager.player.GetComponent<UltimateMove>();
-        _ultMove.FireUltAnim += DoAnim;
+        bc = GetComponent<BoxCollider2D>();
+
+        ultMove = PlayerManager.player.GetComponent<UltimateMove>();
+        ultMove.FireUltAnim += UltAnim;
     }
 
-    private void DoAnim(object sender, EventArgs e)
+    private void UltAnim(object sender, EventArgs e)
     {
+        StartCoroutine(HitboxLife());
         anim.Play("blast");
+    }
+
+    private IEnumerator HitboxLife()
+    {
+        yield return null;
+        bc.enabled = true;
+        // ref clip in animator state
+        var clipInfo = anim.GetCurrentAnimatorClipInfo(0);
+        yield return new WaitForSeconds(clipInfo.Length);
+        bc.enabled = false;
     }
     
     

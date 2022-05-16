@@ -8,14 +8,14 @@ public class ShadowController : MonoBehaviour
 
 	private void Awake()
 	{
-		ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
+		//ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
 	}
 	
     private void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.gameObject.CompareTag("Enemy"))
 		{
-			ultBar.AddUlt(50);
+			//ultBar.AddUlt(50);
 		}
 	}
 }
