@@ -1,0 +1,2756 @@
+fileFormatVersion: 2
+guid: f7e33a378a799534a9ded74c9069455c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: maincave_buildA_0
+  - first:
+      213: 21300002
+    second: maincave_buildA_1
+  - first:
+      213: 21300004
+    second: maincave_buildA_2
+  - first:
+      213: 21300006
+    second: maincave_buildA_3
+  - first:
+      213: 21300008
+    second: maincave_buildA_4
+  - first:
+      213: 21300010
+    second: maincave_buildA_5
+  - first:
+      213: 21300012
+    second: maincave_buildA_6
+  - first:
+      213: 21300014
+    second: maincave_buildA_7
+  - first:
+      213: 21300016
+    second: maincave_buildA_8
+  - first:
+      213: 21300018
+    second: maincave_buildA_9
+  - first:
+      213: 21300020
+    second: maincave_buildA_10
+  - first:
+      213: 21300022
+    second: maincave_buildA_11
+  - first:
+      213: 21300024
+    second: maincave_buildA_12
+  - first:
+      213: 21300026
+    second: maincave_buildA_13
+  - first:
+      213: 21300028
+    second: maincave_buildA_14
+  - first:
+      213: 21300030
+    second: maincave_buildA_15
+  - first:
+      213: 21300032
+    second: maincave_buildA_16
+  - first:
+      213: 21300034
+    second: maincave_buildA_17
+  - first:
+      213: 21300036
+    second: maincave_buildA_18
+  - first:
+      213: 21300038
+    second: maincave_buildA_19
+  - first:
+      213: 21300040
+    second: maincave_buildA_20
+  - first:
+      213: 21300042
+    second: maincave_buildA_21
+  - first:
+      213: 21300044
+    second: maincave_buildA_22
+  - first:
+      213: 21300046
+    second: maincave_buildA_23
+  - first:
+      213: 21300048
+    second: maincave_buildA_24
+  - first:
+      213: 21300050
+    second: maincave_buildA_25
+  - first:
+      213: 21300052
+    second: maincave_buildA_26
+  - first:
+      213: 21300054
+    second: maincave_buildA_27
+  - first:
+      213: 21300056
+    second: maincave_buildA_28
+  - first:
+      213: 21300058
+    second: maincave_buildA_29
+  - first:
+      213: 21300060
+    second: maincave_buildA_30
+  - first:
+      213: 21300062
+    second: maincave_buildA_31
+  - first:
+      213: 21300064
+    second: maincave_buildA_32
+  - first:
+      213: 21300066
+    second: maincave_buildA_33
+  - first:
+      213: 21300068
+    second: maincave_buildA_34
+  - first:
+      213: 21300070
+    second: maincave_buildA_35
+  - first:
+      213: 21300072
+    second: maincave_buildA_36
+  - first:
+      213: 21300074
+    second: maincave_buildA_37
+  - first:
+      213: 21300076
+    second: maincave_buildA_38
+  - first:
+      213: 21300078
+    second: maincave_buildA_39
+  - first:
+      213: 21300080
+    second: maincave_buildA_40
+  - first:
+      213: 21300082
+    second: maincave_buildA_41
+  - first:
+      213: 21300084
+    second: maincave_buildA_42
+  - first:
+      213: 21300086
+    second: maincave_buildA_43
+  - first:
+      213: 21300088
+    second: maincave_buildA_44
+  - first:
+      213: 21300090
+    second: maincave_buildA_45
+  - first:
+      213: 21300092
+    second: maincave_buildA_46
+  - first:
+      213: 21300094
+    second: maincave_buildA_47
+  - first:
+      213: 21300096
+    second: maincave_buildA_48
+  - first:
+      213: 21300098
+    second: maincave_buildA_49
+  - first:
+      213: 21300100
+    second: maincave_buildA_50
+  - first:
+      213: 21300102
+    second: maincave_buildA_51
+  - first:
+      213: 21300104
+    second: maincave_buildA_52
+  - first:
+      213: 21300106
+    second: maincave_buildA_53
+  - first:
+      213: 21300108
+    second: maincave_buildA_54
+  - first:
+      213: 21300110
+    second: maincave_buildA_55
+  - first:
+      213: 21300112
+    second: maincave_buildA_56
+  - first:
+      213: 21300114
+    second: maincave_buildA_57
+  - first:
+      213: 21300116
+    second: maincave_buildA_58
+  - first:
+      213: 21300118
+    second: maincave_buildA_59
+  - first:
+      213: 21300120
+    second: maincave_buildA_60
+  - first:
+      213: 21300122
+    second: maincave_buildA_61
+  - first:
+      213: 21300124
+    second: maincave_buildA_62
+  - first:
+      213: 21300126
+    second: maincave_buildA_63
+  - first:
+      213: 21300128
+    second: maincave_buildA_64
+  - first:
+      213: 21300130
+    second: maincave_buildA_65
+  - first:
+      213: 21300132
+    second: maincave_buildA_66
+  - first:
+      213: 21300134
+    second: maincave_buildA_67
+  - first:
+      213: 21300136
+    second: maincave_buildA_68
+  - first:
+      213: 21300138
+    second: maincave_buildA_69
+  - first:
+      213: 21300140
+    second: maincave_buildA_70
+  - first:
+      213: 21300142
+    second: maincave_buildA_71
+  - first:
+      213: 21300144
+    second: maincave_buildA_72
+  - first:
+      213: 21300146
+    second: maincave_buildA_73
+  - first:
+      213: 21300148
+    second: maincave_buildA_74
+  - first:
+      213: 21300150
+    second: maincave_buildA_75
+  - first:
+      213: 21300152
+    second: maincave_buildA_76
+  - first:
+      213: 21300154
+    second: maincave_buildA_77
+  - first:
+      213: 21300156
+    second: maincave_buildA_78
+  - first:
+      213: 21300158
+    second: maincave_buildA_79
+  - first:
+      213: 21300160
+    second: maincave_buildA_80
+  - first:
+      213: 21300162
+    second: maincave_buildA_81
+  - first:
+      213: 21300164
+    second: maincave_buildA_82
+  - first:
+      213: 21300166
+    second: maincave_buildA_83
+  - first:
+      213: 21300168
+    second: maincave_buildA_84
+  - first:
+      213: 21300170
+    second: maincave_buildA_85
+  - first:
+      213: 21300172
+    second: maincave_buildA_86
+  - first:
+      213: 21300174
+    second: maincave_buildA_87
+  - first:
+      213: 21300176
+    second: maincave_buildA_88
+  - first:
+      213: 21300178
+    second: maincave_buildA_89
+  - first:
+      213: 21300180
+    second: maincave_buildA_90
+  - first:
+      213: 21300182
+    second: maincave_buildA_91
+  - first:
+      213: 21300184
+    second: maincave_buildA_92
+  - first:
+      213: 21300186
+    second: maincave_buildA_93
+  - first:
+      213: 21300188
+    second: maincave_buildA_94
+  - first:
+      213: 21300190
+    second: maincave_buildA_95
+  - first:
+      213: 21300192
+    second: maincave_buildA_96
+  - first:
+      213: 21300194
+    second: maincave_buildA_97
+  - first:
+      213: 21300196
+    second: maincave_buildA_98
+  - first:
+      213: 21300198
+    second: maincave_buildA_99
+  - first:
+      213: 21300200
+    second: maincave_buildA_100
+  - first:
+      213: 21300202
+    second: maincave_buildA_101
+  - first:
+      213: 21300204
+    second: maincave_buildA_102
+  - first:
+      213: 21300206
+    second: maincave_buildA_103
+  - first:
+      213: 21300208
+    second: maincave_buildA_104
+  - first:
+      213: 21300210
+    second: maincave_buildA_105
+  - first:
+      213: 21300212
+    second: maincave_buildA_106
+  - first:
+      213: 21300214
+    second: maincave_buildA_107
+  - first:
+      213: 21300216
+    second: maincave_buildA_108
+  - first:
+      213: 21300218
+    second: maincave_buildA_109
+  - first:
+      213: 21300220
+    second: maincave_buildA_110
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: maincave_buildA_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1312
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aef4b99fa193fc46b9899bb131fca48
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_1
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1280
+        width: 109
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0271a9a2d0c048449ff0d326ad8178d
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1280
+        width: 64
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a12376913936714a8cdc8ff177cf0c0
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58bbe4cb90100f046bc6b0080f34c0dc
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1280
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db7304fffa440e1458a22266c5726882
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_5
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1280
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41450b62839688e4284412adab90b0d7
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_6
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1203
+        width: 32
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4ee99c58e6ce84ba55c55b10491a5c
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_7
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 1312
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0414be258756bdf418919299a0f219c9
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_8
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1312
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9345fe2af462874dbb8e8fc5277d149
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1312
+        width: 64
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b6d36d3ee07204db5aa124840e21b7
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_10
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1312
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc62fb77cf4a70549a66feb056dfd5ea
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_11
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 1203
+        width: 32
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9311ae2f1397a2d44b674b0e571dab82
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_12
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 1280
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fa84dad4de19c40b204cf5c7151e24
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_13
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 1280
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89181f2615c49645a12889c0dea40e8
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_14
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07714fa146a1d794dafec893bb1737ed
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_15
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 1280
+        width: 64
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3929b2bfa7aa7408700620eb310a9b
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_16
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1280
+        width: 109
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede37d0db6aeeb2408b36ccbfedec352
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_17
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 1248
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a1aacaa813fab499983cf28e5c3d08
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_18
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1248
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da46bc7f1c3bda947863403dd4638647
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_19
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1152
+        width: 135
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84176869d72cf9e4bb98f41425f7d9ab
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_20
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1184
+        width: 70
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2849d9a4e7eb2304d8be0aab0ba0a391
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_21
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1184
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eaad1d5984b59549a8eae051668fe11
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_22
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1184
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915c30e7032d62046a2f314f61347f37
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_23
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 1184
+        width: 70
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b5cfc1f9fb9a3489a000233eabc71c
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_24
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1152
+        width: 135
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ba648a4cda20648854e7b119249484
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_25
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1088
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ae3d93e5ec5444d841684d0df66e22
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_26
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1120
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d96869f87ab654a90c04f488d95b39
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_27
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1120
+        width: 64
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f73ff9d7a64c24dbfc7b5ddb9b9985
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_28
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1120
+        width: 64
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7537033a47589e043b3d03e66cf0c22b
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_29
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1120
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a09dc92d078bce468a2b4b8130f593c
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_30
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 1088
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ea35801fb9b0b4fa3905cfcbdac3f9
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_31
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1056
+        width: 51
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f8b6c05c3b28f43b62e08a9b95772e
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_32
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 1056
+        width: 51
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e838ffbc4164c479ad3f3ef8655c72
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_33
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 912
+        width: 60
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2447a356d846e548ab5498afd6cf286
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 846
+        width: 96
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfbd975f6fc54e74aabe46789beead48
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_35
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a37e59b630d544faebccafb7cf2a42
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_36
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 960
+        width: 140
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedf32b95cd37434d898c5339aa511e0
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_37
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 960
+        width: 140
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85b85eb9ee7dab448cccd374146d3b2
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_38
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 825bf672ba2df5e47b8d7ef15673fbc7
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_39
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 846
+        width: 96
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca62d417b053d24a8f6ecf91e25abb0
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_40
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 912
+        width: 60
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117b607784323cf44bf6b6e28747ed69
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_41
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 805
+        width: 64
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d228f6634267f4b93bce8994d9b874
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_42
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 778
+        width: 128
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b3c6baf9e728c45a2ea4f67b723647
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_43
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 784
+        width: 96
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e84232a33fb2f4eb39595cc44f10bd
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_44
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 815
+        width: 32
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62936c80d49209449e1afe446123de4
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_45
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 801
+        width: 128
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0255674e30eb24fbad7b66f526ae68
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_46
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 814
+        width: 47
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae100582829c5684e9ce81feb835d992
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_47
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 814
+        width: 47
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d325031f9c10dc74d8bb425108a25195
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_48
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 801
+        width: 128
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c52dfb71fa220245b29fbda2a137800
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_49
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 815
+        width: 32
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc0c82da59b78c41a8536b9225d7fec
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_50
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 784
+        width: 96
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2c4d3e3ad7444489cefb8d8ada4eeb
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_51
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 778
+        width: 128
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e82f1c282f2b31448c15b0d3bc6163a
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_52
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 805
+        width: 64
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf677882edc1364e884c304d141cb9a
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_53
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 672
+        width: 144
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2380b11f7592bb43997bccc45547281
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_54
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 640
+        width: 96
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d741eca581359f4a95508052ac3fba5
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_55
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 640
+        width: 128
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7013cfb940a77d40aedd37df146e0f3
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_56
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 96
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8719deddacb949346b1f97fd2e39a6a8
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_57
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 576
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45966baaddb5097458d6f86f802af11a
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_58
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 576
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cab04c6fa5a2384f88a8e659a4afcd3
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_59
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 640
+        width: 96
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f47b45a6c24a7840ae8acfa6c521f4f
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_60
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 640
+        width: 128
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9505578e09fd3b4e8c77cdf195542fe
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_61
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 640
+        width: 96
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41f97c83db01624a9b86b62450fd6e9
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_62
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 672
+        width: 144
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac5b8dfa6be6f345b2012e87e2f6a2e
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_63
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 576
+        width: 104
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f60ffdb2848a064a8d692628703d273
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_64
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 544
+        width: 37
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb754f82730cf64b853b77fe25e7bcc
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_65
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 512
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e39d6c74b899b543bdae924b8b53e9a
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_66
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 512
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb4e2ef467629a42a4f5d7fc50cef83
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_67
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 544
+        width: 37
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838dd871e19a8554695c3d0a29acb196
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_68
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 576
+        width: 104
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b68ac137db202f42aec30c25365b1aa
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_69
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 480
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abf8fd6e724f054089c824a656e4c18
+      internalID: 21300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_70
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 458
+        width: 96
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3430a46b4baaf074bbf0c02a10e61191
+      internalID: 21300140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_71
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 443
+        width: 128
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d17a2de47871d4f8aeb0428d3b6530
+      internalID: 21300142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_72
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 461
+        width: 63
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122e4af5ee58e39468f43a97597ecd15
+      internalID: 21300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_73
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 448
+        width: 40
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d37a790fc354d48985798bed6f4e0c
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_74
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 448
+        width: 40
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac559eae422cad48a2df93c574fa483
+      internalID: 21300148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_75
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 461
+        width: 63
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84154610f12aa9b4ea435f721b7f747f
+      internalID: 21300150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_76
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 443
+        width: 128
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca19efcca9cde0d47ae4a999697a00fb
+      internalID: 21300152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_77
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 458
+        width: 96
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c932754d45f96db4b943b0c902838efb
+      internalID: 21300154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_78
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 480
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0fef8135024e547991963723a2dd8e
+      internalID: 21300156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_79
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 363
+        width: 45
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850bf6982ef3471499ca603c5c5da5eb
+      internalID: 21300158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_80
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 272
+        width: 96
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7257a24a44f7d45a2ffb74b4741cf0
+      internalID: 21300160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_81
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 237
+        width: 160
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb358e7d42902274da8baccd48ea3a32
+      internalID: 21300162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_82
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 336
+        width: 50
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2c997f584478b419fa28ff9e1a06c9
+      internalID: 21300164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_83
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 384
+        width: 73
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00997315383da314ba64cf657dc009be
+      internalID: 21300166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_84
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 384
+        width: 73
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7d8e8350eecfc4ca715208c681647b
+      internalID: 21300168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_85
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 336
+        width: 50
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b682eeb1cd92a42826833f853803cd
+      internalID: 21300170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_86
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 237
+        width: 160
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae21921e43f67cc42adf2d0d189ffb3e
+      internalID: 21300172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_87
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 272
+        width: 96
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7b46eabf0fb2847a6cf01bd749b426
+      internalID: 21300174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_88
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 363
+        width: 45
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68edb729e46ea41408148ba49e917801
+      internalID: 21300176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_89
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 273
+        width: 96
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0da8115098fea4da95b886f6aeee5c
+      internalID: 21300178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_90
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 269
+        width: 32
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41548ca3cd8bd2741bdd5ad9ee54cd20
+      internalID: 21300180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_91
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 232
+        width: 96
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ae5dec85da06b4682415e2580e27a3
+      internalID: 21300182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_92
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 256
+        width: 71
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bab8f73ff5e5614cb1f22dfb3426ffe
+      internalID: 21300184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_93
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 71
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557f3864f0b27a744b5ea2ce69cd1648
+      internalID: 21300186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_94
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 232
+        width: 96
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8d5bbeeb2e2a64cbc248b667595eac
+      internalID: 21300188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_95
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 269
+        width: 32
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c1f81929dbe76478a97e81d61f06cf
+      internalID: 21300190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_96
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 273
+        width: 96
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e0e97de618fa74787f5253bc5158ba
+      internalID: 21300192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_97
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 13
+        width: 160
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc12ec9acd1a5b4d965e290f1a9a947
+      internalID: 21300194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_98
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 14
+        width: 96
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed2fe8111e88874f9c576663391743d
+      internalID: 21300196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_99
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 160
+        width: 101
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565a8e9a1f61b04429a68dec7e2dea00
+      internalID: 21300198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_100
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 160
+        width: 101
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240233d904535464d953d2bb50e57c9e
+      internalID: 21300200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_101
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 14
+        width: 96
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c52895ed588794b968e90ef1bb9d65
+      internalID: 21300202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_102
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 13
+        width: 160
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8282b65a740cbb44db7edf53748a34e8
+      internalID: 21300204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_103
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 10
+        width: 128
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277c32d0115fdfe438e6d8978b43fea3
+      internalID: 21300206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_104
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 32
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53d48a443c7438408c5c71ea4154c09
+      internalID: 21300208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_105
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 64
+        width: 128
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4676985b44b24534e975a79dba4fb352
+      internalID: 21300210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_106
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 32
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d245fe1b0050d9f438f74c45da579236
+      internalID: 21300212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_107
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 32
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fbb62c7c8586548a8dc10968975b38
+      internalID: 21300214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_108
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 64
+        width: 128
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cdf43a8d7a8ce45b45032055639d94
+      internalID: 21300216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_109
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 32
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e58d1fbeaa68b64783d8da13350b8d6
+      internalID: 21300218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: maincave_buildA_110
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 10
+        width: 128
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d740db03bec984ca84d853e18d9919
+      internalID: 21300220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d0734719a8b89524ca4b58906f32f632
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

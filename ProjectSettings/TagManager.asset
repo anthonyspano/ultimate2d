@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - UltBar
   - Projectile
+  - Boss
+  - BigHurt
   layers:
   - Default
   - TransparentFX
@@ -43,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2652213281
     locked: 0
   - name: Objects
     uniqueID: 2893185

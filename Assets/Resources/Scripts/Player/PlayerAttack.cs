@@ -3,77 +3,114 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+[RequireComponent(typeof(PlayerAim))]
+public class PlayerAttack : MonoBehaviour, ICoolDown
 {
-    private float x;
-    private float y;
+    // temp
+    private UltimateAim ultAim;
     
     // hitbox
     public float radius;
+    public LayerMask enemyLayer;
     public float range;
     private Vector2 lastMove;
-    public LayerMask enemyLayer;
-    
+
     // debug
     private Color hitboxColor;
 
     // ultimate
     private UltimateBar ultBar;
+    [Tooltip("This charges the ultimate bar")]
     public int ultChargeAmt;
 
     // animation
     private Animator anim;
     
+    // interface
+    [Header("Interface")]
+    [SerializeField] private float cooldownRate;
+    public float CooldownTimer { get; set; }
+    public float CooldownRate { get; set; }
+
+    // Player Aim
+    private PlayerAim myAim;
+
+    public int bossDamage;
+
     private void Start()
     {
-        lastMove = new Vector2(0, 1);
-        ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
-
+        // hitbox
+        lastMove = new Vector2(0,1);
+        myAim = GetComponent<PlayerAim>();
+        ultAim = GetComponent<UltimateAim>();
+        //ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>(); // not implemented in scene
         anim = GameObject.Find("StrikeSprite").GetComponent<Animator>();
-        
+        CooldownTimer = 0;
     }
 
     private void Update()
     {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
-
-        if (x != 0 || y != 0)
-            lastMove = new Vector2(x, y);
-        
-        if (Input.GetButtonDown("Fire1"))
+        // for hitbox
+        //if (x != 0 || y != 0) lastMove = new Vector2(x,y);
+        //if (CooldownTimer <= 0 && (Input.GetKeyDown(PlayerInput.k_slash)
+        //                        || Input.GetKeyDown(PlayerInput.c_slash))) 
+        if (PlayerInput.Slash())
         {
-            // play anim
-            anim.Play("strike");
-            
-            // spawn hitbox
-            var center = transform.XandY() + lastMove.normalized * range;
-            var hits = Physics2D.OverlapCircleAll(center, radius, enemyLayer);
-            foreach (var col in hits)
-            {
-                if (col.gameObject.CompareTag("Enemy"))
-                {
-                    col.gameObject.GetComponent<EnemyManager>().hSystem.Damage(20);
-                    ultBar.AddUlt(ultChargeAmt);
-                    hitboxColor = Color.green;
-                }
-            }
-            
+            StartCoroutine(Strike("strike", 20));
         }
         
-        
+
+        CooldownTimer -= Time.deltaTime;
     }
 
-    
-    private void OnDrawGizmos()
+    // 0.2 seconds will work for now
+    public IEnumerator Strike(string stateName, int ultChargeAmt)
     {
-        if (lastMove.x != 0 || lastMove.y != 0)
+        yield return new WaitForSeconds(0.2f);
+
+        // cooldown
+        CooldownTimer = cooldownRate;
+        
+        // play anim
+        anim.Play("strike");
+        
+        // hitbox
+        //var center = transform.XandY() + lastMove.normalized * range;
+        var hits = Physics2D.OverlapCircleAll(myAim.center, radius, enemyLayer);
+        foreach (var col in hits)
         {
-            var center = transform.XandY();
-            center += lastMove.normalized * range;
-            Gizmos.color = hitboxColor;
-            Gizmos.DrawWireSphere(center, radius);
+            // remember to check tags and layer!!
+            //Debug.Log(col.gameObject.tag);
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+                col.gameObject.GetComponent<EnemyManager>().hSystem.Damage(20);
+                //ultBar.AddUlt(ultChargeAmt);
+                hitboxColor = Color.green;
+            }
+
+            if (col.gameObject.CompareTag("Boss"))
+            {
+                col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(bossDamage);
+            }
         }
-        hitboxColor = Color.red;
+
+
     }
+    
+    public void EndAnim()
+    {
+        anim.Play("Neutral");
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        //var center = transform.XandY();
+        //center += lastMove.normalized * range;
+        // Gizmos.color = hitboxColor;
+        // Gizmos.DrawWireSphere(myAim.center, radius);
+        // hitboxColor = Color.red;
+    }
+
+
 }

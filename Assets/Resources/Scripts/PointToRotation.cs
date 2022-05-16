@@ -18,8 +18,8 @@ public class PointToRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = Input.GetAxis(PlayerInput.x);
+        float y = Input.GetAxis(PlayerInput.y);
         Vector2 movement = new Vector2(x, y);
         movement.Normalize();
 
@@ -28,7 +28,7 @@ public class PointToRotation : MonoBehaviour
         {
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) *
                           Mathf.Rad2Deg;     // return angle in radians tan(y/x)
-            Debug.Log(angle);
+            
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         }
