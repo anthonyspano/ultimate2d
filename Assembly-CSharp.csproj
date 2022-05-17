@@ -36,12 +36,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\Scripts\AI Tree\BTComposite.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI Tree\BTNode.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI Tree\BTRepeater.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI Tree\BTSequencer.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI Tree\BehaviorTree.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI Tree\Decorator.cs" />
+     <Compile Include="Assets\Resources\Scripts\BehaviorTree\Actions\GuardBT.cs" />
+     <Compile Include="Assets\Resources\Scripts\BehaviorTree\Actions\TaskPatrol.cs" />
+     <Compile Include="Assets\Resources\Scripts\BehaviorTree\Node.cs" />
+     <Compile Include="Assets\Resources\Scripts\BehaviorTree\Selector.cs" />
+     <Compile Include="Assets\Resources\Scripts\BehaviorTree\Sequence.cs" />
+     <Compile Include="Assets\Resources\Scripts\BehaviorTree\Tree.cs" />
      <Compile Include="Assets\Resources\Scripts\Bullet.cs" />
      <Compile Include="Assets\Resources\Scripts\Deprecated\AIScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Deprecated\Minotaur.cs" />
