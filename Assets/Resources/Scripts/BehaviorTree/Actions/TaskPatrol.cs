@@ -47,7 +47,6 @@ public class TaskPatrol : Node
                 _waiting = true;
 
                 _currentWaypointIndex = (_currentWaypointIndex + 1) % _waypoints.Length;
-                Debug.Log(_currentWaypointIndex);
             }
             else
             {

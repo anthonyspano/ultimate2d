@@ -86,14 +86,14 @@ public class EnemyMove : MonoBehaviour
         return (dx < atkRange && dy < atkRange);
     }
 
-    private void OnDrawGizmos()
-    {
-        // atkRange hitbox
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, atkRange);
-
-        // sightRange hitbox
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, sightRange);
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     // atkRange hitbox
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireSphere(transform.position, atkRange);
+    //
+    //     // sightRange hitbox
+    //     Gizmos.color = Color.yellow;
+    //     Gizmos.DrawWireSphere(transform.position, sightRange);
+    // }
 }
