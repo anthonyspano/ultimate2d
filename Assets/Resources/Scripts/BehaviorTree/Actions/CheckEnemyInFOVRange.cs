@@ -26,7 +26,7 @@ public class CheckEnemyInFOVRange : Node
             if (colliders.Length > 0)
             {
                 parent.parent.SetData("target", colliders[0].transform);
-                _animator.SetBool("Walking", true);
+                _animator.Play("Running");
                 
                 state = NodeState.SUCCESS;
                 return state;

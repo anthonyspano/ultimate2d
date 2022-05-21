@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour
 	// ultimate
 	public int maxUlt = 100;
 	public UltimateBar ultBar;
+	public float invulnAfterHit;
 
 	// animator
 	private Animator anim;
@@ -40,7 +41,7 @@ public class PlayerManager : MonoBehaviour
 			player = GameObject.Find("Player");
 	    
 	    // health
-        pHealth = new HealthSystem(maxHealth, 1f);
+        pHealth = new HealthSystem(maxHealth, invulnAfterHit);
         var healthBarTransform = Instantiate(pfHealthBar, 
 								     new Vector3(transform.position.x, transform.position.y + positionOffset), 
 								     Quaternion.identity, 

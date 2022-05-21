@@ -6,6 +6,7 @@ using BehaviorTree;
 
 public class TaskPatrol : Node
 {
+    private SpriteRenderer _spriteRenderer;
     private Transform _transform;
     private Animator _animator;
     private Transform[] _waypoints;
@@ -22,6 +23,7 @@ public class TaskPatrol : Node
     {
         _transform = transform;
         _animator = transform.GetComponent<Animator>();
+        _spriteRenderer = transform.GetComponent<SpriteRenderer>();
         _waypoints = waypoints;
     }
 
@@ -33,15 +35,15 @@ public class TaskPatrol : Node
             if(_waitCounter >= _waitTime)
             {
                 _waiting = false;
-                _animator.SetBool("Walking", true);
+                //_animator.SetBool("Walking", true);
             }
         }
         else
         {
             Transform wp = _waypoints[_currentWaypointIndex];
-            if(Vector2.Distance(_transform.position, wp.position) < 0.1f)
+            if(Vector2.Distance(_transform.position, wp.position) < 0.01f)
             {
-                _animator.SetBool("Walking", false);
+                _animator.Play("Idle");
                 _transform.position = wp.XandY();
                 _waitCounter = 0f;
                 _waiting = true;
@@ -50,6 +52,8 @@ public class TaskPatrol : Node
             }
             else
             {
+                _animator.Play("Patrol");
+                _spriteRenderer.flipX = (_transform.position.x < wp.position.x) ? true : false;
                 _transform.position = Vector2.MoveTowards(_transform.position, wp.position, 8f * Time.deltaTime);
             }
 

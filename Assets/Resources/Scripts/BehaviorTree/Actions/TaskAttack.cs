@@ -14,7 +14,7 @@ public class TaskAttack : Node
     private PlayerManager _playerManager = PlayerManager.Instance;
 
     // attack counter
-    private float _attackTime = 1f;
+    private float _attackTime = 3f;
     private float _attackCounter = 0f;
 
     public TaskAttack(Transform transform)
@@ -25,41 +25,45 @@ public class TaskAttack : Node
 
     public override NodeState Evaluate()
     {
+        //if(!_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        //    _animator.SetBool("isIdle", true);
+        
         Transform target = (Transform)GetData("target");
         if (target != _lastTarget)
         {
-            //_enemyManager = target.GetComponent<EnemyManager>();
             _lastTarget = target;
         }
 
         _attackCounter += Time.deltaTime;
         if (_attackCounter >= _attackTime)
         {
-            _animator.SetBool("Attacking", true);
-            // assign damage if hit
-            //bool enemyIsDead = _enemyManager.TakeHit();
-            Collider2D[] player = Physics2D.OverlapCircleAll(_transform.position, EnemyManagerTemp.attackRange, EnemyManagerTemp.enemyLayerMask);
-            if (player[0].name == "Player")
-            {
-                _playerManager.pHealth.Damage(EnemyManagerTemp.damage);
-            }
+             // attack once
+             _animator.Play("Attack");
             
-            // check if player is dead
-            if (_playerManager.pHealth.GetHealth() <= 0)
-            {
-                ClearData("target");
-                _animator.SetBool("Attacking", false);
-                _animator.SetBool("Walking", true);
+             // assign damage if hit
+             // Collider2D[] player = Physics2D.OverlapCircleAll(_transform.position, EnemyManagerTemp.attackRange, EnemyManagerTemp.enemyLayerMask);
+             // if (player[0].name == "Player")
+             // {
+             //     _playerManager.pHealth.Damage(EnemyManagerTemp.damage);
+             // }
+            
+             // check if player is dead
+             if (_playerManager.pHealth.GetHealth() <= 0)
+             {
+                 ClearData("target");
 
-            }
-            else
-            {
-                _attackCounter = 0f;
-            }
+                 _animator.Play("Patrol");
+            
+             }
+             else
+             {
+                 _attackCounter = 0f;
+             }
         }
 
         state = NodeState.RUNNING;
         return state;
     }
+    
     
 }

@@ -7,7 +7,7 @@ public class GuardBT : BehaviorTree.Tree
 {
     public UnityEngine.Transform[] waypoints;
     
-    public static float speed = 2f;
+    public static float speed = 8f;
     public static float fovRange = EnemyManagerTemp.fovRange;
     public static float attackRange = EnemyManagerTemp.attackRange;
 

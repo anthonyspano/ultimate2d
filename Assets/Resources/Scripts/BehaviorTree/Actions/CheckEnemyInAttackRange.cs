@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using BehaviorTree;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class CheckEnemyInAttackRange : Node
 {
@@ -28,11 +30,14 @@ public class CheckEnemyInAttackRange : Node
         Transform target = (Transform)t;
         if (Vector3.Distance(_transform.position, target.position) <= GuardBT.attackRange)
         {
-            _animator.SetBool("Attacking", true);
-            _animator.SetBool("Walking", false);
+            //_animator.Play("Idle");
             
             state = NodeState.SUCCESS;
             return state;
+        }
+        else
+        {
+            //_animator.SetBool("Attacking", false);
         }
 
         state = NodeState.FAILURE;
