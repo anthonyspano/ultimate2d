@@ -30,14 +30,12 @@ public class CheckEnemyInAttackRange : Node
         Transform target = (Transform)t;
         if (Vector3.Distance(_transform.position, target.position) <= GuardBT.attackRange)
         {
-            //_animator.Play("Idle");
-            
             state = NodeState.SUCCESS;
             return state;
         }
         else
         {
-            //_animator.SetBool("Attacking", false);
+            _animator.Play("Running");
         }
 
         state = NodeState.FAILURE;

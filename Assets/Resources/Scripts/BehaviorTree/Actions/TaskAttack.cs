@@ -14,8 +14,8 @@ public class TaskAttack : Node
     private PlayerManager _playerManager = PlayerManager.Instance;
 
     // attack counter
-    private float _attackTime = 3f;
-    private float _attackCounter = 0f;
+    private float _attackTime = 2f;
+    private float _attackCounter = 3f;
 
     public TaskAttack(Transform transform)
     {
@@ -25,9 +25,6 @@ public class TaskAttack : Node
 
     public override NodeState Evaluate()
     {
-        //if(!_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-        //    _animator.SetBool("isIdle", true);
-        
         Transform target = (Transform)GetData("target");
         if (target != _lastTarget)
         {
@@ -37,16 +34,8 @@ public class TaskAttack : Node
         _attackCounter += Time.deltaTime;
         if (_attackCounter >= _attackTime)
         {
-             // attack once
-             _animator.Play("Attack");
-            
-             // assign damage if hit
-             // Collider2D[] player = Physics2D.OverlapCircleAll(_transform.position, EnemyManagerTemp.attackRange, EnemyManagerTemp.enemyLayerMask);
-             // if (player[0].name == "Player")
-             // {
-             //     _playerManager.pHealth.Damage(EnemyManagerTemp.damage);
-             // }
-            
+            _animator.Play("Attack");
+             
              // check if player is dead
              if (_playerManager.pHealth.GetHealth() <= 0)
              {
