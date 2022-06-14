@@ -9,7 +9,22 @@ public class EnemyManagerTemp : MonoBehaviour
     public static float fovRange = 20f;
     public static float attackRange = 12f;
     public static int damage = 20;
+
+    private SpriteRenderer sr;
+
+    public static bool Busy;
     
+    private void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        // player location
+        sr.flipX = (PlayerManager.Instance.transform.position.x > transform.position.x) ? true : false;
+    }
+
     private void OnDrawGizmos()
     {
         // sightRange hitbox

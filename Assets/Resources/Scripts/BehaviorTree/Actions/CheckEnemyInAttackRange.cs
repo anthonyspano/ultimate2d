@@ -20,6 +20,12 @@ public class CheckEnemyInAttackRange : Node
 
     public override NodeState Evaluate()
     {
+        if (EnemyManagerTemp.Busy)
+        {
+            state = NodeState.SUCCESS;
+            return state;
+        }
+        
         object t = GetData("target");
         if (t == null)
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviorTree;
+using DebugTools;
 
 
 public class TaskAttack : Node
@@ -25,6 +26,10 @@ public class TaskAttack : Node
 
     public override NodeState Evaluate()
     {
+        WindowStats.Value = _attackCounter;
+        Debug.Log(_attackCounter);
+        EnemyManagerTemp.Busy = true;
+        
         Transform target = (Transform)GetData("target");
         if (target != _lastTarget)
         {
@@ -47,6 +52,8 @@ public class TaskAttack : Node
              else
              {
                  _attackCounter = 0f;
+                 Debug.Log("Not busy");
+                 EnemyManagerTemp.Busy = false;
              }
         }
 
