@@ -13,6 +13,7 @@ public class EnemyManagerTemp : MonoBehaviour
     private SpriteRenderer sr;
 
     public static bool Busy;
+    public static bool Flipped;
     
     private void Start()
     {
@@ -22,7 +23,7 @@ public class EnemyManagerTemp : MonoBehaviour
     private void Update()
     {
         // player location
-        sr.flipX = (PlayerManager.Instance.transform.position.x > transform.position.x) ? true : false;
+        sr.flipX = Flipped;
     }
 
     private void OnDrawGizmos()

@@ -16,6 +16,8 @@ public class TaskGoToTarget : Node
     {
         Transform target = (Transform)GetData("target");
 
+        EnemyManagerTemp.Flipped = (target.position.x > _transform.position.x) ? true : false;
+        
         if (Vector3.Distance(_transform.position, target.position) > 0.01f)
         {
             _transform.position = Vector3.MoveTowards(

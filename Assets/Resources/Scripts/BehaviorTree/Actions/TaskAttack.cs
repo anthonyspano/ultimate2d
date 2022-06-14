@@ -27,7 +27,6 @@ public class TaskAttack : Node
     public override NodeState Evaluate()
     {
         WindowStats.Value = _attackCounter;
-        Debug.Log(_attackCounter);
         EnemyManagerTemp.Busy = true;
         
         Transform target = (Transform)GetData("target");
@@ -52,7 +51,6 @@ public class TaskAttack : Node
              else
              {
                  _attackCounter = 0f;
-                 Debug.Log("Not busy");
                  EnemyManagerTemp.Busy = false;
              }
         }
