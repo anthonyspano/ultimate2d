@@ -38,7 +38,7 @@ public class PlayerShootRaycast : MonoBehaviour
           
           if (hit.collider)
           {
-           hit.collider.gameObject.GetComponent<EnemyManager>().hSystem.Damage(20);
+           //hit.collider.gameObject.GetComponent<EnemyManager>().hSystem.Damage(20); // change for boss (tbi)
            ultBar.AddUlt(ultChargeAmt);
           }
     

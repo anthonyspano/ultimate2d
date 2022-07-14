@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CheckEnemyInFOVRange : Node
 {
-    private static int _enemyLayerMask = EnemyManagerTemp.enemyLayerMask;
+    private static int _enemyLayerMask = EnemyManager.enemyLayerMask;
     
     private Transform _transform;
     private Animator _animator;
@@ -18,7 +18,7 @@ public class CheckEnemyInFOVRange : Node
 
     public override NodeState Evaluate()
     {
-        if (EnemyManagerTemp.Busy)
+        if (EnemyManager.Busy)
         {
             state = NodeState.SUCCESS;
             return state;
@@ -27,7 +27,7 @@ public class CheckEnemyInFOVRange : Node
         object t = GetData("target");
         if (t == null)
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, GuardBT.fovRange , _enemyLayerMask);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, EnemyBT.fovRange , _enemyLayerMask);
 
             if (colliders.Length > 0)
             {

@@ -1,41 +1,70 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class EnemyManager : MonoBehaviour
 {
-	public Transform pfHealthBar;
-	
-	public HealthSystem hSystem;
-	[HideInInspector]
-	public HealthBar hBar;
+    public static int enemyLayerMask = 1 << 8;
+    private static float fovRange;
+    private static float damage;
+    private static float atkSpeed;
+    private static float moveSpeed;
+    private static float atkRange;
+    private static bool canMove = true;
 
-
-	private void Start()
+    protected float AttackRange
     {
-		// Health
-        hSystem = new HealthSystem(100, 0f);
-        var healthBarTransform = Instantiate(pfHealthBar, new Vector3(transform.position.x, transform.position.y + 0.2f), Quaternion.identity, transform);
-		hBar = healthBarTransform.GetComponent<HealthBar>();
-		hBar.Setup(hSystem);
-		// subscribe to health change event
-		hSystem.OnHealthChanged += OnDeath;
-
+        get { return atkRange; }
+        set { atkRange = value; }
+    }
+    
+    protected float Damage
+    {
+        get { return damage; }
+        set { damage = value; }
+    }
+    protected float AtkSpeed
+    {
+        get { return atkSpeed; }
+        set { atkSpeed = value; }
+    }
+    protected float MoveSpeed
+    {
+        get { return moveSpeed; }
+        set { moveSpeed = value; }
+    }
+    protected float FoVRange
+    {
+        get { return fovRange; }
+        set { fovRange = value; }
     }
 
-	private void OnDeath(object sender, System.EventArgs e)
-	{
-		if(hSystem.GetHealth() <= 0)
-			Destroy(gameObject);
-	}
-	
-    private void OnCollisionEnter2D(Collision2D collision)
+    public bool CanMove
     {
-		
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            hSystem.Damage(20);
-        }
+        get { return canMove; }
+        set { canMove = value; }
     }
+
+    private SpriteRenderer sr;
+
+    public static bool Busy;
+    public static bool Flipped;
+    
+    private void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        // player location
+        if (sr) sr.flipX = Flipped;
+    }
+
+    public void CanMoveAgain()
+    {
+        CanMove = true;
+    }
+
 }

@@ -7,7 +7,7 @@ using UnityEngine.PlayerLoop;
 
 public class CheckEnemyInAttackRange : Node
 {
-    private static int _enemyLayerMask = EnemyManagerTemp.enemyLayerMask;
+    private static int _enemyLayerMask = EnemyManager.enemyLayerMask;
 
     private Transform _transform;
     private Animator _animator;
@@ -20,7 +20,7 @@ public class CheckEnemyInAttackRange : Node
 
     public override NodeState Evaluate()
     {
-        if (EnemyManagerTemp.Busy)
+        if (EnemyManager.Busy)
         {
             state = NodeState.SUCCESS;
             return state;
@@ -34,7 +34,7 @@ public class CheckEnemyInAttackRange : Node
         }
 
         Transform target = (Transform)t;
-        if (Vector3.Distance(_transform.position, target.position) <= GuardBT.attackRange)
+        if (Vector3.Distance(_transform.position, target.position) <= EnemyBT.attackRange)
         {
             state = NodeState.SUCCESS;
             return state;

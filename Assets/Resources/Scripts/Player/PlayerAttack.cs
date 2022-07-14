@@ -81,12 +81,12 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
         {
             // remember to check tags and layer!!
             //Debug.Log(col.gameObject.tag);
-            if (col.gameObject.CompareTag("Enemy"))
-            {
-                col.gameObject.GetComponent<EnemyManager>().hSystem.Damage(20);
-                //ultBar.AddUlt(ultChargeAmt);
-                hitboxColor = Color.green;
-            }
+            // if (col.gameObject.CompareTag("Enemy"))
+            // {
+            //     col.gameObject.GetComponent<EnemyManager>().hSystem.Damage(20);
+            //     //ultBar.AddUlt(ultChargeAmt);
+            //     hitboxColor = Color.green;
+            // }
 
             if (col.gameObject.CompareTag("Boss"))
             {

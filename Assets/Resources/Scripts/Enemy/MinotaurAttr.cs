@@ -3,34 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManagerTemp : MonoBehaviour
+public class MinotaurAttr : EnemyManager
 {
-    public static int enemyLayerMask = 1 << 8;
-    public static float fovRange = 20f;
+    [SerializeField] 
+    public static float fovRange = 19f;
     public static float attackRange = 12f;
     public static int damage = 20;
+    public static float atkSpd = 1f;
+    public static float moveSpeed = 8f;
 
-    private SpriteRenderer sr;
-
-    public static bool Busy;
-    public static bool Flipped;
-    
     private void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        FoVRange = fovRange;
+        AttackRange = attackRange;
+        Damage = damage;
+        AtkSpeed = atkSpd;
+        MoveSpeed = moveSpeed;
     }
-
-    private void Update()
-    {
-        // player location
-        sr.flipX = Flipped;
-    }
-
+    
     private void OnDrawGizmos()
     {
         // sightRange hitbox
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, GuardBT.fovRange);
+        Gizmos.DrawWireSphere(transform.position, fovRange);
         
         // attackRange
         Gizmos.color = Color.red;

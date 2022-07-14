@@ -15,8 +15,8 @@ public class TaskAttack : Node
     private PlayerManager _playerManager = PlayerManager.Instance;
 
     // attack counter
-    private float _attackTime = 2f;
-    private float _attackCounter = 3f;
+    private float _attackTime = MinotaurAttr.atkSpd;
+    private float _attackCounter = MinotaurAttr.atkSpd+1;
 
     public TaskAttack(Transform transform)
     {
@@ -27,7 +27,7 @@ public class TaskAttack : Node
     public override NodeState Evaluate()
     {
         WindowStats.Value = _attackCounter;
-        EnemyManagerTemp.Busy = true;
+        EnemyManager.Busy = true;
         
         Transform target = (Transform)GetData("target");
         if (target != _lastTarget)
@@ -51,7 +51,7 @@ public class TaskAttack : Node
              else
              {
                  _attackCounter = 0f;
-                 EnemyManagerTemp.Busy = false;
+                 EnemyManager.Busy = false;
              }
         }
 
