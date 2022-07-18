@@ -100,6 +100,7 @@
      <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateAim.cs" />
      <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateBar.cs" />
      <Compile Include="Assets\Resources\Scripts\UltimateSystem\UltimateMove.cs" />
+     <Compile Include="Assets\Resources\SpawnObject.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Anthony/Documents/UnityProjects/ultimate2d/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

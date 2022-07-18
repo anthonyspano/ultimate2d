@@ -13,6 +13,14 @@ public class EnemyManager : MonoBehaviour
     private static float atkRange;
     private static bool canMove = true;
 
+    private Transform atkBox;
+
+    public virtual Transform GetAtkBox()
+    {
+        Debug.Log("this is my no no spot!");
+        return atkBox;
+    }
+
     protected float AttackRange
     {
         get { return atkRange; }

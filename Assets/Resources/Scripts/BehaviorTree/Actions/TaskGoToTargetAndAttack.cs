@@ -12,46 +12,67 @@ public class TaskGoToTargetAndAttack : Node
     private Transform _transform;
     private Animator _animator;
 
-    private EnemyManager _enemyManager;
+    //private EnemyManager _enemyManager;
+    private MinotaurAttr _enemyManager;
     
     // attack counter
     private float _attackTime = MinotaurAttr.atkSpd;
     private float _attackCounter = MinotaurAttr.atkSpd+1;
+    
+    // acquire target
+    //private Transform target;
+    private Vector2 stopPoint = Vector2.zero;
 
     public TaskGoToTargetAndAttack(Transform transform)
     {
         _transform = transform;
         _animator = transform.GetComponent<Animator>();
-        _enemyManager = transform.GetComponent<EnemyManager>();
+        _enemyManager = transform.GetComponent<MinotaurAttr>();
+        
     }
 
+    // spawn an object (where the player stood for that frame) to be hit
+    // set busy to be true until that object is hit
+    // repeat
     public override NodeState Evaluate()
     {
+        // target = player's transform each new frame
+        EnemyManager.Busy = true;
         WindowStats.Value = _attackCounter;
-        
-        Transform target = (Transform)GetData("target");
-
-        EnemyManager.Flipped = (target.position.x > _transform.position.x) ? true : false;
-
         _attackCounter += Time.deltaTime;
         
-        if (Vector3.Distance(_transform.position, target.position) > 10f && _enemyManager.CanMove)
+        // spawn attack box
+        if (GameObject.Find("AttackBoxIndication(Clone)") == null)
+        {
+            var t = (Transform)GetData("target");
+            Transform atkBox = Object.Instantiate(_enemyManager.GetAtkBox(), t.position, Quaternion.identity);
+            stopPoint = atkBox.position;
+            Debug.Log(stopPoint);
+
+        }
+        
+        // flip based on player pos
+        EnemyManager.Flipped = (stopPoint.x > _transform.position.x) ? true : false;
+        
+        // move towards new position
+        if (Vector3.Distance(_transform.position, stopPoint) > 12f && _enemyManager.CanMove)
         {
             _transform.position = Vector3.MoveTowards(
-                _transform.position, target.position, EnemyBT.speed * Time.deltaTime);
+                _transform.position, stopPoint, EnemyBT.speed * Time.deltaTime);
             _animator.Play("Running");
         }
-        else
+        else  // attack
         {
-            // disable moving - bool canMove
             _enemyManager.CanMove = false;
             
-            // attack()
             if (_attackCounter >= _attackTime)
             {
                 if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("mino_atk1"))
                     _animator.Play("Attack");
                 
+                // null target after swing?
+                //target = null;
+
                 // check if player is dead
                 if (PlayerManager.Instance.pHealth.GetHealth() <= 0)
                 {
@@ -62,10 +83,11 @@ public class TaskGoToTargetAndAttack : Node
                 {
                     _attackCounter = 0f;
                 }
-
-
+                
+                
             }
         }
+        
 
         state = NodeState.RUNNING;
         return state;

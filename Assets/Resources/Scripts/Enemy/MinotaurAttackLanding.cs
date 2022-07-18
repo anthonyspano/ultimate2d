@@ -19,7 +19,10 @@ public class MinotaurAttackLanding : MonoBehaviour
             {
                 PlayerManager.Instance.pHealth.Damage(MinotaurAttr.damage);
             }
-        
+
+        Destroy(GameObject.Find("AttackBoxIndication(Clone)"));
+        EnemyManager.Busy = false;
+
         _animator.Play("Idle");
         
         // Start event where rocks fall from ceiling

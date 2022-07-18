@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// make sure to reference atkBoxPrefab in the inspector!
 public class MinotaurAttr : EnemyManager
 {
     [SerializeField] 
@@ -12,6 +13,8 @@ public class MinotaurAttr : EnemyManager
     public static float atkSpd = 1f;
     public static float moveSpeed = 8f;
 
+    public Transform atkBoxPrefab;
+
     private void Start()
     {
         FoVRange = fovRange;
@@ -20,6 +23,8 @@ public class MinotaurAttr : EnemyManager
         AtkSpeed = atkSpd;
         MoveSpeed = moveSpeed;
     }
+
+    public override Transform GetAtkBox() => atkBoxPrefab;
     
     private void OnDrawGizmos()
     {

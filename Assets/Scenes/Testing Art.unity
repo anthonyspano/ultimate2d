@@ -7190,6 +7190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d0c0b71494e1dd4db500d8bbcbc0fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkBoxPrefab: {fileID: 6575093728169637634, guid: 462a6b2569d290749b202583afd0270c,
+    type: 3}
 --- !u!114 &1809158624
 MonoBehaviour:
   m_ObjectHideFlags: 0
