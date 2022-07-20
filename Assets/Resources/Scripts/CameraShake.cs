@@ -49,10 +49,10 @@ public class CameraShake : MonoBehaviour
         }
     }
 
-    public void TriggerShake()
+    public void TriggerShake(float d)
     {
         // set damping speed on call
-        
+        shakeMagnitude = d;
         
         shakeDuration = 0.6f;
     }

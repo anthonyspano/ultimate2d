@@ -9,6 +9,7 @@ public class MinotaurAttackLanding : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        Debug.Log(Vector2.Distance(transform.position, PlayerManager.player.transform.position));
     }
 
     public void AttackLands()
@@ -27,7 +28,10 @@ public class MinotaurAttackLanding : MonoBehaviour
         
         // camera shake
         var cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
-        cam.TriggerShake();
+        float distance = Vector2.Distance(transform.position, PlayerManager.player.transform.position);
+        float shakeIntensity = 0.06f + (1 - distance / 30) * 0.275f;
+        Debug.Log(shakeIntensity + " " + distance);
+        cam.TriggerShake(shakeIntensity);
         
         // Start event where rocks fall from ceiling
 
