@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 19480
+  m_LastSelectedObjectID: 19722
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -505,20 +505,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Resources
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets
+  - Assets/Resources
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\Anthony\Documents\UnityProjects\ultimate2d
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 95}
-    m_SelectedIDs: 8e3c0000
-    m_LastClickedID: 15502
-    m_ExpandedIDs: 00000000903c0000363e0000ba3f000032420000384800002e490000
+    m_SelectedIDs: 32420000
+    m_LastClickedID: 16946
+    m_ExpandedIDs: 00000000903c0000363e0000ba3f00003242000008440000384800002e49000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -571,8 +571,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: f44b0000
-    m_LastClickedInstanceID: 19444
+    m_SelectedInstanceIDs: d408ffff
+    m_LastClickedInstanceID: -63276
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000ce2600009429000042600000e22600005e2700006c620000023c00003a620000d26900000000000064400000c6880000
     m_RenameOverlay:
@@ -631,9 +631,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 184c0000
-      m_LastClickedID: 19480
-      m_ExpandedIDs: 62fbffff064c0000e64c00006a4d0000
+      m_SelectedIDs: 0a4d0000
+      m_LastClickedID: 19722
+      m_ExpandedIDs: 62fbffff6e4c0000e64c00006a4d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -693,9 +693,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -11.959654, y: -16.165894, z: -154.27805}
+    m_Target: {x: 3.6596599, y: -15.290832, z: -159.26065}
     speed: 2
-    m_Value: {x: -11.959654, y: -16.165894, z: -154.27805}
+    m_Value: {x: 3.6596599, y: -15.290832, z: -159.26065}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -745,9 +745,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 29.11484
+    m_Target: 13.223857
     speed: 2
-    m_Value: 29.11484
+    m_Value: 13.223857
   m_Ortho:
     m_Target: 1
     speed: 2

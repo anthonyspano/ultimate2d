@@ -77,7 +77,6 @@
      <Compile Include="Assets\Resources\Scripts\Enemy\MinotaurExecuteAttack.cs" />
      <Compile Include="Assets\Resources\Scripts\HealthSystem\HealthBar.cs" />
      <Compile Include="Assets\Resources\Scripts\HealthSystem\HealthSystem.cs" />
-     <Compile Include="Assets\Resources\Scripts\ICoolDown.cs" />
      <Compile Include="Assets\Resources\Scripts\Input\PlayerInput.cs" />
      <Compile Include="Assets\Resources\Scripts\LaunchProjectile.cs" />
      <Compile Include="Assets\Resources\Scripts\Player\ChangeClothes.cs" />

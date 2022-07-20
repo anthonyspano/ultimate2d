@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerAim))]
-public class PlayerAttack : MonoBehaviour, ICoolDown
+public class PlayerAttack : MonoBehaviour
 {
     // temp
     private UltimateAim ultAim;
@@ -26,11 +26,10 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
     // animation
     private Animator anim;
     
-    // interface
-    [Header("Interface")]
-    [SerializeField] private float cooldownRate;
-    public float CooldownTimer { get; set; }
-    public float CooldownRate { get; set; }
+    [SerializeField] public float cooldownRate;
+    private float cooldownTimer;
+    //[SerializeField] public float CooldownTimer { get; set; }
+    //[SerializeField] public float CooldownRate { get; set; }
 
     // Player Aim
     private PlayerAim myAim;
@@ -45,7 +44,7 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
         ultAim = GetComponent<UltimateAim>();
         //ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>(); // not implemented in scene
         anim = GameObject.Find("StrikeSprite").GetComponent<Animator>();
-        CooldownTimer = 0;
+        cooldownTimer = cooldownRate;
     }
 
     private void Update()
@@ -54,25 +53,24 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
         //if (x != 0 || y != 0) lastMove = new Vector2(x,y);
         //if (CooldownTimer <= 0 && (Input.GetKeyDown(PlayerInput.k_slash)
         //                        || Input.GetKeyDown(PlayerInput.c_slash))) 
-        if (PlayerInput.Slash())
+        if (PlayerInput.Slash() && IsReady())
         {
             StartCoroutine(Strike("strike", 20));
         }
         
 
-        CooldownTimer -= Time.deltaTime;
+        cooldownTimer -= Time.deltaTime;
     }
+
+    private bool IsReady() => cooldownTimer <= 0;
 
     // 0.2 seconds will work for now
     public IEnumerator Strike(string stateName, int ultChargeAmt)
     {
         yield return new WaitForSeconds(0.2f);
 
-        // cooldown
-        CooldownTimer = cooldownRate;
-        
         // play anim
-        anim.Play("strike");
+        anim.Play(stateName);
         
         // hitbox
         //var center = transform.XandY() + lastMove.normalized * range;
@@ -93,6 +91,9 @@ public class PlayerAttack : MonoBehaviour, ICoolDown
                 col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(bossDamage);
             }
         }
+        
+        // cooldown
+        cooldownTimer = cooldownRate;
 
 
     }

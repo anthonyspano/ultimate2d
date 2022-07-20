@@ -9,6 +9,7 @@ public class MinotaurAttr : EnemyManager
     [SerializeField] 
     public static float fovRange = 19f;
     public static float attackRange = 12f;
+    public static float hitRange = 5f;
     public static int damage = 20;
     public static float atkSpd = 1f;
     public static float moveSpeed = 8f;
@@ -25,6 +26,12 @@ public class MinotaurAttr : EnemyManager
     }
 
     public override Transform GetAtkBox() => atkBoxPrefab;
+
+    public Vector2 GetHitPos()
+    {
+        // return a Vector2 with x +- 3 depending on flipped
+        return (EnemyManager.Flipped) ? transform.XandY() + (Vector2.right * 6) + Vector2.down * 3 : transform.XandY() + Vector2.left * 6 + Vector2.down * 3;
+    }
     
     private void OnDrawGizmos()
     {
@@ -35,5 +42,9 @@ public class MinotaurAttr : EnemyManager
         // attackRange
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+        
+        // hitRange
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(GetHitPos(), hitRange);
     }
 }

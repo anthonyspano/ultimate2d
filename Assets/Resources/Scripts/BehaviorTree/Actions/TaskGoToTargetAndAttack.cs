@@ -12,8 +12,8 @@ public class TaskGoToTargetAndAttack : Node
     private Transform _transform;
     private Animator _animator;
 
-    //private EnemyManager _enemyManager;
-    private MinotaurAttr _enemyManager;
+    private EnemyManager _enemyManager;
+    //private MinotaurAttr _enemyManager;
     
     // attack counter
     private float _attackTime = MinotaurAttr.atkSpd;
