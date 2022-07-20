@@ -47,8 +47,6 @@ public class TaskGoToTargetAndAttack : Node
             var t = (Transform)GetData("target");
             Transform atkBox = Object.Instantiate(_enemyManager.GetAtkBox(), t.position, Quaternion.identity);
             stopPoint = atkBox.position;
-            Debug.Log(stopPoint);
-
         }
         
         // flip based on player pos
@@ -69,9 +67,6 @@ public class TaskGoToTargetAndAttack : Node
             {
                 if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("mino_atk1"))
                     _animator.Play("Attack");
-                
-                // null target after swing?
-                //target = null;
 
                 // check if player is dead
                 if (PlayerManager.Instance.pHealth.GetHealth() <= 0)

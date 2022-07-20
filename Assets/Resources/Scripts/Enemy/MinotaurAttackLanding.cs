@@ -25,6 +25,10 @@ public class MinotaurAttackLanding : MonoBehaviour
 
         _animator.Play("Idle");
         
+        // camera shake
+        var cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
+        cam.TriggerShake();
+        
         // Start event where rocks fall from ceiling
 
         

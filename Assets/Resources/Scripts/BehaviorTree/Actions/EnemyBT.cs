@@ -19,8 +19,7 @@ public class EnemyBT : BehaviorTree.Tree
         speed = 8f;
         fovRange = MinotaurAttr.fovRange;
         attackRange = 7f;
-        Debug.Log(fovRange);
-        
+
         Node root = new Selector(new List<Node>
         {
             // new Sequence(new List<Node>
