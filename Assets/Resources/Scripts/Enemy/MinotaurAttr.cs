@@ -6,12 +6,11 @@ using UnityEngine;
 // make sure to reference atkBoxPrefab in the inspector!
 public class MinotaurAttr : EnemyManager
 {
-    [SerializeField] 
     public static float fovRange = 19f;
     public static float attackRange = 12f;
-    public static float hitRange = 5f;
-    public static int damage = 20;
-    public static float atkSpd = 0.8f;
+    public static float hitRange = 5.5f; 
+    public static int damage = 30;
+    public static float atkSpd = 1.2f;
     public static float moveSpeed = 8f;
 
     public Transform atkBoxPrefab;
@@ -30,7 +29,8 @@ public class MinotaurAttr : EnemyManager
     public Vector2 GetHitPos()
     {
         // return a Vector2 with x +- 3 depending on flipped
-        return (EnemyManager.Flipped) ? transform.XandY() + (Vector2.right * 6) + Vector2.down * 3 : transform.XandY() + Vector2.left * 6 + Vector2.down * 3;
+        float xAdjust = 5;
+        return (EnemyManager.Flipped) ? transform.XandY() + (Vector2.right * xAdjust) + Vector2.down * 3 : transform.XandY() + Vector2.left * xAdjust + Vector2.down * 3;
     }
     
     private void OnDrawGizmos()

@@ -88,6 +88,7 @@ public class PlayerManager : MonoBehaviour
 
 		else
 		{
+			Debug.Log("Damage");
 			StartCoroutine(FlashRed());
 		}
 		

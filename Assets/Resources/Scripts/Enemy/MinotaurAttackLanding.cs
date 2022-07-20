@@ -9,12 +9,11 @@ public class MinotaurAttackLanding : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        Debug.Log(Vector2.Distance(transform.position, PlayerManager.player.transform.position));
     }
 
     public void AttackLands()
     {
-        Collider2D[] player = Physics2D.OverlapCircleAll(transform.position, MinotaurAttr.attackRange, EnemyManager.enemyLayerMask);
+        Collider2D[] player = Physics2D.OverlapCircleAll(transform.position, MinotaurAttr.hitRange, EnemyManager.enemyLayerMask);
         if(player.Length > 0)
             if (player[0].name == "Player")
             {
@@ -29,9 +28,9 @@ public class MinotaurAttackLanding : MonoBehaviour
         // camera shake
         var cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         float distance = Vector2.Distance(transform.position, PlayerManager.player.transform.position);
-        float shakeIntensity = 0.06f + (1 - distance / 30) * 0.275f;
-        Debug.Log(shakeIntensity + " " + distance);
-        cam.TriggerShake(shakeIntensity);
+        // base shake + (inverse of percentage of max distance) * max shake
+        float shakeIntensity = 0.06f + (1 - distance / 30) * 0.25f;
+        //cam.TriggerShake(shakeIntensity);
         
         // Start event where rocks fall from ceiling
 

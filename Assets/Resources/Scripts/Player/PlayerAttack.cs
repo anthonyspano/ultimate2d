@@ -57,7 +57,6 @@ public class PlayerAttack : MonoBehaviour
         {
             StartCoroutine(Strike("strike", 20));
         }
-        
 
         cooldownTimer -= Time.deltaTime;
     }
@@ -67,6 +66,9 @@ public class PlayerAttack : MonoBehaviour
     // 0.2 seconds will work for now
     public IEnumerator Strike(string stateName, int ultChargeAmt)
     {
+        // cooldown
+        cooldownTimer = cooldownRate;
+        
         yield return new WaitForSeconds(0.2f);
 
         // play anim
@@ -92,8 +94,7 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         
-        // cooldown
-        cooldownTimer = cooldownRate;
+
 
 
     }

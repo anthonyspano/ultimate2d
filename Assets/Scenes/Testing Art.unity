@@ -1809,7 +1809,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9125116208208414915}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &466867621
+--- !u!114 &466867624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8671,7 +8671,7 @@ PrefabInstance:
     - target: {fileID: 9125116208761811325, guid: 4dac4da00385ba04b9894a09f857c3bc,
         type: 3}
       propertyPath: bossDamage
-      value: 70
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9125116208761811325, guid: 4dac4da00385ba04b9894a09f857c3bc,
         type: 3}
