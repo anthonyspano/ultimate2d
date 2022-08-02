@@ -50,6 +50,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\FallingRock.cs" />
      <Compile Include="Assets\Resources\Scripts\BehaviorTree\Actions\CheckEnemyInFOVRange.cs" />
      <Compile Include="Assets\Resources\Scripts\BehaviorTree\Actions\EnemyBT.cs" />
      <Compile Include="Assets\Resources\Scripts\BehaviorTree\Actions\TaskGoToTargetAndAttack.cs" />

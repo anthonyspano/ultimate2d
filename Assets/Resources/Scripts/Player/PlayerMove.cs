@@ -24,6 +24,9 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+        
         float x = Input.GetAxis(PlayerInput.x);
         float y = Input.GetAxis(PlayerInput.y);
         var movement = new Vector2(x, y);

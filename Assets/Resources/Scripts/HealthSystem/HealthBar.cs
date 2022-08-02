@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Changes the size of the health bar sprite
 public class HealthBar : MonoBehaviour
@@ -10,6 +11,8 @@ public class HealthBar : MonoBehaviour
 
     public float invulnTimer;
     private bool once;
+
+    public Slider healthBarGUI;
 
 
     public void Setup(HealthSystem healthSystem)
@@ -21,10 +24,12 @@ public class HealthBar : MonoBehaviour
 
     private void HealthSystem_OnHealthChanged(object sender, System.EventArgs e)
     {
-        Vector3 healthBarSize = transform.Find("Bar").localScale;
-        transform.Find("Bar").localScale = new Vector3(healthSystem.GetHealthPercent(), 1, 0);
+        //Vector3 healthBarSize = transform.Find("Bar").localScale;
+        //transform.Find("Bar").localScale = new Vector3(healthSystem.GetHealthPercent(), 1, 0);
+        healthBarGUI.value = healthSystem.GetHealthPercent();
         healthSystem.SetInvulnerability(true);
 
+        
     }
 	
 

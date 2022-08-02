@@ -42,11 +42,7 @@ public class PlayerManager : MonoBehaviour
 	    
 	    // health
         pHealth = new HealthSystem(maxHealth, invulnAfterHit);
-        var healthBarTransform = Instantiate(pfHealthBar, 
-								     new Vector3(transform.position.x, transform.position.y + positionOffset), 
-								     Quaternion.identity, 
-								     transform);
-		var healthBar = healthBarTransform.GetComponent<HealthBar>();
+        var healthBar = GameObject.Find("PlayerHealthBarManager").GetComponent<HealthBar>();
 		healthBar.Setup(pHealth);
 		
 		// ult amt start of scene

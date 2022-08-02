@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Boss
   - BigHurt
+  - RockShadow
   layers:
   - Default
   - TransparentFX
