@@ -95,6 +95,7 @@
      <Compile Include="Assets\Resources\Scripts\Player\ShadowController.cs" />
      <Compile Include="Assets\Resources\Scripts\Player\TranslateDash.cs" />
      <Compile Include="Assets\Resources\Scripts\PointToRotation.cs" />
+     <Compile Include="Assets\Resources\Scripts\RockPlacementManager.cs" />
      <Compile Include="Assets\Resources\Scripts\TestAnim.cs" />
      <Compile Include="Assets\Resources\Scripts\TransformExtensions.cs" />
      <Compile Include="Assets\Resources\Scripts\TriggerEvent.cs" />

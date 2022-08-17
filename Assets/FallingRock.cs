@@ -5,26 +5,18 @@ using UnityEngine;
 
 public class FallingRock : MonoBehaviour
 {
-    private Vector2 landingSpot;
-    
+    // set gravity scale in the prefab inspector (4)
     private void Start()
     {
-        landingSpot = GameObject.Find("RockShadow(Clone)").transform.position;
-        
+        transform.parent = null;
+        GetComponent<Rigidbody2D>().gravityScale = 4;
     }
-
-    private void Update()
-    {
-        //landingSpot = GameObject.Find("RockShadow(Clone)").transform.position;
-        transform.position = Vector2.MoveTowards(transform.position, landingSpot, 0.2f);
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.transform.tag == "RockShadow")
+        if (col.CompareTag("RockShadow"))
         {
-            
-            Destroy(col.gameObject);
+            Destroy(col.transform.parent.gameObject);
             Destroy(gameObject);
         }
     }

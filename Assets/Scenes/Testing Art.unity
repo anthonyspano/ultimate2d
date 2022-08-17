@@ -3685,6 +3685,57 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.96, y: 1.78}
   m_EdgeRadius: 0
+--- !u!1 &865882279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 865882281}
+  - component: {fileID: 865882280}
+  m_Layer: 0
+  m_Name: RockManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &865882280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865882279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28fe77bb6a01224a9e91b5bf015eb1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coordinates1: []
+  coordinates2: []
+  rockShadow: {fileID: 8280298477372860283, guid: 4b45f8f7e192d544bba955eda828b1a1,
+    type: 3}
+  fallingRock: {fileID: 6577002549053236647, guid: c6add2ff096a1bd4c8a3cb4fd4e3ca60,
+    type: 3}
+  rockCombo: {fileID: 5415211600726191452, guid: a30a521ed639bf14e86b30432d771dfc,
+    type: 3}
+--- !u!4 &865882281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865882279}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.624707, y: -12.115734, z: -23.60261}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &866588852
 GameObject:
   m_ObjectHideFlags: 0

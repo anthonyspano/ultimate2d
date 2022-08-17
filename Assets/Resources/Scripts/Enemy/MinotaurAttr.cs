@@ -10,7 +10,7 @@ public class MinotaurAttr : EnemyManager
     public static float attackRange = 12f;
     public static float hitRange = 5.5f; 
     public static int damage = 30;
-    public static float atkSpd = 1.2f;
+    public static float atkSpd = 3f; // 1.2f
     public static float moveSpeed = 8f;
 
     public Transform atkBoxPrefab;
