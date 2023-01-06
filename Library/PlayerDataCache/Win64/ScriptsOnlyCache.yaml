@@ -11,7 +11,9 @@ ScriptsOnlyBuild:
     - EnemyManagerOld
     - EnemyShoot
     - EnemyTakeDamage
+    - FallingRock
     - HealthBar
+    - MainMenu
     - MinotaurAttackLanding
     - MinotaurAttr
     - NearMiss
@@ -35,17 +37,28 @@ ScriptsOnlyBuild:
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -54,7 +67,7 @@ ScriptsOnlyBuild:
     com.unity.multiplayer-hlapi.Runtime.dll:
     - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
-    Assets/Scenes/Testing Art.unity:
+    Assets/Scenes/Main Menu.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -68,6 +81,111 @@ ScriptsOnlyBuild:
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11434}
+    - Class: 114
+      Script: {instanceID: 11830}
+    - Class: 114
+      Script: {instanceID: 11930}
+    - Class: 114
+      Script: {instanceID: 12028}
+    - Class: 114
+      Script: {instanceID: 12140}
+    - Class: 114
+      Script: {instanceID: 12198}
+    - Class: 114
+      Script: {instanceID: 12394}
+    - Class: 114
+      Script: {instanceID: 12614}
+    - Class: 114
+      Script: {instanceID: 12616}
+    - Class: 114
+      Script: {instanceID: 12634}
+    - Class: 114
+      Script: {instanceID: 12688}
+    - Class: 114
+      Script: {instanceID: 12888}
+    - Class: 114
+      Script: {instanceID: 13164}
+    - Class: 114
+      Script: {instanceID: 13226}
+    - Class: 114
+      Script: {instanceID: 13558}
+    - Class: 114
+      Script: {instanceID: 13650}
+    - Class: 114
+      Script: {instanceID: 13784}
+    - Class: 114
+      Script: {instanceID: 14016}
+    - Class: 114
+      Script: {instanceID: 14040}
+    - Class: 114
+      Script: {instanceID: 14234}
+    - Class: 114
+      Script: {instanceID: 14314}
+    - Class: 114
+      Script: {instanceID: 14368}
+    - Class: 114
+      Script: {instanceID: 14422}
+    - Class: 114
+      Script: {instanceID: 14452}
+    - Class: 114
+      Script: {instanceID: 14546}
+    - Class: 114
+      Script: {instanceID: 14880}
+    - Class: 114
+      Script: {instanceID: 15308}
+    - Class: 114
+      Script: {instanceID: 15376}
+    - Class: 114
+      Script: {instanceID: 20488}
+    - Class: 114
+      Script: {instanceID: 22356}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Testing Art.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
@@ -102,8 +220,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12140}
     - Class: 114
-      Script: {instanceID: 12198}
-    - Class: 114
       Script: {instanceID: 12394}
     - Class: 114
       Script: {instanceID: 12616}
@@ -118,33 +234,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13144}
     - Class: 114
-      Script: {instanceID: 13164}
-    - Class: 114
       Script: {instanceID: 13192}
     - Class: 114
       Script: {instanceID: 13226}
     - Class: 114
       Script: {instanceID: 13480}
     - Class: 114
-      Script: {instanceID: 13650}
+      Script: {instanceID: 13784}
     - Class: 114
-      Script: {instanceID: 13782}
+      Script: {instanceID: 14234}
     - Class: 114
-      Script: {instanceID: 14230}
+      Script: {instanceID: 14314}
     - Class: 114
-      Script: {instanceID: 14308}
+      Script: {instanceID: 14368}
     - Class: 114
-      Script: {instanceID: 14362}
+      Script: {instanceID: 14546}
     - Class: 114
-      Script: {instanceID: 14538}
+      Script: {instanceID: 15318}
     - Class: 114
-      Script: {instanceID: 15306}
+      Script: {instanceID: 15360}
     - Class: 114
-      Script: {instanceID: 15348}
+      Script: {instanceID: 15376}
     - Class: 114
-      Script: {instanceID: 15364}
-    - Class: 114
-      Script: {instanceID: 20200}
+      Script: {instanceID: 20488}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -676,6 +788,12 @@ ScriptsOnlyBuild:
     className: NearMiss
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SlashAttack
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -688,10 +806,16 @@ ScriptsOnlyBuild:
     className: NetworkStartPosition
   - hash:
       serializedVersion: 2
-      Hash: a1840424a0ced7d5bcc46859616e2c6f
+      Hash: 202dbc273a1efee1685a3645d402f958
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HealthBar
+  - hash:
+      serializedVersion: 2
+      Hash: b9be345e2cb4e6390a9b6c6a7e4ec3a0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerMove2D
   - hash:
       serializedVersion: 2
       Hash: a7bdca76b209082097b646b645485dfe
@@ -778,6 +902,12 @@ ScriptsOnlyBuild:
     className: PlayerAim
   - hash:
       serializedVersion: 2
+      Hash: 07640265f8736afafe337202ff0bdcd8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RockPlacementManager
+  - hash:
+      serializedVersion: 2
       Hash: 9f6ddfbce5faeba116a06afde196f94d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -806,6 +936,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FallingRock
   - hash:
       serializedVersion: 2
       Hash: 5f1752ed2092162f016c19510c28a8b9
@@ -838,6 +974,12 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy
+  - hash:
+      serializedVersion: 2
       Hash: 1dcb82730d983b77cec736c6ef19f814
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -866,6 +1008,12 @@ ScriptsOnlyBuild:
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: ca16fe044a7268e5f4a304592891c166
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerAttack2D
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1016,7 +1164,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
   platform: 19
   scenePathNames:
+  - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/Testing Art.unity
   playerPath: C:/Users/Anthony/Desktop/demiurge demo/Demiurge Alpha.exe
