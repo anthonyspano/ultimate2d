@@ -11,14 +11,11 @@ public class CheckEnemyInPursuitRange : Node
     private Transform _transform;
     private Animator _animator;
 	
-	private float _pursuitRange = 16;
-	private float _tooClose;
     
-    public CheckEnemyInPursuitRange(Transform transform, float tooClose)
+    public CheckEnemyInPursuitRange(Transform transform)
     {
         _transform = transform;
         _animator = transform.GetComponent<Animator>();
-		_tooClose = tooClose;
     }
 
     public override NodeState Evaluate()
@@ -29,14 +26,14 @@ public class CheckEnemyInPursuitRange : Node
             return state;
         }
         
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, _pursuitRange , _enemyLayerMask);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, EnemyManager.AttackRange, _enemyLayerMask);
 
         if (colliders.Length > 0)
         {
             // assuming the player is the only one on the enemyLayerMask
             parent.parent.SetData("target", colliders[0].transform);
 
-            if (Vector2.Distance(_transform.position, colliders[0].transform.position) > _tooClose)
+            if (Vector2.Distance(_transform.position, colliders[0].transform.position) > EnemyManager.RetreatRange)
             {
                 _animator.Play("Running");
                 

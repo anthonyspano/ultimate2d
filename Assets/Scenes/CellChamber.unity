@@ -693,8 +693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f220510a734ed42bf204e6a369f7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursuitRange: 16
-  retreatRange: 7
+  pursuitRange: 25
+  retreatRange: 13
 --- !u!61 &439786462
 BoxCollider2D:
   m_ObjectHideFlags: 0

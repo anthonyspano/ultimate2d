@@ -11,6 +11,7 @@ public class EnemyManager : MonoBehaviour
     public static float atkSpeed;
     private static float moveSpeed;
     private static float atkRange;
+    private static float retreatRange;
     private static bool canMove = true;
 
     private Transform atkBox;
@@ -21,7 +22,12 @@ public class EnemyManager : MonoBehaviour
         return atkBox;
     } */
 
-    protected float AttackRange
+    public static float RetreatRange
+    {
+        get { return retreatRange; }
+        set { retreatRange = value; }
+    }
+    public static float AttackRange
     {
         get { return atkRange; }
         set { atkRange = value; }
@@ -42,7 +48,7 @@ public class EnemyManager : MonoBehaviour
         get { return moveSpeed; }
         set { moveSpeed = value; }
     }
-    protected float FoVRange
+    public static float FoVRange
     {
         get { return fovRange; }
         set { fovRange = value; }

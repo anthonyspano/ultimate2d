@@ -43,6 +43,7 @@
      <Compile Include="Assets\Deprecated\TaskAttack.cs" />
      <Compile Include="Assets\Enemies\Deprecated\Enemy.cs" />
      <Compile Include="Assets\Enemies\Generic\BT Actions\CheckEnemyInPursuitRange.cs" />
+     <Compile Include="Assets\Enemies\Generic\BT Actions\CheckEnemyNotInSight.cs" />
      <Compile Include="Assets\Enemies\Generic\BT Actions\CheckToRetreat.cs" />
      <Compile Include="Assets\Enemies\Generic\BT Actions\TaskGoToTargetJumpAtTarget.cs" />
      <Compile Include="Assets\Enemies\Generic\BT Actions\TaskPatrol.cs" />

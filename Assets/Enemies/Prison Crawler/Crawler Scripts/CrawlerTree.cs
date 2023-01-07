@@ -9,30 +9,28 @@ public class CrawlerTree : BehaviorTree.Tree
 {
     public UnityEngine.Transform[] waypoints;
     
-    public static float speed;
-    public static float fovRange;
-    public static float attackRange;
-    public static float tooClose;
 
     protected override Node SetupTree()
     {
-        speed = 8f;
-        attackRange = 7f;
-		tooClose = 7;
 
         Node root = new Selector(new List<Node>
         {
             new Sequence(new List<Node>
             {
-				new CheckEnemyInPursuitRange(transform, tooClose),
+				new CheckEnemyInPursuitRange(transform),
                 new TaskGoToTargetJumpAtTarget(transform)
             }),
             new Sequence(new List<Node>
             {
-                new CheckToRetreat(transform, tooClose),
+                new CheckToRetreat(transform, EnemyManager.RetreatRange),
                 new TaskRetreat(transform)
             }),
-            new TaskPatrol(transform, waypoints),
+            new Sequence(new List<Node>
+            {
+                new CheckEnemyNotInSight(transform),
+                new TaskPatrol(transform, waypoints)
+            })
+            
         });
         return root;
     }
