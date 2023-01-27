@@ -20,11 +20,11 @@ public class CheckToRetreat : Node
 
 	public override NodeState Evaluate()
 	{
-		if (EnemyManager.Busy)
-        {
-            state = NodeState.SUCCESS;
-            return state;
-        }
+		// if (EnemyManager.Busy)
+        // {
+        //     state = NodeState.SUCCESS;
+        //     return state;
+        // }
         
 
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, _tooClose, _enemyLayerMask);
@@ -34,13 +34,17 @@ public class CheckToRetreat : Node
 			// assuming the player is the only one on the enemyLayerMask
 			// retreat if too close
 			if(Vector2.Distance(_transform.position, colliders[0].transform.position) <= _tooClose)
-			{			
+			{		
+				EnemyManager.Retreating = true;		
+            	WindowStats.IsRetreating = EnemyManager.Retreating;	
 				state = NodeState.SUCCESS;
 				return state;
 			}
 			
 		}
 			
+		EnemyManager.Retreating = false;		
+        WindowStats.IsRetreating = EnemyManager.Retreating;
 		state = NodeState.FAILURE;
 		return state;
         

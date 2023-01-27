@@ -20,11 +20,11 @@ public class CheckEnemyInPursuitRange : Node
 
     public override NodeState Evaluate()
     {
-        if (EnemyManager.Busy)
-        {
-            state = NodeState.SUCCESS;
-            return state;
-        }
+        // if (EnemyManager.Busy)
+        // {
+        //     state = NodeState.SUCCESS;
+        //     return state;
+        // }
         
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, EnemyManager.AttackRange, _enemyLayerMask);
 

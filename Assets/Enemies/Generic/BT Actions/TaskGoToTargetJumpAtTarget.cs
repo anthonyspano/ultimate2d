@@ -40,17 +40,17 @@ public class TaskGoToTargetJumpAtTarget : Node
     // repeat
     public override NodeState Evaluate()
     {
-        if(EnemyManager.Retreating)
-        {
-            state = NodeState.FAILURE;
-            return state;
-        }
+        // if(EnemyManager.Retreating)
+        // {
+        //     state = NodeState.FAILURE;
+        //     return state;
+        // }
 
-        if(!EnemyManager.Busy)
-        {
-            EnemyManager.Busy = true;
-            //WindowStats.IsBusy = EnemyManager.Busy;
-        }
+        // if(!EnemyManager.Busy)
+        // {
+        //     EnemyManager.Busy = true;
+        //     //WindowStats.IsBusy = EnemyManager.Busy;
+        // }
 
         WindowStats.Value = _attackCounter; // static script for debugging
         _attackCounter += Time.deltaTime;
@@ -99,7 +99,7 @@ public class TaskGoToTargetJumpAtTarget : Node
                 else
                 {
 					//ClearData("target");
-					EnemyManager.Busy = false;
+					//EnemyManager.Busy = false;
                     WindowStats.IsBusy = EnemyManager.Busy;
                     _attackCounter = 0f;
                     Object.Destroy(atkBox.gameObject);

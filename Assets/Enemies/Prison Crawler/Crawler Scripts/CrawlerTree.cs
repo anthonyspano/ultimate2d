@@ -20,11 +20,11 @@ public class CrawlerTree : BehaviorTree.Tree
 				new CheckEnemyInPursuitRange(transform),
                 new TaskGoToTargetJumpAtTarget(transform)
             }),
-            new Sequence(new List<Node>
-            {
-                new CheckToRetreat(transform, EnemyManager.RetreatRange),
-                new TaskRetreat(transform)
-            }),
+            // new Sequence(new List<Node>
+            // {
+            //     new CheckToRetreat(transform, EnemyManager.RetreatRange),
+            //     new TaskRetreat(transform)
+            // }),
             new Sequence(new List<Node>
             {
                 new CheckEnemyNotInSight(transform),

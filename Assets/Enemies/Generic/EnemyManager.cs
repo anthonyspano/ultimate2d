@@ -82,4 +82,17 @@ public class EnemyManager : MonoBehaviour
         CanMove = true;
     }
 
+
+    void OnDrawGizmos()
+	{
+		Vector3 offset = new Vector3(0.5f, -0.7f, 0);
+
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere(transform.position + offset, AttackRange);
+		
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position + offset, RetreatRange);
+		// 25p 13r
+	}
+
 }

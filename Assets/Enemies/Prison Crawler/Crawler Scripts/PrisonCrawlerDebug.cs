@@ -5,11 +5,11 @@ using UnityEngine;
 public class PrisonCrawlerDebug : MonoBehaviour
 {
 	[SerializeField]
-	public float pursuitRange;
+	public float attackRange;
 	public float retreatRange;
 	void OnDrawGizmos()
 	{
-		EnemyManager.AttackRange = pursuitRange;
+		EnemyManager.AttackRange = attackRange;
 		EnemyManager.RetreatRange = retreatRange;
 		Vector3 offset = new Vector3(0.5f, -0.7f, 0);
 
