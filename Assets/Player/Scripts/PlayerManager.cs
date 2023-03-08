@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // change OnHealthChanged to flash red
 
@@ -35,6 +37,10 @@ public class PlayerManager : MonoBehaviour
 	// player properties
 	[SerializeField] private int maxHealth;
 
+	// etc
+	private int wrongWayCount = 0;
+	public GameObject wrongWayPanel;
+
 	private void Start()
     {
 	    if(player == null)
@@ -54,6 +60,9 @@ public class PlayerManager : MonoBehaviour
 
 		// damage
 		sr = GetComponent<SpriteRenderer>();
+
+		// wrong way dialogue box
+		//wrongWayPanel = GameObject.Find("WrongWayDialogue");
     }
 	
 	private void Awake()
@@ -73,6 +82,29 @@ public class PlayerManager : MonoBehaviour
     {
         //Debug.Log(collision.gameObject.name);
     }
+
+	private void OnTriggerEnter2D(Collider2D col)
+	{
+		if(col.transform.CompareTag("Door"))
+		{
+			var doorExit = col.transform.GetChild(0);
+			Debug.Log(doorExit.gameObject.name);
+			Debug.Log(doorExit.position);
+			transform.position = doorExit.position;
+		}
+
+
+		if(col.transform.CompareTag("RockShadow"))
+		{
+			wrongWayCount++;
+			// 24.5f
+			transform.position = new Vector3(-16.93f, transform.position.y, transform.position.z);
+			if(wrongWayCount > 2)
+				wrongWayPanel.gameObject.SetActive(true);
+				//Debug.Log("Maybe I'm going the wrong way...");
+
+		}
+	}
 
 	private void OnDamage(object sender, System.EventArgs e) 
 	{

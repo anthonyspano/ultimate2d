@@ -14,13 +14,15 @@ public class EnemyManager : MonoBehaviour
     private static float retreatRange;
     private static bool canMove = true;
 
-    private Transform atkBox;
+    private static float pursuitRange;
 
-/*     public virtual Transform GetAtkBox()
+    public static Transform AttackBox;
+
+    public static float PursuitRange
     {
-        Debug.Log("this is my no no spot!");
-        return atkBox;
-    } */
+        get { return pursuitRange; }
+        set { pursuitRange = value; }
+    } 
 
     public static float RetreatRange
     {
@@ -82,17 +84,5 @@ public class EnemyManager : MonoBehaviour
         CanMove = true;
     }
 
-
-    void OnDrawGizmos()
-	{
-		Vector3 offset = new Vector3(0.5f, -0.7f, 0);
-
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position + offset, AttackRange);
-		
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere(transform.position + offset, RetreatRange);
-		// 25p 13r
-	}
 
 }

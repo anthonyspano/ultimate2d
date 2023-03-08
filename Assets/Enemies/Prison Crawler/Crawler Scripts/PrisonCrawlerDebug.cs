@@ -5,19 +5,19 @@ using UnityEngine;
 public class PrisonCrawlerDebug : MonoBehaviour
 {
 	[SerializeField]
+	public float pursuitRange;
 	public float attackRange;
-	public float retreatRange;
 	void OnDrawGizmos()
 	{
+		EnemyManager.PursuitRange = pursuitRange;
 		EnemyManager.AttackRange = attackRange;
-		EnemyManager.RetreatRange = retreatRange;
 		Vector3 offset = new Vector3(0.5f, -0.7f, 0);
 
 		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position + offset, EnemyManager.AttackRange);
+		Gizmos.DrawWireSphere(transform.position + offset, EnemyManager.PursuitRange);
 		
 		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere(transform.position + offset, EnemyManager.RetreatRange);
+		Gizmos.DrawWireSphere(transform.position + offset, EnemyManager.AttackRange);
 		
 	}
 }

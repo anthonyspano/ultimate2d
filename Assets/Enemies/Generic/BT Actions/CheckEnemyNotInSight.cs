@@ -14,8 +14,8 @@ public class CheckEnemyNotInSight : Node
 
     public override NodeState Evaluate()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, EnemyManager.FoVRange, EnemyManager.enemyLayerMask);
-
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, EnemyManager.RetreatRange, EnemyManager.enemyLayerMask);
+        //Debug.Log(EnemyManager.RetreatRange);
         if(colliders.Length > 0)
         {
             state = NodeState.FAILURE;

@@ -40,6 +40,7 @@ public class TaskGoToTargetJumpAtTarget : Node
     // repeat
     public override NodeState Evaluate()
     {
+        Debug.Log("Going to target");
         // if(EnemyManager.Retreating)
         // {
         //     state = NodeState.FAILURE;
@@ -95,7 +96,11 @@ public class TaskGoToTargetJumpAtTarget : Node
 				d += 0.25f;
 				
 				if (Vector2.Distance(_transform.position , stopPoint) > 0.01f)
+                {
 					_transform.position = Vector2.Lerp(_transform.position, stopPoint, 0.25f);
+                    state = NodeState.RUNNING;
+                    return state;
+                }
                 else
                 {
 					//ClearData("target");
@@ -103,6 +108,8 @@ public class TaskGoToTargetJumpAtTarget : Node
                     WindowStats.IsBusy = EnemyManager.Busy;
                     _attackCounter = 0f;
                     Object.Destroy(atkBox.gameObject);
+                    state = NodeState.SUCCESS;
+                    return state;
                     
                 }
                 

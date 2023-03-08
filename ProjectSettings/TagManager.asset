@@ -10,6 +10,8 @@ TagManager:
   - Boss
   - BigHurt
   - RockShadow
+  - WrongWay
+  - Door
   layers:
   - Default
   - TransparentFX
