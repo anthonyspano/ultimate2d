@@ -12,6 +12,7 @@ TagManager:
   - RockShadow
   - WrongWay
   - Door
+  - Shooter
   layers:
   - Default
   - TransparentFX

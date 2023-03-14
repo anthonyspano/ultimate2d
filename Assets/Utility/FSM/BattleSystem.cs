@@ -42,7 +42,6 @@ namespace com.ultimate2d.combat
             return false;
         }
 
-        //public bool GetPlayerPosition
 
         public bool AttackAnimIsPlaying()
         {
