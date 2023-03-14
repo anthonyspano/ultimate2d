@@ -16,7 +16,8 @@ namespace com.ultimate2d.combat
         {
             while(bs.PlayerIsInRange(EnemyManager.PursuitRange) && !bs.PlayerIsInRange(EnemyManager.AttackRange))
             {
-                bs.Enemy.position = Vector3.MoveTowards(bs.Enemy.position, PlayerManager.Instance.transform.position, 1);
+                bs.Enemy.position = Vector3.MoveTowards(bs.Enemy.position, PlayerManager.Instance.transform.position, 5f * Time.deltaTime);
+                yield return null;
             }
 
             // set bs target to player's current position

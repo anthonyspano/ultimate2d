@@ -17,17 +17,23 @@ namespace com.ultimate2d.combat
         {
             Debug.Log("attacking player");
 
+            
+
             // instantiate attack box
             _atkBox = Resources.Load("AttackBoxIndication") as GameObject;
-            var atkBox = Object.Instantiate(EnemyManager.AttackBox.transform, bs.PlayerPosition, Quaternion.identity);
+            // spawn atkbox at player position
+            var atkBox = Object.Instantiate(_atkBox, PlayerManager.Instance.transform.position, Quaternion.identity);
+            
+            yield return new WaitForSeconds(1);
             
             // charge toward 
-            while(Vector3.Distance(bs.transform.position, atkBox.position) > 0.03f)
+            while(Vector3.Distance(bs.transform.position, atkBox.transform.position) > 0.03f)
             {
-                bs.transform.position = Vector2.Lerp(bs.transform.position, atkBox.position, 0.25f);
+                bs.transform.position = Vector2.Lerp(bs.transform.position, atkBox.transform.position, 0.25f);
+                yield return null;
             }
             
-            yield return new WaitUntil(() => !bs.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")); // animator is done playing attack animation
+//            yield return new WaitUntil(() => !bs.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")); // animator is done playing attack animation
             
             yield return new WaitForSeconds(2f);
 

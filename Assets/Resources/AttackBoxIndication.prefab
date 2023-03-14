@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6575093728169637634}
   - component: {fileID: 3830698016860605255}
+  - component: {fileID: -2175762175307355037}
   m_Layer: 0
   m_Name: AttackBoxIndication
   m_TagString: Untagged
@@ -81,3 +82,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2175762175307355037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5230268294898453261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abdde174cb23434681db6b0f30c9523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 1.4
