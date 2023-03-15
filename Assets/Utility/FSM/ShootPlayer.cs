@@ -20,23 +20,18 @@ namespace com.ultimate2d.combat
             var bulletClone = GameObject.Instantiate(bulletPrefab, bs.Enemy.transform.position, Quaternion.identity);
             // gain invulnerability from bullet
             //Debug.Log(bs.Enemy.GetComponent<BoxCollider2D>());
-            //Physics2D.IgnoreCollision(bulletClone.GetComponent<BoxCollider2D>(), bs.Enemy.GetComponent<BoxCollider2D>());		
+            Physics2D.IgnoreCollision(bulletClone.GetComponent<BoxCollider2D>(), bs.Enemy.GetComponent<BoxCollider2D>());		
             // add force
             Rigidbody2D bulletRB = bulletClone.GetComponent<Rigidbody2D>();
             Vector2 dir = PlayerManager.Instance.transform.position - bs.Enemy.transform.position;
             bulletRB.AddForce(dir * 100f);
 
             // cd
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(5f);
 
             BattleSystem.SetState(new Begin(BattleSystem));
         }
-
-        public void Fire()	
-        {
-
-
-        }  
+ 
     }
 
 

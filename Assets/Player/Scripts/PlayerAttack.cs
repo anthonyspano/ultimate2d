@@ -88,10 +88,12 @@ public class PlayerAttack : MonoBehaviour
             //     hitboxColor = Color.green;
             // }
 
-            if (col.gameObject.CompareTag("Boss"))
-            {
-                col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(bossDamage);
-            }
+            col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(70);
+
+            // if (col.gameObject.CompareTag("Boss"))
+            // {
+            //     col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(bossDamage);
+            // }
         }
         
 

@@ -15,9 +15,6 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
-            Debug.Log("attacking player");
-
-            
 
             // instantiate attack box
             _atkBox = Resources.Load("AttackBoxIndication") as GameObject;

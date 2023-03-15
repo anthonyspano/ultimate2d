@@ -1,4 +1,4 @@
-﻿/* using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,22 +10,19 @@ public class RotateAroundPlayer : MonoBehaviour
     private float y;
 
     private Vector2 lastMove;
-
-    public float radius;
     
     private void Update()
     {
         x = Input.GetAxis(PlayerInput.x);
         y = Input.GetAxis(PlayerInput.y);
         Vector3 moveDirection = new Vector3(x, y);
-
         if (moveDirection.x != 0 || moveDirection.y != 0)
         {
             moveDirection.Normalize();
             
             // pos
-            var pos = PlayerManager.player.transform.XandY();
-            pos += (Vector2)moveDirection * radius;
+            var pos = PlayerManager.Instance.transform.XandY();
+            pos += (Vector2)moveDirection * PlayerManager.Instance.range;
             transform.position = pos;
 
             // rotate
@@ -35,4 +32,4 @@ public class RotateAroundPlayer : MonoBehaviour
             
         }
     }
-} */
+} 

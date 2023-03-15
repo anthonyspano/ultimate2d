@@ -36,6 +36,7 @@ public class PlayerManager : MonoBehaviour
 
 	// player properties
 	[SerializeField] private int maxHealth;
+	public float range;
 
 	// etc
 	private int wrongWayCount = 0;
@@ -80,8 +81,11 @@ public class PlayerManager : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log(collision.gameObject.name);
-    }
+        if(collision.transform.CompareTag("Enemy"))
+		{
+			Instance.pHealth.Damage(20);
+		}
+	}
 
 	private void OnTriggerEnter2D(Collider2D col)
 	{
@@ -116,7 +120,6 @@ public class PlayerManager : MonoBehaviour
 
 		else
 		{
-			Debug.Log("Damage");
 			StartCoroutine(FlashRed());
 		}
 		
@@ -140,16 +143,21 @@ public class PlayerManager : MonoBehaviour
 	private void Death() 
     {
         // disable minotaur
-		var boss = GameObject.Find("minotaur_boss");
-		var moveScript = boss.GetComponent<EnemyMove>();
+		//var boss = GameObject.Find("minotaur_boss");
+		//var moveScript = boss.GetComponent<EnemyMove>();
 		//moveScript.enabled = false;
 		//var bossAnim = boss.GetComponent<Animator>();
 		//bossAnim.enabled = false;
-		moveScript.player = GameObject.Find("DeadPlayerPlaceholder");
+		//moveScript.player = GameObject.Find("DeadPlayerPlaceholder");
 
 		// triggered after death animation
         anim.enabled = false;
         gameObject.GetComponent<PlayerMove>().enabled = false;
+
+		
+		var reticle = transform.Find("Reticle");
+		reticle.gameObject.SetActive(false);
+		
     }
 
 }

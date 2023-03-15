@@ -14,8 +14,6 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
-            Debug.Log("patrolling");
-
             // checking if player is in range
             yield return new WaitUntil(() => bs.PlayerIsInRange(EnemyManager.PursuitRange));
             
