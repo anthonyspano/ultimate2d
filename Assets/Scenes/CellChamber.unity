@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleBuffer: 0.2
-  dashDistance: 140
+  dashDistance: 2
   shadowPrefab: {fileID: 2371293195414594047, guid: 6bfba939079f30a43b2d0cf44931569d,
     type: 3}
   maxConsecutiveDashes: 2
@@ -1418,6 +1418,7 @@ MonoBehaviour:
     m_Bits: 512
   range: 0
   ultChargeAmt: 20
+  AtkAnimName: slash2
   cooldownRate: 0.54
   bossDamage: 0
 --- !u!114 &464829522
@@ -20193,10 +20194,10 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

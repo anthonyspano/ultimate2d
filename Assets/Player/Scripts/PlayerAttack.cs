@@ -25,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
 
     // animation
     private Animator anim;
+    public string AtkAnimName;
     
     [SerializeField] public float cooldownRate;
     private float cooldownTimer;
@@ -55,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
         //                        || Input.GetKeyDown(PlayerInput.c_slash))) 
         if (PlayerInput.Slash() && IsReady())
         {
-            StartCoroutine(Strike("strike", 20));
+            StartCoroutine(Strike(AtkAnimName, 20));
         }
 
         cooldownTimer -= Time.deltaTime;

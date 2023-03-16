@@ -9,7 +9,7 @@ public class TranslateDash : MonoBehaviour
 {
 	// speed that determines slow enough to move back instead of jumping forward
 	public float idleBuffer; // (0.2f) if close to not moving, dash backwards 
-	public float dashDistance = 12f; // 12 seems good
+	public float dashDistance; // 12 seems good
     public Transform shadowPrefab;
     
     // cooldown
@@ -35,7 +35,7 @@ public class TranslateDash : MonoBehaviour
             
             
             // dash
-            dashDistance = 12f;
+            //dashDistance = 12f;
             Dash(dashDistance);
             
             // second strike
@@ -60,7 +60,7 @@ public class TranslateDash : MonoBehaviour
         var direction = new Vector2(x, y);
         // if (x < idleBuffer && y < idleBuffer)
 	       //  direction = Vector2.left;
-        transform.Translate(direction * (dashDistance * Time.deltaTime));
+        transform.Translate(direction * dashDistance);
         
     }
     

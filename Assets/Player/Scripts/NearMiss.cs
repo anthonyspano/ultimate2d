@@ -13,6 +13,9 @@ public class NearMiss : TranslateDash
         // coroutine for shadow
         StartCoroutine(Shadow(shadowClone));
     
+        // play anim
+        var anim = GetComponent<Animator>();
+        anim.Play("PlayerDash", 0);
         base.Dash(speed);
     }
     
