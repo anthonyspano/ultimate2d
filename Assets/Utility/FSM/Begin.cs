@@ -21,6 +21,8 @@ namespace com.ultimate2d.combat
                 BattleSystem.SetState(new PursuePlayer(BattleSystem));
             if(bs.Enemy.gameObject.CompareTag("Shooter"))
                 BattleSystem.SetState(new ShootPlayer(BattleSystem));
+            if(bs.Enemy.gameObject.CompareTag("Player"))
+                BattleSystem.SetState(new FirstAttack(BattleSystem));
         }
  
         

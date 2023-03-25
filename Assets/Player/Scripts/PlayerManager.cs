@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // change OnHealthChanged to flash red
-
 public class PlayerManager : MonoBehaviour
 {	
 	// singleton
@@ -30,6 +29,7 @@ public class PlayerManager : MonoBehaviour
 
 	// animator
 	private Animator anim;
+	private bool animFinished;
 
 	// for damage
 	SpriteRenderer sr;
@@ -37,19 +37,21 @@ public class PlayerManager : MonoBehaviour
 	// player properties
 	[SerializeField] private int maxHealth;
 	public float range;
+	public float cooldownRate;
 
 	// etc
 	private int wrongWayCount = 0;
 	public GameObject wrongWayPanel;
 
+
 	private void Start()
-    {
-	    if(player == null)
+	{
+		if(player == null)
 			player = GameObject.Find("Player");
-	    
-	    // health
-        pHealth = new HealthSystem(maxHealth, invulnAfterHit);
-        var healthBar = GameObject.Find("PlayerHealthBar").GetComponent<HealthBar>();
+		
+		// health
+		pHealth = new HealthSystem(maxHealth, invulnAfterHit);
+		var healthBar = GameObject.Find("PlayerHealthBar").GetComponent<HealthBar>();
 		healthBar.Setup(pHealth);
 		
 		// ult amt start of scene
@@ -64,7 +66,8 @@ public class PlayerManager : MonoBehaviour
 
 		// wrong way dialogue box
 		//wrongWayPanel = GameObject.Find("WrongWayDialogue");
-    }
+
+	}
 	
 	private void Awake()
 	{
@@ -80,8 +83,8 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.transform.CompareTag("Enemy"))
+	{
+		if(collision.transform.CompareTag("Enemy"))
 		{
 			Instance.pHealth.Damage(20);
 		}
@@ -141,8 +144,8 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	private void Death() 
-    {
-        // disable minotaur
+	{
+		// disable minotaur
 		//var boss = GameObject.Find("minotaur_boss");
 		//var moveScript = boss.GetComponent<EnemyMove>();
 		//moveScript.enabled = false;
@@ -151,13 +154,24 @@ public class PlayerManager : MonoBehaviour
 		//moveScript.player = GameObject.Find("DeadPlayerPlaceholder");
 
 		// triggered after death animation
-        anim.enabled = false;
-        gameObject.GetComponent<PlayerMove>().enabled = false;
+		anim.enabled = false;
+		gameObject.GetComponent<PlayerMove>().enabled = false;
 
 		
 		var reticle = transform.Find("Reticle");
 		reticle.gameObject.SetActive(false);
 		
-    }
+	}
+
+	// State pattern anim control
+	public void FinishAnimation()
+	{
+		animFinished = true;
+	}
+
+	public bool AnimFinished()
+	{
+		return animFinished;
+	}
 
 }

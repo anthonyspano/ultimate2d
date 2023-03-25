@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerAim))]
 public class PlayerAttack : MonoBehaviour
@@ -37,6 +38,8 @@ public class PlayerAttack : MonoBehaviour
 
     public int bossDamage;
 
+    public Text playerCDText;
+
     private void Start()
     {
         // hitbox
@@ -44,27 +47,24 @@ public class PlayerAttack : MonoBehaviour
         myAim = GetComponent<PlayerAim>();
         ultAim = GetComponent<UltimateAim>();
         //ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>(); // not implemented in scene
-        anim = GameObject.Find("StrikeSprite").GetComponent<Animator>();
+        
+        anim = GetComponent<Animator>();
         cooldownTimer = cooldownRate;
     }
 
     private void Update()
     {
-        // for hitbox
-        //if (x != 0 || y != 0) lastMove = new Vector2(x,y);
-        //if (CooldownTimer <= 0 && (Input.GetKeyDown(PlayerInput.k_slash)
-        //                        || Input.GetKeyDown(PlayerInput.c_slash))) 
         if (PlayerInput.Slash() && IsReady())
         {
             StartCoroutine(Strike(AtkAnimName, 20));
         }
 
         cooldownTimer -= Time.deltaTime;
+        playerCDText.text = cooldownTimer.ToString();
     }
 
     private bool IsReady() => cooldownTimer <= 0;
 
-    // 0.2 seconds will work for now
     public IEnumerator Strike(string stateName, int ultChargeAmt)
     {
         // cooldown
@@ -91,30 +91,14 @@ public class PlayerAttack : MonoBehaviour
 
             col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(70);
 
-            // if (col.gameObject.CompareTag("Boss"))
-            // {
-            //     col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(bossDamage);
-            // }
         }
         
-
-
 
     }
     
     public void EndAnim()
     {
         anim.Play("Neutral");
-    }
-
-
-    private void OnDrawGizmosSelected()
-    {
-        //var center = transform.XandY();
-        //center += lastMove.normalized * range;
-        // Gizmos.color = hitboxColor;
-        // Gizmos.DrawWireSphere(myAim.center, radius);
-        // hitboxColor = Color.red;
     }
 
 
