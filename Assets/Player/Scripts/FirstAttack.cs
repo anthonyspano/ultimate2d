@@ -16,7 +16,10 @@ namespace com.ultimate2d.combat
         public override IEnumerator Start() 
         {
             yield return new WaitUntil(() => PlayerInput.Slash());
-            Debug.Log("Started");
+            //Debug.Log("Started");
+
+            // do damage to area
+            PlayerManager.Instance.DoDamage();
 
             // play slash anim
             PlayerManager.Instance.GetComponent<Animator>().Play("PlayerStrike", 0);

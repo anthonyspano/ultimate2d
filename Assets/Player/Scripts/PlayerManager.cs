@@ -33,11 +33,13 @@ public class PlayerManager : MonoBehaviour
 
 	// for damage
 	SpriteRenderer sr;
+	public LayerMask enemyLayerMask;
 
 	// player properties
 	[SerializeField] private int maxHealth;
 	public float range;
 	public float cooldownRate;
+	public RotateAroundPlayer playerAim;
 
 	// etc
 	private int wrongWayCount = 0;
@@ -67,6 +69,8 @@ public class PlayerManager : MonoBehaviour
 		// wrong way dialogue box
 		//wrongWayPanel = GameObject.Find("WrongWayDialogue");
 
+		// aim
+		playerAim = GetComponentInChildren<RotateAroundPlayer>();
 	}
 	
 	private void Awake()
@@ -172,6 +176,16 @@ public class PlayerManager : MonoBehaviour
 	public bool AnimFinished()
 	{
 		return animFinished;
+	}
+
+	// damage
+	public void DoDamage()
+	{
+		var hits = Physics2D.OverlapCircleAll(playerAim.transform.position, range, enemyLayerMask);
+		foreach (var col in hits)
+		{
+			col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(70);
+		}
 	}
 
 }

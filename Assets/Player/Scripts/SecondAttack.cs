@@ -24,6 +24,9 @@ namespace com.ultimate2d.combat
             // play second slash anim
             PlayerManager.Instance.GetComponent<Animator>().Play("PlayerStrike2", 0);
 
+            // do damage to area
+            PlayerManager.Instance.DoDamage();
+            
             var cooldown = PlayerManager.Instance.cooldownRate;
             while(cooldown > 0)
             {

@@ -1313,15 +1313,15 @@ GameObject:
   - component: {fileID: 464829526}
   - component: {fileID: 464829525}
   - component: {fileID: 464829524}
+  - component: {fileID: 464829520}
   - component: {fileID: 464829523}
   - component: {fileID: 464829522}
-  - component: {fileID: 464829521}
-  - component: {fileID: 464829520}
   - component: {fileID: 464829519}
   - component: {fileID: 464829518}
-  - component: {fileID: 464829517}
-  - component: {fileID: 464829531}
   - component: {fileID: 464829530}
+  - component: {fileID: 464829531}
+  - component: {fileID: 464829521}
+  - component: {fileID: 464829517}
   m_Layer: 8
   m_Name: Player 1
   m_TagString: Player
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464829516}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bd4ed0bdc7e6cc44ab87dea04397fd3, type: 3}
   m_Name: 
@@ -1399,9 +1399,13 @@ MonoBehaviour:
   maxUlt: 100
   ultBar: {fileID: 0}
   invulnAfterHit: 1.2
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   maxHealth: 100
   range: 1
   cooldownRate: 0.5
+  playerAim: {fileID: 0}
   wrongWayPanel: {fileID: 1796555654}
 --- !u!114 &464829521
 MonoBehaviour:
@@ -1609,7 +1613,7 @@ Transform:
   - {fileID: 673931880}
   - {fileID: 1657515213}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &464829530
 MonoBehaviour:
@@ -1630,9 +1634,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464829516}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a76845c556849cf4bb579f4664d6088b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8762bb6bc386aa44e9e8901bdc676aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &477850553
@@ -20129,7 +20133,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &673931879
 GameObject:

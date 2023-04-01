@@ -68,7 +68,6 @@
      <Compile Include="Assets\Player\Scripts\FirstAttack.cs" />
      <Compile Include="Assets\Player\Scripts\NearMiss.cs" />
      <Compile Include="Assets\Player\Scripts\Player Cursor\PointToRotation.cs" />
-     <Compile Include="Assets\Player\Scripts\PlayerAim.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerAttack.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerAttack2D.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerInput.cs" />
@@ -85,11 +84,13 @@
      <Compile Include="Assets\Player\Scripts\ThirdAttack.cs" />
      <Compile Include="Assets\Player\Scripts\TranslateDash.cs" />
      <Compile Include="Assets\Player\Scripts\TriggerEvent.cs" />
-     <Compile Include="Assets\Player\Scripts\UltimateSystem\TestAnim.cs" />
-     <Compile Include="Assets\Player\Scripts\UltimateSystem\UltimateAim.cs" />
-     <Compile Include="Assets\Player\Scripts\UltimateSystem\UltimateBar.cs" />
-     <Compile Include="Assets\Player\Scripts\UltimateSystem\UltimateMove.cs" />
+     <Compile Include="Assets\Player\Scripts\deprecated\PlayerAim.cs" />
+     <Compile Include="Assets\Player\Scripts\deprecated\UltimateSystem\TestAnim.cs" />
+     <Compile Include="Assets\Player\Scripts\deprecated\UltimateSystem\UltimateAim.cs" />
+     <Compile Include="Assets\Player\Scripts\deprecated\UltimateSystem\UltimateBar.cs" />
+     <Compile Include="Assets\Player\Scripts\deprecated\UltimateSystem\UltimateMove.cs" />
      <Compile Include="Assets\PlayerComboSystem.cs" />
+     <Compile Include="Assets\PlayerDebug.cs" />
      <Compile Include="Assets\RemoveWrongWay.cs" />
      <Compile Include="Assets\Resources\Scripts\PowerStorage.cs" />
      <Compile Include="Assets\Utility\BehaviorTree\Node.cs" />
