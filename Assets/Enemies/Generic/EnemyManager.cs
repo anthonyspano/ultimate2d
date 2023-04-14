@@ -65,24 +65,17 @@ public class EnemyManager : MonoBehaviour
     private SpriteRenderer sr;
 
     public static bool Busy = false;
-    public static bool Flipped;
     public static bool Retreating;
-    
-    private void Start()
-    {
-        sr = GetComponent<SpriteRenderer>();
-    }
 
-    private void Update()
-    {
-        // player location
-        if (sr) sr.flipX = Flipped;
-    }
+    public static int jumpSpeed = 15;
+
 
     public void CanMoveAgain()
     {
         CanMove = true;
     }
+
+
 
 
 }

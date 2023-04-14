@@ -30,7 +30,7 @@ public class MinotaurAttr : EnemyManager
     {
         // return a Vector2 with x +- 3 depending on flipped
         float xAdjust = 5;
-        return (Flipped) ? transform.XandY() + (Vector2.right * xAdjust) + Vector2.down * 3 : transform.XandY() + Vector2.left * xAdjust + Vector2.down * 3;
+        return (Flipped()) ? transform.XandY() + (Vector2.right * xAdjust) + Vector2.down * 3 : transform.XandY() + Vector2.left * xAdjust + Vector2.down * 3;
     }
     
     private void OnDrawGizmos()
@@ -46,5 +46,15 @@ public class MinotaurAttr : EnemyManager
         // hitRange
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(GetHitPos(), hitRange);
+    }
+
+    public bool Flipped()
+    {
+        if(transform.position.x - PlayerManager.Instance.transform.position.x < 0)
+        {
+            return false;
+        }
+
+        return true;
     }
 }

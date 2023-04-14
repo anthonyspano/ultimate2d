@@ -1358,7 +1358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleBuffer: 0.2
-  dashDistance: 2
+  dashDistance: 1.33
   shadowPrefab: {fileID: 2371293195414594047, guid: 6bfba939079f30a43b2d0cf44931569d,
     type: 3}
   maxConsecutiveDashes: 2

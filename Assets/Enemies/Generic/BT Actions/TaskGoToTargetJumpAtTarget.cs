@@ -67,7 +67,7 @@ public class TaskGoToTargetJumpAtTarget : Node
         }
         
         // flip based on player pos
-        EnemyManager.Flipped = (stopPoint.x < _transform.position.x) ? true : false;
+        //EnemyManager.Flipped = (stopPoint.x < _transform.position.x) ? true : false;
         
         // move towards new position
         if (Vector3.Distance(_transform.position, stopPoint) > 7f && _enemyManager.CanMove) // pos away from target

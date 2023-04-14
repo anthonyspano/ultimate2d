@@ -27,10 +27,27 @@ namespace com.ultimate2d.combat
             set { enemy = value; }
         }
 
+        private Transform player;
+        public Transform Player
+        {
+            get { return player; }
+            set { player = value; }
+        }
+
+        private SpriteRenderer sr;
+
         private void Start()
         {
             Enemy = transform;
             SetState(new Begin(this));
+
+            sr = GetComponent<SpriteRenderer>();
+        }
+
+        private void Update()
+        {
+            if(transform.CompareTag("Enemy"))
+                sr.flipX = Flipped();
         }
 
         public bool PlayerIsInRange(float range)
@@ -47,6 +64,17 @@ namespace com.ultimate2d.combat
         {
             return animator.GetCurrentAnimatorStateInfo(0).IsName("Attacking");
         }
+
+        public bool Flipped()
+        {
+            if(transform.position.x - Player.transform.position.x < 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
 
     }
 }

@@ -10,7 +10,6 @@ public class PlayerDebug : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
 
-        Gizmos.DrawWireSphere(PlayerManager.Instance.playerAim.transform.position,
-                              PlayerManager.Instance.range);
+        Gizmos.DrawWireSphere(PlayerManager.Instance.playerAim.transform.position, PlayerManager.Instance.range);
     }
 }

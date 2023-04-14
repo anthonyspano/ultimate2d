@@ -20,13 +20,16 @@ namespace com.ultimate2d.combat
             _atkBox = Resources.Load("AttackBoxIndication") as GameObject;
             // spawn atkbox at player position
             var atkBox = Object.Instantiate(_atkBox, PlayerManager.Instance.transform.position, Quaternion.identity);
-            
+            bs.Player = atkBox.transform;
             yield return new WaitForSeconds(1);
             
             // charge toward 
+            // play anim
+            bs.GetComponent<Animator>().Play("Attack", 0);
             while(Vector3.Distance(bs.transform.position, atkBox.transform.position) > 0.03f)
             {
-                bs.transform.position = Vector2.Lerp(bs.transform.position, atkBox.transform.position, 0.25f);
+                //bs.transform.position = Vector2.Lerp(bs.transform.position, atkBox.transform.position, 0.25f);
+                bs.transform.position = Vector2.MoveTowards(bs.transform.position, atkBox.transform.position, 0.01f * EnemyManager.jumpSpeed);
                 yield return null;
             }
             

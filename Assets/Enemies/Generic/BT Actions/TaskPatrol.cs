@@ -55,8 +55,7 @@ public class TaskPatrol : Node
             else
             {
                 _animator.SetBool("Walking", true);
-                EnemyManager.Flipped = (_transform.position.x > wp.position.x) ? true : false;
-                _spriteRenderer.flipX = EnemyManager.Flipped;
+                _spriteRenderer.flipX = (_transform.position.x > wp.position.x) ? true : false;
                 
                 _transform.position = Vector2.MoveTowards(_transform.position, wp.position, 8f * Time.deltaTime);
             }
