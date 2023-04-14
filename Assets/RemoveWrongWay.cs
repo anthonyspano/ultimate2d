@@ -7,7 +7,13 @@ public class RemoveWrongWay : MonoBehaviour
     public GameObject wrongWayPanel;
     void Update()
     {
-        if(Input.GetAxis("Horizontal") > 0) 
-            wrongWayPanel.SetActive(false);
+        StartCoroutine(RemovePanel());
+    }
+
+    private IEnumerator RemovePanel()
+    {
+        yield return new WaitForSeconds(2f);
+
+        wrongWayPanel.SetActive(false);
     }
 }

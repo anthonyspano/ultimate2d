@@ -34,6 +34,7 @@ public class PlayerManager : MonoBehaviour
 	// for damage
 	SpriteRenderer sr;
 	public LayerMask enemyLayerMask;
+	public int attack;
 
 	// player properties
 	[SerializeField] private int maxHealth;
@@ -184,7 +185,7 @@ public class PlayerManager : MonoBehaviour
 		var hits = Physics2D.OverlapCircleAll(playerAim.transform.position, range, enemyLayerMask);
 		foreach (var col in hits)
 		{
-			col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(70);
+			col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(attack);
 		}
 	}
 

@@ -22,7 +22,6 @@ public class EnemyTakeDamage : MonoBehaviour
 
 	private void OnDamage(object sender, System.EventArgs e) 
 	{
-        Debug.Log("hit");
     	if(healthSystem.GetHealth() <= 0)
 		{
 			// Death sequence

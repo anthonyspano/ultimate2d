@@ -116,6 +116,7 @@
      <Compile Include="Assets\Utility\TimedLife.cs" />
      <Compile Include="Assets\Utility\TransformExtensions.cs" />
      <Compile Include="Assets\Utility\WindowStats.cs" />
+     <Compile Include="Assets\WaveManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
