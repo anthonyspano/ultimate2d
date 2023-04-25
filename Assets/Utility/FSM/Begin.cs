@@ -16,12 +16,12 @@ namespace com.ultimate2d.combat
         {
             // checking if player is in range
             yield return new WaitUntil(() => bs.PlayerIsInRange(EnemyManager.PursuitRange));
-            
-            if(bs.Enemy.gameObject.CompareTag("Enemy"))
+
+            if(bs.transform.gameObject.CompareTag("Enemy"))
                 BattleSystem.SetState(new PursuePlayer(BattleSystem));
-            if(bs.Enemy.gameObject.CompareTag("Shooter"))
+            if(bs.transform.gameObject.CompareTag("Shooter"))
                 BattleSystem.SetState(new ShootPlayer(BattleSystem));
-            if(bs.Enemy.gameObject.CompareTag("Player"))
+            if(bs.transform.gameObject.CompareTag("Player"))
                 BattleSystem.SetState(new FirstAttack(BattleSystem));
         }
  

@@ -14,10 +14,11 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
+            Debug.Log("pursuing");
             bs.Player = PlayerManager.Instance.transform;
             while(bs.PlayerIsInRange(EnemyManager.PursuitRange) && !bs.PlayerIsInRange(EnemyManager.AttackRange))
             {
-                bs.Enemy.position = Vector3.MoveTowards(bs.Enemy.position, bs.Player.position, 5f * Time.deltaTime);
+                bs.transform.position = Vector3.MoveTowards(bs.transform.position, bs.Player.position, 5f * Time.deltaTime);
                 yield return null;
             }
 

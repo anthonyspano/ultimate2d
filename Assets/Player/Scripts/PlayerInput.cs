@@ -11,10 +11,13 @@ public class PlayerInput : MonoBehaviour
     private static KeyCode k_jump = KeyCode.Space;
     private static KeyCode c_shoot = KeyCode.JoystickButton3; // Y
     private static KeyCode k_shoot = KeyCode.J;
-    private static KeyCode c_ultimate = KeyCode.JoystickButton3; // Y
+    private static KeyCode c_ultimate = KeyCode.JoystickButton3; // RB for this one
     private static KeyCode k_ultimate = KeyCode.U;
     private static KeyCode c_slash = KeyCode.JoystickButton0; // A
     private static KeyCode k_slash = KeyCode.K;
+
+    private static KeyCode c_interact = KeyCode.JoystickButton1; // B
+    private static KeyCode k_interact = KeyCode.I;
 
     public static bool Jump() 
     {
@@ -39,6 +42,13 @@ public class PlayerInput : MonoBehaviour
     public static bool Slash()
     {
         if(Input.GetKeyDown(k_slash) || Input.GetKeyDown(c_slash))
+            return true;
+        return false;
+    }
+
+    public static bool Interact()
+    {
+        if(Input.GetKey(c_interact) || Input.GetKey(k_slash))
             return true;
         return false;
     }

@@ -109,6 +109,7 @@
      <Compile Include="Assets\Utility\FallingRock.cs" />
      <Compile Include="Assets\Utility\HealthSystem\HealthBar.cs" />
      <Compile Include="Assets\Utility\HealthSystem\HealthSystem.cs" />
+     <Compile Include="Assets\Utility\Interactable.cs" />
      <Compile Include="Assets\Utility\LaunchProjectile.cs" />
      <Compile Include="Assets\Utility\MainMenu.cs" />
      <Compile Include="Assets\Utility\RockPlacementManager.cs" />

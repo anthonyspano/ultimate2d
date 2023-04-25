@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour
 	public float invulnAfterHit;
 
 	// animator
-	private Animator anim;
+	public Animator anim;
 	private bool animFinished;
 
 	// for damage
@@ -41,6 +41,9 @@ public class PlayerManager : MonoBehaviour
 	public float range;
 	public float cooldownRate;
 	public RotateAroundPlayer playerAim;
+
+	// audio
+	public AudioSource audioSource;
 
 	// etc
 	private int wrongWayCount = 0;
@@ -97,14 +100,6 @@ public class PlayerManager : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D col)
 	{
-		if(col.transform.CompareTag("Door"))
-		{
-			var doorExit = col.transform.GetChild(0);
-			Debug.Log(doorExit.gameObject.name);
-			Debug.Log(doorExit.position);
-			transform.position = doorExit.position;
-		}
-
 
 		if(col.transform.CompareTag("RockShadow"))
 		{
@@ -113,7 +108,6 @@ public class PlayerManager : MonoBehaviour
 			transform.position = new Vector3(-16.93f, transform.position.y, transform.position.z);
 			if(wrongWayCount > 2)
 				wrongWayPanel.gameObject.SetActive(true);
-				//Debug.Log("Maybe I'm going the wrong way...");
 
 		}
 	}

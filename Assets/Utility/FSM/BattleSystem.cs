@@ -20,12 +20,6 @@ namespace com.ultimate2d.combat
             set { playerPos = value; }
         }
 
-        private Transform enemy;
-        public Transform Enemy
-        {
-            get { return enemy; }
-            set { enemy = value; }
-        }
 
         private Transform player;
         public Transform Player
@@ -38,10 +32,9 @@ namespace com.ultimate2d.combat
 
         private void Start()
         {
-            Enemy = transform;
-            SetState(new Begin(this));
-
             sr = GetComponent<SpriteRenderer>();
+
+            SetState(new Begin(this));  
         }
 
         private void Update()

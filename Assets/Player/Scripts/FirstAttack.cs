@@ -23,6 +23,8 @@ namespace com.ultimate2d.combat
 
             // play slash anim
             PlayerManager.Instance.GetComponent<Animator>().Play("PlayerStrike", 0);
+            //PlayerManager.Instance.audioSource.Play();
+            PlayerManager.Instance.GetComponent<AudioSource>().Play();
 
             var cooldown = PlayerManager.Instance.cooldownRate;
             while(cooldown > 0)
