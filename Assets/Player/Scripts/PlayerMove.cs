@@ -22,7 +22,7 @@ public class PlayerMove : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // if(Input.GetKeyDown(KeyCode.Escape))
         //     Application.Quit();
