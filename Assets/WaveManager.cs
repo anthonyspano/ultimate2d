@@ -23,7 +23,6 @@ public class WaveManager : MonoBehaviour
             if(once == false)
             {
                 once = true;
-                Debug.Log("prompt!");
                 var door = GameObject.Find("Door2");
                 door.transform.GetChild(0).gameObject.SetActive(true);
                 DoorOpenPrompt.gameObject.SetActive(true);

@@ -14,7 +14,6 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
-            Debug.Log("pursuing");
             bs.Player = PlayerManager.Instance.transform;
             while(bs.PlayerIsInRange(EnemyManager.PursuitRange) && !bs.PlayerIsInRange(EnemyManager.AttackRange))
             {

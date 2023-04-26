@@ -60,7 +60,7 @@ namespace com.ultimate2d.combat
 
         public bool Flipped()
         {
-            if(transform.position.x - Player.transform.position.x < 0)
+            if(transform.position.x - PlayerManager.Instance.transform.position.x < 0)
             {
                 return false;
             }

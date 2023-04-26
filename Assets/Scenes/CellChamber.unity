@@ -1529,6 +1529,8 @@ MonoBehaviour:
   cooldownRate: 0.5
   playerAim: {fileID: 0}
   audioSource: {fileID: 0}
+  slash1: {fileID: 8300000, guid: 045ad82e118921a428488577eb38d79a, type: 3}
+  hurt1: {fileID: 8300000, guid: 3374377e45532b04d95d1c767cc42ff1, type: 3}
   wrongWayPanel: {fileID: 1796555654}
 --- !u!114 &464829521
 MonoBehaviour:
@@ -1729,7 +1731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464829516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.05, y: 9.18, z: 0}
+  m_LocalPosition: {x: 2.03, y: 25.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 184673391}
@@ -26982,7 +26984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c3c8d404571cd4fb3b18d5462cef9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 20
+  followSpeed: 14
 --- !u!1 &707374392
 GameObject:
   m_ObjectHideFlags: 0

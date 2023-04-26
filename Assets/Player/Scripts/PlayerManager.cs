@@ -44,6 +44,8 @@ public class PlayerManager : MonoBehaviour
 
 	// audio
 	public AudioSource audioSource;
+	public AudioClip slash1;
+	public AudioClip hurt1;
 
 	// etc
 	private int wrongWayCount = 0;
@@ -75,6 +77,9 @@ public class PlayerManager : MonoBehaviour
 
 		// aim
 		playerAim = GetComponentInChildren<RotateAroundPlayer>();
+
+		// audio
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	private void Awake()
@@ -95,6 +100,7 @@ public class PlayerManager : MonoBehaviour
 		if(collision.transform.CompareTag("Enemy"))
 		{
 			Instance.pHealth.Damage(20);
+			audioSource.PlayOneShot(hurt1, 0.7f);
 		}
 	}
 
