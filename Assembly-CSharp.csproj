@@ -36,12 +36,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Book.cs" />
      <Compile Include="Assets\CrawlerController.cs" />
      <Compile Include="Assets\Deprecated\AIScript.cs" />
      <Compile Include="Assets\Deprecated\CheckEnemyInAttackRange.cs" />
      <Compile Include="Assets\Deprecated\Minotaur.cs" />
      <Compile Include="Assets\Deprecated\SimpleAI.cs" />
      <Compile Include="Assets\Deprecated\TaskAttack.cs" />
+     <Compile Include="Assets\Door.cs" />
      <Compile Include="Assets\Enemies\Deprecated\Enemy.cs" />
      <Compile Include="Assets\Enemies\Generic\BT Actions\CheckEnemyInPursuitRange.cs" />
      <Compile Include="Assets\Enemies\Generic\BT Actions\CheckEnemyNotInSight.cs" />
