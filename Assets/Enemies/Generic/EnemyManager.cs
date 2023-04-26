@@ -16,6 +16,8 @@ public class EnemyManager : MonoBehaviour
 
     private static float pursuitRange;
 
+    public AudioClip attackSound;
+
     public static Transform AttackBox;
 
     public static float PursuitRange

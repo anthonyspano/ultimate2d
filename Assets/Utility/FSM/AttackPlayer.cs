@@ -8,14 +8,17 @@ namespace com.ultimate2d.combat
     {
         BattleSystem bs;
         GameObject _atkBox;
+        EnemyManager enemyManager;
         public AttackPlayer(BattleSystem battleSystem) : base(battleSystem)
         {
             bs = battleSystem;
+            enemyManager = bs.GetComponent<EnemyManager>();
         }
 
         public override IEnumerator Start()
         {
-
+            // play sound
+            bs.GetComponent<AudioSource>().PlayOneShot(enemyManager.attackSound, 1f);
             // instantiate attack box
             _atkBox = Resources.Load("AttackBoxIndication") as GameObject;
             // spawn atkbox at player position
@@ -26,6 +29,7 @@ namespace com.ultimate2d.combat
             // charge toward 
             // play anim
             bs.GetComponent<Animator>().Play("Attack", 0);
+
             while(Vector3.Distance(bs.transform.position, atkBox.transform.position) > 0.03f)
             {
                 //bs.transform.position = Vector2.Lerp(bs.transform.position, atkBox.transform.position, 0.25f);
