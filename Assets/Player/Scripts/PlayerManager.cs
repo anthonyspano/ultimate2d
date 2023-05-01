@@ -50,6 +50,12 @@ public class PlayerManager : MonoBehaviour
 	// etc
 	private int wrongWayCount = 0;
 	public GameObject wrongWayPanel;
+	private bool canMove = true;
+	public bool CanMove
+	{
+		get { return canMove;} 
+		set { canMove = value; }
+	}
 
 
 	private void Start()
@@ -171,6 +177,7 @@ public class PlayerManager : MonoBehaviour
 	// State pattern anim control
 	public void FinishAnimation()
 	{
+		CanMove = true;
 		animFinished = true;
 	}
 

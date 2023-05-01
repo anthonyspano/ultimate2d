@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// TODO: Write mappings of all buttons in comment section
 public class PlayerInput : MonoBehaviour
 {
     public static string x = "Horizontal";

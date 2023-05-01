@@ -826,7 +826,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 464829529}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &184673392
 SpriteRenderer:
@@ -1768,12 +1768,13 @@ GameObject:
   - component: {fileID: 464829523}
   - component: {fileID: 464829522}
   - component: {fileID: 464829519}
-  - component: {fileID: 464829518}
   - component: {fileID: 464829530}
   - component: {fileID: 464829531}
   - component: {fileID: 464829521}
   - component: {fileID: 464829517}
   - component: {fileID: 464829532}
+  - component: {fileID: 464829533}
+  - component: {fileID: 464829518}
   m_Layer: 8
   m_Name: Player 1
   m_TagString: Player
@@ -1799,22 +1800,15 @@ MonoBehaviour:
 --- !u!114 &464829518
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 9125116208761811202, guid: 4dac4da00385ba04b9894a09f857c3bc,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464829516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be2688f86c6123c4ca7b2c8c2f2ea57f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b70c05cf2337704bb165e977e9fa99d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleBuffer: 0.2
-  dashDistance: 1.33
-  shadowPrefab: {fileID: 2371293195414594047, guid: 6bfba939079f30a43b2d0cf44931569d,
-    type: 3}
-  maxConsecutiveDashes: 2
-  cooldownRate: 2
 --- !u!114 &464829519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2066,9 +2060,9 @@ Transform:
   m_LocalPosition: {x: -9.89, y: 8.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 184673391}
   - {fileID: 673931880}
   - {fileID: 1657515213}
+  - {fileID: 184673391}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2192,6 +2186,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &464829533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464829516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2854c6ffcb0c5404093fd2bcf6e535c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDownRate: 2
+  jumpDistance: 5
 --- !u!1 &477850553
 GameObject:
   m_ObjectHideFlags: 0
@@ -27118,7 +27126,7 @@ Transform:
   m_LocalScale: {x: 0.50000024, y: 0.50000024, z: 1}
   m_Children: []
   m_Father: {fileID: 464829529}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &673931881
 MonoBehaviour:
@@ -28706,7 +28714,7 @@ Transform:
   m_LocalScale: {x: 1.12, y: 0.18, z: 1}
   m_Children: []
   m_Father: {fileID: 464829529}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1657515214
 BoxCollider2D:
@@ -28912,10 +28920,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1788116597}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2cff99b7e8bb44bb969b4f30eef428, type: 3}
+  m_Script: {fileID: 11500000, guid: c4a34ef0aafc2084893a5c8624ae85a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1781769204798187605, guid: 8351bcf69f563ee43930aaf8eb8828af, type: 3}
+  audioSource: {fileID: 0}
 --- !u!82 &1788116601
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29170,10 +29179,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1797824560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2cff99b7e8bb44bb969b4f30eef428, type: 3}
+  m_Script: {fileID: 11500000, guid: c4a34ef0aafc2084893a5c8624ae85a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1781769204798187605, guid: 8351bcf69f563ee43930aaf8eb8828af, type: 3}
+  audioSource: {fileID: 0}
 --- !u!82 &1797824564
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29905,10 +29915,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1970906621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2cff99b7e8bb44bb969b4f30eef428, type: 3}
+  m_Script: {fileID: 11500000, guid: c4a34ef0aafc2084893a5c8624ae85a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1781769204798187605, guid: 8351bcf69f563ee43930aaf8eb8828af, type: 3}
+  audioSource: {fileID: 0}
 --- !u!82 &1970906625
 AudioSource:
   m_ObjectHideFlags: 0

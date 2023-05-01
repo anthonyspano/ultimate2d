@@ -19,9 +19,12 @@ namespace com.ultimate2d.combat
             // wait until animation is on second to last frame and use event to trigger bool?
             // or wait until animation is finished?
             yield return new WaitUntil(() => PlayerManager.Instance.AnimFinished());
+            
             PlayerManager.Instance.FinishAnimation();
 
             // play second slash anim
+            //Debug.Log("Second attack");
+            PlayerManager.Instance.CanMove = false;
             PlayerManager.Instance.GetComponent<Animator>().Play("PlayerStrike2", 0);
             PlayerManager.Instance.GetComponent<AudioSource>().Play();
 
@@ -44,7 +47,7 @@ namespace com.ultimate2d.combat
             }
             else
             {
-                BattleSystem.SetState(new FirstAttack(BattleSystem));
+                BattleSystem.SetState(new Begin(BattleSystem));
             }    
 
 

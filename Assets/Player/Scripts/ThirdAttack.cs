@@ -21,6 +21,8 @@ namespace com.ultimate2d.combat
             PlayerManager.Instance.FinishAnimation();
 
             // play third slash anim
+            //Debug.Log("Third attack");
+            PlayerManager.Instance.CanMove = false;
             PlayerManager.Instance.GetComponent<Animator>().Play("PlayerStrike3", 0);
             PlayerManager.Instance.GetComponent<AudioSource>().Play();
 
@@ -36,7 +38,7 @@ namespace com.ultimate2d.combat
 
             // yield return new WaitForSeconds(chainCD);
 
-            BattleSystem.SetState(new FirstAttack(BattleSystem));
+            BattleSystem.SetState(new Begin(BattleSystem));
                 
 
 

@@ -18,18 +18,34 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
-            // checking if player is in range
-            yield return new WaitUntil(() => bs.PlayerIsInRange(EnemyManager.PursuitRange));
+            if(bs.transform.gameObject.CompareTag("Player"))
+            {
+                // yield return new WaitUntil(() => Input.anyKeyDown);
+                // if(PlayerInput.Slash())
+                // {
+                //     BattleSystem.SetState(new FirstAttack(BattleSystem));
 
+                // }
+
+                yield return new WaitUntil(() => PlayerInput.Slash());
+                BattleSystem.SetState(new FirstAttack(BattleSystem));
+
+            }
             if(bs.transform.gameObject.CompareTag("Enemy"))
             {
+                // checking if player is in range
+                yield return new WaitUntil(() => bs.PlayerIsInRange(EnemyManager.PursuitRange));
                 audio.Play();
                 BattleSystem.SetState(new PursuePlayer(BattleSystem));
             }
             if(bs.transform.gameObject.CompareTag("Shooter"))
+            {
+                // checking if player is in range
+                yield return new WaitUntil(() => bs.PlayerIsInRange(EnemyManager.PursuitRange));
                 BattleSystem.SetState(new ShootPlayer(BattleSystem));
-            if(bs.transform.gameObject.CompareTag("Player"))
-                BattleSystem.SetState(new FirstAttack(BattleSystem));
+            }
+
+            
         }
  
         

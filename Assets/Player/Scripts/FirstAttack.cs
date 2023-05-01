@@ -16,17 +16,20 @@ namespace com.ultimate2d.combat
         public override IEnumerator Start() 
         {
             yield return new WaitUntil(() => PlayerInput.Slash());
-            //Debug.Log("Started");
+            Debug.Log("First attack");
 
-            // do damage to area
-            PlayerManager.Instance.DoDamage();
+            PlayerManager.Instance.CanMove = false;
 
             // play slash anim
             PlayerManager.Instance.GetComponent<Animator>().Play("PlayerStrike", 0);
             //PlayerManager.Instance.audioSource.Play();
             PlayerManager.Instance.GetComponent<AudioSource>().Play();
 
+            // do damage to area
+            PlayerManager.Instance.DoDamage();
+
             var cooldown = PlayerManager.Instance.cooldownRate;
+            Debug.Log(cooldown);
             while(cooldown > 0)
             {
  
@@ -35,14 +38,16 @@ namespace com.ultimate2d.combat
                 if(PlayerInput.Slash()) continueChain = true;
             }
 
-            
             if(continueChain)
             {
                 continueChain = false;
                 BattleSystem.SetState(new SecondAttack(BattleSystem));
             }
             else
-                BattleSystem.SetState(new FirstAttack(BattleSystem));
+            {
+                BattleSystem.SetState(new Begin(BattleSystem));
+            }
+                
                 
 
 

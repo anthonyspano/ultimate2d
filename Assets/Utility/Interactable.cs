@@ -31,5 +31,11 @@ public class Interactable : MonoBehaviour
 
     }
 
+    void OnCollisionExit2D(Collision2D col)
+    {
+        Destroy(prompt);
+        once = false;
+    }
+
     protected virtual void Trigger(){}
 }
