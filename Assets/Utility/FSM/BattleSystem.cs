@@ -45,6 +45,7 @@ namespace com.ultimate2d.combat
 
         public bool PlayerIsInRange(float range)
         {
+            Debug.Log(range);
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, range, EnemyManager.enemyLayerMask);
             if(colliders.Length > 0) 
                 return true;

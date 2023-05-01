@@ -29,7 +29,6 @@ namespace com.ultimate2d.combat
             PlayerManager.Instance.DoDamage();
 
             var cooldown = PlayerManager.Instance.cooldownRate;
-            Debug.Log(cooldown);
             while(cooldown > 0)
             {
  

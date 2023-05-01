@@ -11,13 +11,17 @@ namespace com.ultimate2d.combat
 
         public Begin(BattleSystem battleSystem) : base(battleSystem)
         {
+            
             bs = battleSystem;
             if(bs.transform.gameObject.CompareTag("Enemy"))
                 audio = bs.GetComponent<AudioSource>();
+
+            
         }
 
         public override IEnumerator Start()
         {
+
             if(bs.transform.gameObject.CompareTag("Player"))
             {
                 // yield return new WaitUntil(() => Input.anyKeyDown);
@@ -34,7 +38,9 @@ namespace com.ultimate2d.combat
             if(bs.transform.gameObject.CompareTag("Enemy"))
             {
                 // checking if player is in range
+                Debug.Log(EnemyManager.PursuitRange);
                 yield return new WaitUntil(() => bs.PlayerIsInRange(EnemyManager.PursuitRange));
+                Debug.Log(bs.transform);
                 audio.Play();
                 BattleSystem.SetState(new PursuePlayer(BattleSystem));
             }

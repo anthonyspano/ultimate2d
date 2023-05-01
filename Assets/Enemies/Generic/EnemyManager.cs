@@ -71,6 +71,11 @@ public class EnemyManager : MonoBehaviour
 
     public static int jumpSpeed = 15;
 
+    void Start()
+    {
+        PursuitRange = 7;
+        AttackRange = 2.5f;
+    }
 
     public void CanMoveAgain()
     {
