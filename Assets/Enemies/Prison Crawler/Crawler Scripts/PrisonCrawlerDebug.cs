@@ -9,15 +9,13 @@ public class PrisonCrawlerDebug : MonoBehaviour
 	public float attackRange;
 	void OnDrawGizmos()
 	{
-		EnemyManager.PursuitRange = pursuitRange;
-		EnemyManager.AttackRange = attackRange;
 		Vector3 offset = new Vector3(0.5f, -0.7f, 0);
 
 		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position + offset, EnemyManager.PursuitRange);
+		Gizmos.DrawWireSphere(transform.position + offset, pursuitRange);
 		
 		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere(transform.position + offset, EnemyManager.AttackRange);
+		Gizmos.DrawWireSphere(transform.position + offset, attackRange);
 		
 	}
 }

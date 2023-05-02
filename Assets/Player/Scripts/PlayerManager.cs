@@ -57,6 +57,13 @@ public class PlayerManager : MonoBehaviour
 		set { canMove = value; }
 	}
 
+	private Vector3 lastMove;
+	public Vector3 LastMove
+	{
+		get { return lastMove; }
+		set { lastMove = value; }
+	}
+
 
 	private void Start()
 	{
@@ -98,6 +105,16 @@ public class PlayerManager : MonoBehaviour
 		else
 		{
 			_instance = this;
+		}
+	}
+
+	void Update()
+	{
+		var x = Input.GetAxis("Horizontal");
+		var y = Input.GetAxis("Vertical");
+		if(x != 0 || y != 0)
+		{
+			LastMove = new Vector3(x,y,0);
 		}
 	}
 

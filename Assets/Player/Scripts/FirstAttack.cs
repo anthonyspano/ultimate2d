@@ -25,6 +25,10 @@ namespace com.ultimate2d.combat
             //PlayerManager.Instance.audioSource.Play();
             PlayerManager.Instance.GetComponent<AudioSource>().Play();
 
+            // scoot towards last move
+            var newPos = PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove;
+            PlayerManager.Instance.transform.position = Vector3.Lerp(PlayerManager.Instance.transform.position, newPos, 0.8f);
+
             // do damage to area
             PlayerManager.Instance.DoDamage();
 
