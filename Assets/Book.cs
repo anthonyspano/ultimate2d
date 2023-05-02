@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Book : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject book;
+    protected override void Trigger()
     {
-        
+        book.SetActive(true);
+
+        StartCoroutine("CloseBook");
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator CloseBook()
     {
-        
+        yield return new WaitForSeconds(1.5f);
+        yield return new WaitUntil(() => PlayerInput.Interact());
+        book.SetActive(false);
     }
 }
