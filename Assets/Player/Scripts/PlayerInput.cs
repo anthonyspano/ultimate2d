@@ -47,7 +47,7 @@ public class PlayerInput : MonoBehaviour
 
     public static bool Interact()
     {
-        if(Input.GetKey(c_interact) || Input.GetKey(k_slash))
+        if(Input.GetKey(c_interact) || Input.GetKey(k_interact))
             return true;
         return false;
     }

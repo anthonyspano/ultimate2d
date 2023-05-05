@@ -7,10 +7,12 @@ public class Jump : MonoBehaviour
     public float coolDownRate;
     private float coolDownTimer;
     public float jumpDistance;
+    private Animator anim;
 
     void Start() 
     {
         coolDownTimer = coolDownRate;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -22,7 +24,8 @@ public class Jump : MonoBehaviour
             var y = Input.GetAxis(PlayerInput.y);
             var direction = new Vector2(x, y);
 
-            transform.position = Vector2.Lerp(transform.position, transform.XandY() + direction * jumpDistance, 0.3f); // jump speed
+            Debug.Log("Jumping");
+            StartCoroutine("PerformJump", transform.XandY() + direction * jumpDistance);
 
             coolDownTimer = coolDownRate;
         }   
@@ -30,5 +33,18 @@ public class Jump : MonoBehaviour
         coolDownTimer -= Time.deltaTime;     
     }
 
+    IEnumerator PerformJump(Vector2 target)
+    {
+        // while the absolute value of the distance between the two points is less than x
+        while(Vector2.Distance(transform.XandY(), target) > 0.3f)
+        {
+            Debug.Log(transform.position);
+            Debug.Log(target);
+            transform.position = Vector2.Lerp(transform.position, target, 0.5f); 
+            yield return null;
+
+        }
+
+    }
     
 }

@@ -31,10 +31,5 @@ public class PlayerShootProjectile : LaunchProjectile
 	    
     }
 
-    private void OnDrawGizmosSelected()
-    {
-	    //Gizmos.color = Color.red;
-	    //Gizmos.DrawWireSphere(myAim.center, crosshairSize);
-    }
     
 }

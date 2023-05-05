@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 // change OnHealthChanged to flash red
 public class PlayerManager : MonoBehaviour
@@ -46,6 +47,13 @@ public class PlayerManager : MonoBehaviour
 	public AudioSource audioSource;
 	public AudioClip slash1;
 	public AudioClip hurt1;
+
+	// death screen
+	PostProcessVolume m_Volume;
+	Vignette m_Vignette;
+	ColorGrading m_ColorGrading;
+	float w;
+	public GameObject ppv;
 
 	// etc
 	private int wrongWayCount = 0;
@@ -106,6 +114,10 @@ public class PlayerManager : MonoBehaviour
 		{
 			_instance = this;
 		}
+
+		// remove post effects
+		ppv.SetActive(false);
+
 	}
 
 	void Update()
@@ -116,6 +128,7 @@ public class PlayerManager : MonoBehaviour
 		{
 			LastMove = new Vector3(x,y,0);
 		}
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -173,22 +186,22 @@ public class PlayerManager : MonoBehaviour
 
 	private void Death() 
 	{
-		// disable minotaur
-		//var boss = GameObject.Find("minotaur_boss");
-		//var moveScript = boss.GetComponent<EnemyMove>();
-		//moveScript.enabled = false;
-		//var bossAnim = boss.GetComponent<Animator>();
-		//bossAnim.enabled = false;
-		//moveScript.player = GameObject.Find("DeadPlayerPlaceholder");
-
 		// triggered after death animation
 		anim.enabled = false;
 		gameObject.GetComponent<PlayerMove>().enabled = false;
-
 		
 		var reticle = transform.Find("Reticle");
 		reticle.gameObject.SetActive(false);
 		
+		ppv.SetActive(true);
+		// reset scene after timer
+		StartCoroutine("LoadScene");
+	}
+
+	IEnumerator LoadScene()
+	{
+		yield return new WaitForSeconds(4);
+		SceneManager.LoadScene("CellChamber", LoadSceneMode.Single);
 	}
 
 	// State pattern anim control
@@ -210,6 +223,8 @@ public class PlayerManager : MonoBehaviour
 		foreach (var col in hits)
 		{
 			col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(attack);
+			// fill ult bar here
+			ultBar.AddUlt(10);
 		}
 	}
 

@@ -24,13 +24,6 @@ namespace com.ultimate2d.combat
 
             if(bs.transform.gameObject.CompareTag("Player"))
             {
-                // yield return new WaitUntil(() => Input.anyKeyDown);
-                // if(PlayerInput.Slash())
-                // {
-                //     BattleSystem.SetState(new FirstAttack(BattleSystem));
-
-                // }
-
                 yield return new WaitUntil(() => PlayerInput.Slash());
                 BattleSystem.SetState(new FirstAttack(BattleSystem));
 
@@ -38,9 +31,7 @@ namespace com.ultimate2d.combat
             if(bs.transform.gameObject.CompareTag("Enemy"))
             {
                 // checking if player is in range
-                Debug.Log(EnemyManager.PursuitRange);
                 yield return new WaitUntil(() => bs.PlayerIsInRange(EnemyManager.PursuitRange));
-                Debug.Log(bs.transform);
                 audio.Play();
                 BattleSystem.SetState(new PursuePlayer(BattleSystem));
             }
