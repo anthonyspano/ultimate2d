@@ -1,4 +1,4 @@
-﻿/* using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BehaviorTree;
@@ -11,6 +11,7 @@ public class CheckEnemyInAttackRange : Node
 
     private Transform _transform;
     private Animator _animator;
+    private float coolDown = 0;
 
     public CheckEnemyInAttackRange(Transform transform)
     {
@@ -20,12 +21,12 @@ public class CheckEnemyInAttackRange : Node
 
     public override NodeState Evaluate()
     {
-        if (EnemyManager.Busy)
+        if (MinotaurProperties.IsBusy)
         {
-            state = NodeState.SUCCESS;
+            state = NodeState.FAILURE;
             return state;
         }
-        
+     
         object t = GetData("target");
         if (t == null)
         {
@@ -34,13 +35,16 @@ public class CheckEnemyInAttackRange : Node
         }
 
         Transform target = (Transform)t;
-        if (Vector3.Distance(_transform.position, target.position) <= EnemyBT.attackRange)
+        //Debug.Log(coolDown);
+        if (Vector3.Distance(_transform.position, target.position) <= MinotaurProperties.AttackRange && coolDown <= 0)
         {
+            coolDown = MinotaurProperties.CoolDownRate;
             state = NodeState.SUCCESS;
             return state;
         }
         else
         {
+            coolDown -= Time.deltaTime;
             _animator.Play("Running");
         }
 
@@ -49,4 +53,3 @@ public class CheckEnemyInAttackRange : Node
     }
     
 }
- */

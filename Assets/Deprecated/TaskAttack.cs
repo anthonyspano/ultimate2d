@@ -1,4 +1,4 @@
-﻿/* using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviorTree;
@@ -26,34 +26,39 @@ public class TaskAttack : Node
 
     public override NodeState Evaluate()
     {
-        WindowStats.Value = _attackCounter;
-        EnemyManager.Busy = true;
-        
+        MinotaurProperties.IsBusy = true;
+        Debug.Log("Attacking");
         Transform target = (Transform)GetData("target");
         if (target != _lastTarget)
         {
             _lastTarget = target;
         }
 
-        _attackCounter += Time.deltaTime;
-        if (_attackCounter >= _attackTime)
-        {
-            _animator.Play("Attack");
-             
-             // check if player is dead
-             if (_playerManager.pHealth.GetHealth() <= 0)
-             {
-                 ClearData("target");
+        _animator.Play("Attack");
 
-                 _animator.Play("Patrol");
-            
-             }
-             else
-             {
-                 _attackCounter = 0f;
-                 EnemyManager.Busy = false;
-             }
+        var axeHitBox = GameObject.Find("AxeHitBox");
+        var hits = Physics2D.OverlapCircleAll(axeHitBox.transform.position, 1.25f, LayerMask.GetMask("Player")); // put proper radius
+        foreach (var col in hits)
+        {
+            // do damage to player
+            PlayerManager.Instance.pHealth.Damage(20);
+
         }
+            
+        // check if player is dead
+        if (_playerManager.pHealth.GetHealth() <= 0)
+        {
+            ClearData("target");
+
+            _animator.Play("Idle");
+    
+        }
+        else
+        {
+            _attackCounter = 0f;
+            //EnemyManager.Busy = false;
+        }
+        
 
         state = NodeState.RUNNING;
         return state;
@@ -61,4 +66,3 @@ public class TaskAttack : Node
     
     
 }
- */

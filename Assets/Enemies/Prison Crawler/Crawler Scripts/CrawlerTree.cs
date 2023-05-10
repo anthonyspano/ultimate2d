@@ -19,7 +19,7 @@ public class CrawlerTree : BehaviorTree.Tree
             new Sequence(new List<Node>
             {
 				new CheckEnemyInPursuitRange(transform),
-                new TaskGoToTargetJumpAtTarget(transform)
+                //new TaskGoToTargetJumpAtTarget(transform)
             }),
             new Sequence(new List<Node>
             {

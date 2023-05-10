@@ -61,7 +61,7 @@ public class EnemyTakeDamage : MonoBehaviour
 
         sr.enabled = true;
         var i = 0;
-        float flickerTime = 0.3f;
+        float flickerTime = 0.33f;
         while (i < 3)
         {
             yield return new WaitForSeconds(flickerTime);
