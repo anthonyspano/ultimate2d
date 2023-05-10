@@ -34,8 +34,6 @@ public class CheckEnemyInPursuitRange : Node
 
             if (Vector2.Distance(_transform.position, colliders[0].transform.position) > MinotaurProperties.AttackRange)
             {
-                _animator.Play("Running");
-                
                 state = NodeState.SUCCESS;
                 return state;
             }	

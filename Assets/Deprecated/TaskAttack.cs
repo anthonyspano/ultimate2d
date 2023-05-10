@@ -53,12 +53,6 @@ public class TaskAttack : Node
             _animator.Play("Idle");
     
         }
-        else
-        {
-            _attackCounter = 0f;
-            //EnemyManager.Busy = false;
-        }
-        
 
         state = NodeState.RUNNING;
         return state;

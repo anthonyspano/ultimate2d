@@ -44,8 +44,8 @@ public class CheckEnemyInAttackRange : Node
         }
         else
         {
+            _animator.Play("Idle");
             coolDown -= Time.deltaTime;
-            _animator.Play("Running");
         }
 
         state = NodeState.FAILURE;

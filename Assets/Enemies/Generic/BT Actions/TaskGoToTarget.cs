@@ -45,9 +45,6 @@ public class TaskGoToTarget : Node
             state = NodeState.FAILURE;
             return state;
         }
-        //Debug.Log("Going to target");
-
-        _attackCounter += Time.deltaTime;
         
         // spawn attack box
         if (GameObject.Find("AttackBoxIndication(Clone)") == null)
@@ -65,6 +62,10 @@ public class TaskGoToTarget : Node
             _transform.position = Vector3.MoveTowards(
                 _transform.position, stopPoint, speed * Time.deltaTime);
             _animator.Play("Running");
+        }
+        else
+        {
+            _animator.Play("Idle");
         }
         // else  // attack
         // {
