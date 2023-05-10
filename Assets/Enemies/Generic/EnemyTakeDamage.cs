@@ -38,17 +38,44 @@ public class EnemyTakeDamage : MonoBehaviour
     private void Death() 
     {
         // triggered after death animation
-        // var scripts = gameObject.GetComponents(typeof(MonoBehaviour)); // scripts attached
-        // foreach (MonoBehaviour s in scripts)
-        // {
-        //     s.enabled = false;
-        //     Debug.Log(s);
-        // }
+        var scripts = gameObject.GetComponents(typeof(MonoBehaviour)); // scripts attached
+        foreach (MonoBehaviour s in scripts)
+        {
+            s.enabled = false;
+            Debug.Log(s);
+        }
 
-        // anim.enabled = false;
+        anim.enabled = false;
+
+        StartCoroutine("EnemyDying");
+
+    }
+
+    IEnumerator EnemyDying()
+    {
+        // play death anim
+        anim.Play("Death", 0);
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length); 
+
+        var sr = GetComponent<SpriteRenderer>();
+
+        sr.enabled = true;
+        var i = 0;
+        float flickerTime = 0.3f;
+        while (i < 3)
+        {
+            yield return new WaitForSeconds(flickerTime);
+            sr.enabled = false;
+
+            yield return new WaitForSeconds(flickerTime);
+            sr.enabled = false;
+
+            i++;
+        }
+
+
 
         Destroy(gameObject);
-
     }
 
     public IEnumerator FlashRed()
