@@ -8,13 +8,15 @@ public class EnemyTakeDamage : MonoBehaviour
     public HealthSystem healthSystem;
     //public HealthBar healthBar; // referenced with scene healthbar
 
+    public int maxHealth;
+
     private Animator anim;
     private void Start() 
     {
         anim = GetComponent<Animator>();
         
         // health
-        healthSystem = new HealthSystem(200, 0f);
+        healthSystem = new HealthSystem(maxHealth, 0f);
         //healthBar.Setup(healthSystem);
         // health - death event
         healthSystem.OnHealthChanged += OnDamage;
