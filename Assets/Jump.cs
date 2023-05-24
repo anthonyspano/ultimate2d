@@ -8,11 +8,13 @@ public class Jump : MonoBehaviour
     private float coolDownTimer;
     public float jumpDistance;
     private Animator anim;
+    private Rigidbody2D rb;
 
     void Start() 
     {
         coolDownTimer = coolDownRate;
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -25,7 +27,7 @@ public class Jump : MonoBehaviour
             var direction = new Vector2(x, y);
 
             Debug.Log("Jumping");
-            StartCoroutine("PerformJump", transform.XandY() + direction * jumpDistance);
+            rb.AddForce(direction * jumpDistance);
 
             coolDownTimer = coolDownRate;
         }   
@@ -33,18 +35,5 @@ public class Jump : MonoBehaviour
         coolDownTimer -= Time.deltaTime;     
     }
 
-    IEnumerator PerformJump(Vector2 target)
-    {
-        // while the absolute value of the distance between the two points is less than x
-        while(Vector2.Distance(transform.XandY(), target) > 0.3f)
-        {
-            Debug.Log(transform.position);
-            Debug.Log(target);
-            transform.position = Vector2.Lerp(transform.position, target, 0.5f); 
-            yield return null;
-
-        }
-
-    }
     
 }

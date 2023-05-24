@@ -2465,7 +2465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDownRate: 1
-  jumpDistance: 3.5
+  jumpDistance: 5000
 --- !u!1 &477850553
 GameObject:
   m_ObjectHideFlags: 0
