@@ -24,8 +24,27 @@ namespace com.ultimate2d.combat
 
             if(bs.transform.gameObject.CompareTag("Player"))
             {
-                yield return new WaitUntil(() => PlayerInput.Slash());
-                BattleSystem.SetState(new FirstAttack(BattleSystem));
+                // wait for anykey
+                yield return new WaitUntil(() => Input.anyKey);
+                // grab key pressed from gamemanager
+                yield return null;
+                switch((int)GameManager.playerInput) // create different begin classes based on detected input
+                {
+                    case 107: // 'k'
+                        BattleSystem.SetState(new FirstAttack(BattleSystem));
+                        break;
+                    case 32: // 'space'
+                        BattleSystem.SetState(new Jump(BattleSystem));
+                        break;
+                    default:
+                        BattleSystem.SetState(new Begin(BattleSystem));
+                        break;
+
+                }
+
+
+                // yield return new WaitUntil(() => PlayerInput.Slash());
+                // BattleSystem.SetState(new FirstAttack(BattleSystem));
 
             }
             if(bs.transform.gameObject.CompareTag("Enemy"))

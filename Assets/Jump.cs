@@ -2,38 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jump : MonoBehaviour
+namespace com.ultimate2d.combat
 {
-    public float coolDownRate;
-    private float coolDownTimer;
-    public float jumpDistance;
-    private Animator anim;
-    private Rigidbody2D rb;
-
-    void Start() 
+    public class Jump : State
     {
-        coolDownTimer = coolDownRate;
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-    }
+        public float coolDownRate = 1; // 1
+        private float coolDownTimer = 0;
+        private Animator anim;
+        private Rigidbody2D rb;
 
-    void Update()
-    {
-        if(PlayerInput.Jump() && coolDownTimer <= 0)
+        private BattleSystem bs;
+
+        public Jump(BattleSystem battleSystem) : base(battleSystem)
         {
-            // perform jump
-            var x = Input.GetAxis(PlayerInput.x);
-            var y = Input.GetAxis(PlayerInput.y);
-            var direction = new Vector2(x, y);
+            bs = battleSystem;
+            anim = bs.GetComponent<Animator>();
+            rb = bs.GetComponent<Rigidbody2D>();
+        }
 
-            Debug.Log("Jumping");
-            rb.AddForce(direction * jumpDistance);
+        public override IEnumerator Start() 
+        {
+            if(coolDownTimer <= 0)
+            {
+                // perform jump
+                anim.Play("PlayerJump", 0);
+                PlayerManager.Instance.CanMove = false;
+                // while animator is playing clip, add force
+                while(anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerJump"))
+                {
+                    // addforce + directional movement amplifies is greatly
+                    //rb.AddForce(PlayerManager.Instance.LastMove * jumpDistance);
+                    Debug.Log(PlayerManager.Instance.LastMove);
+                    PlayerManager.Instance.transform.position = Vector2.MoveTowards(PlayerManager.Instance.transform.position, 
+                                                                                    PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.JumpDistance, PlayerManager.Instance.MDD);
+                    yield return null;
+                }
+                coolDownTimer = coolDownRate;
+                PlayerManager.Instance.CanMove = true;
+            }   
 
-            coolDownTimer = coolDownRate;
-        }   
+            coolDownTimer -= Time.deltaTime;   
+            BattleSystem.SetState(new Begin(BattleSystem));  
+       
+        }
 
-        coolDownTimer -= Time.deltaTime;     
     }
-
     
 }

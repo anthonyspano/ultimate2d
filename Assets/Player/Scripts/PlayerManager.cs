@@ -42,6 +42,9 @@ public class PlayerManager : MonoBehaviour
 	public float range;
 	public float cooldownRate;
 	public RotateAroundPlayer playerAim;
+	public float JumpDistance;
+	public float JumpSpeed;
+	public float MDD;
 
 	// audio
 	public AudioSource audioSource;

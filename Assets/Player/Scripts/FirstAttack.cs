@@ -15,7 +15,7 @@ namespace com.ultimate2d.combat
         }
         public override IEnumerator Start() 
         {
-            yield return new WaitUntil(() => PlayerInput.Slash());
+            //yield return new WaitUntil(() => PlayerInput.Slash());
 
             PlayerManager.Instance.CanMove = false;
 
