@@ -127,7 +127,7 @@ public class PlayerManager : MonoBehaviour
 	{
 		var x = Input.GetAxis("Horizontal");
 		var y = Input.GetAxis("Vertical");
-		if(x != 0 || y != 0)
+		if(Mathf.Abs(x) > 0.1f || Mathf.Abs(y) > 0.1f)
 		{
 			LastMove = new Vector3(x,y,0);
 		}

@@ -44,10 +44,10 @@ public class EnemyTakeDamage : MonoBehaviour
         foreach (MonoBehaviour s in scripts)
         {
             s.enabled = false;
-            Debug.Log(s);
+            //Debug.Log(s);
         }
 
-        anim.enabled = false;
+        //anim.enabled = false;
 
         StartCoroutine("EnemyDying");
 
@@ -56,8 +56,8 @@ public class EnemyTakeDamage : MonoBehaviour
     IEnumerator EnemyDying()
     {
         // play death anim
-        anim.Play("Death", 0);
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length); 
+        //anim.Play("Death", 0);
+        //yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length); 
 
         var sr = GetComponent<SpriteRenderer>();
 

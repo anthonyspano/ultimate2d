@@ -100,6 +100,7 @@
      <Compile Include="Assets\PlayerDebug.cs" />
      <Compile Include="Assets\RemoveWrongWay.cs" />
      <Compile Include="Assets\Resources\Scripts\PowerStorage.cs" />
+     <Compile Include="Assets\TurnOffTorch.cs" />
      <Compile Include="Assets\Utility\BehaviorTree\Node.cs" />
      <Compile Include="Assets\Utility\BehaviorTree\Selector.cs" />
      <Compile Include="Assets\Utility\BehaviorTree\Sequence.cs" />

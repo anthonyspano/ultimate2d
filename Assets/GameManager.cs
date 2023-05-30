@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,11 +11,14 @@ public class GameManager : MonoBehaviour
 
     public static KeyCode playerInput;
 
+    public Text timerText;
+
     void Awake()
     {
         values = (int[])System.Enum.GetValues(typeof(KeyCode));
         keys = new bool[values.Length];
 
+        timerText.text = "0";
     }
 
     void Update()
@@ -33,7 +37,9 @@ public class GameManager : MonoBehaviour
                 playerInput = (KeyCode)values[i];
                 //Debug.Log(playerInput);
             }
-        }        
+        }  
+
+        timerText.text = Time.timeSinceLevelLoad.ToString();      
     }
 
     public void GameStart()

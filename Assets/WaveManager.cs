@@ -4,30 +4,39 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    private bool once;
-
     public GameObject DoorOpenPrompt;
 
-    void Start()
-    {
+    public GameObject[] Rooms;
+    public GameObject[] Doors;
+    
+    private int currentRoom; 
+    private int aliveEnemies;
 
+
+    private void Start()
+    {
+        currentRoom = 0;
     }
 
     void Update()
     {
-        GameObject[] aliveEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(aliveEnemies.GetLength(0) <= 0)
-        {
-            
+        //GameObject[] aliveEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        aliveEnemies = Rooms[currentRoom].gameObject.transform.childCount;
+        
+        if(aliveEnemies == 0)
+        {  
             // unlock door to next room
-            if(once == false)
-            {
-                once = true;
-                var door = GameObject.Find("Door2");
-                door.transform.GetChild(0).gameObject.SetActive(true);
-                DoorOpenPrompt.gameObject.SetActive(true);
+            Doors[currentRoom].transform.GetChild(0).gameObject.SetActive(true);
+            DoorOpenPrompt.gameObject.SetActive(true);
 
-            }
+            currentRoom++;
+
+        }
+
+        if(currentRoom == 4)
+        {
+            // you win screen
+            
         }
     }
 }

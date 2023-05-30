@@ -14,22 +14,27 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
-            // shoot
-            // spawn bullet
-            var bulletPrefab = Resources.Load("Bullet") as GameObject;
-            var bulletClone = GameObject.Instantiate(bulletPrefab, bs.transform.transform.position, Quaternion.identity);
-            // gain invulnerability from bullet
-            //Debug.Log(bs.Enemy.GetComponent<BoxCollider2D>());
-            Physics2D.IgnoreCollision(bulletClone.GetComponent<BoxCollider2D>(), bs.transform.GetComponent<BoxCollider2D>());		
-            // add force
-            Rigidbody2D bulletRB = bulletClone.GetComponent<Rigidbody2D>();
-            Vector2 dir = PlayerManager.Instance.transform.position - bs.transform.transform.position;
-            bulletRB.AddForce(dir * 100f);
+            if(bs.CanAttack)
+            {
+                // spawn bullet
+                var bulletPrefab = Resources.Load("Bullet") as GameObject;
+                var bulletClone = GameObject.Instantiate(bulletPrefab, bs.transform.transform.position, Quaternion.identity);
+                // gain invulnerability from bullet
+                //Debug.Log(bs.Enemy.GetComponent<BoxCollider2D>());
+                Physics2D.IgnoreCollision(bulletClone.GetComponent<BoxCollider2D>(), bs.transform.GetComponent<BoxCollider2D>());		
+                // add force
+                Rigidbody2D bulletRB = bulletClone.GetComponent<Rigidbody2D>();
+                Vector2 dir = PlayerManager.Instance.transform.position - bs.transform.transform.position;
+                bulletRB.AddForce(dir * 91f);
 
-            // cd
-            yield return new WaitForSeconds(5f);
+                // cd
+                yield return new WaitForSeconds(5f);
 
-            BattleSystem.SetState(new Begin(BattleSystem));
+                BattleSystem.SetState(new Begin(BattleSystem));
+            }
+
+            
+
         }
  
     }

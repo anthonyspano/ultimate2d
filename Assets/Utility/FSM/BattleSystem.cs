@@ -7,6 +7,12 @@ namespace com.ultimate2d.combat
 {
     public class BattleSystem : StateMachine
     {
+        private bool canAttack = true;
+        public bool CanAttack
+        {
+            get { return canAttack; }
+            set { canAttack = value; }
+        }
         private Animator animator;
         public Animator Animator
         {
