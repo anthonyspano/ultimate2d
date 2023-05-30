@@ -14,6 +14,7 @@ TagManager:
   - Door
   - Shooter
   - PlayerAttack
+  - Power
   layers:
   - Default
   - TransparentFX

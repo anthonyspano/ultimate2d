@@ -98,6 +98,7 @@
      <Compile Include="Assets\Player\Scripts\deprecated\UltimateSystem\UltimateMove.cs" />
      <Compile Include="Assets\PlayerComboSystem.cs" />
      <Compile Include="Assets\PlayerDebug.cs" />
+     <Compile Include="Assets\PowerManager.cs" />
      <Compile Include="Assets\RemoveWrongWay.cs" />
      <Compile Include="Assets\Resources\Scripts\PowerStorage.cs" />
      <Compile Include="Assets\TurnOffTorch.cs" />

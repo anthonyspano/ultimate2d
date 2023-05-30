@@ -136,7 +136,7 @@ public class PlayerManager : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if(collision.transform.CompareTag("Enemy"))
+		if(collision.transform.CompareTag("Enemy") || collision.transform.CompareTag("Projectile"))
 		{
 			Instance.pHealth.Damage(20);
 			audioSource.PlayOneShot(hurt1, 0.7f);
