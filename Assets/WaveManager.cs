@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class WaveManager : MonoBehaviour
 {
@@ -9,9 +11,10 @@ public class WaveManager : MonoBehaviour
     public GameObject[] Rooms;
     public GameObject[] Doors;
     
-    private int currentRoom; 
+    public int currentRoom; 
     private int aliveEnemies;
 
+    public Text youWinText;
 
     private void Start()
     {
@@ -20,23 +23,43 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
-        //GameObject[] aliveEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        aliveEnemies = Rooms[currentRoom].gameObject.transform.childCount;
-        
+
+        try
+        {
+            aliveEnemies = Rooms[currentRoom].gameObject.transform.childCount;
+        }
+        catch (Exception e)
+        {
+            Debug.Log("index out of bounds dummy");
+
+        }
+
+
         if(aliveEnemies == 0)
         {  
-            // unlock door to next room
-            Doors[currentRoom].transform.GetChild(0).gameObject.SetActive(true);
-            DoorOpenPrompt.gameObject.SetActive(true);
+            if(currentRoom < 2)
+            {
+                // unlock door to next room
+                Doors[currentRoom].transform.GetChild(0).gameObject.SetActive(true);
+                DoorOpenPrompt.gameObject.SetActive(true);
 
-            currentRoom++;
+                currentRoom++;
+            }
+            else
+            {
+                Debug.Log("here");
+                // you win screen
+                youWinText.gameObject.SetActive(true);
+
+                // record time on clock
+                string time = GameObject.Find("GameManager").GetComponent<GameManager>().timerText.text;
+                youWinText.text += "\n" + time;
+
+                Destroy(this);
+            }
 
         }
 
-        if(currentRoom == 4)
-        {
-            // you win screen
-            
-        }
+
     }
 }
