@@ -34,7 +34,7 @@ namespace com.ultimate2d.combat
                         BattleSystem.SetState(new FirstAttack(BattleSystem));
                         break;
                     case 32: // 'space'
-                        BattleSystem.SetState(new Jump(BattleSystem));
+                        //BattleSystem.SetState(new Jump(BattleSystem));
                         break;
                     default:
                         BattleSystem.SetState(new Begin(BattleSystem));

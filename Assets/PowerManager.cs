@@ -19,7 +19,7 @@ public class PowerManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.J) && ultimateCharge.GetUlt() > ultCost)
+        if(Input.GetKeyDown(KeyCode.Space) && ultimateCharge.GetUlt() > ultCost)
         {
             ultimateCharge.AddUlt(-ultCost);
             anim.SetBool("IsExploding", true);

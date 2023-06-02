@@ -2843,7 +2843,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
-  ultDamage: 100
+  ultDamage: 200
 --- !u!114 &464829520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2867,8 +2867,8 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  attack: 500
-  maxHealth: 100000
+  attack: 50
+  maxHealth: 100
   range: 1
   cooldownRate: 0.5
   playerAim: {fileID: 0}
@@ -3056,7 +3056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464829516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.11, y: 30.44, z: 0}
+  m_LocalPosition: {x: -3.11, y: 3.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 673931880}
@@ -23219,7 +23219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 1.72
   SpecialDamage: 150
-  ultCost: 60
+  ultCost: 50
 --- !u!1 &753794795
 GameObject:
   m_ObjectHideFlags: 0
@@ -26744,7 +26744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1788116598
 BoxCollider2D:
   m_ObjectHideFlags: 0
