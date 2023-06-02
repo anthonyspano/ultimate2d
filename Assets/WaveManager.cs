@@ -47,7 +47,6 @@ public class WaveManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("here");
                 // you win screen
                 youWinText.gameObject.SetActive(true);
 
