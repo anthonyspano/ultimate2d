@@ -336,7 +336,7 @@ TextureImporter:
       213: 21300220
     second: maincave_buildA_110
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -353,9 +353,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -387,10 +390,15 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -402,6 +410,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
@@ -2748,9 +2783,120 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      maincave_buildA_0: 21300000
+      maincave_buildA_1: 21300002
+      maincave_buildA_10: 21300020
+      maincave_buildA_100: 21300200
+      maincave_buildA_101: 21300202
+      maincave_buildA_102: 21300204
+      maincave_buildA_103: 21300206
+      maincave_buildA_104: 21300208
+      maincave_buildA_105: 21300210
+      maincave_buildA_106: 21300212
+      maincave_buildA_107: 21300214
+      maincave_buildA_108: 21300216
+      maincave_buildA_109: 21300218
+      maincave_buildA_11: 21300022
+      maincave_buildA_110: 21300220
+      maincave_buildA_12: 21300024
+      maincave_buildA_13: 21300026
+      maincave_buildA_14: 21300028
+      maincave_buildA_15: 21300030
+      maincave_buildA_16: 21300032
+      maincave_buildA_17: 21300034
+      maincave_buildA_18: 21300036
+      maincave_buildA_19: 21300038
+      maincave_buildA_2: 21300004
+      maincave_buildA_20: 21300040
+      maincave_buildA_21: 21300042
+      maincave_buildA_22: 21300044
+      maincave_buildA_23: 21300046
+      maincave_buildA_24: 21300048
+      maincave_buildA_25: 21300050
+      maincave_buildA_26: 21300052
+      maincave_buildA_27: 21300054
+      maincave_buildA_28: 21300056
+      maincave_buildA_29: 21300058
+      maincave_buildA_3: 21300006
+      maincave_buildA_30: 21300060
+      maincave_buildA_31: 21300062
+      maincave_buildA_32: 21300064
+      maincave_buildA_33: 21300066
+      maincave_buildA_34: 21300068
+      maincave_buildA_35: 21300070
+      maincave_buildA_36: 21300072
+      maincave_buildA_37: 21300074
+      maincave_buildA_38: 21300076
+      maincave_buildA_39: 21300078
+      maincave_buildA_4: 21300008
+      maincave_buildA_40: 21300080
+      maincave_buildA_41: 21300082
+      maincave_buildA_42: 21300084
+      maincave_buildA_43: 21300086
+      maincave_buildA_44: 21300088
+      maincave_buildA_45: 21300090
+      maincave_buildA_46: 21300092
+      maincave_buildA_47: 21300094
+      maincave_buildA_48: 21300096
+      maincave_buildA_49: 21300098
+      maincave_buildA_5: 21300010
+      maincave_buildA_50: 21300100
+      maincave_buildA_51: 21300102
+      maincave_buildA_52: 21300104
+      maincave_buildA_53: 21300106
+      maincave_buildA_54: 21300108
+      maincave_buildA_55: 21300110
+      maincave_buildA_56: 21300112
+      maincave_buildA_57: 21300114
+      maincave_buildA_58: 21300116
+      maincave_buildA_59: 21300118
+      maincave_buildA_6: 21300012
+      maincave_buildA_60: 21300120
+      maincave_buildA_61: 21300122
+      maincave_buildA_62: 21300124
+      maincave_buildA_63: 21300126
+      maincave_buildA_64: 21300128
+      maincave_buildA_65: 21300130
+      maincave_buildA_66: 21300132
+      maincave_buildA_67: 21300134
+      maincave_buildA_68: 21300136
+      maincave_buildA_69: 21300138
+      maincave_buildA_7: 21300014
+      maincave_buildA_70: 21300140
+      maincave_buildA_71: 21300142
+      maincave_buildA_72: 21300144
+      maincave_buildA_73: 21300146
+      maincave_buildA_74: 21300148
+      maincave_buildA_75: 21300150
+      maincave_buildA_76: 21300152
+      maincave_buildA_77: 21300154
+      maincave_buildA_78: 21300156
+      maincave_buildA_79: 21300158
+      maincave_buildA_8: 21300016
+      maincave_buildA_80: 21300160
+      maincave_buildA_81: 21300162
+      maincave_buildA_82: 21300164
+      maincave_buildA_83: 21300166
+      maincave_buildA_84: 21300168
+      maincave_buildA_85: 21300170
+      maincave_buildA_86: 21300172
+      maincave_buildA_87: 21300174
+      maincave_buildA_88: 21300176
+      maincave_buildA_89: 21300178
+      maincave_buildA_9: 21300018
+      maincave_buildA_90: 21300180
+      maincave_buildA_91: 21300182
+      maincave_buildA_92: 21300184
+      maincave_buildA_93: 21300186
+      maincave_buildA_94: 21300188
+      maincave_buildA_95: 21300190
+      maincave_buildA_96: 21300192
+      maincave_buildA_97: 21300194
+      maincave_buildA_98: 21300196
+      maincave_buildA_99: 21300198
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

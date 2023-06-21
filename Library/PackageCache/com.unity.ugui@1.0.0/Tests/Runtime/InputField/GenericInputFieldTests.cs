@@ -27,9 +27,6 @@ namespace InputfieldTests
         public virtual void TestSetup()
         {
             m_PrefabRoot = UnityEngine.Object.Instantiate(Resources.Load("GenericInputFieldPrefab")) as GameObject;
-
-            FieldInfo inputModule = typeof(EventSystem).GetField("m_CurrentInputModule", BindingFlags.NonPublic | BindingFlags.Instance);
-            inputModule.SetValue(m_PrefabRoot.GetComponentInChildren<EventSystem>(), m_PrefabRoot.GetComponentInChildren<FakeInputModule>());
         }
 
         [TearDown]
@@ -106,6 +103,7 @@ namespace InputfieldTests
         }
 
         [Test]
+        [UnityPlatform(exclude = new[] { RuntimePlatform.Switch })] // Currently InputField.ActivateInputFieldInternal calls Switch SoftwareKeyboard screen ; without user input or a command to close the SoftwareKeyboard this blocks the tests suite
         public void FocusesOnSelect()
         {
             InputField inputField = m_PrefabRoot.GetComponentInChildren<InputField>();

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+// subscribe event if multiple threshold triggers occur in separate places
 [RequireComponent(typeof(UltimateMove))]
 public class UltimateBar : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class UltimateBar : MonoBehaviour
 	
 	public event EventHandler OnUltFull;
 	
+	
+
 	public void SetMaxUlt(float max)
 	{
 		slider.maxValue = max;
@@ -25,6 +29,7 @@ public class UltimateBar : MonoBehaviour
 		{
 			if (OnUltFull != null) OnUltFull(this, EventArgs.Empty);
 		}
+
 	}
 	
 	public void SetUlt(float ult)

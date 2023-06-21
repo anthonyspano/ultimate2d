@@ -82,6 +82,25 @@ public class GraphicRaycasterTests
     }
 
     [UnityTest]
+    public IEnumerator GraphicRaycasterUsesGraphicPadding()
+    {
+        m_CanvasRectTrans.anchoredPosition3D = new Vector3(0, 0, 11);
+        m_TextComponent.raycastPadding = new Vector4(-50, -50, -50, -50);
+        m_Camera.farClipPlane = 12;
+        yield return null;
+
+        var results = new List<RaycastResult>();
+        var pointerEvent = new PointerEventData(m_EventSystem)
+        {
+            position = new Vector2((Screen.width / 2f) - 60, Screen.height / 2f)
+        };
+
+        m_EventSystem.RaycastAll(pointerEvent, results);
+
+        Assert.IsNotEmpty(results, "Expected at least 1 result from a raycast outside the graphics RectTransform whose padding would make the click hit.");
+    }
+
+    [UnityTest]
     public IEnumerator GraphicOnTheSamePlaneAsTheCameraCanBeTargetedForEvents()
     {
         m_Canvas.renderMode = RenderMode.ScreenSpaceCamera;
@@ -102,7 +121,26 @@ public class GraphicRaycasterTests
 
         Assert.IsNotEmpty(results, "Expected at least 1 result from a raycast ");
     }
+#if ENABLE_INPUT_SYSTEM
+    [UnityTest]
+    public IEnumerator GraphicRaycasterIgnoresEventsFromTheWrongDisplay()
+    {
+        m_CanvasRectTrans.anchoredPosition3D = new Vector3(0, 0, 11);
+        m_Camera.farClipPlane = 12;
 
+        yield return null;
+        var results = new List<RaycastResult>();
+        var pointerEvent = new PointerEventData(m_EventSystem)
+        {
+            position = new Vector2(Screen.width / 2f, Screen.height / 2f),
+            displayIndex = 1,
+        };
+
+        m_EventSystem.RaycastAll(pointerEvent, results);
+
+        Assert.IsEmpty(results, "Pointer event on display 1 was not ignored on display 0");
+    }
+#endif
     [TearDown]
     public void TearDown()
     {

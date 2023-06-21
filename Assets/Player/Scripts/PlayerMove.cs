@@ -36,14 +36,13 @@ public class PlayerMove : MonoBehaviour
         else if (x > 0)
             isFacingLeft = false;
         sr.flipX = isFacingLeft;
-        //Debug.Log(Input.GetAxis("Horizontal"));
         
-        if (movement.magnitude > deadZone && PlayerManager.Instance.CanMove) // if (movement.magnitude > 0)
+        if (movement.magnitude > deadZone && PlayerManager.Instance.CanMove) 
         {
-            //Debug.Log(Input.GetAxis("Horizontal"));
             var direction = new Vector3(movement.x, movement.y, 0) + transform.position;
             transform.position = Vector2.MoveTowards(transform.position, direction, moveSpeed * Time.deltaTime);
             anim.SetBool("isMoving", true);
+            
         }
         else anim.SetBool("isMoving", false);
         

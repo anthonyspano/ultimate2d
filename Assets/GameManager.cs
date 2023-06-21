@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
             if(keys[i])
             {
                 playerInput = (KeyCode)values[i];
-                //Debug.Log(playerInput);
+                //Debug.Log((int)playerInput);
             }
         }  
 

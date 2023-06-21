@@ -3,9 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* melee class: lightning hits sword and applies damage horizontally
- *
- */
 
 public class UltimateMove : MonoBehaviour
 {
@@ -15,13 +12,13 @@ public class UltimateMove : MonoBehaviour
 
     private bool ultReady;
 
-    public int ultDamage;
+    //public int ultDamage; // 200
 
     public event EventHandler FireUltAnim;
 
+
     private void Start()
     {
-        //ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
         //ultBar.OnUltFull += ReadyUlt;
 
 
@@ -30,6 +27,9 @@ public class UltimateMove : MonoBehaviour
     private void ReadyUlt(object sender, EventArgs e)
     {
         ultReady = true;
+
+        // light up icon
+
     }
     
     private void Update()
@@ -49,14 +49,16 @@ public class UltimateMove : MonoBehaviour
     
     private void UseUlt()
     {
-        // enable ult hitbox
-        
-        
+
         // play ult anim
         if(FireUltAnim != null) FireUltAnim(this, EventArgs.Empty);
         
         // empty ult bar
         ultBar.SetUlt(0);
+
+        // disable icon
+
+
     }
 
 

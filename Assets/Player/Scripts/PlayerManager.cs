@@ -45,6 +45,7 @@ public class PlayerManager : MonoBehaviour
 	public float JumpDistance;
 	public float JumpSpeed;
 	public float MDD;
+	public float AttackMoveDistance;
 
 	// audio
 	public AudioSource audioSource;

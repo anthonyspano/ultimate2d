@@ -33,6 +33,9 @@ namespace com.ultimate2d.combat
                     case 107: // 'k'
                         BattleSystem.SetState(new FirstAttack(BattleSystem));
                         break;
+                    case 350:
+                        BattleSystem.SetState(new FirstAttack(BattleSystem));
+                        break;
                     case 32: // 'space'
                         //BattleSystem.SetState(new Jump(BattleSystem));
                         break;

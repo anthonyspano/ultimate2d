@@ -1,3 +1,4 @@
+using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.Tilemaps;
@@ -15,6 +16,18 @@ namespace UnityEditor.Tilemaps
             public static readonly Color executingColor = new Color(1f, .75f, 0.25f);
         }
 
+        /// <summary>Returns a tooltip describing the usage of the brush and other helpful information.</summary>
+        public virtual string tooltip
+        {
+            get { return null; }
+        }
+
+        /// <summary>Returns a texture used as an icon to identify this brush.</summary>
+        public virtual Texture2D icon
+        {
+            get { return null; }
+        }
+
         /// <summary>Checks if the Brush allows the changing of Z Position.</summary>
         /// <returns>Whether the Brush can change Z Position.</returns>
         public virtual bool canChangeZPosition
@@ -29,7 +42,7 @@ namespace UnityEditor.Tilemaps
         /// <param name="position">Current selected location of the brush.</param>
         /// <param name="tool">Current GridBrushBase::ref::Tool selected.</param>
         /// <param name="executing">Whether is brush is being used.</param>
-        /// <remarks>Implement this for any special behaviours when the GridBrush is used on the Scene view.</remarks>
+        /// <remarks>Implement this for any special behaviours when the GridBrush is used on the Scene View.</remarks>
         public virtual void OnPaintSceneGUI(GridLayout gridLayout, GameObject brushTarget, BoundsInt position, GridBrushBase.Tool tool, bool executing)
         {
             OnPaintSceneGUIInternal(gridLayout, brushTarget, position, tool, executing);
@@ -45,6 +58,20 @@ namespace UnityEditor.Tilemaps
         /// <summary>Callback for drawing the Inspector GUI when there is an active GridSelection made in a GridLayout.</summary>
         /// <remarks>Override this to show custom Inspector GUI for the current selection.</remarks>
         public virtual void OnSelectionInspectorGUI() {}
+
+        /// <summary>Callback for painting custom gizmos when there is an active GridSelection made in a GridLayout.</summary>
+        /// <param name="gridLayout">Grid that the brush is being used on.</param>
+        /// <param name="brushTarget">Target of the GridBrushBase::ref::Tool operation. By default the currently selected GameObject.</param>
+        /// <remarks>Override this to show custom gizmos for the current selection.</remarks>
+        public virtual void OnSelectionSceneGUI(GridLayout gridLayout, GameObject brushTarget) {}
+
+        /// <summary>
+        /// Callback for painting custom gizmos for the GridBrush for the brush target
+        /// </summary>
+        /// <param name="gridLayout">Grid that the brush is being used on.</param>
+        /// <param name="brushTarget">Target of the GridBrushBase::ref::Tool operation. By default the currently selected GameObject.</param>
+        /// <remarks>Override this to show custom gizmos for the brush target.</remarks>
+        public virtual void OnSceneGUI(GridLayout gridLayout, GameObject brushTarget) {}
 
         /// <summary>Callback when the mouse cursor leaves a paintable region.</summary>
         /// <remarks>Implement this for any custom behaviour when the mouse cursor leaves a paintable region.</remarks>
@@ -95,6 +122,23 @@ namespace UnityEditor.Tilemaps
             }
         }
 
+        internal static void OnSceneGUIInternal(GridLayout gridLayout, GameObject brushTarget, BoundsInt position, GridBrushBase.Tool tool, bool executing)
+        {
+            if (Event.current.type != EventType.Repaint)
+                return;
+
+            if (tool == GridBrushBase.Tool.Select
+                || tool == GridBrushBase.Tool.Move
+                || GridSelectionTool.IsActive())
+            {
+                if (GridSelection.active && !executing)
+                {
+                    Color color = Styles.activeColor;
+                    GridEditorUtility.DrawGridMarquee(gridLayout, position, color);
+                }
+            }
+        }
+
         internal static void OnPaintSceneGUIInternal(GridLayout gridLayout, GameObject brushTarget, BoundsInt position, GridBrushBase.Tool tool, bool executing)
         {
             if (Event.current.type != EventType.Repaint)
@@ -106,13 +150,21 @@ namespace UnityEditor.Tilemaps
             if (tool == GridBrushBase.Tool.Paint && executing)
                 color = Color.yellow;
 
-            if (tool == GridBrushBase.Tool.Select ||
-                tool == GridBrushBase.Tool.Move)
+            if (tool == GridBrushBase.Tool.Select
+                || tool == GridBrushBase.Tool.Move
+                || GridSelectionTool.IsActive())
             {
                 if (executing)
                     color = Styles.executingColor;
                 else if (GridSelection.active)
                     color = Styles.activeColor;
+            }
+
+            if (brushTarget != null)
+            {
+                var targetLayout = brushTarget.GetComponent<GridLayout>();
+                if (targetLayout != null)
+                    gridLayout = targetLayout;
             }
 
             if (position.zMin != 0)
