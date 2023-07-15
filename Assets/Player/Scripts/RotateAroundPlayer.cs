@@ -10,6 +10,8 @@ public class RotateAroundPlayer : MonoBehaviour
     private float y;
 
     private Vector2 lastMove;
+    public int Z_offset;
+    public float cursorDistanceFromPlayer;
     
     private void Update()
     {
@@ -22,13 +24,13 @@ public class RotateAroundPlayer : MonoBehaviour
             
             // pos
             var pos = PlayerManager.Instance.transform.XandY();
-            pos += (Vector2)moveDirection * PlayerManager.Instance.range;
+            pos += (Vector2)moveDirection * cursorDistanceFromPlayer; // 1 is good for final
             transform.position = pos;
 
             // rotate
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) *
                           Mathf.Rad2Deg;     // return angle in radians tan(y/x)
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward - new Vector3(0,0, Z_offset)); // needs to be flipped
             
         }
     }

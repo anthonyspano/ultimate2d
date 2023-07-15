@@ -22,13 +22,17 @@ public class PowerManager : MonoBehaviour
 
     private void Update()
     {
-        if(ultimateCharge.GetUlt() > ultCost)
+        
+        if(ultimateCharge.GetUlt() >= ultCost)
         {
             powerIcon.color = new Color(1,1,1, 1f);
         }
+        else
+            powerIcon.color = new Color(0,0,0, .80f);
 
-        if(Input.GetKeyDown(KeyCode.Space) && ultimateCharge.GetUlt() > ultCost)
+        if(PlayerInput.Ultimate() && ultimateCharge.GetUlt() > ultCost)
         {
+            Debug.Log("ultimate");
             ultimateCharge.AddUlt(-ultCost);
             anim.SetBool("IsExploding", true);
 
@@ -44,8 +48,8 @@ public class PowerManager : MonoBehaviour
                     col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(SpecialDamage);
             }
 
-            // "turn off" icon
-            powerIcon.color = new Color(0,0,0, .80f);
+        
+            
 
         }
     }

@@ -23,15 +23,14 @@ namespace com.ultimate2d.combat
             // play third slash anim
             //Debug.Log("Third attack");
             PlayerManager.Instance.CanMove = false;
-            PlayerManager.Instance.GetComponent<Animator>().Play("PlayerStrike3", 0);
+            //PlayerManager.Instance.GetComponent<Animator>().Play("PlayerStrike3", 0);
             PlayerManager.Instance.GetComponent<AudioSource>().Play();
+            // play slash anim
+            PlayerManager.Instance.GetComponent<Animator>().SetBool("IsAttacking", true);
 
             // scoot towards last move
             var newPos = PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance;
             PlayerManager.Instance.transform.position = Vector3.Lerp(PlayerManager.Instance.transform.position, newPos, 0.4f);
-
-            // do damage to area
-            PlayerManager.Instance.DoDamage();
             
             var cooldown = PlayerManager.Instance.cooldownRate;
             while(cooldown > 0)
@@ -39,6 +38,8 @@ namespace com.ultimate2d.combat
                 cooldown -= Time.deltaTime;
                 yield return null;
             }
+            // turn off attack anim
+            PlayerManager.Instance.GetComponent<Animator>().SetBool("IsAttacking", false);
 
             // yield return new WaitForSeconds(chainCD);
             PlayerManager.Instance.CanMove = true;

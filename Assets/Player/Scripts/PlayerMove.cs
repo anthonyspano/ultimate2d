@@ -32,10 +32,15 @@ public class PlayerMove : MonoBehaviour
         var movement = new Vector2(x, y);
         
         if (x < 0)
+        {
             isFacingLeft = true;
+        }
         else if (x > 0)
+        {
             isFacingLeft = false;
+        }
         sr.flipX = isFacingLeft;
+       
         
         if (movement.magnitude > deadZone && PlayerManager.Instance.CanMove) 
         {

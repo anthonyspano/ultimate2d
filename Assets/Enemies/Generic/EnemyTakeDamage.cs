@@ -94,9 +94,11 @@ public class EnemyTakeDamage : MonoBehaviour
         }
     }
 
-    // void OnCollisionEnter2D(Collision2D col)
-    // {
-    //     if(col.transform.CompareTag("PlayerAttack"))
-    //         healthSystem.Damage(70);
-    // }
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.CompareTag("Player"))
+        {
+            healthSystem.Damage(PlayerManager.Instance.Attack);
+        }
+    }
 }

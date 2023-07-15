@@ -18,22 +18,22 @@ namespace com.ultimate2d.combat
         {
             // wait until animation is on second to last frame and use event to trigger bool?
             // or wait until animation is finished?
+            Debug.Log(PlayerManager.Instance.anim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
             yield return new WaitUntil(() => PlayerManager.Instance.AnimFinished());
             
-            PlayerManager.Instance.FinishAnimation();
+            Debug.Log("preparing second attack");
 
             // play second slash anim
             //Debug.Log("Second attack");
             PlayerManager.Instance.CanMove = false;
-            PlayerManager.Instance.GetComponent<Animator>().Play("PlayerStrike2", 0);
+            //PlayerManager.Instance.GetComponent<Animator>().Play("PlayerStrike2", 0);
             PlayerManager.Instance.GetComponent<AudioSource>().Play();
+            // play slash anim
+            PlayerManager.Instance.GetComponent<Animator>().SetBool("IsAttacking", true);
 
             // scoot towards last move
             var newPos = PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance;
             PlayerManager.Instance.transform.position = Vector3.Lerp(PlayerManager.Instance.transform.position, newPos, 0.8f);
-            
-            // do damage to area
-            PlayerManager.Instance.DoDamage();
             
             var cooldown = PlayerManager.Instance.cooldownRate;
             while(cooldown > 0)
@@ -43,7 +43,9 @@ namespace com.ultimate2d.combat
                 yield return null;
             }
 
-            
+            // turn off attack anim
+            PlayerManager.Instance.GetComponent<Animator>().SetBool("IsAttacking", false);
+
             if(continueChain)
             {
                 continueChain = false;

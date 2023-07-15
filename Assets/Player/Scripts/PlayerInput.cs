@@ -10,8 +10,8 @@ public class PlayerInput : MonoBehaviour
     private static KeyCode k_jump = KeyCode.Space;
     private static KeyCode c_shoot = KeyCode.JoystickButton3; // Y
     private static KeyCode k_shoot = KeyCode.J;
-    private static KeyCode c_ultimate = KeyCode.JoystickButton3; // RB for this one
-    private static KeyCode k_ultimate = KeyCode.U;
+    private static int c_ultimate = 355; // RB
+    private static KeyCode k_ultimate = KeyCode.Space;
     private static KeyCode c_slash = KeyCode.JoystickButton0; // A
     private static KeyCode k_slash = KeyCode.K;
 
@@ -34,7 +34,7 @@ public class PlayerInput : MonoBehaviour
 
     public static bool Ultimate() 
     {
-        if(Input.GetKeyDown(k_ultimate) || Input.GetKeyDown(c_ultimate))
+        if(Input.GetKeyDown(k_ultimate) || Input.GetKeyDown((KeyCode)c_ultimate))
             return true;
         return false;
     }

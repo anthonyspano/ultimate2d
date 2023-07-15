@@ -35,7 +35,7 @@ public class PlayerManager : MonoBehaviour
 	// for damage
 	SpriteRenderer sr;
 	public LayerMask enemyLayerMask;
-	public int attack;
+	public int Attack;
 
 	// player properties
 	[SerializeField] private int maxHealth;
@@ -68,6 +68,10 @@ public class PlayerManager : MonoBehaviour
 		get { return canMove;} 
 		set { canMove = value; }
 	}
+
+	// delete if old
+	private Transform hitbox;
+	private BoxCollider2D boxCollider;
 
 	private Vector3 lastMove;
 	public Vector3 LastMove
@@ -105,6 +109,10 @@ public class PlayerManager : MonoBehaviour
 
 		// audio
 		audioSource = GetComponent<AudioSource>();
+
+		// delete if old
+		boxCollider = GetComponent<BoxCollider2D>();
+		hitbox = transform.GetChild(3);
 	}
 	
 	private void Awake()
@@ -133,11 +141,14 @@ public class PlayerManager : MonoBehaviour
 			LastMove = new Vector3(x,y,0);
 		}
 
+		if(boxCollider.enabled == false && anim.GetCurrentAnimatorClipInfo(0)[0].clip.name != "PlayerLeftAttack")
+			hitbox.gameObject.SetActive(false);
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if(collision.transform.CompareTag("Enemy") || collision.transform.CompareTag("Projectile"))
+		if(collision.transform.CompareTag("Projectile"))
 		{
 			Instance.pHealth.Damage(20);
 			audioSource.PlayOneShot(hurt1, 0.7f);
@@ -211,25 +222,28 @@ public class PlayerManager : MonoBehaviour
 	// State pattern anim control
 	public void FinishAnimation()
 	{
+		Debug.Log("anim finished");
 		CanMove = true;
 		animFinished = true;
 	}
 
 	public bool AnimFinished()
 	{
+		
 		return animFinished;
 	}
 
-	// damage
-	public void DoDamage()
+
+	// delete if old
+	public void EnableVisualHitBox()
 	{
-		var hits = Physics2D.OverlapCircleAll(playerAim.transform.position, range, enemyLayerMask);
-		foreach (var col in hits)
-		{
-			col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(attack);
-			// fill ult bar here
-			ultBar.AddUlt(10);
-		}
+		hitbox.gameObject.SetActive(true);
+		//Debug.Log(anim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+	}
+
+	public void DisableVisualHitbox()
+	{
+		//hitbox.gameObject.SetActive(false);
 	}
 
 }

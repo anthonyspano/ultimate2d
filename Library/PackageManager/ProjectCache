@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638229614046523430
+      ticks: 638241652390639244
     m_Hash: 885490006
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -1587,17 +1587,21 @@ m_ResolvedPackages:
     - 1.7.2
     - 1.7.3
     - 1.7.4
+    - 1.7.5
     - 1.8.0
     - 1.8.1
     - 1.8.2
     - 1.8.3
+    - 1.8.4
     compatible:
     - 1.7.4
+    - 1.7.5
     - 1.8.0
     - 1.8.1
     - 1.8.2
     - 1.8.3
-    recommended: 1.7.4
+    - 1.8.4
+    recommended: 1.7.5
     deprecated: []
   dependencies:
   - name: com.unity.modules.director
@@ -3751,10 +3755,14 @@ m_ResolvedPackages:
     - 1.0.6
     - 2.0.2
     - 2.0.3
+    - 2.0.4
+    - 2.0.5
     compatible:
     - 1.0.6
     - 2.0.2
     - 2.0.3
+    - 2.0.4
+    - 2.0.5
     recommended: 1.0.6
     deprecated: []
   dependencies: []
@@ -3803,7 +3811,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: 'This package defines common components used by multiple Game Service
     packages.
 
@@ -3835,8 +3843,10 @@ m_ResolvedPackages:
     - 1.8.1
     - 1.8.2
     - 1.9.0
+    - 1.10.1
     compatible:
     - 1.9.0
+    - 1.10.1
     recommended: 1.9.0
     deprecated: []
   dependencies:
@@ -3864,7 +3874,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638199321780000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.services.core@1.9/manual/index.html
   hasRepository: 1
   repository:
@@ -3894,7 +3904,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: The Unity Analytics package automatically collects core events and
     user properties when someone uses your game or application, and enables you to
     track specific in-game actions your user performs by defining custom events.
@@ -3905,10 +3915,32 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 1.0.3
+    - 1.0.4
+    - 1.0.5
+    - 2.0.7-pre.4
+    - 2.0.7-pre.6
+    - 2.0.7-pre.7
+    - 3.0.0-pre.2
+    - 3.0.0-pre.3
+    - 3.0.0-pre.4
+    - 4.0.0-pre.2
+    - 4.0.0-pre.3
+    - 4.0.0
+    - 4.0.1
+    - 4.1.0
+    - 4.2.0
+    - 4.3.0
     - 4.4.0
+    - 4.4.1
+    - 4.4.2
+    - 5.0.0
     compatible:
     - 4.4.0
-    recommended: 4.4.0
+    - 4.4.1
+    - 4.4.2
+    - 5.0.0
+    recommended: 4.4.2
     deprecated: []
   dependencies:
   - name: com.unity.ugui
@@ -3943,7 +3975,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 638139658640000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.services.analytics@4.4/manual/index.html
   hasRepository: 1
   repository:
