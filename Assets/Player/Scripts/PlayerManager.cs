@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour
 
 	// animator
 	public Animator anim;
-	private bool animFinished;
+	public bool animFinished;
 
 	// for damage
 	SpriteRenderer sr;
@@ -140,9 +140,8 @@ public class PlayerManager : MonoBehaviour
 		{
 			LastMove = new Vector3(x,y,0);
 		}
-
-		if(boxCollider.enabled == false && anim.GetCurrentAnimatorClipInfo(0)[0].clip.name != "PlayerLeftAttack")
-			hitbox.gameObject.SetActive(false);
+		anim.SetFloat("MoveX", LastMove.x);
+		anim.SetFloat("MoveY", LastMove.y);
 
 	}
 
@@ -222,8 +221,7 @@ public class PlayerManager : MonoBehaviour
 	// State pattern anim control
 	public void FinishAnimation()
 	{
-		Debug.Log("anim finished");
-		CanMove = true;
+		anim.Play("Player Idle", 0);
 		animFinished = true;
 	}
 
@@ -233,17 +231,5 @@ public class PlayerManager : MonoBehaviour
 		return animFinished;
 	}
 
-
-	// delete if old
-	public void EnableVisualHitBox()
-	{
-		hitbox.gameObject.SetActive(true);
-		//Debug.Log(anim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
-	}
-
-	public void DisableVisualHitbox()
-	{
-		//hitbox.gameObject.SetActive(false);
-	}
 
 }
