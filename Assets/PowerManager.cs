@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace com.ultimate2d.combat
+{
 public class PowerManager : MonoBehaviour
 {
     public float range;
@@ -64,4 +66,6 @@ public class PowerManager : MonoBehaviour
     //     Gizmos.color = Color.blue;
     //     Gizmos.DrawWireSphere(transform.position, range);
     // }
+}
+
 }

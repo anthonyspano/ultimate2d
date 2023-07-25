@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+namespace com.ultimate2d.combat
+{
 [RequireComponent(typeof(PlayerAttack))]
 public class TranslateDash : MonoBehaviour
 {
@@ -64,4 +65,6 @@ public class TranslateDash : MonoBehaviour
         
     }
     
+}
+
 }

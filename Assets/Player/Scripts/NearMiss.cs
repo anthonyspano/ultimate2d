@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace com.ultimate2d.combat
+{
 public class NearMiss : TranslateDash
 {
     protected override void Dash(float speed)
@@ -24,4 +26,6 @@ public class NearMiss : TranslateDash
         yield return new WaitForSeconds(2);
         Destroy(clone.gameObject);
     }
+}
+
 }

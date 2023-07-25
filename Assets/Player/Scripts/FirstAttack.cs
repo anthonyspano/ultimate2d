@@ -16,7 +16,6 @@ namespace com.ultimate2d.combat
         public override IEnumerator Start() 
         {
             PlayerManager.Instance.CanMove = false;
-
             // play slash anim
             PlayerManager.Instance.GetComponent<Animator>().Play("Attack Tree", 0);
             PlayerManager.Instance.GetComponent<AudioSource>().Play();

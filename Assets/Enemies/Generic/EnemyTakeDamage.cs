@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace com.ultimate2d.combat
+{
 public class EnemyTakeDamage : MonoBehaviour
 {
     // health
@@ -55,6 +57,9 @@ public class EnemyTakeDamage : MonoBehaviour
 
     IEnumerator EnemyDying()
     {
+        // disable further movements
+        gameObject.GetComponent<BattleSystem>().enabled = false;
+
         // play death anim
         //anim.Play("Death", 0);
         //yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length); 
@@ -101,4 +106,6 @@ public class EnemyTakeDamage : MonoBehaviour
             healthSystem.Damage(PlayerManager.Instance.Attack);
         }
     }
+}
+
 }

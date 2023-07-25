@@ -15,6 +15,7 @@ TagManager:
   - Shooter
   - PlayerAttack
   - Power
+  - PlayerHurt
   layers:
   - Default
   - TransparentFX

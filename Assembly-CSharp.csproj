@@ -110,7 +110,6 @@
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Player\Scripts\FirstAttack.cs" />
      <Compile Include="Assets\Enemies\Minotaur\Minotaur Scripts\MinotaurExecuteAttack.cs" />
-     <Compile Include="Assets\AttackAnimManager.cs" />
      <Compile Include="Assets\Enemies\Generic\EnemyManagerOld.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerAttack2D.cs" />
      <Compile Include="Assets\PowerManager.cs" />
@@ -131,7 +130,6 @@
      <Compile Include="Assets\Player\Scripts\ShadowController.cs" />
      <Compile Include="Assets\Utility\FSM\AttackPlayer.cs" />
      <Compile Include="Assets\Deprecated\Minotaur.cs" />
-     <Compile Include="Assets\AnimationControl.cs" />
      <Compile Include="Assets\MinotaurBossDebug.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

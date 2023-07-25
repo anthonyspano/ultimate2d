@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace com.ultimate2d.combat
+{
 [RequireComponent(typeof(PlayerAim))]
 public class PlayerAttack : MonoBehaviour
 {
@@ -101,5 +103,7 @@ public class PlayerAttack : MonoBehaviour
         anim.Play("Neutral");
     }
 
+
+}
 
 }
