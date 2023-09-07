@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// old?
 namespace com.ultimate2d.combat
 {
 [RequireComponent(typeof(PlayerAim))]

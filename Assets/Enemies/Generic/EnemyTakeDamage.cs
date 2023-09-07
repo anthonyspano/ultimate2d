@@ -12,6 +12,8 @@ public class EnemyTakeDamage : MonoBehaviour
 
     public int maxHealth;
 
+    public int ultAddedOnHit;
+
     private Animator anim;
     private void Start() 
     {
@@ -104,6 +106,7 @@ public class EnemyTakeDamage : MonoBehaviour
         if(col.gameObject.CompareTag("Player"))
         {
             healthSystem.Damage(PlayerManager.Instance.Attack);
+            PlayerManager.Instance.ultBar.AddUlt(PlayerManager.Instance.ultAddedOnHit); // consider source
         }
     }
 }

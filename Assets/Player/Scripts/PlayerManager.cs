@@ -19,50 +19,59 @@ public class PlayerManager : MonoBehaviour
 	public static GameObject player;
 
 	// health
+	[Header("Health")]
+	[SerializeField] private int maxHealth;
 	public Transform pfHealthBar;	
 	public HealthSystem pHealth;
 	public float positionOffset;
 	
 	// ultimate
+	[Header("Ultimate")]
 	public int maxUlt = 100;
 	public UltimateBar ultBar;
 	public float invulnAfterHit;
+	public int ultAddedOnHit;
 
 	// animator
-	public Animator anim;
-	public bool animFinished;
+	private Animator anim;
+	private bool animFinished;
 
 	// for damage
-	SpriteRenderer sr;
+	[Header("Damage")]
 	public LayerMask enemyLayerMask;
 	public int Attack;
+	private SpriteRenderer sr;
 
 	// player properties
-	[SerializeField] private int maxHealth;
+	[Header("Special Properties")]
 	public float range;
 	public float cooldownRate;
-	public RotateAroundPlayer playerAim;
 	public float JumpDistance;
 	public float JumpSpeed;
 	public float MDD;
 	public float AttackMoveDistance;
+	private RotateAroundPlayer playerAim;
 
 	// audio
-	public AudioSource audioSource;
+	[Header("Audio")]
 	public AudioClip slash1;
 	public AudioClip hurt1;
+	private AudioSource audioSource;
 
 	// death screen
+	[Header("Death Screen")]
+	public GameObject ppv;
 	PostProcessVolume m_Volume;
 	Vignette m_Vignette;
 	ColorGrading m_ColorGrading;
 	float w;
-	public GameObject ppv;
 
 	// etc
-	private int wrongWayCount = 0;
+	[Header("Etc")]
 	public GameObject wrongWayPanel;
 	private bool canMove = true;
+	private int wrongWayCount = 0;
+
 	public bool CanMove
 	{
 		get { return canMove;} 
