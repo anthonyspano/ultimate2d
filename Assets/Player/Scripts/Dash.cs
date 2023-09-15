@@ -19,4 +19,5 @@ public class Dash : MonoBehaviour
             transform.Translate(direction * (dashDistance * Time.deltaTime));
         }
     }
+
 }

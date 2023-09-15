@@ -7,6 +7,7 @@ namespace com.ultimate2d.combat
 {
     public class BattleSystem : StateMachine
     {
+        public EnemyManager _enemyManager;
         private bool canAttack = true;
         public bool CanAttack
         {
@@ -52,7 +53,7 @@ namespace com.ultimate2d.combat
 
         public bool PlayerIsInRange(float range)
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, range, EnemyManager.enemyLayerMask);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, range, _enemyManager.enemyLayerMask);
             if(colliders.Length > 0) 
                 return true;
             

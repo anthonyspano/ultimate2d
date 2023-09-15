@@ -258,8 +258,8 @@
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\treeview\TrackPropertyCurvesDataSource.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Window\TimelineWindow_PlaybackControls.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Analytics\TimelineAnalytics.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\treeview\Snapping\SnapEngine.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\treeview\Drawers\InfiniteTrackDrawer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\treeview\Snapping\SnapEngine.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Signals\SignalReceiverHeader.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Utilities\KeyTraverser.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Manipulators\Trim\TrimItemModeRipple.cs" />

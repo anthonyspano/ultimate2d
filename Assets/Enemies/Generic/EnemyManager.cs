@@ -3,86 +3,79 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+namespace com.ultimate2d.combat
 {
-    public static int enemyLayerMask = 1 << 8;
-    private static float fovRange;
-    private static float damage;
-    public static float atkSpeed;
-    private static float moveSpeed;
-    private static float atkRange;
-    private static float retreatRange;
-    private static bool canMove = true;
-
-    private static float pursuitRange;
-
-    public AudioClip attackSound;
-
-    public static Transform AttackBox;
-
-    public static float PursuitRange
+    public class EnemyManager : MonoBehaviour
     {
-        get { return pursuitRange; }
-        set { pursuitRange = value; }
-    } 
+        public int enemyLayerMask = 1 << 8;
+        private static float fovRange;
+        private static float damage;
+        public static float atkSpeed;
+        private static float moveSpeed;
 
-    public static float RetreatRange
-    {
-        get { return retreatRange; }
-        set { retreatRange = value; }
+        private static float retreatRange;
+        private static bool canMove = true;
+
+        public float pursuitRange;
+        public float attackRange;
+
+        public AudioClip attackSound;
+
+        public static Transform AttackBox;
+
+        public static float RetreatRange
+        {
+            get { return retreatRange; }
+            set { retreatRange = value; }
+        }
+        
+        protected float Damage
+        {
+            get { return damage; }
+            set { damage = value; }
+        }
+        protected float AtkSpeed
+        {
+            get { return atkSpeed; }
+            set { atkSpeed = value; }
+        }
+        protected float MoveSpeed
+        {
+            get { return moveSpeed; }
+            set { moveSpeed = value; }
+        }
+        public static float FoVRange
+        {
+            get { return fovRange; }
+            set { fovRange = value; }
+        }
+
+        public bool CanMove
+        {
+            get { return canMove; }
+            set { canMove = value; }
+        }
+
+        private SpriteRenderer sr;
+
+        public static bool Busy = false;
+        public static bool Retreating;
+
+        public static int jumpSpeed = 15;
+
+        void Start()
+        {
+            
+        }
+
+        public void CanMoveAgain()
+        {
+            CanMove = true;
+        }
+
+
+
+
     }
-    public static float AttackRange
-    {
-        get { return atkRange; }
-        set { atkRange = value; }
-    }
-    
-    protected float Damage
-    {
-        get { return damage; }
-        set { damage = value; }
-    }
-    protected float AtkSpeed
-    {
-        get { return atkSpeed; }
-        set { atkSpeed = value; }
-    }
-    protected float MoveSpeed
-    {
-        get { return moveSpeed; }
-        set { moveSpeed = value; }
-    }
-    public static float FoVRange
-    {
-        get { return fovRange; }
-        set { fovRange = value; }
-    }
-
-    public bool CanMove
-    {
-        get { return canMove; }
-        set { canMove = value; }
-    }
-
-    private SpriteRenderer sr;
-
-    public static bool Busy = false;
-    public static bool Retreating;
-
-    public static int jumpSpeed = 15;
-
-    void Start()
-    {
-        PursuitRange = 7;
-        AttackRange = 2.5f;
-    }
-
-    public void CanMoveAgain()
-    {
-        CanMove = true;
-    }
-
-
-
 
 }

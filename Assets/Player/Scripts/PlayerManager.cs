@@ -46,6 +46,7 @@ public class PlayerManager : MonoBehaviour
 	[Header("Special Properties")]
 	public float range;
 	public float cooldownRate;
+	public float jumpCooldownRate;
 	public float JumpDistance;
 	public float JumpSpeed;
 	public float MDD;

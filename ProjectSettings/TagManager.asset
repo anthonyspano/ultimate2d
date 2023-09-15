@@ -16,6 +16,7 @@ TagManager:
   - PlayerAttack
   - Power
   - PlayerHurt
+  - BigCultist
   layers:
   - Default
   - TransparentFX

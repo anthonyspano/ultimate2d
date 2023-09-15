@@ -6,7 +6,6 @@ namespace com.ultimate2d.combat
 {
     public class Jump : State
     {
-        public float coolDownRate = 1; // 1
         private float coolDownTimer = 0;
         private Animator anim;
         private Rigidbody2D rb;
@@ -25,23 +24,28 @@ namespace com.ultimate2d.combat
             if(coolDownTimer <= 0)
             {
                 // perform jump
-                anim.Play("PlayerJump", 0);
+                Debug.Log("Jump");
+                //anim.Play("PlayerJump", 0);
                 PlayerManager.Instance.CanMove = false;
                 // while animator is playing clip, add force
-                while(anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerJump"))
-                {
+                // while(anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerJump"))
+                // {
                     // addforce + directional movement amplifies is greatly
                     //rb.AddForce(PlayerManager.Instance.LastMove * jumpDistance);
                     //Debug.Log(PlayerManager.Instance.LastMove);
-                    PlayerManager.Instance.transform.position = Vector2.MoveTowards(PlayerManager.Instance.transform.position, 
-                                                                                    PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.JumpDistance, PlayerManager.Instance.MDD);
-                    yield return null;
-                }
-                coolDownTimer = coolDownRate;
+                    //PlayerManager.Instance.transform.position = Vector2.MoveTowards(PlayerManager.Instance.transform.position, 
+                    //                                                                    PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.JumpDistance, PlayerManager.Instance.MDD);
+                        
+                var x = Input.GetAxis(PlayerInput.x);
+                var y = Input.GetAxis(PlayerInput.y);
+                var direction = new Vector2(x, y);
+                PlayerManager.Instance.transform.Translate(direction * PlayerManager.Instance.JumpDistance * Time.deltaTime);
+                yield return null;
+                //}
+                coolDownTimer = PlayerManager.Instance.jumpCooldownRate;
                 PlayerManager.Instance.CanMove = true;
             }   
-
-            coolDownTimer -= Time.deltaTime;   
+ 
             BattleSystem.SetState(new Begin(BattleSystem));  
        
         }

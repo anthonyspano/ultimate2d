@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!114 &897380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908ca683a95d2f459b5b51b175839cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayerMask: 256
+  pursuitRange: 0
+  attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
 --- !u!95 &897382
 Animator:
@@ -345,9 +349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70cdf66e2d5ab647978bef1798e1266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1299893146}
-  - {fileID: 1244880437}
 --- !u!61 &897384
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -942,6 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!114 &47060018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,6 +970,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908ca683a95d2f459b5b51b175839cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayerMask: 256
+  pursuitRange: 0
+  attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
 --- !u!95 &47060020
 Animator:
@@ -1002,9 +1007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70cdf66e2d5ab647978bef1798e1266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1299893146}
-  - {fileID: 1244880437}
 --- !u!61 &47060022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1115,6 +1117,156 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Torch: {fileID: 1038560425}
+--- !u!1 &62772405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 62772408}
+  - component: {fileID: 62772407}
+  - component: {fileID: 62772406}
+  - component: {fileID: 62772409}
+  - component: {fileID: 62772410}
+  - component: {fileID: 62772411}
+  m_Layer: 9
+  m_Name: BIG FAT GUY
+  m_TagString: BigCultist
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &62772406
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62772405}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a4998e2d39f270243b85caa50822ad7a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &62772407
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62772405}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 2893185
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1931407996, guid: 48ae58137cd49db40bd683fdfdfab5ac, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.375, y: 1.84375}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &62772408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62772405}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.63, y: 7.713437, z: -3.6256511}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &62772409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62772405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
+--- !u!114 &62772410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62772405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0908ca683a95d2f459b5b51b175839cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayerMask: 256
+  pursuitRange: 7
+  attackRange: 1.5
+  attackSound: {fileID: 0}
+--- !u!114 &62772411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62772405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f8cde83f41b38408aba379428a9d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &73354406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,6 +1773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!114 &159061683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1659,6 +1812,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908ca683a95d2f459b5b51b175839cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayerMask: 256
+  pursuitRange: 0
+  attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
 --- !u!95 &159061686
 Animator:
@@ -1693,9 +1849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70cdf66e2d5ab647978bef1798e1266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1299893146}
-  - {fileID: 1244880437}
 --- !u!61 &159061688
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2983,6 +3136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!114 &439741152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3009,6 +3163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908ca683a95d2f459b5b51b175839cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayerMask: 256
+  pursuitRange: 0
+  attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
 --- !u!95 &439741154
 Animator:
@@ -3043,9 +3200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70cdf66e2d5ab647978bef1798e1266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1299893146}
-  - {fileID: 1244880437}
 --- !u!61 &439741156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3359,6 +3513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e510cee44d97e4b4caa6b68aa1fa4029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   pfHealthBar: {fileID: 1726575013604697225, guid: e735742ab812228469c1101b5a48a022,
     type: 3}
   positionOffset: 1.8
@@ -3366,21 +3521,17 @@ MonoBehaviour:
   ultBar: {fileID: 464829523}
   invulnAfterHit: 0.1
   ultAddedOnHit: 10
-  anim: {fileID: 0}
-  animFinished: 0
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 512
   Attack: 100
-  maxHealth: 100
   range: 1
   cooldownRate: 0.21
-  playerAim: {fileID: 0}
+  jumpCooldownRate: 1
   JumpDistance: 50
   JumpSpeed: 10
   MDD: 0.15
   AttackMoveDistance: 1
-  audioSource: {fileID: 0}
   slash1: {fileID: 8300000, guid: 045ad82e118921a428488577eb38d79a, type: 3}
   hurt1: {fileID: 8300000, guid: 3374377e45532b04d95d1c767cc42ff1, type: 3}
   ppv: {fileID: 130940280}
@@ -3605,6 +3756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!114 &464829531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24754,6 +24906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!95 &1038560430
 Animator:
   serializedVersion: 5
@@ -25259,6 +25412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!61 &1314379737
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25827,7 +25981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1463035033
 Transform:
   m_ObjectHideFlags: 0
@@ -25965,6 +26119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!114 &1463035037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26003,6 +26158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908ca683a95d2f459b5b51b175839cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayerMask: 256
+  pursuitRange: 0
+  attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
 --- !u!95 &1463035040
 Animator:
@@ -26037,9 +26195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70cdf66e2d5ab647978bef1798e1266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1299893146}
-  - {fileID: 1244880437}
 --- !u!61 &1463035042
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26300,6 +26455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!114 &1466940306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26326,6 +26482,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908ca683a95d2f459b5b51b175839cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayerMask: 256
+  pursuitRange: 0
+  attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
 --- !u!95 &1466940308
 Animator:
@@ -26360,9 +26519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70cdf66e2d5ab647978bef1798e1266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1299893146}
-  - {fileID: 1244880437}
 --- !u!61 &1466940310
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26722,6 +26878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!114 &1587493518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26760,6 +26917,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908ca683a95d2f459b5b51b175839cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayerMask: 256
+  pursuitRange: 0
+  attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
 --- !u!95 &1587493521
 Animator:
@@ -26794,9 +26954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70cdf66e2d5ab647978bef1798e1266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1299893146}
-  - {fileID: 1244880437}
 --- !u!61 &1587493523
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27341,6 +27498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!114 &1642665400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27367,6 +27525,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908ca683a95d2f459b5b51b175839cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayerMask: 256
+  pursuitRange: 0
+  attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
 --- !u!95 &1642665402
 Animator:
@@ -27401,9 +27562,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70cdf66e2d5ab647978bef1798e1266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1299893146}
-  - {fileID: 1244880437}
 --- !u!61 &1642665404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28580,6 +28738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!212 &1861623733
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29134,6 +29293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!95 &1898152506
 Animator:
   serializedVersion: 5
@@ -29317,6 +29477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!114 &1919277495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29343,6 +29504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908ca683a95d2f459b5b51b175839cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayerMask: 256
+  pursuitRange: 0
+  attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
 --- !u!95 &1919277497
 Animator:
@@ -29377,9 +29541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70cdf66e2d5ab647978bef1798e1266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1299893146}
-  - {fileID: 1244880437}
 --- !u!61 &1919277499
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30155,6 +30316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyManager: {fileID: 0}
 --- !u!95 &2019562641
 Animator:
   serializedVersion: 5
