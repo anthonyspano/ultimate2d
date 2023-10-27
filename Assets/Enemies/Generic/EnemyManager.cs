@@ -7,6 +7,7 @@ namespace com.ultimate2d.combat
 {
     public class EnemyManager : MonoBehaviour
     {
+        [HideInInspector]
         public int enemyLayerMask = 1 << 8;
         private static float fovRange;
         private static float damage;
@@ -63,16 +64,50 @@ namespace com.ultimate2d.combat
 
         public static int jumpSpeed = 15;
 
-        void Start()
-        {
-            
-        }
-
         public void CanMoveAgain()
         {
             CanMove = true;
         }
 
+        private Animator anim;
+
+        void Start()
+        {
+            anim = GetComponent<Animator>();
+        }
+
+        void Update()
+        {
+            // the direction the enemy is facing is the 
+            // some trig
+            Vector3 n = transform.position - PlayerManager.Instance.transform.position;
+            n.Normalize();
+            float rot_z = Mathf.Atan2(n.y, n.x) * Mathf.Rad2Deg;
+            rot_z = 90 - rot_z;           
+            
+            if(rot_z > 45f && rot_z <= 135f) // left face
+            {
+                anim.SetFloat("MoveX", -1);
+                anim.SetFloat("MoveY", 0);
+            }
+            else if(rot_z <= 225f && rot_z > 135f) // up face
+            {
+                anim.SetFloat("MoveX", 0);
+                anim.SetFloat("MoveY", 1);
+            }
+            else if(rot_z < -45f || rot_z > 225f) // right face
+            {
+                anim.SetFloat("MoveX", 1);
+                anim.SetFloat("MoveY", 0);
+            }
+            else // down face
+            {
+                anim.SetFloat("MoveX", 0);
+                anim.SetFloat("MoveY", -1);
+            }
+            
+
+        }
 
 
 

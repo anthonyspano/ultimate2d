@@ -418,6 +418,7 @@
 "Assets/PlayerComboSystem.cs"
 "Assets/PlayerDebug.cs"
 "Assets/PowerManager.cs"
+"Assets/Queue.cs"
 "Assets/RemoveWrongWay.cs"
 "Assets/Resources/Scripts/PowerStorage.cs"
 "Assets/ShockwaveTrigger.cs"

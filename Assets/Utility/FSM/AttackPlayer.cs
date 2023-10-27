@@ -30,7 +30,7 @@ namespace com.ultimate2d.combat
             
             // charge toward 
             // play anim
-            bs.GetComponent<Animator>().Play("big_guy_attack", 0);
+            bs.GetComponent<Animator>().Play("Attack", 0);
 
             // while(Vector3.Distance(bs.transform.position, atkBox.transform.position) > 0.03f)
             // {
@@ -40,7 +40,7 @@ namespace com.ultimate2d.combat
             // }
             
 //            yield return new WaitUntil(() => !bs.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")); // animator is done playing attack animation
-                      
+          
             yield return new WaitForSeconds(2f);
 
             BattleSystem.SetState(new Begin(BattleSystem));

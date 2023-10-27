@@ -7,6 +7,7 @@ namespace com.ultimate2d.combat
 {
     public class BattleSystem : StateMachine
     {
+        [HideInInspector]
         public EnemyManager _enemyManager;
         private bool canAttack = true;
         public bool CanAttack

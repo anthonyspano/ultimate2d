@@ -32,7 +32,7 @@ public class EnemyTakeDamage : MonoBehaviour
 		{
 			// Death sequence
 			//anim.SetBool("isDead", true);
-            Death();
+            StartCoroutine("Death");
 		}
         else 
         {
@@ -41,47 +41,16 @@ public class EnemyTakeDamage : MonoBehaviour
 
 	}
 
-    private void Death() 
+    IEnumerator Death()
     {
-        // triggered after death animation
-        var scripts = gameObject.GetComponents(typeof(MonoBehaviour)); // scripts attached
-        foreach (MonoBehaviour s in scripts)
-        {
-            s.enabled = false;
-            //Debug.Log(s);
-        }
+        //var scripts = gameObject.GetComponents(typeof(MonoBehaviour)); // scripts attached
 
-        //anim.enabled = false;
-
-        StartCoroutine("EnemyDying");
-
-    }
-
-    IEnumerator EnemyDying()
-    {
         // disable further movements
         gameObject.GetComponent<BattleSystem>().enabled = false;
 
         // play death anim
-        //anim.Play("Death", 0);
-        //yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length); 
-
-        var sr = GetComponent<SpriteRenderer>();
-
-        sr.enabled = true;
-        var i = 0;
-        float flickerTime = 0.33f;
-        while (i < 3)
-        {
-            yield return new WaitForSeconds(flickerTime);
-            sr.enabled = false;
-
-            yield return new WaitForSeconds(flickerTime);
-            sr.enabled = false;
-
-            i++;
-        }
-
+        anim.Play("enemy_death", 0);
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length); 
 
 
         Destroy(gameObject);
