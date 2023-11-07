@@ -96,6 +96,7 @@
      <Compile Include="Assets\Utility\TimedLife.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Player\Scripts\FirstAttack.cs" />
+     <Compile Include="Assets\TakeDamage.cs" />
      <Compile Include="Assets\Enemies\Generic\EnemyManagerOld.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerAttack2D.cs" />
      <Compile Include="Assets\PowerManager.cs" />

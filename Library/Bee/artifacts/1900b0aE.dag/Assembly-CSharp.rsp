@@ -422,6 +422,7 @@
 "Assets/RemoveWrongWay.cs"
 "Assets/Resources/Scripts/PowerStorage.cs"
 "Assets/ShockwaveTrigger.cs"
+"Assets/TakeDamage.cs"
 "Assets/TurnOffTorch.cs"
 "Assets/Utility/CameraShake.cs"
 "Assets/Utility/EndAnimation.cs"

@@ -25,7 +25,7 @@ namespace com.ultimate2d.combat
         public override IEnumerator Start()
         {
 
-            if(bs.transform.gameObject.CompareTag("Player"))
+            if(bs.transform.gameObject.CompareTag("PlayerAttack"))
             {
                 // wait for anykey
                 yield return new WaitUntil(() => Input.anyKey);

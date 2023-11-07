@@ -72,7 +72,9 @@ public class EnemyTakeDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.CompareTag("Player"))
+        var myCollider = col.GetContact(0);
+        Debug.Log(myCollider.collider.transform.name);
+        if(col.GetContact(0).collider.transform.CompareTag("PlayerAttack"))
         {
             healthSystem.Damage(PlayerManager.Instance.Attack);
             PlayerManager.Instance.ultBar.AddUlt(PlayerManager.Instance.ultAddedOnHit); // consider source

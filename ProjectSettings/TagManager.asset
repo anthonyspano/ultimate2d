@@ -17,11 +17,12 @@ TagManager:
   - Power
   - PlayerHurt
   - BigCultist
+  - HitBox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Damage
   - Water
   - UI
   - 
