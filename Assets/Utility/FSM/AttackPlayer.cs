@@ -7,30 +7,45 @@ namespace com.ultimate2d.combat
 {
     public class AttackPlayer : State
     {
-        BattleSystem bs;
+        BlockBattleSystem bs;
         GameObject _atkBox;
         GameObject shockwavePrefab;
-        EnemyManager enemyManager;
-        public AttackPlayer(BattleSystem battleSystem) : base(battleSystem)
+        EnemyManager em;
+        Animator anim;
+        float telegraphTime = 0.5f;
+
+        public AttackPlayer(BlockBattleSystem BlockBattleSystem) : base(BlockBattleSystem)
         {
-            bs = battleSystem;
-            enemyManager = bs.GetComponent<EnemyManager>();
+            bs = BlockBattleSystem;
+            em = bs.GetComponent<EnemyManager>();
+            anim = bs.GetComponent<Animator>();
         }
 
         public override IEnumerator Start()
         {
+            // final check for facing player
+            anim.SetFloat("MoveX", em.PlayerFacingVector().x);
+            anim.SetFloat("MoveY", em.PlayerFacingVector().y);
+
+            // create attack box 
+            _atkBox = Resources.Load("AttackBoxIndication") as GameObject;
+            //spawn atkbox at player position
+            var atkBox = Object.Instantiate(_atkBox, PlayerManager.Instance.transform.position, Quaternion.identity);
+            bs.Player = atkBox.transform;
+
+            // telegraph "charge up" attack
+            anim.Play("Telegraph", 0);
+
+            yield return new WaitForSeconds(telegraphTime);
+
             // play sound
             //bs.GetComponent<AudioSource>().PlayOneShot(enemyManager.attackSound, 1f);
-            // instantiate attack box
-            //_atkBox = Resources.Load("AttackBoxIndication") as GameObject;
-            // spawn atkbox at player position
-            //var atkBox = Object.Instantiate(_atkBox, PlayerManager.Instance.transform.position, Quaternion.identity);
-           // bs.Player = atkBox.transform;
-            //yield return new WaitForSeconds(1);
             
             // charge toward 
+            bs.transform.position = Vector2.Lerp(bs.transform.position, atkBox.transform.position, 0.2f);
+
             // play anim
-            bs.GetComponent<Animator>().Play("Attack", 0);
+            anim.Play("Attack", 0);
 
             // while(Vector3.Distance(bs.transform.position, atkBox.transform.position) > 0.03f)
             // {
@@ -43,7 +58,7 @@ namespace com.ultimate2d.combat
           
             yield return new WaitForSeconds(2f);
 
-            BattleSystem.SetState(new Begin(BattleSystem));
+            BlockBattleSystem.SetState(new PursuePlayer(BlockBattleSystem));
         }
 
 

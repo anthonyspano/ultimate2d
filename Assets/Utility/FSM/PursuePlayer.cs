@@ -7,34 +7,43 @@ namespace com.ultimate2d.combat
 {
     public class PursuePlayer : State
     {
-        BattleSystem bs;
+        BlockBattleSystem bs;
         Animator anim;
-        
-        public PursuePlayer(BattleSystem battleSystem) : base(battleSystem)
+        EnemyManager em;
+        AudioSource audio;
+
+        public PursuePlayer(BlockBattleSystem _blockBattleSystem) : base(_blockBattleSystem)
         {
-            bs = battleSystem;
-            anim = bs.gameObject.GetComponent<Animator>();
+            bs = _blockBattleSystem;
+            anim = bs.GetComponent<Animator>();
             bs.Player = PlayerManager.Instance.transform;
+            em = bs.GetComponent<EnemyManager>();
+            audio = bs.GetComponent<AudioSource>();
         }
 
         public override IEnumerator Start()
         {
-            while(bs.PlayerIsInRange(bs._enemyManager.pursuitRange) && !bs.PlayerIsInRange(bs._enemyManager.attackRange))
+            yield return new WaitUntil(() => bs.PlayerIsInRange(em.pursuitRange));
+            while(bs.PlayerIsInRange(em.pursuitRange) && !bs.PlayerIsInRange(em.attackRange))
             {
+                Debug.Log("running");
                 anim.SetBool("Running", true);
+                anim.SetFloat("MoveX", em.PlayerFacingVector().x);
+                anim.SetFloat("MoveY", em.PlayerFacingVector().y);
                 bs.transform.position = Vector3.MoveTowards(bs.transform.position, bs.Player.position, 5f * Time.deltaTime);
                 yield return null;
             }
 
+            //Debug.Log(em.pursuitRange);
             // set bs target to player's current position
             //bs.PlayerPosition = PlayerManager.player.transform.position;
             anim.SetBool("Running", false);
             
             // checking if player is in range
-            //yield return new WaitUntil(() => bs.PlayerIsInRange(bs._enemyManager.attackRange));
+            //yield return new WaitUntil(() => bs.PlayerIsInRange(em.attackRange));
             
             //yield return new WaitForSeconds(1f); // the wait before attacking
-            BattleSystem.SetState(new AttackPlayer(BattleSystem));
+            BlockBattleSystem.SetState(new AttackPlayer(BlockBattleSystem));
         }
 
 

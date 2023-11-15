@@ -76,7 +76,7 @@ namespace com.ultimate2d.combat
             anim = GetComponent<Animator>();
         }
 
-        void Update()
+        public Vector2 PlayerFacingVector()
         {
             // the direction the enemy is facing is the 
             // some trig
@@ -87,25 +87,23 @@ namespace com.ultimate2d.combat
             
             if(rot_z > 45f && rot_z <= 135f) // left face
             {
-                anim.SetFloat("MoveX", -1);
-                anim.SetFloat("MoveY", 0);
+                return new Vector2(-1,0);
             }
             else if(rot_z <= 225f && rot_z > 135f) // up face
             {
-                anim.SetFloat("MoveX", 0);
-                anim.SetFloat("MoveY", 1);
+                return new Vector2(0,1);
             }
             else if(rot_z < -45f || rot_z > 225f) // right face
             {
-                anim.SetFloat("MoveX", 1);
-                anim.SetFloat("MoveY", 0);
+                return new Vector2(1,0);    
             }
             else // down face
             {
-                anim.SetFloat("MoveX", 0);
-                anim.SetFloat("MoveY", -1);
+                return new Vector2(0,-1);
             }
-            
+
+
+
 
         }
 

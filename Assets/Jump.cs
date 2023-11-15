@@ -10,13 +10,13 @@ namespace com.ultimate2d.combat
         private Animator anim;
         private Rigidbody2D rb;
 
-        private BattleSystem bs;
+        private PlayerBattleSystem pbs;
 
-        public Jump(BattleSystem battleSystem) : base(battleSystem)
+        public Jump(PlayerBattleSystem playerBattleSystem) : base(playerBattleSystem)
         {
-            bs = battleSystem;
-            anim = bs.GetComponent<Animator>();
-            rb = bs.GetComponent<Rigidbody2D>();
+            pbs = playerBattleSystem;
+            anim = pbs.GetComponent<Animator>();
+            rb = pbs.GetComponent<Rigidbody2D>();
         }
 
         public override IEnumerator Start() 
@@ -46,7 +46,7 @@ namespace com.ultimate2d.combat
                 PlayerManager.Instance.CanMove = true;
             }   
  
-            BattleSystem.SetState(new Begin(BattleSystem));  
+            PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));  
        
         }
 

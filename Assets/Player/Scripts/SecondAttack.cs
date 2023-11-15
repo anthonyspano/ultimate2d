@@ -7,13 +7,14 @@ namespace com.ultimate2d.combat
     public class SecondAttack : State
     {
         private bool continueChain;
-        private BattleSystem bs;
+        private PlayerBattleSystem pbs;
 
 
-        public SecondAttack(BattleSystem battleSystem) : base(battleSystem)
+        public SecondAttack(PlayerBattleSystem playerBattleSystem) : base(playerBattleSystem)
         {
-            bs = battleSystem;
+            pbs = PlayerBattleSystem;
         }
+
         public override IEnumerator Start() 
         {
             Debug.Log("Starting second attack");
@@ -36,12 +37,12 @@ namespace com.ultimate2d.combat
             // if(continueChain)
             // {
             //     continueChain = false;
-            //     BattleSystem.SetState(new ThirdAttack(BattleSystem));
+            //     PlayerBattleSystem.SetState(new ThirdAttack(PlayerBattleSystem));
             // }
             // else
             // {
                 PlayerManager.Instance.CanMove = true;
-                BattleSystem.SetState(new Begin(BattleSystem));
+                PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
             //}    
 
 

@@ -10,7 +10,7 @@ public class TurnOffTorch : MonoBehaviour
     void OnDestroy()
     {
         // disable torch firing
-        Torch.GetComponent<BattleSystem>().CanAttack = false;
+        Torch.GetComponent<BlockBattleSystem>().CanAttack = false;
 
         // change torch anim state to off
         Torch.GetComponent<Animator>().Play("Off");

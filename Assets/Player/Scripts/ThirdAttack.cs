@@ -6,12 +6,12 @@ namespace com.ultimate2d.combat
 {
     public class ThirdAttack : State
     {
-        private BattleSystem bs;
+        private PlayerBattleSystem pbs;
 
 
-        public ThirdAttack(BattleSystem battleSystem) : base(battleSystem)
+        public ThirdAttack(PlayerBattleSystem playerBattleSystem) : base(playerBattleSystem)
         {
-            bs = battleSystem;
+            pbs = PlayerBattleSystem;
         }
         public override IEnumerator Start() 
         {
@@ -43,7 +43,7 @@ namespace com.ultimate2d.combat
 
             // yield return new WaitForSeconds(chainCD);
             PlayerManager.Instance.CanMove = true;
-            BattleSystem.SetState(new Begin(BattleSystem));
+            PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
                 
 
 

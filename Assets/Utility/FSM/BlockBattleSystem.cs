@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace com.ultimate2d.combat
 {
-    public class BattleSystem : StateMachine
+    public class BlockBattleSystem : StateMachine
     {
         [HideInInspector]
         public EnemyManager _enemyManager;
@@ -42,8 +42,9 @@ namespace com.ultimate2d.combat
         private void Start()
         {
             sr = GetComponent<SpriteRenderer>();
+            _enemyManager = GetComponent<EnemyManager>();
 
-            SetState(new Begin(this));  
+            SetState(new PursuePlayer(this));  
         }
 
         private void Update()

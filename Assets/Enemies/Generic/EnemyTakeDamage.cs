@@ -46,7 +46,7 @@ public class EnemyTakeDamage : MonoBehaviour
         //var scripts = gameObject.GetComponents(typeof(MonoBehaviour)); // scripts attached
 
         // disable further movements
-        gameObject.GetComponent<BattleSystem>().enabled = false;
+        gameObject.GetComponent<BlockBattleSystem>().enabled = false;
 
         // play death anim
         anim.Play("enemy_death", 0);
@@ -73,7 +73,7 @@ public class EnemyTakeDamage : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         var myCollider = col.GetContact(0);
-        Debug.Log(myCollider.collider.transform.name);
+        //Debug.Log(myCollider.collider.transform.name);
         if(col.GetContact(0).collider.transform.CompareTag("PlayerAttack"))
         {
             healthSystem.Damage(PlayerManager.Instance.Attack);

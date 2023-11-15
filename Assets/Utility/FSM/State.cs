@@ -2,16 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// add constructor here for each new implementation
 namespace com.ultimate2d.combat
 {
     public abstract class State
     {
-        protected BattleSystem BattleSystem;
+        protected BlockBattleSystem BlockBattleSystem;
+        protected PlayerBattleSystem PlayerBattleSystem;
 
-        public State(BattleSystem battleSystem)
+        public State(BlockBattleSystem blockBattleSystem)
         {
-            BattleSystem = battleSystem;
+            BlockBattleSystem = blockBattleSystem;
 
+        }
+
+        public State(PlayerBattleSystem playerBattleSystem)
+        {
+            PlayerBattleSystem  = playerBattleSystem;
         }
         
         public virtual IEnumerator Start()
