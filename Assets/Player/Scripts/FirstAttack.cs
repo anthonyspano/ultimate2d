@@ -38,7 +38,7 @@ namespace com.ultimate2d.combat
             // {
                 
                 PlayerManager.Instance.CanMove = true;
-                BlockBattleSystem.SetState(new Begin(pbs));
+                PlayerBattleSystem.SetState(new Begin(pbs));
             //}
                 
                 

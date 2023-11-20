@@ -8,7 +8,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 // change OnHealthChanged to flash red
 public class PlayerManager : MonoBehaviour
-{	
+{
 	// singleton
 	private static PlayerManager _instance;
 	public static PlayerManager Instance
@@ -21,10 +21,10 @@ public class PlayerManager : MonoBehaviour
 	// health
 	[Header("Health")]
 	[SerializeField] private int maxHealth;
-	public Transform pfHealthBar;	
+	public Transform pfHealthBar;
 	public HealthSystem pHealth;
 	public float positionOffset;
-	
+
 	// ultimate
 	[Header("Ultimate")]
 	public int maxUlt = 100;
@@ -47,6 +47,7 @@ public class PlayerManager : MonoBehaviour
 	public float range;
 	public float cooldownRate;
 	public float jumpCooldownRate;
+	public float jumpCooldown;
 	public float JumpDistance;
 	public float JumpSpeed;
 	public float MDD;
@@ -75,7 +76,7 @@ public class PlayerManager : MonoBehaviour
 
 	public bool CanMove
 	{
-		get { return canMove;} 
+		get { return canMove;}
 		set { canMove = value; }
 	}
 
@@ -95,12 +96,12 @@ public class PlayerManager : MonoBehaviour
 	{
 		if(player == null)
 			player = GameObject.Find("Player");
-		
+
 		// health
 		pHealth = new HealthSystem(maxHealth, invulnAfterHit);
 		var healthBar = GameObject.Find("PlayerHealthBar").GetComponent<HealthBar>();
 		healthBar.Setup(pHealth);
-		
+
 		// ult amt start of scene
 		//ultBar.SetUlt(0);
 
@@ -124,7 +125,7 @@ public class PlayerManager : MonoBehaviour
 		boxCollider = GetComponent<BoxCollider2D>();
 		hitbox = transform.GetChild(3);
 	}
-	
+
 	private void Awake()
 	{
 		// singleton
@@ -153,6 +154,8 @@ public class PlayerManager : MonoBehaviour
 		anim.SetFloat("MoveX", LastMove.x);
 		anim.SetFloat("MoveY", LastMove.y);
 
+		//Debug.Log(jump)
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -178,20 +181,21 @@ public class PlayerManager : MonoBehaviour
 		}
 	}
 
-	private void OnDamage(object sender, System.EventArgs e) 
+	private void OnDamage(object sender, System.EventArgs e)
 	{
 		if(pHealth.GetHealth() <= 0)
 		{
 			// Death sequence
 			anim.SetBool("isDead", true);
+			Death();
 		}
 
 		else
 		{
 			StartCoroutine(FlashRed());
 		}
-		
-		
+
+
 
 	}
 
@@ -208,15 +212,15 @@ public class PlayerManager : MonoBehaviour
 
 	}
 
-	private void Death() 
+	private void Death()
 	{
 		// triggered after death animation
 		anim.enabled = false;
 		gameObject.GetComponent<PlayerMove>().enabled = false;
-		
+
 		var reticle = transform.Find("Reticle");
 		reticle.gameObject.SetActive(false);
-		
+
 		ppv.SetActive(true);
 		// reset scene after timer
 		StartCoroutine("LoadScene");
@@ -224,7 +228,7 @@ public class PlayerManager : MonoBehaviour
 
 	IEnumerator LoadScene()
 	{
-		yield return new WaitForSeconds(4);
+		yield return new WaitForSeconds(2.5f);
 		SceneManager.LoadScene("CellChamber", LoadSceneMode.Single);
 	}
 
@@ -237,8 +241,19 @@ public class PlayerManager : MonoBehaviour
 
 	public bool AnimFinished()
 	{
-		
+
 		return animFinished;
+	}
+
+	public void StartJumpCD()
+	{
+		StartCoroutine("JumpCooldown");
+	}
+
+	private IEnumerator JumpCooldown()
+	{
+		yield return new WaitForSeconds(jumpCooldownRate);
+		jumpCooldown = 0;
 	}
 
 

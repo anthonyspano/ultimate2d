@@ -26,7 +26,6 @@ namespace com.ultimate2d.combat
             yield return new WaitUntil(() => bs.PlayerIsInRange(em.pursuitRange));
             while(bs.PlayerIsInRange(em.pursuitRange) && !bs.PlayerIsInRange(em.attackRange))
             {
-                Debug.Log("running");
                 anim.SetBool("Running", true);
                 anim.SetFloat("MoveX", em.PlayerFacingVector().x);
                 anim.SetFloat("MoveY", em.PlayerFacingVector().y);

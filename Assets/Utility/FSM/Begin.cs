@@ -43,9 +43,8 @@ namespace com.ultimate2d.combat
 
 
             // yield return new WaitUntil(() => PlayerInput.Slash());
-            // PlayerBattleSystem.SetState(new FirstAttack(PlayerBattleSystem));
+            //PlayerBattleSystem.SetState(new FirstAttack(PlayerBattleSystem));
 
-            
 
             
         }

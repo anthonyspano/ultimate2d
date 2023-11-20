@@ -3586,9 +3586,9 @@ GameObject:
   - component: {fileID: 464829523}
   - component: {fileID: 464829522}
   - component: {fileID: 464829519}
-  - component: {fileID: 464829530}
   - component: {fileID: 464829517}
   - component: {fileID: 464829532}
+  - component: {fileID: 464829533}
   m_Layer: 8
   m_Name: Player 1
   m_TagString: PlayerAttack
@@ -3637,7 +3637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e510cee44d97e4b4caa6b68aa1fa4029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 60
   pfHealthBar: {fileID: 1726575013604697225, guid: e735742ab812228469c1101b5a48a022,
     type: 3}
   positionOffset: 1.8
@@ -3648,13 +3648,14 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  Attack: 100
+  Attack: 20
   range: 1
   cooldownRate: 0.21
   jumpCooldownRate: 1
-  JumpDistance: 50
+  jumpCooldown: 0
+  JumpDistance: 3.5
   JumpSpeed: 10
-  MDD: 0.15
+  MDD: 0.05
   AttackMoveDistance: 1
   slash1: {fileID: 8300000, guid: 045ad82e118921a428488577eb38d79a, type: 3}
   hurt1: {fileID: 8300000, guid: 3374377e45532b04d95d1c767cc42ff1, type: 3}
@@ -3774,7 +3775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16341e7b7e5296049a5d28573fc3cc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 12
   deadZone: 0.5
 --- !u!95 &464829527
 Animator:
@@ -3869,19 +3870,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &464829530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464829516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b15a7a8aa067ee40be28972012a9ccd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyManager: {fileID: 0}
 --- !u!82 &464829532
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3978,6 +3966,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &464829533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464829516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6794909a095625140acd5aeb37da7c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &477850553
 GameObject:
   m_ObjectHideFlags: 0
@@ -27336,7 +27336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1641425657
 RectTransform:
   m_ObjectHideFlags: 0

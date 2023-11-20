@@ -48,6 +48,7 @@
      <Compile Include="Assets\Utility\FSM\ShootPlayer.cs" />
      <Compile Include="Assets\Player\Scripts\deprecated\UltimateSystem\TestAnim.cs" />
      <Compile Include="Assets\Utility\Interactable.cs" />
+     <Compile Include="Assets\Utility\FSM\BlockStatusCheck.cs" />
      <Compile Include="Assets\Utility\CameraShake.cs" />
      <Compile Include="Assets\Jump.cs" />
      <Compile Include="Assets\Objects\Bullet\Bullet.cs" />

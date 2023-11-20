@@ -430,6 +430,7 @@
 "Assets/Utility/FSM/AttackPlayer.cs"
 "Assets/Utility/FSM/Begin.cs"
 "Assets/Utility/FSM/BlockBattleSystem.cs"
+"Assets/Utility/FSM/BlockStatusCheck.cs"
 "Assets/Utility/FSM/PlayerBattleSystem.cs"
 "Assets/Utility/FSM/PursuePlayer.cs"
 "Assets/Utility/FSM/ShootPlayer.cs"
