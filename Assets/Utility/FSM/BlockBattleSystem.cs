@@ -15,6 +15,20 @@ namespace com.ultimate2d.combat
             get { return canAttack; }
             set { canAttack = value; }
         }
+
+        private bool canMove = true;
+        public bool CanMove
+        {
+            get { return canMove; }
+            set { canMove = value; }
+        }
+        
+        private bool dead = true;
+        public bool Dead
+        {
+            get { return dead; }
+            set { dead = value; }
+        }
         private Animator animator;
         public Animator Animator
         {

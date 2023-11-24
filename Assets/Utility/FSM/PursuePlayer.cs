@@ -24,7 +24,7 @@ namespace com.ultimate2d.combat
         public override IEnumerator Start()
         {
             yield return new WaitUntil(() => bs.PlayerIsInRange(em.pursuitRange));
-            while(bs.PlayerIsInRange(em.pursuitRange) && !bs.PlayerIsInRange(em.attackRange))
+            while(bs.PlayerIsInRange(em.pursuitRange) && !bs.PlayerIsInRange(em.attackRange) && bs.CanMove)
             {
                 anim.SetBool("Running", true);
                 anim.SetFloat("MoveX", em.PlayerFacingVector().x);
@@ -37,7 +37,7 @@ namespace com.ultimate2d.combat
             // set bs target to player's current position
             //bs.PlayerPosition = PlayerManager.player.transform.position;
             anim.SetBool("Running", false);
-            
+            bs.CanMove = false;
             // checking if player is in range
             //yield return new WaitUntil(() => bs.PlayerIsInRange(em.attackRange));
             

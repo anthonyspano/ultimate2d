@@ -17,7 +17,7 @@ public class EnemyTakeDamage : MonoBehaviour
     private Animator anim;
     private void Start() 
     {
-        anim = GetComponent<Animator>();
+        anim = transform.parent.GetComponent<Animator>();
         
         // health
         healthSystem = new HealthSystem(maxHealth, 0f);
@@ -46,21 +46,24 @@ public class EnemyTakeDamage : MonoBehaviour
         //var scripts = gameObject.GetComponents(typeof(MonoBehaviour)); // scripts attached
 
         // disable further movements
-        gameObject.GetComponent<BlockBattleSystem>().enabled = false;
+        transform.parent.GetComponent<BlockBattleSystem>().CanMove = false;
+        transform.parent.GetComponent<BlockBattleSystem>().Dead = true;
+        
 
         // play death anim
         anim.Play("enemy_death", 0);
         yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length); 
 
 
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 
     public IEnumerator FlashRed()
     {
         var repeatTimes = 3;
         var timer = 0.1f; // just seems like a good number
-        var sr = GetComponent<SpriteRenderer>();
+        //var sr = GetComponent<SpriteRenderer>();
+        var sr = transform.parent.GetComponent<SpriteRenderer>();
 		for(int i = 0; i < repeatTimes; i++)
         {
             sr.color = Color.red;
@@ -70,6 +73,7 @@ public class EnemyTakeDamage : MonoBehaviour
         }
     }
 
+    // have child "hitbox" receive collider instead
     private void OnCollisionEnter2D(Collision2D col)
     {
         var myCollider = col.GetContact(0);
