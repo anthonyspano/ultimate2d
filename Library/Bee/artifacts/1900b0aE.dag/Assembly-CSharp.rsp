@@ -375,6 +375,7 @@
 "Assets/Book.cs"
 "Assets/CrawlerController.cs"
 "Assets/DeathScreen.cs"
+"Assets/DebugColliderAnim.cs"
 "Assets/Door.cs"
 "Assets/Enemies/Deprecated/Enemy.cs"
 "Assets/Enemies/Generic/EnemyManager.cs"
