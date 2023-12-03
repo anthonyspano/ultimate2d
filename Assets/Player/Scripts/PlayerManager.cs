@@ -236,6 +236,7 @@ public class PlayerManager : MonoBehaviour
 	public void FinishAnimation()
 	{
 		anim.Play("Player Idle", 0);
+		anim.SetBool("IsAttacking", false);
 		animFinished = true;
 	}
 

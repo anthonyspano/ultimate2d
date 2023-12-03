@@ -5,18 +5,32 @@ using UnityEngine;
 public class DebugColliderAnim : MonoBehaviour
 {
     private Animator anim;
-    // Start is called before the first frame update
+
+    float LastMoveY;
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        var y = Input.GetAxis("Vertical");
+        if(y > 0.2f)
+            LastMoveY =  1;
+
+        if(y < -0.2f)
+            LastMoveY =  -1;
+
+        anim.SetFloat("LastMoveY", LastMoveY);
         if(Input.GetKeyDown(KeyCode.K))
         {
-            anim.Play("DebugAttack");
+            if(anim.GetFloat("LastMoveY") == -1)
+                anim.Play("deleteme_attack");
+
+            if(anim.GetFloat("LastMoveY") == 1)
+                anim.Play("deleteme_attack_up");
         }
     }
 }
