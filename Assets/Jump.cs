@@ -37,10 +37,9 @@ namespace com.ultimate2d.combat
 
                 while(anim.GetCurrentAnimatorStateInfo(0).IsName("Player_Jump"))
                 {
-                    Debug.Log("step");
                     // addforce + directional movement amplifies is greatly
                     //rb.AddForce(PlayerManager.Instance.LastMove * jumpDistance);
-                    //Debug.Log(PlayerManager.Instance.LastMove);
+                    Debug.Log(PlayerManager.Instance.LastMove);
                     PlayerManager.Instance.transform.position = Vector2.MoveTowards(PlayerManager.Instance.transform.position,
                                                                                     PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.JumpDistance,
                                                                                     PlayerManager.Instance.MDD);
@@ -58,7 +57,7 @@ namespace com.ultimate2d.combat
                 PlayerManager.Instance.CanMove = true;
 
             }
-            Debug.Log("begin");
+
             PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
 
         }

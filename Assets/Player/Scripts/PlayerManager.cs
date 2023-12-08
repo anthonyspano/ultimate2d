@@ -149,12 +149,12 @@ public class PlayerManager : MonoBehaviour
 		var y = Input.GetAxis("Vertical");
 		if(Mathf.Abs(x) > 0.1f || Mathf.Abs(y) > 0.1f)
 		{
-			LastMove = new Vector3(x,y,0);
+			LastMove = new Vector3(x,y,0).normalized;
 		}
 		anim.SetFloat("MoveX", LastMove.x);
 		anim.SetFloat("MoveY", LastMove.y);
 
-		//Debug.Log(jump)
+		//Debug.Log(LastMove);
 
 	}
 
