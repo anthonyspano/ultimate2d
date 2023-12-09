@@ -17,10 +17,7 @@ namespace com.ultimate2d.combat
         {
             PlayerManager.Instance.CanMove = false;
             // play slash anim
-            //PlayerManager.Instance.GetComponent<Animator>().Play("Attack Tree", 0);
             PlayerManager.Instance.GetComponent<Animator>().SetBool("IsAttacking", true);
-            
-            PlayerManager.Instance.GetComponent<AudioSource>().Play();
 
             // scoot towards last move
             //var newPos = PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance;

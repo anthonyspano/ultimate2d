@@ -30,6 +30,7 @@ namespace com.ultimate2d.combat
                     PlayerBattleSystem.SetState(new FirstAttack(PlayerBattleSystem));
                     break;
                 case 350:
+                    Debug.Log("once");
                     PlayerBattleSystem.SetState(new FirstAttack(PlayerBattleSystem));
                     break;
                 case 352: // 'x'

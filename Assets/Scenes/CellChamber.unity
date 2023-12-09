@@ -3665,7 +3665,7 @@ MonoBehaviour:
     m_Bits: 512
   Attack: 75
   range: 1
-  cooldownRate: 0.21
+  cooldownRate: 2
   jumpCooldownRate: 1
   jumpCooldown: 0
   JumpDistance: 20

@@ -45,7 +45,7 @@ public class PlayerManager : MonoBehaviour
 	// player properties
 	[Header("Special Properties")]
 	public float range;
-	public float cooldownRate;
+	public float cooldownRate; // for attack - 0.21
 	public float jumpCooldownRate;
 	public float jumpCooldown;
 	public float JumpDistance;
@@ -255,6 +255,12 @@ public class PlayerManager : MonoBehaviour
 	{
 		yield return new WaitForSeconds(jumpCooldownRate);
 		jumpCooldown = 0;
+	}
+
+	public void PlayAttackSound()
+	{
+		GetComponent<AudioSource>().Play();
+		Debug.Log("twice");
 	}
 
 
