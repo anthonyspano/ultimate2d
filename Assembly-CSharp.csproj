@@ -53,7 +53,6 @@
      <Compile Include="Assets\Jump.cs" />
      <Compile Include="Assets\Objects\Bullet\Bullet.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerAttack.cs" />
-     <Compile Include="Assets\Queue.cs" />
      <Compile Include="Assets\DebugColliderAnim.cs" />
      <Compile Include="Assets\Player\Scripts\TriggerEvent.cs" />
      <Compile Include="Assets\Utility\MainMenu.cs" />
@@ -106,6 +105,7 @@
      <Compile Include="Assets\Player\Scripts\ChangeClothes.cs" />
      <Compile Include="Assets\Enemies\Generic\EnemyManager.cs" />
      <Compile Include="Assets\TurnOffTorch.cs" />
+     <Compile Include="Assets\Utility\FSM\ReactionAttack.cs" />
      <Compile Include="Assets\Player\Scripts\RotateAroundPlayer.cs" />
      <Compile Include="Assets\Utility\HealthSystem\HealthSystem.cs" />
      <Compile Include="Assets\Player\Scripts\Player Cursor\PointToRotation.cs" />

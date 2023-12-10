@@ -1,0 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+namespace com.ultimate2d.combat
+{
+    public class ReactionAttack : State
+    {
+        BlockBattleSystem bs;
+        Animator anim;
+        EnemyManager em;
+        AudioSource audio;
+        float telegraphTime = 0.5f;
+
+        public ReactionAttack(BlockBattleSystem _blockBattleSystem) : base(_blockBattleSystem)
+        {
+            bs = _blockBattleSystem;
+            anim = bs.GetComponent<Animator>();
+            em = bs.GetComponent<EnemyManager>();
+            audio = bs.GetComponent<AudioSource>();
+        }
+
+        public override IEnumerator Start()
+        {
+            // telegraph "charge up" attack
+            anim.Play("Telegraph", 0);
+
+            yield return new WaitForSeconds(telegraphTime);
+
+            anim.Play("Attack", 0);
+            yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
+            anim.Play("Attack", 0);
+            yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
+            anim.Play("Attack", 0);
+            yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
+
+
+
+            yield return null;
+            BlockBattleSystem.SetState(new PursuePlayer(BlockBattleSystem));
+        }
+
+
+        
+    }
+}

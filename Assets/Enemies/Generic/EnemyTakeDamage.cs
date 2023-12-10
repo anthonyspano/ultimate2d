@@ -15,6 +15,7 @@ public class EnemyTakeDamage : MonoBehaviour
     public int ultAddedOnHit;
 
     private Animator anim;
+    private EnemyManager em;
     private void Start() 
     {
         anim = transform.parent.GetComponent<Animator>();
@@ -24,6 +25,7 @@ public class EnemyTakeDamage : MonoBehaviour
         //healthBar.Setup(healthSystem);
         // health - death event
         healthSystem.OnHealthChanged += OnDamage;
+        em = transform.parent.GetComponent<EnemyManager>();
     }
 
 	private void OnDamage(object sender, System.EventArgs e) 
@@ -37,14 +39,16 @@ public class EnemyTakeDamage : MonoBehaviour
         else 
         {
             StartCoroutine(FlashRed());
+            if(healthSystem.GetHealth() < 50)
+            {
+                em.timeToReact = true;
+            }
         }
 
 	}
 
     IEnumerator Death()
     {
-        //var scripts = gameObject.GetComponents(typeof(MonoBehaviour)); // scripts attached
-
         // disable further movements
         transform.parent.GetComponent<BlockBattleSystem>().CanMove = false;
         transform.parent.GetComponent<BlockBattleSystem>().Dead = true;
@@ -62,7 +66,6 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         var repeatTimes = 3;
         var timer = 0.1f; // just seems like a good number
-        //var sr = GetComponent<SpriteRenderer>();
         var sr = transform.parent.GetComponent<SpriteRenderer>();
 		for(int i = 0; i < repeatTimes; i++)
         {
@@ -77,7 +80,6 @@ public class EnemyTakeDamage : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         var myCollider = col.GetContact(0);
-        //Debug.Log(myCollider.collider.transform.name);
         if(col.GetContact(0).collider.transform.CompareTag("PlayerAttack"))
         {
             healthSystem.Damage(PlayerManager.Instance.Attack);
