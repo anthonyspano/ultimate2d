@@ -242,7 +242,6 @@ public class PlayerManager : MonoBehaviour
 
 	public bool AnimFinished()
 	{
-
 		return animFinished;
 	}
 
@@ -259,8 +258,10 @@ public class PlayerManager : MonoBehaviour
 
 	public void PlayAttackSound()
 	{
-		GetComponent<AudioSource>().Play();
-		Debug.Log("twice");
+		// if(!GetComponent<AudioSource>().isPlaying)
+		// 	GetComponent<AudioSource>().Play();
+		
+		
 	}
 
 
