@@ -66,9 +66,11 @@
      <Compile Include="Assets\Utility\SpawnObject.cs" />
      <Compile Include="Assets\Utility\EndAnimation.cs" />
      <Compile Include="Assets\Enemies\Generic\EnemyShoot.cs" />
+     <Compile Include="Assets\Utility\FSM\BossAttackPlayer.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerShootProjectile.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Enemies\Generic\EnemyTakeDamage.cs" />
+     <Compile Include="Assets\Utility\FSM\BossBattleSystem.cs" />
      <Compile Include="Assets\Book.cs" />
      <Compile Include="Assets\Enemies\Deprecated\Enemy.cs" />
      <Compile Include="Assets\Player\Scripts\SlashAttack.cs" />
@@ -107,6 +109,7 @@
      <Compile Include="Assets\TurnOffTorch.cs" />
      <Compile Include="Assets\Utility\FSM\ReactionAttack.cs" />
      <Compile Include="Assets\Player\Scripts\RotateAroundPlayer.cs" />
+     <Compile Include="Assets\Utility\FSM\BossEngage.cs" />
      <Compile Include="Assets\Utility\HealthSystem\HealthSystem.cs" />
      <Compile Include="Assets\Player\Scripts\Player Cursor\PointToRotation.cs" />
      <Compile Include="Assets\Utility\FSM\State.cs" />

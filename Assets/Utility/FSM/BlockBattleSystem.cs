@@ -7,6 +7,7 @@ namespace com.ultimate2d.combat
 {
     public class BlockBattleSystem : StateMachine
     {
+        // cleanup: shared variables for class
         [HideInInspector]
         public EnemyManager _enemyManager;
         private bool canAttack = true;
@@ -23,7 +24,7 @@ namespace com.ultimate2d.combat
             set { canMove = value; }
         }
         
-        private bool dead = true;
+        private bool dead = false;
         public bool Dead
         {
             get { return dead; }

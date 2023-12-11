@@ -9,6 +9,7 @@ namespace com.ultimate2d.combat
     {
         protected BlockBattleSystem BlockBattleSystem;
         protected PlayerBattleSystem PlayerBattleSystem;
+        protected BossBattleSystem BossBattleSystem;
 
         public State(BlockBattleSystem blockBattleSystem)
         {
@@ -19,6 +20,11 @@ namespace com.ultimate2d.combat
         public State(PlayerBattleSystem playerBattleSystem)
         {
             PlayerBattleSystem  = playerBattleSystem;
+        }
+
+        public State(BossBattleSystem bossBattleSystem)
+        {
+            BossBattleSystem = bossBattleSystem;
         }
         
         public virtual IEnumerator Start()

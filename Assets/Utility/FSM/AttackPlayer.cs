@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// CODE CLEANUP: split code into separate classes for crawler and cultist distinctly
 namespace com.ultimate2d.combat
 {
     public class AttackPlayer : State
@@ -23,7 +22,7 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
-            if(bs.Dead)
+            if(!bs.Dead)
             {
                 // final check for facing player
                 anim.SetFloat("MoveX", em.PlayerFacingVector().x);
@@ -56,7 +55,7 @@ namespace com.ultimate2d.combat
                 //     yield return null;
                 // }
                 
-    //            yield return new WaitUntil(() => !bs.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")); // animator is done playing attack animation
+                // yield return new WaitUntil(() => !bs.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")); // animator is done playing attack animation
             
 
             }
