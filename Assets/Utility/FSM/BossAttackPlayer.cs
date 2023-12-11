@@ -47,6 +47,7 @@ namespace com.ultimate2d.combat
 
                 // play anim
                 anim.Play("Attack", 0);
+                Debug.Log("attacking normally");
 
                 // while(Vector3.Distance(bs.transform.position, atkBox.transform.position) > 0.03f)
                 // {
@@ -60,7 +61,7 @@ namespace com.ultimate2d.combat
 
             }
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
             bs.CanMove = true;
             
             BossBattleSystem.SetState(new BossEngage(BossBattleSystem));
