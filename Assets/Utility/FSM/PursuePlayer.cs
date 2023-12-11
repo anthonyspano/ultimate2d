@@ -23,12 +23,7 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
-            if(em.timeToReact)
-            {
-                em.timeToReact = false;
-                BlockBattleSystem.SetState(new ReactionAttack(BlockBattleSystem));
-            }
-
+            
             yield return new WaitUntil(() => bs.PlayerIsInRange(em.pursuitRange));
             while(bs.PlayerIsInRange(em.pursuitRange) && !bs.PlayerIsInRange(em.attackRange) && bs.CanMove)
             {

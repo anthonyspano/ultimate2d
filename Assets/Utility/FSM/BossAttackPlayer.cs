@@ -55,7 +55,7 @@ namespace com.ultimate2d.combat
                 //     yield return null;
                 // }
                 
-    //            yield return new WaitUntil(() => !bs.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")); // animator is done playing attack animation
+                // yield return new WaitUntil(() => !bs.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")); // animator is done playing attack animation
             
 
             }

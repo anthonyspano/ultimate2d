@@ -7,15 +7,15 @@ namespace com.ultimate2d.combat
 {
     public class ReactionAttack : State
     {
-        BlockBattleSystem bs;
+        BossBattleSystem bs;
         Animator anim;
         EnemyManager em;
         AudioSource audio;
         float telegraphTime = 0.5f;
 
-        public ReactionAttack(BlockBattleSystem _blockBattleSystem) : base(_blockBattleSystem)
+        public ReactionAttack(BossBattleSystem _bossBattleSystem) : base(_bossBattleSystem)
         {
-            bs = _blockBattleSystem;
+            bs = _bossBattleSystem;
             anim = bs.GetComponent<Animator>();
             em = bs.GetComponent<EnemyManager>();
             audio = bs.GetComponent<AudioSource>();
@@ -38,7 +38,7 @@ namespace com.ultimate2d.combat
 
 
             yield return null;
-            BlockBattleSystem.SetState(new PursuePlayer(BlockBattleSystem));
+            BossBattleSystem.SetState(new BossEngage(BossBattleSystem));
         }
 
 

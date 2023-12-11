@@ -28,7 +28,7 @@ namespace com.ultimate2d.combat
             if(em.timeToReact)
             {
                 em.timeToReact = false;
-                BlockBattleSystem.SetState(new ReactionAttack(BlockBattleSystem));
+                BossBattleSystem.SetState(new ReactionAttack(BossBattleSystem));
             }
 
             yield return new WaitUntil(() => bs.PlayerIsInRange(em.pursuitRange));
