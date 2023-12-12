@@ -47,7 +47,6 @@ namespace com.ultimate2d.combat
 
                 // play anim
                 anim.Play("Attack", 0);
-                Debug.Log("attacking normally");
 
                 // while(Vector3.Distance(bs.transform.position, atkBox.transform.position) > 0.03f)
                 // {

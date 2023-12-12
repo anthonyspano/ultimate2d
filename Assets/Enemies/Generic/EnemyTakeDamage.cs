@@ -16,7 +16,7 @@ public class EnemyTakeDamage : MonoBehaviour
 
     private Animator anim;
     private EnemyManager em;
-    private void Start() 
+    private void Awake() 
     {
         anim = transform.parent.GetComponent<Animator>();
         

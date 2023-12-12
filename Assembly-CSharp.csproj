@@ -69,8 +69,8 @@
      <Compile Include="Assets\Utility\FSM\BossAttackPlayer.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerShootProjectile.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerMove.cs" />
-     <Compile Include="Assets\Enemies\Generic\EnemyTakeDamage.cs" />
      <Compile Include="Assets\Utility\FSM\BossBattleSystem.cs" />
+     <Compile Include="Assets\Enemies\Generic\EnemyTakeDamage.cs" />
      <Compile Include="Assets\Book.cs" />
      <Compile Include="Assets\Enemies\Deprecated\Enemy.cs" />
      <Compile Include="Assets\Player\Scripts\SlashAttack.cs" />

@@ -28,7 +28,6 @@ namespace com.ultimate2d.combat
             if(em.timeToReact)
             {
                 em.timeToReact = false;
-                Debug.Log("reacting");
                 BossBattleSystem.SetState(new ReactionAttack(BossBattleSystem));
             }
             else
