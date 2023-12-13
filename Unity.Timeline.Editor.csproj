@@ -107,8 +107,8 @@
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\State\PlayRange.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Window\TimelineWindow_Selection.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Manipulators\Move\MovingItems.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Animation\CurveTreeViewNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Manipulators\Utils\PlacementValidity.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Animation\CurveTreeViewNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Items\MarkerItem.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Recording\TrackAssetRecordingExtensions.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.7.4\Editor\Activation\ActivationTrackInspector.cs" />

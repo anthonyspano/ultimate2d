@@ -9,7 +9,7 @@ namespace com.ultimate2d.combat
     {
         [HideInInspector]
         public EnemyManager _enemyManager;
-        public HealthBar healthBar;
+        private HealthBar healthBar;
         private Transform player;
         public Transform Player
         {
@@ -35,7 +35,7 @@ namespace com.ultimate2d.combat
         {
             _enemyManager = GetComponent<EnemyManager>();
             healthBar = GameObject.Find("BossHealthBar").GetComponent<HealthBar>();
-            healthBar.Setup(transform.GetComponentInChildren<EnemyTakeDamage>().healthSystem);
+            healthBar.Setup(transform.GetComponentInChildren<BossTakeDamage>().healthSystem);
             SetState(new BossEngage(this));
         }
 

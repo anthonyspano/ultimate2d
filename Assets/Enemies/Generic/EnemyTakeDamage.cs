@@ -47,9 +47,10 @@ public class EnemyTakeDamage : MonoBehaviour
 
 	}
 
-    IEnumerator Death()
+    IEnumerator Death<T>()
     {
         // disable further movements
+        // enemy manager
         transform.parent.GetComponent<BlockBattleSystem>().CanMove = false;
         transform.parent.GetComponent<BlockBattleSystem>().Dead = true;
         
@@ -76,7 +77,6 @@ public class EnemyTakeDamage : MonoBehaviour
         }
     }
 
-    // have child "hitbox" receive collider instead
     private void OnCollisionEnter2D(Collision2D col)
     {
         var myCollider = col.GetContact(0);

@@ -98,8 +98,8 @@
      <Compile Include="Library\PackageCache\com.unity.services.core@1.9.0\Editor\Core\EditorGameService\IEditorGameServiceRegistry.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.9.0\Editor\Core\UiHelpers\IProjectEditorDrawerFactory.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.9.0\Editor\Core\Shared\DependencyInversion\AbstractRuntimeServices.Gen.cs" />
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.9.0\Editor\Core\Networking\TokenExchange.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.9.0\Editor\Core\Utils\IAccessTokens.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.9.0\Editor\Core\Networking\TokenExchange.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.9.0\Editor\Core\Shared\UI\ProgressBar.Gen.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.9.0\Editor\Core\Shared\Infrastructure\Collections\MappedObservableCollection.Gen.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.9.0\Editor\Core\Shared\UI\AssemblyInfo.Gen.cs" />
