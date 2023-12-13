@@ -19,21 +19,21 @@ namespace com.ultimate2d.combat
         {
             Debug.Log("Starting second attack");
             // play second slash anim
-            PlayerManager.Instance.GetComponent<Animator>().Play("Attack Tree", 0);
+            PlayerManager.Instance.GetComponent<Animator>().SetBool("SecondAttack", true);
             PlayerManager.Instance.GetComponent<AudioSource>().Play();
 
             // scoot towards last move
             // var newPos = PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance;
             // PlayerManager.Instance.transform.position = Vector3.Lerp(PlayerManager.Instance.transform.position, newPos, 0.8f);
             
-            var cooldown = PlayerManager.Instance.cooldownRate;
-            while(cooldown > 0)
-            {
-                if(PlayerInput.Slash()) continueChain = true;
-                cooldown -= Time.deltaTime;
-                yield return null;
-            }
-
+            // var cooldown = PlayerManager.Instance.cooldownRate;
+            // while(cooldown > 0)
+            // {
+            //     if(PlayerInput.Slash()) continueChain = true;
+            //     cooldown -= Time.deltaTime;
+            //     yield return null;
+            // }
+            yield return new WaitForSeconds(0.117f); // current length of all attack anims
             // if(continueChain)
             // {
             //     continueChain = false;
@@ -41,8 +41,9 @@ namespace com.ultimate2d.combat
             // }
             // else
             // {
-                PlayerManager.Instance.CanMove = true;
-                PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
+            PlayerManager.Instance.CanMove = true;
+            yield return new WaitForSeconds(PlayerManager.Instance.cooldownRate); 
+            PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
             //}    
 
 
