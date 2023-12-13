@@ -30,13 +30,13 @@ namespace com.ultimate2d.combat
             
             if(PlayerInput.Slash()) continueChain = true;
             
-            // if(continueChain)
-            // {
-            //     continueChain = false;
-            //     BlockBattleSystem.SetState(new SecondAttack(BlockBattleSystem));
-            // }
-            // else
-            // {
+            if(continueChain)
+            {
+                continueChain = false;
+                BlockBattleSystem.SetState(new SecondAttack(PlayerBattleSystem));
+            }
+            else
+            {
                 
             PlayerManager.Instance.CanMove = true;
 
