@@ -22,6 +22,7 @@ public class PowerManager : MonoBehaviour
         powerIcon.color = new Color(0,0,0, .80f);
     }
 
+    // make position of beam be position of RotateAroundPlayer
     private void Update()
     {
         
@@ -37,7 +38,8 @@ public class PowerManager : MonoBehaviour
         {
             Debug.Log("ultimate");
             ultimateCharge.AddUlt(-ultCost);
-            anim.SetBool("IsExploding", true);
+            //anim.SetBool("IsBeaming", true);
+            anim.Play("BeamAttack");
 
             // do damage to area
             var hits = Physics2D.OverlapCircleAll(transform.position, range, PlayerManager.Instance.enemyLayerMask);
@@ -47,8 +49,8 @@ public class PowerManager : MonoBehaviour
                 {
                     Destroy(col.gameObject);
                 }
-                if(col.CompareTag("Enemy"))
-                    col.gameObject.GetComponent<EnemyTakeDamage>().healthSystem.Damage(SpecialDamage);
+                if(col.CompareTag("BigCultist"))
+                    col.gameObject.GetComponent<BossTakeDamage>().healthSystem.Damage(SpecialDamage);
             }
 
         
@@ -59,7 +61,8 @@ public class PowerManager : MonoBehaviour
 
     public void StopAnimation()
     {
-        anim.SetBool("IsExploding", false);
+        anim.SetBool("IsBeaming", false);
+        anim.Play("Empty");
     }
 
     // void OnDrawGizmosSelected()
