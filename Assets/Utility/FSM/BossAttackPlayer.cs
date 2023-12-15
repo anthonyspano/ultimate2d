@@ -11,7 +11,7 @@ namespace com.ultimate2d.combat
         GameObject shockwavePrefab;
         EnemyManager em;
         Animator anim;
-        float telegraphTime = 0.5f;
+        float telegraphTime = 0.4f;
 
         public BossAttackPlayer(BossBattleSystem BossBattleSystem) : base(BossBattleSystem)
         {

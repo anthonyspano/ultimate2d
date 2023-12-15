@@ -11,7 +11,7 @@ public class UltimateBar : MonoBehaviour
 {
 	public Slider slider;
 	
-	public event EventHandler OnUltFull;
+	public event EventHandler OnUltReady;
 	
 	
 
@@ -25,9 +25,13 @@ public class UltimateBar : MonoBehaviour
 	public void AddUlt(int charge)
 	{
 		slider.value += charge;
-		if ((int) slider.value >= (int) slider.maxValue)
+		// if ((int) slider.value >= (int) slider.maxValue)
+		// {
+		// 	if (OnUltFull != null) OnUltFull(this, EventArgs.Empty);
+		// }
+		if((int) slider.value > PlayerManager.Instance.ultCost)
 		{
-			if (OnUltFull != null) OnUltFull(this, EventArgs.Empty);
+			if (OnUltReady != null) OnUltReady(this, EventArgs.Empty);
 		}
 
 	}

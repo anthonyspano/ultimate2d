@@ -3630,18 +3630,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e510cee44d97e4b4caa6b68aa1fa4029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 600
+  maxHealth: 200
   pfHealthBar: {fileID: 1726575013604697225, guid: e735742ab812228469c1101b5a48a022,
     type: 3}
   positionOffset: 1.8
   maxUlt: 100
+  ultCost: 20
   ultBar: {fileID: 464829523}
   invulnAfterHit: 0.1
   ultAddedOnHit: 10
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  Attack: 51
+  Attack: 50
   range: 1
   cooldownRate: 0.5
   jumpCooldownRate: 1
@@ -24252,7 +24253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &743051574
 Transform:
   m_ObjectHideFlags: 0
@@ -24355,7 +24356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 1.72
   SpecialDamage: 150
-  ultCost: 50
+  ultCost: 20
   powerIcon: {fileID: 538613521}
 --- !u!1 &753794795
 GameObject:
@@ -30984,7 +30985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f51993d1c520a43a8540857724c163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 300
   ultAddedOnHit: 15
 --- !u!1 &2046757918
 GameObject:

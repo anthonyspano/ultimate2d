@@ -19,14 +19,17 @@ public class UltimateMove : MonoBehaviour
 
     private void Start()
     {
-        //ultBar.OnUltFull += ReadyUlt;
+        ultBar = PlayerManager.Instance.GetComponent<UltimateBar>();
+        ultBar.OnUltReady += ReadyUlt;
 
 
     }
 
     private void ReadyUlt(object sender, EventArgs e)
     {
-        ultReady = true;
+        // see PowerManager.cs
+
+        //ultReady = true;
 
         // light up icon
 
@@ -42,6 +45,7 @@ public class UltimateMove : MonoBehaviour
 
         if (ultReady && PlayerInput.Ultimate())
         {
+            Debug.Log("Ultimate!");
             ultReady = false;
             UseUlt();
         }

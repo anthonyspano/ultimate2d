@@ -28,6 +28,7 @@ public class PlayerManager : MonoBehaviour
 	// ultimate
 	[Header("Ultimate")]
 	public int maxUlt = 100;
+	public int ultCost = 20;
 	public UltimateBar ultBar;
 	public float invulnAfterHit;
 	public int ultAddedOnHit;
@@ -165,6 +166,12 @@ public class PlayerManager : MonoBehaviour
 			Instance.pHealth.Damage(20);
 			audioSource.PlayOneShot(hurt1, 0.7f);
 		}
+		if(collision.transform.CompareTag("BigCultist"))
+		{
+			Instance.pHealth.Damage(70);
+			audioSource.PlayOneShot(hurt1, 0.7f);
+		}
+		
 	}
 
 	private void OnTriggerEnter2D(Collider2D col)
@@ -255,14 +262,6 @@ public class PlayerManager : MonoBehaviour
 	{
 		yield return new WaitForSeconds(jumpCooldownRate);
 		jumpCooldown = 0;
-	}
-
-	public void PlayAttackSound()
-	{
-		// if(!GetComponent<AudioSource>().isPlaying)
-		// 	GetComponent<AudioSource>().Play();
-		
-		
 	}
 
 

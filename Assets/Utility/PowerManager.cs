@@ -27,6 +27,7 @@ public class PowerManager : MonoBehaviour
         
         if(ultimateCharge.GetUlt() >= ultCost)
         {
+            Debug.Log("ready");
             powerIcon.color = new Color(1,1,1, 1f);
         }
         else

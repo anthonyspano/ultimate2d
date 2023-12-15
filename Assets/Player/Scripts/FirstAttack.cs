@@ -17,7 +17,8 @@ namespace com.ultimate2d.combat
         {
             PlayerManager.Instance.CanMove = false;
             // play slash anim
-            PlayerManager.Instance.GetComponent<AudioSource>().Play();
+            //if(!PlayerManager.Instance.GetComponent<AudioSource>().isPlaying)
+                PlayerManager.Instance.GetComponent<AudioSource>().Play();
             PlayerManager.Instance.GetComponent<Animator>().SetBool("IsAttacking", true);
 
             // scoot towards last move
@@ -36,6 +37,7 @@ namespace com.ultimate2d.combat
             if(continueChain)
             {
                 continueChain = false;
+                yield return null;
                 PlayerBattleSystem.SetState(new SecondAttack(PlayerBattleSystem));
             }
 

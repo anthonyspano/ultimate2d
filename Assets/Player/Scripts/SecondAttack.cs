@@ -17,7 +17,6 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start() 
         {
-            Debug.Log("Starting second attack");
             // play second slash anim
             PlayerManager.Instance.GetComponent<Animator>().SetBool("SecondAttack", true);
             PlayerManager.Instance.GetComponent<AudioSource>().Play();
