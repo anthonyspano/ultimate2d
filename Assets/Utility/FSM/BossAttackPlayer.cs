@@ -43,7 +43,7 @@ namespace com.ultimate2d.combat
                 //bs.GetComponent<AudioSource>().PlayOneShot(enemyManager.attackSound, 1f);
                 
                 // charge toward 
-                bs.transform.position = Vector2.Lerp(bs.transform.position, atkBox.transform.position, 0.2f);
+                bs.transform.position = Vector2.Lerp(bs.transform.position, atkBox.transform.position, 0.4f);
 
                 // play anim
                 anim.Play("Attack", 0);

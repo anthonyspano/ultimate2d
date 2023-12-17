@@ -36,7 +36,7 @@ public class BossTakeDamage : MonoBehaviour
         else 
         {
             StartCoroutine(FlashRed());
-            if(healthSystem.GetHealth() < 50)
+            if(healthSystem.GetHealthPercent() < .50f)
             {
                 em.timeToReact = true;
             }

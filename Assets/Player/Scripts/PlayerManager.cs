@@ -264,5 +264,15 @@ public class PlayerManager : MonoBehaviour
 		jumpCooldown = 0;
 	}
 
+	public void PushBack()
+	{
+		Debug.Log("Pushing back");
+		// push back in the direction opposite of player aim
+		// get position of cursor
+		var cursorPos = GetComponentInChildren<RotateAroundPlayer>().transform.position;
+		// translate in opposite direction in relation to player (take the difference)
+		transform.Translate((transform.position - cursorPos) * Time.deltaTime);
+	}
+
 
 }

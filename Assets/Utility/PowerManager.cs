@@ -39,6 +39,8 @@ public class PowerManager : MonoBehaviour
             ultimateCharge.AddUlt(-ultCost);
             //anim.SetBool("IsBeaming", true);
             anim.Play("BeamAttack");
+            PlayerManager.Instance.CanMove = false;
+            StartCoroutine("PushBack"); // being pushed back during the ultimate
 
             // do damage to area
             var hits = Physics2D.OverlapCircleAll(transform.position, range, PlayerManager.Instance.enemyLayerMask);
@@ -58,10 +60,24 @@ public class PowerManager : MonoBehaviour
         }
     }
 
+    private IEnumerator PushBack()
+    {
+        yield return null;
+        while(anim.GetCurrentAnimatorStateInfo(0).IsName("BeamAttack"))
+        {
+            // push player back
+            PlayerManager.Instance.PushBack();
+            yield return null;
+        }
+
+        yield return null;
+    }
     public void StopAnimation()
     {
+        PlayerManager.Instance.CanMove = true;
         anim.SetBool("IsBeaming", false);
         anim.Play("Empty");
+
     }
 
     // void OnDrawGizmosSelected()

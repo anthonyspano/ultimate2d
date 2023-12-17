@@ -23,6 +23,7 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
+            Debug.Log("reaction attack go!");
             // telegraph "charge up" attack
             anim.Play("Telegraph", 0);
 

@@ -2322,7 +2322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 1.72
   SpecialDamage: 150
-  ultCost: 1
+  ultCost: 20
   powerIcon: {fileID: 538613521}
 --- !u!212 &223515773
 SpriteRenderer:
@@ -3839,7 +3839,7 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  Attack: 50
+  Attack: 43
   range: 1
   cooldownRate: 0.5
   jumpCooldownRate: 1

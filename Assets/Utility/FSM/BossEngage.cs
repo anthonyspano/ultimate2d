@@ -25,8 +25,9 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
-            if(em.timeToReact)
+            if(em.timeToReact && !em.ReactOnce)
             {
+                em.ReactOnce = true;
                 em.timeToReact = false;
                 BossBattleSystem.SetState(new ReactionAttack(BossBattleSystem));
             }

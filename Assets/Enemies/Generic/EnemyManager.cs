@@ -23,7 +23,10 @@ namespace com.ultimate2d.combat
         public AudioClip attackSound;
 
         public static Transform AttackBox;
+
+        // Reaction Attack
         public bool timeToReact;
+        public bool ReactOnce;
 
         public static float RetreatRange
         {
