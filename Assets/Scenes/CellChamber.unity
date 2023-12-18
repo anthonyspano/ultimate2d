@@ -317,6 +317,7 @@ MonoBehaviour:
   attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!95 &897382
 Animator:
   serializedVersion: 5
@@ -976,6 +977,7 @@ MonoBehaviour:
   attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!95 &47060020
 Animator:
   serializedVersion: 5
@@ -1259,6 +1261,7 @@ MonoBehaviour:
   attackRange: 1.5
   attackSound: {fileID: 0}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!61 &62772413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1946,6 +1949,7 @@ MonoBehaviour:
   attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!95 &159061686
 Animator:
   serializedVersion: 5
@@ -2301,7 +2305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223515770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.95, y: 0, z: 0}
+  m_LocalPosition: {x: 5.15, y: 0.11, z: 0}
   m_LocalScale: {x: 13.07, y: 3.76, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2324,6 +2328,9 @@ MonoBehaviour:
   SpecialDamage: 150
   ultCost: 20
   powerIcon: {fileID: 538613521}
+  CircleRadius: 5
+  ElevationOffset: 0
+  RotationSpeed: 1
 --- !u!212 &223515773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2404,7 +2411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223515770}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1e1e7928c0d12544a5af3c83eab8af4, type: 3}
   m_Name: 
@@ -3483,6 +3490,7 @@ MonoBehaviour:
   attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!95 &439741154
 Animator:
   serializedVersion: 5
@@ -3776,7 +3784,6 @@ GameObject:
   - component: {fileID: 464829523}
   - component: {fileID: 464829522}
   - component: {fileID: 464829519}
-  - component: {fileID: 464829517}
   - component: {fileID: 464829532}
   - component: {fileID: 464829533}
   m_Layer: 8
@@ -3786,20 +3793,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &464829517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464829516}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd4ed0bdc7e6cc44ab87dea04397fd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  center: {x: 0, y: 0}
-  range: 2.6
 --- !u!114 &464829519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24042,6 +24035,7 @@ MonoBehaviour:
   attackRange: 1.5
   attackSound: {fileID: 0}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!95 &656443616
 Animator:
   serializedVersion: 5
@@ -24556,6 +24550,9 @@ MonoBehaviour:
   SpecialDamage: 150
   ultCost: 20
   powerIcon: {fileID: 538613521}
+  CircleRadius: 1
+  ElevationOffset: 0
+  RotationSpeed: 1
 --- !u!1 &753794795
 GameObject:
   m_ObjectHideFlags: 0
@@ -26836,6 +26833,7 @@ MonoBehaviour:
   attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!95 &1463035040
 Animator:
   serializedVersion: 5
@@ -27161,6 +27159,7 @@ MonoBehaviour:
   attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!95 &1466940308
 Animator:
   serializedVersion: 5
@@ -27597,6 +27596,7 @@ MonoBehaviour:
   attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!95 &1587493521
 Animator:
   serializedVersion: 5
@@ -28206,6 +28206,7 @@ MonoBehaviour:
   attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!95 &1642665402
 Animator:
   serializedVersion: 5
@@ -30186,6 +30187,7 @@ MonoBehaviour:
   attackRange: 0
   attackSound: {fileID: 8300000, guid: b8909d36c3b18cf40902069ab0ec671d, type: 3}
   timeToReact: 0
+  ReactOnce: 0
 --- !u!95 &1919277497
 Animator:
   serializedVersion: 5

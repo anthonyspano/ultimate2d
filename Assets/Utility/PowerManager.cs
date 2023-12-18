@@ -15,6 +15,16 @@ public class PowerManager : MonoBehaviour
     public Image powerIcon;
 
 
+    // circling player
+    private Vector3 positionOffset;
+    [Range(0, 360)]
+    private float angle = 0;
+    public float CircleRadius;
+    public float ElevationOffset = 0;
+    public float RotationSpeed = 1;
+
+
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -37,28 +47,69 @@ public class PowerManager : MonoBehaviour
         {
             Debug.Log("ultimate");
             ultimateCharge.AddUlt(-ultCost);
-            //anim.SetBool("IsBeaming", true);
+            BeamSetup();
             anim.Play("BeamAttack");
             PlayerManager.Instance.CanMove = false;
             StartCoroutine("PushBack"); // being pushed back during the ultimate
 
             // do damage to area
-            var hits = Physics2D.OverlapCircleAll(transform.position, range, PlayerManager.Instance.enemyLayerMask);
-            foreach(var col in hits)
-            {
-                if(col.CompareTag("Projectile"))
-                {
-                    Destroy(col.gameObject);
-                }
-                if(col.CompareTag("BigCultist"))
-                    col.gameObject.GetComponent<BossTakeDamage>().healthSystem.Damage(SpecialDamage);
-            }
-
-        
-            
-
+            // var hits = Physics2D.OverlapCircleAll(transform.position, range, PlayerManager.Instance.enemyLayerMask);
+            // foreach(var col in hits)
+            // {
+            //     if(col.CompareTag("Projectile"))
+            //     {
+            //         Destroy(col.gameObject);
+            //     }
+            //     if(col.CompareTag("BigCultist"))
+            //         col.gameObject.GetComponent<BossTakeDamage>().healthSystem.Damage(SpecialDamage);
+            // }       
         }
+        // if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        // {
+        //     // move in a circle towards input of joystick, considering rotation
+        //     // h,k is the position of the player
+        //     var h = PlayerManager.Instance.transform.position.x;
+        //     var k = PlayerManager.Instance.transform.position.y;
+        //     // r is the radius of the circle
+        //     var r = 1;
+
+
+
+        // }
     }
+
+    private void LateUpdate()
+    {
+        // position
+        if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            positionOffset.Set(Mathf.Cos(angle) * CircleRadius, Mathf.Sin(angle) * CircleRadius, ElevationOffset);
+            transform.position = PlayerManager.Instance.transform.position + positionOffset;
+            // TBI: angle approaches angle of input
+            var stickAngle = Mathf.Atan2(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal")) * Mathf.Rad2Deg;
+            //angle += Time.deltaTime * RotationSpeed;
+            // lerp? the angle to approach the stick angle
+            //angle = 
+
+            // rotation
+            // rotate that vector by 90 degrees around the Z axis
+            Vector3 rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * (transform.position - PlayerManager.Instance.transform.position);
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, rotatedVectorToTarget);
+        }
+
+
+
+    }
+
+    public void BeamSetup()
+    {
+        // set position and rotation same as cursor
+        var reticle = GameObject.Find("Reticle");
+        transform.position = reticle.transform.position;
+        transform.rotation = reticle.transform.rotation;
+        
+    }
+
 
     private IEnumerator PushBack()
     {

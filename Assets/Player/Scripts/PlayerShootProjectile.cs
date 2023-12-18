@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(UltimateBar))]
-[RequireComponent(typeof(PlayerAim))]
 public class PlayerShootProjectile : LaunchProjectile
 {
 	private UltimateBar ultBar;
@@ -25,8 +24,8 @@ public class PlayerShootProjectile : LaunchProjectile
     {
 	    if (PlayerInput.Shoot())
 	    {
-		    var pos = myAim.center;
-		    Fire(bulletPrefab, pos, pos - transform.XandY(), bulletSpeed);
+            var pos = transform.position + PlayerManager.Instance.LastMove.normalized;
+		    Fire(bulletPrefab, pos, pos - transform.position, bulletSpeed);
 	    }
 	    
     }

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638383405425488163
-    m_Hash: 3751044229
+      ticks: 638229613734261816
+    m_Hash: 1183844688
   m_LockFileStatus:
     m_FilePath: C:/Users/Anthony/Documents/UnityProjects/ultimate2d/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638383405425488163
-    m_Hash: 3569251116
+      ticks: 638241652390639244
+    m_Hash: 885490006
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -440,7 +440,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: The Unity Analytics Library contains the Analytics Event Tracker component,
     the Data Privacy plug-in, and the Standard Events API.
   status: 0
@@ -748,13 +748,15 @@ m_ResolvedPackages:
     - 3.0.24
     - 3.0.25
     - 3.0.26
+    - 3.0.27
     compatible:
     - 3.0.21
     - 3.0.22
     - 3.0.24
     - 3.0.25
     - 3.0.26
-    recommended: 3.0.26
+    - 3.0.27
+    recommended: 3.0.27
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit
@@ -895,7 +897,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: Code editor integration for supporting Visual Studio Code as code
     editor for unity. Adds support for generating csproj files for intellisense purposes,
     auto discovery of installations, etc.
@@ -1278,6 +1280,8 @@ m_ResolvedPackages:
     - 1.3.8
     - 1.3.9
     - 1.4.0
+    - 1.4.1
+    - 1.4.2
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1294,6 +1298,8 @@ m_ResolvedPackages:
     - 1.3.8
     - 1.3.9
     - 1.4.0
+    - 1.4.1
+    - 1.4.2
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1778,7 +1784,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: XR
-  type: 
+  type: asset
   description: This package includes the tracked pose driver for the legacy input
     system, the XR Bindings Seeding Tool and 3Dof Arm Model support for the Tracked
     Pose Driver. The Tracked Pose Driver is a behavior that enables GameObjects to
@@ -3983,12 +3989,14 @@ m_ResolvedPackages:
     - 4.4.2
     - 5.0.0
     - 5.0.1
+    - 5.0.2
     compatible:
     - 4.4.0
     - 4.4.1
     - 4.4.2
     - 5.0.0
     - 5.0.1
+    - 5.0.2
     recommended: 4.4.2
     deprecated: []
   dependencies:
