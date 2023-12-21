@@ -91,7 +91,6 @@ public class PowerManager : MonoBehaviour
         // cA = Mathf.Lerp(cA, sA, 0.1f);
         if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            
             Debug.Log(angle);
             //angle *= Mathf.PI / 180;
             positionOffset.Set(Mathf.Cos(angle) * CircleRadius, Mathf.Sin(angle) * CircleRadius, ElevationOffset);
@@ -109,8 +108,20 @@ public class PowerManager : MonoBehaviour
             // lerp? the angle to approach the stick angle
             //Debug.Log(currentAngle);
             //angle = currentAngle;
-            angle = Mathf.Lerp(angle, stickAngle, 0.1f);
-            //angle = 135;
+            
+            // convert angles, lerp values, convert angle back to negative
+            if(angle < 0)
+            {
+                angle = NegToPosRad(angle);
+            }
+            if(stickAngle < 0)
+            {
+                stickAngle = NegToPosRad(stickAngle);
+            }
+            Debug.Log("ca: " + angle + ", sa: " + stickAngle);
+            
+            angle = Mathf.Lerp(angle, stickAngle, 0.1f); // 0.01f
+            angle = PosToNegRad(angle);
             
 
             // rotation
@@ -121,6 +132,16 @@ public class PowerManager : MonoBehaviour
 
 
 
+    }
+
+    private float NegToPosRad(float a)
+    {
+        return Mathf.PI - Mathf.Abs(a) + Mathf.PI;
+    }
+    
+    private float PosToNegRad(float a)
+    {
+        return a - Mathf.PI * 2;
     }
 
     public void BeamSetup()

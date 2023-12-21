@@ -2328,7 +2328,7 @@ MonoBehaviour:
   SpecialDamage: 150
   ultCost: 20
   powerIcon: {fileID: 538613521}
-  CircleRadius: 1
+  CircleRadius: 5
   ElevationOffset: 0
   RotationSpeed: 1
 --- !u!212 &223515773
@@ -23972,7 +23972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &656443612
 BoxCollider2D:
   m_ObjectHideFlags: 0
