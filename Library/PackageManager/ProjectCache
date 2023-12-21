@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638229613734261816
-    m_Hash: 1183844688
+      ticks: 638383405425488163
+    m_Hash: 3751044229
   m_LockFileStatus:
     m_FilePath: C:/Users/Anthony/Documents/UnityProjects/ultimate2d/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638241652390639244
-    m_Hash: 885490006
+      ticks: 638383405425488163
+    m_Hash: 3569251116
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -440,7 +440,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: asset
+  type: 
   description: The Unity Analytics Library contains the Analytics Event Tracker component,
     the Data Privacy plug-in, and the Standard Events API.
   status: 0
@@ -897,7 +897,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: asset
+  type: 
   description: Code editor integration for supporting Visual Studio Code as code
     editor for unity. Adds support for generating csproj files for intellisense purposes,
     auto discovery of installations, etc.
@@ -1784,7 +1784,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: XR
-  type: asset
+  type: 
   description: This package includes the tracked pose driver for the legacy input
     system, the XR Bindings Seeding Tool and 3Dof Arm Model support for the Tracked
     Pose Driver. The Tracked Pose Driver is a behavior that enables GameObjects to

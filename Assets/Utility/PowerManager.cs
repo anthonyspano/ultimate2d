@@ -23,6 +23,9 @@ public class PowerManager : MonoBehaviour
     public float ElevationOffset = 0;
     public float RotationSpeed = 1;
 
+    private float cA = 0f;
+    private float sA = 90f;
+
 
 
     private void Start()
@@ -30,12 +33,14 @@ public class PowerManager : MonoBehaviour
         anim = GetComponent<Animator>();
         ultimateCharge = PlayerManager.Instance.GetComponent<UltimateBar>();
         powerIcon.color = new Color(0,0,0, .80f);
+        //Debug.Log(Mathf.Lerp(16.42f, 90, 0.1f));
+        Debug.Log(Mathf.Cos(9));
     }
 
     // make position of beam be position of RotateAroundPlayer
     private void Update()
     {
-        
+
         if(ultimateCharge.GetUlt() >= ultCost)
         {
             powerIcon.color = new Color(1,1,1, 1f);
@@ -80,16 +85,30 @@ public class PowerManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        // position
+        // Debug.Log(cA);
+        // Debug.Log(sA);
+        // cA = Mathf.Lerp(cA, sA, 0.1f);
         if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
+            Debug.Log(angle);
+            angle *= Mathf.PI / 180;
             positionOffset.Set(Mathf.Cos(angle) * CircleRadius, Mathf.Sin(angle) * CircleRadius, ElevationOffset);
-            transform.position = PlayerManager.Instance.transform.position + positionOffset;
+            Debug.Log(positionOffset);
+            transform.position = positionOffset + PlayerManager.Instance.transform.position;
             // TBI: angle approaches angle of input
             var stickAngle = Mathf.Atan2(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal")) * Mathf.Rad2Deg;
+            // vector in relation to the player (local position)
+            var vector1 = transform.position - PlayerManager.Instance.transform.position;
+            vector1.Normalize();
+            //Debug.Log(vector1);
+            var currentAngle = Mathf.Atan(vector1.y/vector1.x) * Mathf.Rad2Deg;
             //angle += Time.deltaTime * RotationSpeed;
             // lerp? the angle to approach the stick angle
-            //angle = 
+            Debug.Log(currentAngle);
+            //angle = currentAngle;
+            angle = Mathf.Lerp(currentAngle, stickAngle, 0.1f);
+            //angle = 135;
+            
 
             // rotation
             // rotate that vector by 90 degrees around the Z axis

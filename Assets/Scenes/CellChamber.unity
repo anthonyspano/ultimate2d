@@ -2328,7 +2328,7 @@ MonoBehaviour:
   SpecialDamage: 150
   ultCost: 20
   powerIcon: {fileID: 538613521}
-  CircleRadius: 5
+  CircleRadius: 1
   ElevationOffset: 0
   RotationSpeed: 1
 --- !u!212 &223515773
