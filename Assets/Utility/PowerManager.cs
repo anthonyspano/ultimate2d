@@ -34,7 +34,8 @@ public class PowerManager : MonoBehaviour
         ultimateCharge = PlayerManager.Instance.GetComponent<UltimateBar>();
         powerIcon.color = new Color(0,0,0, .80f);
         //Debug.Log(Mathf.Lerp(16.42f, 90, 0.1f));
-        Debug.Log(Mathf.Cos(9));
+        //Debug.Log(Mathf.Cos(9));
+        
     }
 
     // make position of beam be position of RotateAroundPlayer
@@ -90,23 +91,25 @@ public class PowerManager : MonoBehaviour
         // cA = Mathf.Lerp(cA, sA, 0.1f);
         if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
+            
             Debug.Log(angle);
-            angle *= Mathf.PI / 180;
+            //angle *= Mathf.PI / 180;
             positionOffset.Set(Mathf.Cos(angle) * CircleRadius, Mathf.Sin(angle) * CircleRadius, ElevationOffset);
             Debug.Log(positionOffset);
             transform.position = positionOffset + PlayerManager.Instance.transform.position;
             // TBI: angle approaches angle of input
-            var stickAngle = Mathf.Atan2(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal")) * Mathf.Rad2Deg;
+            var stickAngle = Mathf.Atan2(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
+            Debug.Log(stickAngle);
             // vector in relation to the player (local position)
             var vector1 = transform.position - PlayerManager.Instance.transform.position;
             vector1.Normalize();
             //Debug.Log(vector1);
-            var currentAngle = Mathf.Atan(vector1.y/vector1.x) * Mathf.Rad2Deg;
+            //var currentAngle = Mathf.Atan(vector1.y/vector1.x) * Mathf.Rad2Deg;
             //angle += Time.deltaTime * RotationSpeed;
             // lerp? the angle to approach the stick angle
-            Debug.Log(currentAngle);
+            //Debug.Log(currentAngle);
             //angle = currentAngle;
-            angle = Mathf.Lerp(currentAngle, stickAngle, 0.1f);
+            angle = Mathf.Lerp(angle, stickAngle, 0.1f);
             //angle = 135;
             
 
