@@ -140,13 +140,15 @@ public class PowerManager : MonoBehaviour
             }
             //Debug.Log("ca: " + angle * Mathf.Rad2Deg + ", sa: " + stickAngle * Mathf.Rad2Deg);
 
+            // have the beam angle approach the stick input with lerp
+            if(stickAngle == 0)
+                stickAngle = Mathf.PI * 2;
+                
             // if the difference between the angle and the stick angle > pi, adjust input angle
             if(Mathf.Abs(angle - stickAngle) > Mathf.PI)
                 stickAngle -= (Mathf.PI * 2);
 
-            // have the beam angle approach the stick input with lerp
-            if(stickAngle == 0)
-                stickAngle = Mathf.PI * 2;
+
 
             angle = Mathf.Lerp(angle, stickAngle, 0.01f); // 0.01f
             Debug.Log("ca: " + angle * Mathf.Rad2Deg + ", sa: " + stickAngle * Mathf.Rad2Deg);
