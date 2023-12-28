@@ -34,26 +34,6 @@ public class PowerManager : MonoBehaviour
         ultimateCharge = PlayerManager.Instance.GetComponent<UltimateBar>();
         powerIcon.color = new Color(0,0,0, .80f);
         
-
-        angle = -171;
-        Debug.Log(angle);
-        angle *= Mathf.PI / 180;
-        positionOffset.Set(Mathf.Cos(angle) * CircleRadius, Mathf.Sin(angle) * CircleRadius, ElevationOffset);
-        Debug.Log(positionOffset);
-        transform.position = positionOffset + PlayerManager.Instance.transform.position;
-        // vector in relation to the player (local position)
-        var vector1 = transform.position - PlayerManager.Instance.transform.position;
-        vector1.Normalize();
-        
-        // convert angles, lerp values, convert angle back to negative
-        if(angle < 0)
-        {
-            angle = NegToPosRad(angle);
-        }
-        
-        angle = Mathf.Lerp(angle, Mathf.PI, 0.1f); // 0.01f
-        //angle = PosToNegRad(angle);
-        Debug.Log(angle * Mathf.Rad2Deg);
     }
 
     // make position of beam be position of RotateAroundPlayer
@@ -69,7 +49,7 @@ public class PowerManager : MonoBehaviour
 
         if(PlayerInput.Ultimate() && ultimateCharge.GetUlt() > ultCost)
         {
-            Debug.Log("ultimate");
+            //Debug.Log("ultimate");
             ultimateCharge.AddUlt(-ultCost);
             BeamSetup();
             anim.Play("BeamAttack");
@@ -88,38 +68,15 @@ public class PowerManager : MonoBehaviour
             //         col.gameObject.GetComponent<BossTakeDamage>().healthSystem.Damage(SpecialDamage);
             // }       
         }
-        // if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-        // {
-        //     // move in a circle towards input of joystick, considering rotation
-        //     // h,k is the position of the player
-        //     var h = PlayerManager.Instance.transform.position.x;
-        //     var k = PlayerManager.Instance.transform.position.y;
-        //     // r is the radius of the circle
-        //     var r = 1;
 
-
-
-        // }
     }
 
     private void LateUpdate()
     {
-        // Debug.Log(cA);
-        // Debug.Log(sA);
-        // cA = Mathf.Lerp(cA, sA, 0.1f);
+
         if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            // calculate shortest route
-            // if the difference between the angle and the stick angle > pi
-            // make the target angle stick angle + 2pi
 
-
-            //Debug.Log(angle);
-            //angle *= Mathf.PI / 180;
-
-            // set the position of the beam object to the new angle
-            positionOffset.Set(Mathf.Cos(angle) * CircleRadius, Mathf.Sin(angle) * CircleRadius, ElevationOffset);
-            transform.position = positionOffset + PlayerManager.Instance.transform.position;
             // get the angle of stick input
             var stickAngle = Mathf.Atan2(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
 
@@ -147,13 +104,15 @@ public class PowerManager : MonoBehaviour
 
 
             angle = Mathf.Lerp(angle, stickAngle, 0.01f); // 0.01f
-            Debug.Log("ca: " + angle * Mathf.Rad2Deg + ", sa: " + stickAngle * Mathf.Rad2Deg);
+            //Debug.Log("ca: " + angle * Mathf.Rad2Deg + ", sa: " + stickAngle * Mathf.Rad2Deg);
             // convert appropriately
             if(angle > Mathf.PI * 2)
                 angle = angle - (Mathf.PI * 2);
             angle = PosToNegRad(angle);
 
-            
+            // set the position of the beam object to the new angle
+            positionOffset.Set(Mathf.Cos(angle) * CircleRadius, Mathf.Sin(angle) * CircleRadius, ElevationOffset);
+            transform.position = positionOffset + PlayerManager.Instance.transform.position;
             
 
             // rotation
@@ -182,9 +141,11 @@ public class PowerManager : MonoBehaviour
         var reticle = GameObject.Find("Reticle");
         var r_vector = reticle.transform.position - PlayerManager.Instance.transform.position;
         r_vector.Normalize();
+        angle = Mathf.Atan2(r_vector.y, r_vector.x);
         r_vector *= 5;
         transform.position = reticle.transform.position + r_vector;
         transform.rotation = reticle.transform.rotation;
+        
         
     }
 
