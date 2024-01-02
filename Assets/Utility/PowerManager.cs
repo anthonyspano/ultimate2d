@@ -23,9 +23,9 @@ public class PowerManager : MonoBehaviour
     public float ElevationOffset = 0;
     public float RotationSpeed = 1;
 
-    private float cA = 0f;
-    private float sA = 90f;
-
+    // sound
+    private AudioSource audioSource;
+    public AudioClip soundEffect;
 
 
     private void Start()
@@ -33,6 +33,8 @@ public class PowerManager : MonoBehaviour
         anim = GetComponent<Animator>();
         ultimateCharge = PlayerManager.Instance.GetComponent<UltimateBar>();
         powerIcon.color = new Color(0,0,0, .80f);
+
+        audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -145,6 +147,9 @@ public class PowerManager : MonoBehaviour
         r_vector *= 5;
         transform.position = reticle.transform.position + r_vector;
         transform.rotation = reticle.transform.rotation;
+
+        // play beam sound
+        audioSource.PlayOneShot(soundEffect);
         
         
     }

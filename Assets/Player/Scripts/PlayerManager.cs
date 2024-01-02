@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Rendering.PostProcessing;
+using com.ultimate2d.combat;
 
 // change OnHealthChanged to flash red
 public class PlayerManager : MonoBehaviour
@@ -74,6 +75,7 @@ public class PlayerManager : MonoBehaviour
 	public GameObject wrongWayPanel;
 	private bool canMove = true;
 	private int wrongWayCount = 0;
+	public float pushBackIntensity;
 
 	public bool CanMove
 	{
@@ -266,10 +268,10 @@ public class PlayerManager : MonoBehaviour
 
 	public void PushBack()
 	{
-		// get position of cursor
-		var cursorPos = GetComponentInChildren<RotateAroundPlayer>().transform.position;
+		// get position of beam 
+		var cursorPos = GetComponentInChildren<PowerManager>().transform.position;
 		// translate in opposite direction in relation to player (take the difference)
-		transform.Translate((transform.position - cursorPos) * Time.deltaTime);
+		transform.Translate((transform.position - cursorPos) * Time.deltaTime * pushBackIntensity);
 	}
 
 
