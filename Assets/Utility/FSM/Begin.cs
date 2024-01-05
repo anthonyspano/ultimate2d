@@ -18,24 +18,25 @@ namespace com.ultimate2d.combat
 
         
 
+        // close the loop according to notepad on desk
         public override IEnumerator Start()
         {
+
             // wait for anykey
-            yield return new WaitUntil(() => Input.anyKey);
+            yield return new WaitUntil(() => PlayerController.Instance.playerStatus != PlayerController.PlayerStatus.Idle);
             // grab key pressed from gamemanager
             yield return null;
-            switch((int)GameManager.playerInput) // create different begin classes based on detected input
+            switch(PlayerController.Instance.playerStatus) // create different begin classes based on detected input
             {
-                case 107: // 'k'
-                    PlayerBattleSystem.SetState(new FirstAttack(PlayerBattleSystem));
-                    break;
-                case 350:
-                    PlayerBattleSystem.SetState(new FirstAttack(PlayerBattleSystem));
-                    break;
-                case 352: // 'x'
+                case PlayerController.PlayerStatus.Dodge: 
+                    Debug.Log("dodging");
                     PlayerBattleSystem.SetState(new Jump(PlayerBattleSystem));
                     break;
+                // case PlayerController.PlayerStatus.Move:
+                //     PlayerBattleSystem.SetState(new FirstAttack(PlayerBattleSystem));
+                //     break;
                 default:
+                    PlayerController.Instance.playerStatus = PlayerController.PlayerStatus.Idle;
                     PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
                     break;
 

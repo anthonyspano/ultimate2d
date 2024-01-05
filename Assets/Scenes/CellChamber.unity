@@ -3832,6 +3832,8 @@ GameObject:
   - component: {fileID: 464829519}
   - component: {fileID: 464829532}
   - component: {fileID: 464829533}
+  - component: {fileID: 464829534}
+  - component: {fileID: 464829535}
   m_Layer: 8
   m_Name: Player 1
   m_TagString: PlayerAttack
@@ -3866,6 +3868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e510cee44d97e4b4caa6b68aa1fa4029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
   maxHealth: 200
   pfHealthBar: {fileID: 1726575013604697225, guid: e735742ab812228469c1101b5a48a022,
     type: 3}
@@ -4210,6 +4213,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6794909a095625140acd5aeb37da7c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &464829534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464829516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 6c9aed2bcf7190840b09b3508388bc5a,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &464829535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464829516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f0d355ae75e5647a629c5014eacd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0
+  playerStatus: 0
 --- !u!1 &477850553
 GameObject:
   m_ObjectHideFlags: 0

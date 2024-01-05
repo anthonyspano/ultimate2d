@@ -58,6 +58,9 @@ namespace com.ultimate2d.combat
 
             }
 
+            // end jump endeavors
+            PlayerController.Instance.playerStatus = PlayerController.PlayerStatus.Idle;
+
             PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
 
         }

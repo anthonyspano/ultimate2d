@@ -19,6 +19,8 @@ public class PlayerManager : MonoBehaviour
 
 	public static GameObject player;
 
+
+
 	// health
 	[Header("Health")]
 	[SerializeField] private int maxHealth;
