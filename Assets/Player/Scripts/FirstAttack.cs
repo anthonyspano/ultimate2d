@@ -22,9 +22,9 @@ namespace com.ultimate2d.combat
             PlayerManager.Instance.GetComponent<Animator>().SetBool("IsAttacking", true);
 
             // scoot towards last move
-            // var newPos = PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance;
-            // Debug.Log(PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance);
-            // PlayerManager.Instance.transform.position = Vector3.Lerp(PlayerManager.Instance.transform.position, newPos, 0.8f);
+            var newPos = PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance;
+            Debug.Log(PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance);
+            PlayerManager.Instance.transform.position = Vector3.Lerp(PlayerManager.Instance.transform.position, newPos, 0.8f);
 
             while(PlayerManager.Instance.GetComponent<Animator>().GetBool("IsAttacking") == true)
             {
