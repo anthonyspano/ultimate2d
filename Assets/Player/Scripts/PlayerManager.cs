@@ -57,6 +57,7 @@ public class PlayerManager : MonoBehaviour
 	public float MDD;
 	public float AttackMoveDistance;
 	private RotateAroundPlayer playerAim;
+	public float moveSpeed;
 
 	// audio
 	[Header("Audio")]
@@ -78,6 +79,7 @@ public class PlayerManager : MonoBehaviour
 	private bool canMove = true;
 	private int wrongWayCount = 0;
 	public float pushBackIntensity;
+	public bool isBusy;
 
 	public bool CanMove
 	{

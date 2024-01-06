@@ -51,7 +51,16 @@ namespace com.ultimate2d.combat
         {
             // move
             inputVector = playerInputActions.Player.Movement.ReadValue<Vector2>();
-            anim.SetFloat("Horizontal", inputVector.x);
+            if(!PlayerManager.Instance.isBusy)
+            {
+                if(inputVector != new Vector2(0, 0))
+                {
+                    playerStatus = PlayerStatus.Move;
+                    //PlayerManager.Instance.isBusy = true;
+                }
+                else
+                    playerStatus = PlayerStatus.Idle;
+            }
 
         }
 
@@ -60,6 +69,7 @@ namespace com.ultimate2d.combat
         {
             // started, performed, canceled
             playerStatus = PlayerStatus.Dodge;
+            PlayerManager.Instance.isBusy = true;
             if(context.performed)
                 Debug.Log("dodge " + context.phase);
         }

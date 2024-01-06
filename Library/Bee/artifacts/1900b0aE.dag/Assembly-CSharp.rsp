@@ -407,6 +407,7 @@
 "Assets/Player/Scripts/PlayerManager.cs"
 "Assets/Player/Scripts/PlayerMove.cs"
 "Assets/Player/Scripts/PlayerMove2D.cs"
+"Assets/Player/Scripts/PlayerRun.cs"
 "Assets/Player/Scripts/PlayerShootProjectile.cs"
 "Assets/Player/Scripts/PlayerShootRaycast.cs"
 "Assets/Player/Scripts/RBDash.cs"

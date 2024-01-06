@@ -3823,7 +3823,6 @@ GameObject:
   - component: {fileID: 464829529}
   - component: {fileID: 464829528}
   - component: {fileID: 464829527}
-  - component: {fileID: 464829526}
   - component: {fileID: 464829525}
   - component: {fileID: 464829524}
   - component: {fileID: 464829520}
@@ -3868,7 +3867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e510cee44d97e4b4caa6b68aa1fa4029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
   maxHealth: 200
   pfHealthBar: {fileID: 1726575013604697225, guid: e735742ab812228469c1101b5a48a022,
     type: 3}
@@ -3890,6 +3888,7 @@ MonoBehaviour:
   JumpSpeed: 10
   MDD: 0.05
   AttackMoveDistance: 1
+  moveSpeed: 12
   slash1: {fileID: 8300000, guid: 045ad82e118921a428488577eb38d79a, type: 3}
   hurt1: {fileID: 8300000, guid: 3374377e45532b04d95d1c767cc42ff1, type: 3}
   ppv: {fileID: 130940280}
@@ -3997,20 +3996,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &464829526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464829516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16341e7b7e5296049a5d28573fc3cc13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 12
-  deadZone: 0.5
 --- !u!95 &464829527
 Animator:
   serializedVersion: 5
