@@ -3888,7 +3888,7 @@ MonoBehaviour:
   JumpDistance: 20
   JumpSpeed: 10
   MDD: 0.05
-  AttackMoveDistance: 1
+  AttackMoveDistance: 1.6
   moveSpeed: 12
   slash1: {fileID: 8300000, guid: 045ad82e118921a428488577eb38d79a, type: 3}
   hurt1: {fileID: 8300000, guid: 3374377e45532b04d95d1c767cc42ff1, type: 3}

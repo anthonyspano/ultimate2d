@@ -17,6 +17,9 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start() 
         {
+            // restart attack cooldown
+            PlayerManager.Instance.attackCooldown = PlayerManager.Instance.attackCooldownRate;
+
             // play second slash anim
             PlayerManager.Instance.GetComponent<Animator>().SetBool("SecondAttack", true);
             PlayerManager.Instance.GetComponent<AudioSource>().Play();
@@ -32,7 +35,8 @@ namespace com.ultimate2d.combat
             //     cooldown -= Time.deltaTime;
             //     yield return null;
             // }
-            yield return new WaitForSeconds(0.117f); // current length of all attack anims
+            //yield return new WaitForSeconds(0.117f); // current length of all attack anims
+            yield return null;
             // if(continueChain)
             // {
             //     continueChain = false;
@@ -40,8 +44,8 @@ namespace com.ultimate2d.combat
             // }
             // else
             // {
-            PlayerManager.Instance.CanMove = true;
-            yield return new WaitForSeconds(PlayerManager.Instance.attackCooldownRate); 
+            PlayerManager.Instance.isBusy = false;
+            PlayerController.Instance.playerStatus = PlayerController.PlayerStatus.Idle;
             PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
             //}    
 

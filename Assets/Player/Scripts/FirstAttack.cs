@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace com.ultimate2d.combat
@@ -35,19 +36,21 @@ namespace com.ultimate2d.combat
             //yield return new WaitForSeconds(0.117f); // current length of all attack anims
             //yield return new WaitForSeconds(PlayerManager.Instance.cooldownRate); // arbitrary wait to read player input
    
-            // if(continueChain)
-            // {
-            //     continueChain = false;
-            //     yield return null;
-            //     PlayerBattleSystem.SetState(new SecondAttack(PlayerBattleSystem));
-            // }
-
-            PlayerManager.Instance.isBusy = false;
-            PlayerController.Instance.playerStatus = PlayerController.PlayerStatus.Idle;
-            // time waiting until player can attack again after combo over
-            PlayerBattleSystem.SetState(new Begin(pbs));
-            //}
+            if(continueChain)
+            {
+                continueChain = false;
+                yield return null;
+                PlayerBattleSystem.SetState(new SecondAttack(PlayerBattleSystem));
                 
+            }
+            else
+            {
+                PlayerManager.Instance.isBusy = false;
+                PlayerController.Instance.playerStatus = PlayerController.PlayerStatus.Idle;
+                // time waiting until player can attack again after combo over
+                PlayerBattleSystem.SetState(new Begin(pbs));
+                //}
+            }   
                 
 
 
