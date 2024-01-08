@@ -35,17 +35,16 @@ namespace com.ultimate2d.combat
             //yield return new WaitForSeconds(0.117f); // current length of all attack anims
             //yield return new WaitForSeconds(PlayerManager.Instance.cooldownRate); // arbitrary wait to read player input
    
-            if(continueChain)
-            {
-                continueChain = false;
-                yield return null;
-                PlayerBattleSystem.SetState(new SecondAttack(PlayerBattleSystem));
-            }
+            // if(continueChain)
+            // {
+            //     continueChain = false;
+            //     yield return null;
+            //     PlayerBattleSystem.SetState(new SecondAttack(PlayerBattleSystem));
+            // }
 
-            PlayerManager.Instance.CanMove = true;
-
+            PlayerManager.Instance.isBusy = false;
+            PlayerController.Instance.playerStatus = PlayerController.PlayerStatus.Idle;
             // time waiting until player can attack again after combo over
-            yield return new WaitForSeconds(PlayerManager.Instance.cooldownRate);
             PlayerBattleSystem.SetState(new Begin(pbs));
             //}
                 

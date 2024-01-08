@@ -41,7 +41,7 @@ namespace com.ultimate2d.combat
             // else
             // {
             PlayerManager.Instance.CanMove = true;
-            yield return new WaitForSeconds(PlayerManager.Instance.cooldownRate); 
+            yield return new WaitForSeconds(PlayerManager.Instance.attackCooldownRate); 
             PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
             //}    
 

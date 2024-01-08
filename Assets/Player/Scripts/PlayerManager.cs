@@ -49,7 +49,8 @@ public class PlayerManager : MonoBehaviour
 	// player properties
 	[Header("Special Properties")]
 	public float range;
-	public float cooldownRate; // for attack - 0.21
+	public float attackCooldownRate; // for attack - 0.21
+	public float attackCooldown;
 	public float jumpCooldownRate;
 	public float jumpCooldown;
 	public float JumpDistance;
@@ -259,15 +260,36 @@ public class PlayerManager : MonoBehaviour
 		return animFinished;
 	}
 
+	private bool jumping;
+	private bool attacking;
+
 	public void StartJumpCD()
 	{
-		StartCoroutine("JumpCooldown");
+		if(!jumping)
+			StartCoroutine("JumpCooldown");
 	}
 
 	private IEnumerator JumpCooldown()
 	{
+		jumping = true;
 		yield return new WaitForSeconds(jumpCooldownRate);
 		jumpCooldown = 0;
+		jumping = false;
+	}
+
+	public void StartAttackCD()
+	{
+		//if(!attacking)
+		StartCoroutine("AttackCooldown");
+		
+	}
+
+	private IEnumerator AttackCooldown()
+	{
+		attacking = true;
+		yield return new WaitForSeconds(attackCooldownRate);
+		attackCooldown = 0;
+		attacking = false;
 	}
 
 	public void PushBack()
@@ -277,6 +299,8 @@ public class PlayerManager : MonoBehaviour
 		// translate in opposite direction in relation to player (take the difference)
 		transform.Translate((transform.position - cursorPos) * Time.deltaTime * pushBackIntensity);
 	}
+
+	
 
 
 }

@@ -32,7 +32,7 @@ namespace com.ultimate2d.combat
             var newPos = PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance;
             PlayerManager.Instance.transform.position = Vector3.Lerp(PlayerManager.Instance.transform.position, newPos, 0.4f);
             
-            var cooldown = PlayerManager.Instance.cooldownRate;
+            var cooldown = PlayerManager.Instance.attackCooldownRate;
             while(cooldown > 0)
             {
                 cooldown -= Time.deltaTime;

@@ -3881,7 +3881,8 @@ MonoBehaviour:
     m_Bits: 512
   Attack: 43
   range: 1
-  cooldownRate: 0.5
+  attackCooldownRate: 1
+  attackCooldown: 0
   jumpCooldownRate: 1
   jumpCooldown: 0
   JumpDistance: 20
@@ -3894,6 +3895,7 @@ MonoBehaviour:
   ppv: {fileID: 130940280}
   wrongWayPanel: {fileID: 1796555654}
   pushBackIntensity: 0.6
+  isBusy: 0
 --- !u!114 &464829522
 MonoBehaviour:
   m_ObjectHideFlags: 0

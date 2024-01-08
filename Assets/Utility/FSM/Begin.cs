@@ -33,12 +33,33 @@ namespace com.ultimate2d.combat
                     PlayerBattleSystem.SetState(new PlayerRun(PlayerBattleSystem));
                     break;
                 case PlayerController.PlayerStatus.Dodge: 
-                    Debug.Log("dodging");
+                    if(PlayerManager.Instance.jumpCooldown > 0)
+                    {
+                        PlayerManager.Instance.isBusy = false;
+                        break;
+                    }
+                    Debug.Log("Dodging");
                     PlayerBattleSystem.SetState(new Jump(PlayerBattleSystem));
+                    break;
+                case PlayerController.PlayerStatus.Attack:
+                    if(PlayerManager.Instance.attackCooldown <= 0)
+                    {
+                        // start cooldown timer
+                        PlayerManager.Instance.attackCooldown = PlayerManager.Instance.attackCooldownRate;
+                        PlayerManager.Instance.StartAttackCD();
+                        Debug.Log("Attacking");
+                        PlayerBattleSystem.SetState(new FirstAttack(PlayerBattleSystem));
+                    }
+                    else 
+                    {
+                        PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
+                    }
+
                     break;
 
                 default:
                     PlayerController.Instance.playerStatus = PlayerController.PlayerStatus.Idle;
+                    PlayerManager.Instance.isBusy = false;
                     PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
                     break;
 

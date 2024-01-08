@@ -21,7 +21,7 @@ namespace com.ultimate2d.combat
 
         public float movementSpeed;
 
-        public enum PlayerStatus {Idle, Move, Dodge};
+        public enum PlayerStatus {Idle, Move, Dodge, Attack};
         public PlayerStatus playerStatus;
 
         private void Awake()
@@ -43,6 +43,7 @@ namespace com.ultimate2d.combat
             playerInputActions = new PlayerInputActions();
             playerInputActions.Player.Enable();
             playerInputActions.Player.Dodge.performed += Dodge;
+            playerInputActions.Player.Attack.performed += Attack;
             
             //playerInputActions.Player.Movement.performed += Movement;
         }
@@ -56,7 +57,6 @@ namespace com.ultimate2d.combat
                 if(inputVector != new Vector2(0, 0))
                 {
                     playerStatus = PlayerStatus.Move;
-                    //PlayerManager.Instance.isBusy = true;
                 }
                 else
                     playerStatus = PlayerStatus.Idle;
@@ -64,14 +64,19 @@ namespace com.ultimate2d.combat
 
         }
 
-        // TBI
         public void Dodge(InputAction.CallbackContext context)
         {
             // started, performed, canceled
-            playerStatus = PlayerStatus.Dodge;
-            PlayerManager.Instance.isBusy = true;
-            if(context.performed)
-                Debug.Log("dodge " + context.phase);
+            // if(context.performed)
+            //     Debug.Log("dodge " + context.phase);
+
+            // start dodge cooldown  
+            if(!PlayerManager.Instance.isBusy)
+            {
+                PlayerManager.Instance.isBusy = true;
+                playerStatus = PlayerStatus.Dodge;
+
+            }
         }
 
         public void Movement(InputAction.CallbackContext context)
@@ -79,6 +84,18 @@ namespace com.ultimate2d.combat
             //Debug.Log(context.ReadValue<Vector2>());
             
             
+        }
+
+        public void Attack(InputAction.CallbackContext context)
+        {
+            // start Attack cooldown
+            // player manager subscribes to this event
+
+            if(!PlayerManager.Instance.isBusy)
+            {
+                PlayerManager.Instance.isBusy = true;
+                playerStatus = PlayerStatus.Attack;
+            }
         }
     }
 
