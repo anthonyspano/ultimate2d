@@ -45,6 +45,7 @@ namespace com.ultimate2d.combat
             // }
             // else
             // {
+            PlayerManager.Instance.CanMove = true;
             PlayerManager.Instance.isBusy = false;
             PlayerController.Instance.playerStatus = PlayerController.PlayerStatus.Idle;
             PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));

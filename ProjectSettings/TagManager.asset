@@ -18,6 +18,7 @@ TagManager:
   - PlayerHurt
   - BigCultist
   - HitBox
+  - Wall
   layers:
   - Default
   - TransparentFX

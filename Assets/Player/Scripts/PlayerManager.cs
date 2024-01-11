@@ -10,6 +10,8 @@ using com.ultimate2d.combat;
 // change OnHealthChanged to flash red
 public class PlayerManager : MonoBehaviour
 {
+	public float drawMagnitude;
+	
 	// singleton
 	private static PlayerManager _instance;
 	public static PlayerManager Instance
@@ -87,6 +89,8 @@ public class PlayerManager : MonoBehaviour
 		get { return canMove;}
 		set { canMove = value; }
 	}
+
+	public bool hittingWall;
 
 	// delete if old
 	private Transform hitbox;
@@ -178,6 +182,7 @@ public class PlayerManager : MonoBehaviour
 			Instance.pHealth.Damage(70);
 			audioSource.PlayOneShot(hurt1, 0.7f);
 		}
+
 		
 	}
 
@@ -300,6 +305,11 @@ public class PlayerManager : MonoBehaviour
 		transform.Translate((transform.position - cursorPos) * Time.deltaTime * pushBackIntensity);
 	}
 
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawLine(transform.position, transform.position + LastMove * drawMagnitude);
+	}
 	
 
 

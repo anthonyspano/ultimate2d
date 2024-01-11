@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 10170701}
   m_Layer: 0
   m_Name: room_3_bottom
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 73354408}
   m_Layer: 0
   m_Name: Main Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1453,7 +1453,7 @@ GameObject:
   - component: {fileID: 111011945}
   m_Layer: 0
   m_Name: wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2821,7 +2821,7 @@ GameObject:
   - component: {fileID: 336245465}
   m_Layer: 0
   m_Name: InfiniteFrameTrigger
-  m_TagString: RockShadow
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3867,6 +3867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e510cee44d97e4b4caa6b68aa1fa4029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawMagnitude: 0.5
   maxHealth: 300
   pfHealthBar: {fileID: 1726575013604697225, guid: e735742ab812228469c1101b5a48a022,
     type: 3}
@@ -3885,9 +3886,9 @@ MonoBehaviour:
   attackCooldown: 0
   jumpCooldownRate: 1
   jumpCooldown: 0
-  JumpDistance: 100
+  JumpDistance: 5
   JumpSpeed: 10
-  MDD: 0.1
+  MDD: 0.2
   AttackMoveDistance: 1.6
   moveSpeed: 12
   slash1: {fileID: 8300000, guid: 045ad82e118921a428488577eb38d79a, type: 3}
@@ -3896,6 +3897,7 @@ MonoBehaviour:
   wrongWayPanel: {fileID: 1796555654}
   pushBackIntensity: 0.6
   isBusy: 0
+  hittingWall: 0
 --- !u!114 &464829522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4257,7 +4259,7 @@ GameObject:
   - component: {fileID: 477850555}
   m_Layer: 0
   m_Name: wall (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4585,7 +4587,7 @@ GameObject:
   - component: {fileID: 542932596}
   m_Layer: 0
   m_Name: CellColliderR
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24399,7 +24401,7 @@ GameObject:
   - component: {fileID: 707374394}
   m_Layer: 0
   m_Name: wall (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24728,7 +24730,7 @@ GameObject:
   - component: {fileID: 804010701}
   m_Layer: 0
   m_Name: assembly_side_wall_R
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24885,7 +24887,7 @@ GameObject:
   - component: {fileID: 865370097}
   m_Layer: 0
   m_Name: room_3_left
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24995,7 +24997,7 @@ GameObject:
   - component: {fileID: 933341383}
   m_Layer: 0
   m_Name: wall (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25938,7 +25940,7 @@ GameObject:
   - component: {fileID: 1228166223}
   m_Layer: 0
   m_Name: room_3_right
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26644,7 +26646,7 @@ GameObject:
   - component: {fileID: 1462314317}
   m_Layer: 0
   m_Name: assembly_top_wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27371,7 +27373,7 @@ GameObject:
   - component: {fileID: 1505302401}
   m_Layer: 0
   m_Name: WallColliders
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27783,7 +27785,7 @@ GameObject:
   - component: {fileID: 1589044617}
   m_Layer: 0
   m_Name: wall (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29193,7 +29195,7 @@ GameObject:
   - component: {fileID: 1838435957}
   m_Layer: 0
   m_Name: assembly_side_wall_L
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29245,7 +29247,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.020483017, y: 1.342989}
+  m_Offset: {x: -2.3836594, y: 1.342989}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -29256,7 +29258,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1822281, y: 18.105564}
+  m_Size: {x: 5.908581, y: 18.105564}
   m_EdgeRadius: 0
 --- !u!1 &1857945014
 GameObject:
@@ -29533,7 +29535,7 @@ GameObject:
   - component: {fileID: 1866446118}
   m_Layer: 0
   m_Name: CellColliderL
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30348,7 +30350,7 @@ GameObject:
   - component: {fileID: 1921217109}
   m_Layer: 0
   m_Name: assembly_bot_wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30425,7 +30427,7 @@ GameObject:
   - component: {fileID: 1936039058}
   m_Layer: 0
   m_Name: hallway_bot_wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31048,7 +31050,7 @@ GameObject:
   - component: {fileID: 2029401284}
   m_Layer: 0
   m_Name: wall (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31294,7 +31296,7 @@ GameObject:
   - component: {fileID: 2110612818}
   m_Layer: 0
   m_Name: LeftHallwayEnd
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31371,7 +31373,7 @@ GameObject:
   - component: {fileID: 2120976561}
   m_Layer: 0
   m_Name: room_3_top
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
