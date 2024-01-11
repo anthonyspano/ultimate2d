@@ -10,7 +10,7 @@ namespace com.ultimate2d.combat
 
         public override IEnumerator Start()
         {
-            while(PlayerController.Instance.playerStatus == PlayerController.PlayerStatus.Move)
+            while(PlayerController.Instance.playerStatus == PlayerController.PlayerStatus.Move && PlayerManager.Instance.CanMove)
             {
                 var direction = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) + PlayerManager.Instance.transform.position;
                 PlayerManager.Instance.transform.position = Vector2.MoveTowards(PlayerManager.Instance.transform.position, direction, PlayerManager.Instance.moveSpeed * Time.deltaTime);

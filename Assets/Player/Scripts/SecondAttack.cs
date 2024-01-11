@@ -21,6 +21,7 @@ namespace com.ultimate2d.combat
             PlayerManager.Instance.attackCooldown = PlayerManager.Instance.attackCooldownRate;
 
             // play second slash anim
+            Debug.Log("second attack go");
             PlayerManager.Instance.GetComponent<Animator>().SetBool("SecondAttack", true);
             PlayerManager.Instance.GetComponent<AudioSource>().Play();
 
@@ -35,8 +36,8 @@ namespace com.ultimate2d.combat
             //     cooldown -= Time.deltaTime;
             //     yield return null;
             // }
-            //yield return new WaitForSeconds(0.117f); // current length of all attack anims
-            yield return null;
+            yield return new WaitForSeconds(PlayerManager.Instance.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0).Length);
+            //yield return null;
             // if(continueChain)
             // {
             //     continueChain = false;

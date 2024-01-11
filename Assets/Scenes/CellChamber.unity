@@ -3867,7 +3867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e510cee44d97e4b4caa6b68aa1fa4029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 300
   pfHealthBar: {fileID: 1726575013604697225, guid: e735742ab812228469c1101b5a48a022,
     type: 3}
   positionOffset: 1.8
@@ -3885,9 +3885,9 @@ MonoBehaviour:
   attackCooldown: 0
   jumpCooldownRate: 1
   jumpCooldown: 0
-  JumpDistance: 20
+  JumpDistance: 100
   JumpSpeed: 10
-  MDD: 0.05
+  MDD: 0.1
   AttackMoveDistance: 1.6
   moveSpeed: 12
   slash1: {fileID: 8300000, guid: 045ad82e118921a428488577eb38d79a, type: 3}
@@ -24054,7 +24054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &656443612
 BoxCollider2D:
   m_ObjectHideFlags: 0
