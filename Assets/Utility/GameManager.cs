@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour
         timerText.text = "0";
     }
 
+    void Start()
+    {
+        Application.targetFrameRate = 60;
+
+    }
+
     void Update()
     {
         if(Input.GetKey(KeyCode.Escape))

@@ -61,8 +61,6 @@ namespace com.ultimate2d.combat
 
             }
 
-            yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
-
             //while(anim.GetCurrentAnimatorStateInfo(0).IsName("Player_Jump"))
             // {
             //     // addforce + directional movement amplifies is greatly
@@ -78,10 +76,6 @@ namespace com.ultimate2d.combat
             //     // PlayerManager.Instance.transform.Translate(direction * PlayerManager.Instance.JumpDistance * Time.deltaTime);
             //     yield return null;
             // }
-
-
-
-            PlayerManager.Instance.CanMove = true;
 
             
 

@@ -258,6 +258,7 @@ public class PlayerManager : MonoBehaviour
 		anim.SetBool("IsAttacking", false);
 		anim.SetBool("SecondAttack", false);
 		animFinished = true;
+		CanMove = true;
 	}
 
 	public bool AnimFinished()
