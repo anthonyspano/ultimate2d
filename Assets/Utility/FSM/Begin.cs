@@ -30,6 +30,7 @@ namespace com.ultimate2d.combat
             switch(PlayerController.Instance.playerStatus) // create different begin classes based on detected input
             {
                 case PlayerController.PlayerStatus.Move:
+                
                     PlayerBattleSystem.SetState(new PlayerRun(PlayerBattleSystem));
                     break;
                 case PlayerController.PlayerStatus.Dodge: 

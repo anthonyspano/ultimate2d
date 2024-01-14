@@ -110,6 +110,7 @@
      <Compile Include="Assets\Utility\TimedLife.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerRun.cs" />
      <Compile Include="Assets\Enemies\Generic\EnemyManagerOld.cs" />
+     <Compile Include="Assets\Player\InputSystem\Test.cs" />
      <Compile Include="Assets\Enemies\Generic\EnemyManager.cs" />
      <Compile Include="Assets\Player\Scripts\RotateAroundPlayer.cs" />
      <Compile Include="Assets\Utility\HealthSystem\HealthSystem.cs" />

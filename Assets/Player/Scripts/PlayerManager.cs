@@ -235,7 +235,8 @@ public class PlayerManager : MonoBehaviour
 	{
 		// triggered after death animation
 		anim.enabled = false;
-		gameObject.GetComponent<PlayerMove>().enabled = false;
+		canMove = false;
+		isBusy = true;
 
 		var reticle = transform.Find("Reticle");
 		reticle.gameObject.SetActive(false);

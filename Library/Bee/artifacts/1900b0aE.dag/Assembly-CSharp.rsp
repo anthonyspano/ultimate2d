@@ -389,6 +389,7 @@
 "Assets/Objects/TurnOffTorch.cs"
 "Assets/Player/InputSystem/PlayerController.cs"
 "Assets/Player/InputSystem/PlayerInputActions.cs"
+"Assets/Player/InputSystem/Test.cs"
 "Assets/Player/Jump.cs"
 "Assets/Player/Scripts/CameraFollowPlayer.cs"
 "Assets/Player/Scripts/ChangeClothes.cs"

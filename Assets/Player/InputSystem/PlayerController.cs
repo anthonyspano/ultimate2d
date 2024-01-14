@@ -41,11 +41,13 @@ namespace com.ultimate2d.combat
             playerStatus = PlayerStatus.Idle;
 
             playerInputActions = new PlayerInputActions();
+            // playerInputActions.Keyboard.Enable();
             playerInputActions.Player.Enable();
             playerInputActions.Player.Dodge.performed += Dodge;
             playerInputActions.Player.Attack.performed += Attack;
+            //playerInputActions.Keyboard.Movement.performed += Movement;
             
-            //playerInputActions.Player.Movement.performed += Movement;
+            //playerInputActions.Player.Movement.performed += c => Debug.Log(c.ReadValue<Vector2>());
         }
 
         private void FixedUpdate()
@@ -61,6 +63,10 @@ namespace com.ultimate2d.combat
                 else
                     playerStatus = PlayerStatus.Idle;
             }
+            // var value1 = playerInputActions.Player.Movement.ReadValue<Vector2>(); // 2DVector
+            // if(value1 != null)
+            //     Debug.Log(value1);
+            
 
         }
 
@@ -81,7 +87,7 @@ namespace com.ultimate2d.combat
 
         public void Movement(InputAction.CallbackContext context)
         {
-            //Debug.Log(context.ReadValue<Vector2>());
+            Debug.Log(context.ReadValue<Vector2>());
             
             
         }

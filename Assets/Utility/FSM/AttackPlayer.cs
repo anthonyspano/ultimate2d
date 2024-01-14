@@ -11,7 +11,7 @@ namespace com.ultimate2d.combat
         GameObject shockwavePrefab;
         EnemyManager em;
         Animator anim;
-        float telegraphTime = 0.5f;
+        float telegraphTime = 0.22f;
 
         public AttackPlayer(BlockBattleSystem BlockBattleSystem) : base(BlockBattleSystem)
         {

@@ -47,7 +47,7 @@ public class EnemyTakeDamage : MonoBehaviour
 
 	}
 
-    IEnumerator Death<T>()
+    IEnumerator Death()
     {
         // disable further movements
         // enemy manager
