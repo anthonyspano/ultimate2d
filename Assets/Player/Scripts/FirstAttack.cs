@@ -19,20 +19,24 @@ namespace com.ultimate2d.combat
             PlayerManager.Instance.CanMove = false;
             // play slash anim
             //if(!PlayerManager.Instance.GetComponent<AudioSource>().isPlaying)
-                PlayerManager.Instance.GetComponent<AudioSource>().Play();
-            PlayerManager.Instance.GetComponent<Animator>().SetBool("IsAttacking", true);
+                
+            //PlayerManager.Instance.GetComponent<Animator>().SetBool("isAttacking", true);
+            PlayerManager.Instance.GetComponent<Animator>().SetTrigger("Attacking");
+            
 
+            yield return null;
+            PlayerManager.Instance.GetComponent<AudioSource>().Play();
             // scoot towards last move
             var newPos = PlayerManager.Instance.transform.position + PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance;
             //Debug.Log(PlayerManager.Instance.LastMove * PlayerManager.Instance.AttackMoveDistance);
             PlayerManager.Instance.transform.position = Vector3.Lerp(PlayerManager.Instance.transform.position, newPos, 0.8f);
 
-            while(PlayerManager.Instance.GetComponent<Animator>().GetBool("IsAttacking") == true)
-            {
-                if(PlayerInput.Slash()) 
-                    continueChain = true;
-                yield return null;
-            }
+            // while(PlayerManager.Instance.GetComponent<Animator>().GetBool("IsAttacking") == true)
+            // {
+            //     if(PlayerInput.Slash()) 
+            //         continueChain = true;
+            //     yield return null;
+            // }
             //yield return new WaitForSeconds(0.117f); // current length of all attack anims
             //yield return new WaitForSeconds(PlayerManager.Instance.cooldownRate); // arbitrary wait to read player input
    

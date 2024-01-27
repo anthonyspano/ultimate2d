@@ -90,9 +90,6 @@ public class PlayerManager : MonoBehaviour
 		set { canMove = value; }
 	}
 
-	public bool hittingWall;
-
-	// delete if old
 	private Transform hitbox;
 	private BoxCollider2D boxCollider;
 
@@ -102,6 +99,9 @@ public class PlayerManager : MonoBehaviour
 		get { return lastMove; }
 		set { lastMove = value; }
 	}
+
+	public enum Direction {left, right, up, down};
+	public Direction pFacingDir;
 
 
 	private void Start()
@@ -166,7 +166,17 @@ public class PlayerManager : MonoBehaviour
 		anim.SetFloat("MoveX", LastMove.x);
 		anim.SetFloat("MoveY", LastMove.y);
 
-		//Debug.Log(LastMove);
+		float facingDir = Mathf.Atan2(LastMove.y, LastMove.x) * Mathf.Rad2Deg;
+		if(facingDir < 45 && facingDir >= -45) // facing right
+			pFacingDir = Direction.right;
+		else if(facingDir < 135 && facingDir >= 45) // facing up
+			pFacingDir = Direction.up;
+		else if(facingDir >= -135 && facingDir < -45) // facing down
+			pFacingDir = Direction.down;
+		else if(facingDir >= 135 || facingDir < -135) // facing left	
+		{
+			pFacingDir = Direction.left;
+		}
 
 	}
 
@@ -256,7 +266,7 @@ public class PlayerManager : MonoBehaviour
 	public void FinishAnimation()
 	{
 		anim.Play("Player Idle", 0);
-		anim.SetBool("IsAttacking", false);
+		anim.SetBool("isAttacking", false);
 		anim.SetBool("SecondAttack", false);
 		animFinished = true;
 		CanMove = true;
@@ -265,6 +275,11 @@ public class PlayerManager : MonoBehaviour
 	public bool AnimFinished()
 	{
 		return animFinished;
+	}
+
+	public void FinishJumpAnimation()
+	{
+		anim.SetBool("isJumping", false);
 	}
 
 	private bool jumping;

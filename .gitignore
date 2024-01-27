@@ -1,2 +1,14 @@
-Temp/*
-Library/il2cpp_cache/linkresult_7A53E73ACCF4BE0CEDC5024200E05AB5/*
+# Blanket ignore
+/*
+/*/
+
+# Whitelist:
+# Git meta files
+!.gitignore
+!.gitattributes
+!README.md
+
+# Directories/files
+!/ProjectSettings/
+!/Assets/
+

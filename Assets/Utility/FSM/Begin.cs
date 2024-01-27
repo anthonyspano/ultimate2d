@@ -33,21 +33,6 @@ namespace com.ultimate2d.combat
                 
                     PlayerBattleSystem.SetState(new PlayerRun(PlayerBattleSystem));
                     break;
-                case PlayerController.PlayerStatus.Dodge: 
-                    if(PlayerManager.Instance.jumpCooldown <= 0)
-                    {
-                        PlayerManager.Instance.jumpCooldown = PlayerManager.Instance.jumpCooldownRate;
-                        PlayerManager.Instance.StartJumpCD();
-                        Debug.Log("Dodging");
-                        PlayerBattleSystem.SetState(new Jump(PlayerBattleSystem));
-
-                    }
-                    else
-                    {
-                        PlayerBattleSystem.SetState(new Begin(PlayerBattleSystem));
-                    }
-
-                    break;
                     
                 case PlayerController.PlayerStatus.Attack:
                     if(PlayerManager.Instance.attackCooldown <= 0)
@@ -64,6 +49,7 @@ namespace com.ultimate2d.combat
                     }
 
                     break;
+
 
                 default:
                     PlayerController.Instance.playerStatus = PlayerController.PlayerStatus.Idle;

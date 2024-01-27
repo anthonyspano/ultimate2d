@@ -62,7 +62,6 @@
      <Compile Include="Assets\Utility\FSM\BossBattleSystem.cs" />
      <Compile Include="Assets\Player\InputSystem\PlayerInputActions.cs" />
      <Compile Include="Assets\Player\Scripts\SlashAttack.cs" />
-     <Compile Include="Assets\Player\Scripts\Dash.cs" />
      <Compile Include="Assets\Enemies\Prison Crawler\Crawler Scripts\PrisonCrawlerDebug.cs" />
      <Compile Include="Assets\Utility\GameManager.cs" />
      <Compile Include="Assets\Player\Scripts\deprecated\PlayerAim.cs" />
@@ -93,7 +92,6 @@
      <Compile Include="Assets\Player\Scripts\PlayerAttack.cs" />
      <Compile Include="Assets\Player\Scripts\TriggerEvent.cs" />
      <Compile Include="Assets\Player\Scripts\deprecated\UltimateSystem\UltimateAim.cs" />
-     <Compile Include="Assets\Player\Scripts\TranslateDash.cs" />
      <Compile Include="Assets\Utility\ShockwaveTrigger.cs" />
      <Compile Include="Assets\Utility\SpawnObject.cs" />
      <Compile Include="Assets\Utility\FSM\BossAttackPlayer.cs" />

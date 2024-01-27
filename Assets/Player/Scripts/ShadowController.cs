@@ -6,16 +6,20 @@ public class ShadowController : MonoBehaviour
 {
 	public UltimateBar ultBar;
 
-	private void Awake()
+	private void Start()
 	{
-		//ultBar = GameObject.Find("UltBar").GetComponent<UltimateBar>();
+		ultBar = PlayerManager.Instance.ultBar;
 	}
 	
     private void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.gameObject.CompareTag("Enemy"))
+		Debug.Log("shadow hit 1");
+		if(other.gameObject.CompareTag("HitBox"))
 		{
-			//ultBar.AddUlt(50);
+			Debug.Log("shadow hit 2");
+			ultBar.AddUlt(20);
 		}
 	}
+
+
 }
